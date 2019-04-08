@@ -9,7 +9,7 @@ const contentfulConfig = {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful TypeScript starter',
+    title: 'NYC Worst Evictors',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -26,6 +26,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    `gatsby-plugin-sass`,
     `gatsby-plugin-typescript`,
     'gatsby-transformer-remark',
     'gatsby-plugin-sharp',

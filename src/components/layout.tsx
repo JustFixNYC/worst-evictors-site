@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 
-import './layout.css'
+import '../styles/layout.scss'
 
 type Props = {
   children: React.ReactNode
@@ -20,6 +20,7 @@ const Layout = ({ children }: Props) => (
           }
         }
       }
+      
     `}
     render={data => (
       <>
