@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
+import "spectre.css"
 
 import Layout from '../components/layout'
 
-import "spectre.css"
-
-class IndexPage extends Component {
+class LandingPage extends Component {
   render() {
     return (
       <Layout>
@@ -17,4 +16,4 @@ class IndexPage extends Component {
     )
   }
 }
-export default IndexPage
+export default LandingPage

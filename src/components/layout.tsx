@@ -33,7 +33,7 @@ const Layout = ({ children }: Props) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header />
         <div
           style={{
             margin: '0 auto',
