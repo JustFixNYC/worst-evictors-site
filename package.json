@@ -4,6 +4,8 @@
   "version": "0.3.0",
   "author": "Filip Havrlent <filip@havrlent.com>",
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^13.1.0",
+    "@contentful/rich-text-react-renderer": "^13.2.0",
     "@types/react-helmet": "^5.0.7",
     "dotenv": "^6.0.0",
     "emotion": "^9.2.12",
