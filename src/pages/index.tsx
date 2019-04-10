@@ -59,7 +59,7 @@ const LandingPage = () => (
     `}
     render={data => (
       <Layout>
-        <section id="intro" className="hero hero-lg bg-primary">
+        <section id="intro" className="landing-intro hero hero-centered hero-lg bg-primary">
           <div className="hero-body">
             <h1>{documentToReactComponents(data.contentfulLandingPage.openingTitle.json)}</h1>
             {documentToReactComponents(data.contentfulLandingPage.openingSubtitle.json)}
@@ -68,7 +68,7 @@ const LandingPage = () => (
             </AnchorLink>
           </div>
         </section>
-        <section id="list-link" className="hero half-vh">
+        <section id="list-link" className="list-link hero hero-centered half-vh">
           <div className="hero-body">
             <h1>{data.contentfulLandingPage.listTitle}</h1>
             {documentToReactComponents(data.contentfulLandingPage.listDescription.json)}
@@ -78,7 +78,7 @@ const LandingPage = () => (
             </Link>
           </div>
         </section>
-        <section id="map-link" className="hero half-vh">
+        <section id="map-link" className="map-link hero hero-centered half-vh">
           <div className="hero-body">
             <h1>{data.contentfulLandingPage.mapTitle}</h1>
             {documentToReactComponents(data.contentfulLandingPage.mapDescription.json)}
@@ -88,16 +88,16 @@ const LandingPage = () => (
             </Link>
           </div>
         </section>
-        <section id="context" className="hero">
+        <section id="context" className="landing-context hero">
           <div className="hero-body">
             <h3>{data.contentfulLandingPage.contextTitle}</h3>
             <div className="divider d-invisible"></div>
             {documentToReactComponents(data.contentfulLandingPage.contextDescription.json)}
           </div>
         </section>
-        <section id="resources" className="container">
+        <section id="resources" className="landing-resources container">
           <div className="columns">
-            <div id="efnyc" className="column col-6 col-sm-12 hero hero-sm">
+            <div id="efnyc" className="efnyc column col-6 col-sm-12 hero hero-sm">
               <div className="hero-body">
                 <h3>{data.contentfulLandingPage.efnycTitle}</h3>
                 {documentToReactComponents(data.contentfulLandingPage.efnycDescription.json)}
@@ -107,7 +107,7 @@ const LandingPage = () => (
                 </a>
               </div>
             </div>
-            <div id="know-your-rights" className="column col-6 col-sm-12 hero hero-sm">
+            <div id="know-your-rights" className="know-your-rights column col-6 col-sm-12 hero hero-sm">
               <div className="hero-body">
                 <h3>{data.contentfulLandingPage.kyrTitle}</h3>
                 {documentToReactComponents(data.contentfulLandingPage.kyrDescription.json)}

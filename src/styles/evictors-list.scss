@@ -1,0 +1,20 @@
+@import "node_modules/spectre.css/src/spectre";
+@import "node_modules/spectre.css/src/icons";
+
+.list-intro.hero {
+	padding-left: 2.5em;
+	padding-right: 2.5em;
+	.hero-body {
+		text-align: left;
+		.btn-group {
+			.btn {
+				margin: 1em;
+				border-radius: 5px;
+			}
+			.icon {
+				margin-left: 0.5em;
+				margin-right: 0.5em;
+			}
+		}
+	}
+}
