@@ -4,6 +4,7 @@
   "version": "0.3.0",
   "author": "Filip Havrlent <filip@havrlent.com>",
   "dependencies": {
+    "@babel/core": "^7.4.3",
     "@contentful/rich-text-html-renderer": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^13.2.0",
     "@types/react-helmet": "^5.0.7",
@@ -20,7 +21,9 @@
     "gatsby-plugin-typescript": "^2.0.0",
     "gatsby-source-contentful": "^2.0.1",
     "gatsby-transformer-remark": "^2.1.5",
+    "graphql": "0.13.0",
     "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
     "react": "^16.5.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.5.1",
@@ -28,7 +31,8 @@
     "react-helmet": "^5.2.0",
     "spectre.css": "^0.5.8",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.1",
+    "webpack": "^4.29.6"
   },
   "keywords": [
     "gatsby"
