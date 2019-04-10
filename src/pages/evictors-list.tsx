@@ -8,6 +8,7 @@ import { Link } from 'gatsby'
 import '../styles/evictors-list.scss'
 
 import Layout from '../components/layout'
+import Evictor from '../components/evictor'
 
 const EvictorsListPage = () => (
   <StaticQuery
@@ -59,6 +60,24 @@ const EvictorsListPage = () => (
 	            </AnchorLink>
 	        </div>
           </div>
+        </section>
+        <section id="bronx" className="boro-list">
+          <h3>{data.contentfulListPage.evictorList[0].boroName}</h3>
+          <h5>{documentToReactComponents(data.contentfulListPage.evictorList[0].subtitle.json)}</h5>
+          {data.contentfulListPage.evictorList[0].evictors.map(evictor => 
+          	<Evictor data={evictor} />)}
+        </section>
+        <section id="manhattan" className="boro-list">
+          <h3>{data.contentfulListPage.evictorList[1].boroName}</h3>
+          <h5>{documentToReactComponents(data.contentfulListPage.evictorList[1].subtitle.json)}</h5>
+          {data.contentfulListPage.evictorList[0].evictors.map(evictor => 
+          	<Evictor data={evictor} />)}
+        </section>
+        <section id="brooklyn" className="boro-list">
+          <h3>{data.contentfulListPage.evictorList[2].boroName}</h3>
+          <h5>{documentToReactComponents(data.contentfulListPage.evictorList[2].subtitle.json)}</h5>
+          {data.contentfulListPage.evictorList[0].evictors.map(evictor => 
+          	<Evictor data={evictor} />)}
         </section>
       </Layout>
     )}

@@ -18,3 +18,23 @@
 		}
 	}
 }
+
+.boro-list {
+	padding: 2rem;
+
+	.evictor-container {
+		.evictor-rank {
+			align-self: center;
+		}
+		.evictor-pic {
+			width: 80%;
+			padding-top: 80%; /* 1:1 Aspect Ratio */
+  			position: relative;
+			background-color: black;
+
+		}
+		.evictor-name {
+			margin-top: 1em
+		}
+	}
+}
