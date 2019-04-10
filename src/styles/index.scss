@@ -1,0 +1,53 @@
+@import "node_modules/spectre.css/src/spectre";
+@import "node_modules/spectre.css/src/icons";
+
+.hero {
+	justify-content: center;
+	align-items: center;
+}
+
+#intro {
+	padding-left: 50px;
+	padding-right: 50px;
+	height: calc(100vh - 50px);
+	flex-direction: unset;
+
+	.hero-body {
+		text-align: center;
+	}
+}
+
+.hero.half-vh {
+	height: 50vh;
+	padding-left: 2rem;
+	padding-right: 2rem;
+
+	.hero-body {
+		align-self: center;
+		text-align: center;
+		max-width: 500px;
+	}
+}
+
+#map-link {
+	background-color: #d5d5d5;
+}
+
+#context {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+#resources {
+	.hero {
+		padding: 2rem;
+	}
+
+	#efnyc {
+		background-color: #d5d5d5;
+	}
+
+	#know-your-rights {
+		background-color: #e6e6e6;
+	}
+}
