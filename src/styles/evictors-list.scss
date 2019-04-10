@@ -1,0 +1,40 @@
+@import "node_modules/spectre.css/src/spectre";
+@import "node_modules/spectre.css/src/icons";
+
+.list-intro.hero {
+	padding-left: 2.5em;
+	padding-right: 2.5em;
+	.hero-body {
+		text-align: left;
+		.btn-group {
+			.btn {
+				margin: 1em;
+				border-radius: 5px;
+			}
+			.icon {
+				margin-left: 0.5em;
+				margin-right: 0.5em;
+			}
+		}
+	}
+}
+
+.boro-list {
+	padding: 2rem;
+
+	.evictor-container {
+		.evictor-rank {
+			align-self: center;
+		}
+		.evictor-pic {
+			width: 80%;
+			padding-top: 80%; /* 1:1 Aspect Ratio */
+  			position: relative;
+			background-color: black;
+
+		}
+		.evictor-name {
+			margin-top: 1em
+		}
+	}
+}
