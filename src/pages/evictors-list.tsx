@@ -70,13 +70,13 @@ const EvictorsListPage = () => (
         <section id="manhattan" className="boro-list">
           <h3>{data.contentfulListPage.evictorList[1].boroName}</h3>
           <h5>{documentToReactComponents(data.contentfulListPage.evictorList[1].subtitle.json)}</h5>
-          {data.contentfulListPage.evictorList[0].evictors.map(evictor => 
+          {data.contentfulListPage.evictorList[1].evictors.map(evictor => 
           	<Evictor data={evictor} />)}
         </section>
         <section id="brooklyn" className="boro-list">
           <h3>{data.contentfulListPage.evictorList[2].boroName}</h3>
           <h5>{documentToReactComponents(data.contentfulListPage.evictorList[2].subtitle.json)}</h5>
-          {data.contentfulListPage.evictorList[0].evictors.map(evictor => 
+          {data.contentfulListPage.evictorList[2].evictors.map(evictor => 
           	<Evictor data={evictor} />)}
         </section>
       </Layout>

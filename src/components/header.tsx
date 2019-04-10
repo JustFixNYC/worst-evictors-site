@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import '../styles/header.scss';
+import '../styles/header-footer.scss';
 
 type Props = {
   siteTitle: string

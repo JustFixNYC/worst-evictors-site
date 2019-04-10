@@ -1,13 +1,43 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import { StaticQuery, graphql } from 'gatsby'
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { Link } from 'gatsby'
+
+import '../styles/rights.scss'
 
 import Layout from '../components/layout'
 
 const RightsPage = () => (
-  <Layout>
-    <h1>Hi from the know your rights page</h1>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
+  <StaticQuery
+    query={graphql`
+      query {
+		  contentfulKnowYourRightsPage {
+		    title
+		    subtitle {
+		      json
+		    }
+		    description {
+		      json
+		    }
+		  }
+		}
+    `}
+    render={data => (
+		  <Layout>
+		    <section id="context" className="landing-context hero">
+			  <div className="hero-body">
+			    <h3>{data.contentfulKnowYourRightsPage.title}</h3>
+			    <div className="text-italic">{documentToReactComponents(data.contentfulKnowYourRightsPage.subtitle.json)}</div>
+			    <div className="divider d-invisible"></div>
+			    <div className="know-your-rights-content">
+			    {documentToReactComponents(data.contentfulKnowYourRightsPage.description.json)}
+			    </div>
+			  </div>
+			</section>
+		  </Layout>
+		)}
+      />
 )
 
 export default RightsPage
