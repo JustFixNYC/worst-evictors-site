@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { StaticQuery, graphql } from 'gatsby'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { Link } from 'gatsby'
@@ -61,6 +63,9 @@ const LandingPage = () => (
           <div className="hero-body">
             <h1>{documentToReactComponents(data.contentfulLandingPage.openingTitle.json)}</h1>
             {documentToReactComponents(data.contentfulLandingPage.openingSubtitle.json)}
+            <AnchorLink href="#list-link" className="btn btn-action btn-lg s-circle">
+              <i className="icon icon-2x icon-arrow-down"></i>
+            </AnchorLink>
           </div>
         </section>
         <section id="list-link" className="hero half-vh">
