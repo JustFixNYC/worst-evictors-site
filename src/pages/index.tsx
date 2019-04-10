@@ -16,9 +16,6 @@ const LandingPage = () => (
     query={graphql`
       query {
         contentfulLandingPage {
-          openingTitle {
-            json
-          }
           openingSubtitle {
             json
           }
@@ -61,7 +58,7 @@ const LandingPage = () => (
       <Layout>
         <section id="intro" className="hero hero-lg bg-primary">
           <div className="hero-body">
-            <h1>{documentToReactComponents(data.contentfulLandingPage.openingTitle.json)}</h1>
+            <h1>{documentToReactComponents(data.contentfulLandingPage.openingSubtitle.json)}</h1>
             {documentToReactComponents(data.contentfulLandingPage.openingSubtitle.json)}
             <AnchorLink href="#list-link" className="btn btn-action btn-lg s-circle">
               <i className="icon icon-2x icon-arrow-down"></i>

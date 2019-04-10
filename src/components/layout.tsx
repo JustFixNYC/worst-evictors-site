@@ -6,10 +6,6 @@ import Header from './header'
 
 import '../styles/layout.scss'
 
-type Props = {
-  children: React.ReactNode
-}
-
 const Layout = ({ children }: Props) => (
       <>
         <Helmet
