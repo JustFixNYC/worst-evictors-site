@@ -4,6 +4,7 @@
   "version": "0.3.0",
   "author": "Filip Havrlent <filip@havrlent.com>",
   "dependencies": {
+    "@babel/core": "^7.4.3",
     "@contentful/rich-text-html-renderer": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^13.2.0",
     "@types/react-helmet": "^5.0.8",

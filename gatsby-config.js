@@ -1,6 +1,6 @@
-require("dotenv").config({
-  path: `.env`,
-})
+if (process.env.ENVIROMENT !== 'production') {
+  require('dotenv').config()
+}
 
 const contentfulConfig = {
   spaceId: process.env.SPACE_ID,

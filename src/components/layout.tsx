@@ -3,8 +3,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
-
-import '../styles/layout.scss'
+import Footer from './footer'
 
 const Layout = ({ children }: Props) => (
       <>
@@ -21,6 +20,7 @@ const Layout = ({ children }: Props) => (
         <div>
           {children}
         </div>
+        <Footer />
       </>
     )
 
