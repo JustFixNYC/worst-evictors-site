@@ -1,0 +1,28 @@
+@import "~spectre.css/src/mixins";
+
+
+.btn.btn-secondary {
+  @include button-variant($secondary-color);
+}
+
+.btn.btn-accent {
+  @include button-variant($accent-color);
+}
+
+.btn-block {
+  max-width: 200px;
+}
+
+.btn-centered {
+  margin: 0 auto;
+}
+
+.btn + .btn {
+  margin-left: 32px;
+  margin-bottom: 16px;
+  vertical-align: top;
+}
+
+.icon-mail:before {
+  border-radius: 0.1rem;
+}

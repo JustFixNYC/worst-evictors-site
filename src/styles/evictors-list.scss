@@ -22,9 +22,55 @@
 .boro-list {
 	padding: 2rem;
 
+
+	.boro-list-intro {
+		margin-bottom: 60px;
+
+		h1 {
+			font-weight: 700;
+			font-size: 5rem;
+			margin-bottom: 0.25rem;
+		}
+	}
+
 	.evictor-container {
+		margin-top: 20px;
+		margin-bottom: 20px;
+
 		.evictor-rank {
+
+			h1 {
+				font-weight: 700;
+				font-size: 5rem;
+			}
+
+			sup {
+				font-size: 25%;
+				top: -2.25em;
+			}
+		}
+		.evictor-intro {
 			align-self: center;
+			
+			.evictor-name {
+			 	font-size: 1.75rem;
+			 	font-weight: 900;
+			}
+
+			.evictor-corp {
+			
+			}
+
+			.eviction-count {
+				font-size: 1.75rem;
+				font-weight: 900;
+			}
+		}
+		.eviction-stats {
+			td {
+				padding: 0.3rem;
+				font-size: 0.8rem;
+			}	
 		}
 		.evictor-pic {
 			width: 80%;
@@ -32,9 +78,6 @@
   			position: relative;
 			background-color: black;
 
-		}
-		.evictor-name {
-			margin-top: 1em
 		}
 	}
 }
