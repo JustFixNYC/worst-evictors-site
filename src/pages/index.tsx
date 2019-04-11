@@ -59,9 +59,9 @@ const LandingPage = () => (
     `}
     render={data => (
       <Layout>
-        <section id="intro" className="landing-intro hero hero-centered hero-lg bg-primary">
+        <section id="intro" className="landing-intro hero hero-centered hero-lg">
           <div className="hero-body">
-            <h1>{documentToReactComponents(data.contentfulLandingPage.openingTitle.json)}</h1>
+            <h1 className="title-font">{documentToReactComponents(data.contentfulLandingPage.openingTitle.json)}</h1>
             {documentToReactComponents(data.contentfulLandingPage.openingSubtitle.json)}
             <AnchorLink href="#list-link" className="btn btn-action btn-lg s-circle">
               <i className="icon icon-2x icon-arrow-down"></i>

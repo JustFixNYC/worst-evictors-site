@@ -1,5 +1,14 @@
-@import "node_modules/spectre.css/src/spectre";
+@import "_vars.scss";
+@import "node_modules/spectre.css/src/spectre.scss";
 @import "node_modules/spectre.css/src/icons";
+
+* {
+	font-family: $body-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $title-font;
+}
 
 .hero-centered {
 	justify-content: center;
@@ -11,6 +20,8 @@
 	padding-right: 50px;
 	height: calc(100vh - 50px);
 	flex-direction: unset;
+	color: $light;
+	background-color: $primary-color-light;
 
 	.hero-body {
 		text-align: center;
