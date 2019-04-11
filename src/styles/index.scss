@@ -2,6 +2,8 @@
 @import "node_modules/spectre.css/src/spectre.scss";
 @import "node_modules/spectre.css/src/icons";
 
+// GLOBAL RULES/OVERRIDES:
+
 * {
 	font-family: $body-font;
 }
@@ -9,6 +11,24 @@
 h1, h2, h3, h4, h5, h6 {
 	font-family: $title-font;
 }
+
+.btn.btn-primary {
+  @include button-variant($primary-color);
+}
+
+.btn.btn-secondary {
+  @include button-variant($secondary-color);
+}
+
+.btn.btn-outline-primary {
+  @include button-outline-variant($primary-color);
+}
+
+.btn.btn-outline-secondary {
+  @include button-outline-variant($secondary-color);
+}
+
+// LANDING PAGE:
 
 .hero-centered {
 	justify-content: center;
@@ -50,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .map-link {
-	background-color: #d5d5d5;
+	background-color: $gray;
 }
 
 .landing-context {
@@ -64,10 +84,8 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	.efnyc {
-		background-color: #d5d5d5;
 	}
 
 	.know-your-rights {
-		background-color: #e6e6e6;
 	}
 }

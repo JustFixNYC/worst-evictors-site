@@ -63,7 +63,7 @@ const LandingPage = () => (
           <div className="hero-body">
             <h1 className="title-font">{documentToReactComponents(data.contentfulLandingPage.openingTitle.json)}</h1>
             {documentToReactComponents(data.contentfulLandingPage.openingSubtitle.json)}
-            <AnchorLink href="#list-link" className="btn btn-action btn-lg s-circle">
+            <AnchorLink href="#list-link" className="btn btn-outline-primary btn-lg s-circle">
               <i className="icon icon-2x icon-arrow-down"></i>
             </AnchorLink>
           </div>
@@ -97,23 +97,25 @@ const LandingPage = () => (
         </section>
         <section id="resources" className="landing-resources container">
           <div className="columns">
-            <div id="efnyc" className="efnyc column col-6 col-sm-12 hero hero-sm">
+            <div id="efnyc" className="efnyc column col-6 col-sm-12 hero hero-sm bg-primary">
               <div className="hero-body">
                 <h3>{data.contentfulLandingPage.efnycTitle}</h3>
                 {documentToReactComponents(data.contentfulLandingPage.efnycDescription.json)}
-                <a href="https://www.evictionfreenyc.org/" className="btn btn-primary">
+                <a href="https://www.evictionfreenyc.org/" className="btn btn-outline-primary">
                   {data.contentfulLandingPage.efnycButton}
                   <i className="icon icon-forward ml-2"></i>
                 </a>
               </div>
             </div>
-            <div id="know-your-rights" className="know-your-rights column col-6 col-sm-12 hero hero-sm">
+            <div id="know-your-rights" className="know-your-rights column col-6 col-sm-12 hero hero-sm bg-secondary text-light">
               <div className="hero-body">
                 <h3>{data.contentfulLandingPage.kyrTitle}</h3>
                 {documentToReactComponents(data.contentfulLandingPage.kyrDescription.json)}
-                <Link to="/rights" className="btn btn-primary">
-                  {data.contentfulLandingPage.kyrButton}
-                  <i className="icon icon-forward ml-2"></i>
+                <Link to="/rights">
+                  <button className="btn btn-outline-secondary">
+                    {data.contentfulLandingPage.kyrButton}
+                    <i className="icon icon-forward ml-2"></i>
+                  </button>
                 </Link>
               </div>
             </div>

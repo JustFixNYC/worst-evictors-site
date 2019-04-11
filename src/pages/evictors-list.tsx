@@ -46,17 +46,17 @@ const EvictorsListPage = () => (
             {documentToReactComponents(data.contentfulListPage.subtitle.json)}
             <h3> Select a borough: </h3>
             <div className="btn-group">
-	            <AnchorLink href="#bronx" className="btn btn-lg">
-	              Bronx <i className="icon icon-forward"></i>
+	            <AnchorLink href="#bronx" className="btn btn-lg btn-outline-primary">
+	              Bronx
 	            </AnchorLink>
-	            <AnchorLink href="#manhattan" className="btn btn-lg">
-	              Manhattan<i className="icon icon-forward"></i>
+	            <AnchorLink href="#manhattan" className="btn btn-lg btn-outline-primary">
+	              Manhattan
 	            </AnchorLink>
-	            <AnchorLink href="#brooklyn" className="btn btn-lg">
-	              Brooklyn<i className="icon icon-forward"></i>
+	            <AnchorLink href="#brooklyn" className="btn btn-lg btn-outline-primary">
+	              Brooklyn
 	            </AnchorLink>
-	            <AnchorLink href="#queens" className="btn btn-lg">
-	              Queens<i className="icon icon-forward"></i>
+	            <AnchorLink href="#queens" className="btn btn-lg btn-outline-primary">
+	              Queens
 	            </AnchorLink>
 	        </div>
           </div>
