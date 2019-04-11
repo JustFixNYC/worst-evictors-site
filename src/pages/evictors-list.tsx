@@ -8,7 +8,7 @@ import { Link } from 'gatsby'
 import '../styles/evictors-list.scss'
 
 import Layout from '../components/layout'
-import Evictor from '../components/evictor'
+import BoroList from '../components/boro-list'
 
 const EvictorsListPage = () => (
   <StaticQuery
@@ -46,39 +46,22 @@ const EvictorsListPage = () => (
             {documentToReactComponents(data.contentfulListPage.subtitle.json)}
             <h3> Select a borough: </h3>
             <div className="btn-group">
-	            <AnchorLink href="#bronx" className="btn btn-lg btn-outline-primary">
-	              Bronx
-	            </AnchorLink>
-	            <AnchorLink href="#manhattan" className="btn btn-lg btn-outline-primary">
-	              Manhattan
-	            </AnchorLink>
-	            <AnchorLink href="#brooklyn" className="btn btn-lg btn-outline-primary">
-	              Brooklyn
-	            </AnchorLink>
-	            <AnchorLink href="#queens" className="btn btn-lg btn-outline-primary">
-	              Queens
-	            </AnchorLink>
+              {data.contentfulListPage.evictorList.map(list => 
+                <AnchorLink 
+                  key={list.boroName} 
+                  href={"#" + list.boroName} 
+                  className="btn btn-lg btn-outline-primary">
+                    {list.boroName}
+                </AnchorLink>
+              )}
 	        </div>
           </div>
-        </section>
-        <section id="bronx" className="boro-list">
-          <h3>{data.contentfulListPage.evictorList[0].boroName}</h3>
-          <h5>{documentToReactComponents(data.contentfulListPage.evictorList[0].subtitle.json)}</h5>
-          {data.contentfulListPage.evictorList[0].evictors.map(evictor => 
-          	<Evictor data={evictor} />)}
-        </section>
-        <section id="manhattan" className="boro-list">
-          <h3>{data.contentfulListPage.evictorList[1].boroName}</h3>
-          <h5>{documentToReactComponents(data.contentfulListPage.evictorList[1].subtitle.json)}</h5>
-          {data.contentfulListPage.evictorList[1].evictors.map(evictor => 
-          	<Evictor data={evictor} />)}
-        </section>
-        <section id="brooklyn" className="boro-list">
-          <h3>{data.contentfulListPage.evictorList[2].boroName}</h3>
-          <h5>{documentToReactComponents(data.contentfulListPage.evictorList[2].subtitle.json)}</h5>
-          {data.contentfulListPage.evictorList[2].evictors.map(evictor => 
-          	<Evictor data={evictor} />)}
-        </section>
+        </section> 
+        {data.contentfulListPage.evictorList.map(list => 
+          <BoroList 
+            key={list.boroName} 
+            data={list} />
+        )}
       </Layout>
     )}
   />
