@@ -33,6 +33,14 @@ const EvictorsListPage = () => (
               description {
                 json
               }
+              photo {
+                sizes(maxWidth: 613) {
+                        aspectRatio
+                        src
+                        srcSet
+                        sizes
+                      } 
+              }
             }
           }
         }
@@ -40,7 +48,7 @@ const EvictorsListPage = () => (
     `}
     render={data => (
       <Layout>
-        <section id="list-intro" className="list-intro hero bg-primary">
+        <section id="list-intro" className="list-intro hero bg-secondary text-light">
           <div className="hero-body">
             <h1>{data.contentfulListPage.title}</h1>
             {documentToReactComponents(data.contentfulListPage.subtitle.json)}
@@ -50,7 +58,7 @@ const EvictorsListPage = () => (
                 <AnchorLink 
                   key={list.boroName} 
                   href={"#" + list.boroName} 
-                  className="btn btn-lg btn-outline-primary">
+                  className="btn btn-lg btn-outline-secondary">
                     {list.boroName}
                 </AnchorLink>
               )}

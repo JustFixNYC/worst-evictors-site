@@ -68,11 +68,11 @@ const LandingPage = () => (
             </AnchorLink>
           </div>
         </section>
-        <section id="list-link" className="list-link hero hero-centered half-vh">
+        <section id="list-link" className="list-link hero hero-centered half-vh bg-secondary text-light">
           <div className="hero-body">
             <h1>{data.contentfulLandingPage.listTitle}</h1>
             {documentToReactComponents(data.contentfulLandingPage.listDescription.json)}
-            <Link to="/evictors-list" className="btn btn-primary">
+            <Link to="/evictors-list" className="btn btn-outline-secondary">
               {data.contentfulLandingPage.listButton}
               <i className="icon icon-forward ml-2"></i>
             </Link>
@@ -97,7 +97,7 @@ const LandingPage = () => (
         </section>
         <section id="resources" className="landing-resources container">
           <div className="columns">
-            <div id="efnyc" className="efnyc column col-6 col-sm-12 hero hero-sm bg-primary">
+            <div id="efnyc" className="efnyc column col-6 col-sm-12 hero hero-sm text-light">
               <div className="hero-body">
                 <h3>{data.contentfulLandingPage.efnycTitle}</h3>
                 {documentToReactComponents(data.contentfulLandingPage.efnycDescription.json)}
@@ -107,12 +107,12 @@ const LandingPage = () => (
                 </a>
               </div>
             </div>
-            <div id="know-your-rights" className="know-your-rights column col-6 col-sm-12 hero hero-sm bg-secondary text-light">
+            <div id="know-your-rights" className="know-your-rights column col-6 col-sm-12 hero hero-sm bg-gray">
               <div className="hero-body">
                 <h3>{data.contentfulLandingPage.kyrTitle}</h3>
                 {documentToReactComponents(data.contentfulLandingPage.kyrDescription.json)}
                 <Link to="/rights">
-                  <button className="btn btn-outline-secondary">
+                  <button className="btn btn-outline-dark">
                     {data.contentfulLandingPage.kyrButton}
                     <i className="icon icon-forward ml-2"></i>
                   </button>

@@ -20,12 +20,24 @@ h1, h2, h3, h4, h5, h6 {
   @include button-variant($secondary-color);
 }
 
+.btn.btn-gray {
+  @include button-variant($gray);
+}
+
 .btn.btn-outline-primary {
   @include button-outline-variant($primary-color);
 }
 
 .btn.btn-outline-secondary {
   @include button-outline-variant($secondary-color);
+}
+
+.btn.btn-outline-gray {
+  @include button-outline-variant($gray);
+}
+
+.btn.btn-outline-dark {
+  @include button-outline-variant($dark);
 }
 
 // LANDING PAGE:
@@ -41,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 	height: calc(100vh - 50px);
 	flex-direction: unset;
 	color: $light;
-	background-color: $primary-color-light;
+	background-color: $dark;
 
 	.hero-body {
 		text-align: center;
@@ -76,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 .landing-context {
 	padding-left: 2rem;
 	padding-right: 2rem;
+	border-bottom: 2px solid $efnyc-blue;
 }
 
 .landing-resources {
@@ -84,6 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	.efnyc {
+	 background-color: $efnyc-blue;
 	}
 
 	.know-your-rights {
