@@ -1,44 +1,8 @@
 @import "_vars.scss";
+@import "_button.scss";
+@import "_fonts.scss";
 @import "node_modules/spectre.css/src/spectre.scss";
 @import "node_modules/spectre.css/src/icons";
-
-// GLOBAL RULES/OVERRIDES:
-
-* {
-	font-family: $body-font;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: $title-font;
-}
-
-.btn.btn-primary {
-  @include button-variant($primary-color);
-}
-
-.btn.btn-secondary {
-  @include button-variant($secondary-color);
-}
-
-.btn.btn-gray {
-  @include button-variant($gray);
-}
-
-.btn.btn-outline-primary {
-  @include button-outline-variant($primary-color);
-}
-
-.btn.btn-outline-secondary {
-  @include button-outline-variant($secondary-color);
-}
-
-.btn.btn-outline-gray {
-  @include button-outline-variant($gray);
-}
-
-.btn.btn-outline-dark {
-  @include button-outline-variant($dark);
-}
 
 // LANDING PAGE:
 
@@ -63,6 +27,11 @@ h1, h2, h3, h4, h5, h6 {
 			height: 3rem;
 		}
 
+		.btn-outline-secondary {
+			color: $dark;
+			border-color: $dark;
+		}
+
 		.icon {
 			height: 0em;
 		}
@@ -81,17 +50,15 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-.map-link {
-	background-color: $gray;
-}
-
 .landing-context {
 	padding-left: 2rem;
 	padding-right: 2rem;
-	border-bottom: 2px solid $efnyc-blue;
 }
 
 .landing-resources {
+	border-top: 2px solid $efnyc-blue;
+	border-bottom: 2px solid $efnyc-blue;
+
 	.hero {
 		padding: 2rem;
 	}

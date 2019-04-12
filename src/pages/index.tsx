@@ -23,12 +23,12 @@ const LandingPage = () => (
             json
           }
           openingBackground {
-            sizes(maxWidth: 613) {
-                        aspectRatio
-                        src
-                        srcSet
-                        sizes
-                      } 
+            fluid {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            } 
           }
           listTitle
           listDescription {
@@ -40,6 +40,14 @@ const LandingPage = () => (
             json
           }
           mapButton
+          mapBackground {
+            fluid {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            } 
+          }
           contextTitle
           contextDescription {
             json
@@ -59,11 +67,17 @@ const LandingPage = () => (
     `}
     render={data => (
       <Layout>
-        <section id="intro" className="landing-intro hero hero-centered hero-lg">
+        <section id="intro" className="landing-intro hero hero-centered hero-lg" 
+          style={{
+            backgroundImage: "url("+(data.contentfulLandingPage.openingBackground ? data.contentfulLandingPage.openingBackground.fluid.src : '')+")",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundRepeat:"no-repeat" 
+          }}>
           <div className="hero-body">
             <h1 className="title-font">{documentToReactComponents(data.contentfulLandingPage.openingTitle.json)}</h1>
             {documentToReactComponents(data.contentfulLandingPage.openingSubtitle.json)}
-            <AnchorLink href="#list-link" className="btn btn-outline-primary btn-lg s-circle">
+            <AnchorLink href="#list-link" className="btn btn-outline-secondary btn-lg s-circle">
               <i className="icon icon-2x icon-arrow-down"></i>
             </AnchorLink>
           </div>
@@ -78,11 +92,17 @@ const LandingPage = () => (
             </Link>
           </div>
         </section>
-        <section id="map-link" className="map-link hero hero-centered half-vh">
+        <section id="map-link" className="map-link hero hero-centered half-vh text-light"
+          style={{
+            backgroundImage: "url("+(data.contentfulLandingPage.mapBackground ? data.contentfulLandingPage.mapBackground.fluid.src : '')+")",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundRepeat:"no-repeat" 
+          }}>
           <div className="hero-body">
             <h1>{data.contentfulLandingPage.mapTitle}</h1>
             {documentToReactComponents(data.contentfulLandingPage.mapDescription.json)}
-            <Link to="/map" className="btn btn-primary">
+            <Link to="/map" className="btn btn-outline-primary">
               {data.contentfulLandingPage.mapButton}
               <i className="icon icon-forward ml-2"></i>
             </Link>
@@ -101,7 +121,7 @@ const LandingPage = () => (
               <div className="hero-body">
                 <h3>{data.contentfulLandingPage.efnycTitle}</h3>
                 {documentToReactComponents(data.contentfulLandingPage.efnycDescription.json)}
-                <a href="https://www.evictionfreenyc.org/" className="btn btn-outline-primary">
+                <a href="https://www.evictionfreenyc.org/" className="btn btn-outline-efnyc">
                   {data.contentfulLandingPage.efnycButton}
                   <i className="icon icon-forward ml-2"></i>
                 </a>

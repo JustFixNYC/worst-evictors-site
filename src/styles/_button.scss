@@ -1,28 +1,40 @@
-@import "~spectre.css/src/mixins";
+@import "_vars.scss";
+@import "node_modules/spectre.css/src/spectre.scss";
 
+.btn.btn-primary {
+  @include button-variant($primary-color);
+}
 
 .btn.btn-secondary {
   @include button-variant($secondary-color);
 }
 
-.btn.btn-accent {
-  @include button-variant($accent-color);
+.btn.btn-gray {
+  @include button-variant($gray);
 }
 
-.btn-block {
-  max-width: 200px;
+.btn.btn-outline-primary {
+  @include button-outline-variant($primary-color);
 }
 
-.btn-centered {
-  margin: 0 auto;
+.btn.btn-outline-secondary {
+  @include button-outline-variant($secondary-color);
+
+  // override because secondary color is too light
+  &:focus,
+  &:hover {
+    background: lighten($secondary-color, 20%);
+  }
 }
 
-.btn + .btn {
-  margin-left: 32px;
-  margin-bottom: 16px;
-  vertical-align: top;
+.btn.btn-outline-efnyc {
+  @include button-outline-variant($efnyc-blue);
 }
 
-.icon-mail:before {
-  border-radius: 0.1rem;
+.btn.btn-outline-gray {
+  @include button-outline-variant($gray);
+}
+
+.btn.btn-outline-dark {
+  @include button-outline-variant($dark);
 }
