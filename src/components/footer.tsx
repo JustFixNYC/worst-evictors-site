@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import '../styles/header-footer.scss';
 
 const Footer = () => (
-  <header className="navbar">
+  <header className="navbar footer">
     <section className="navbar-section"></section>
     <section className="navbar-center text-small">
         Made with ♡ by JustFix.nyc, Right to Counsel Coalition, and the Anti-Eviction Mapping Project

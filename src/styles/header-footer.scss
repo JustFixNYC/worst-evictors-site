@@ -13,8 +13,29 @@
   }
 
   .btn.btn-link.active {
+    background-color: $light;
   	color: $gray-dark;
   	font-weight: 600;
+  } 
+
+  .btn.btn-link:hover, .btn.btn-link:focus{
+    background-color: $gray-light;
+    color: $gray-dark;
+  } 
+
+  ul.menu.menu-reverse {
+    left: initial;
+    right: 0;
   }
-  
+
+}
+
+.navbar.header {
+  .navbar-section {
+    justify-content: flex-end;
+  }
+}
+
+.navbar.footer {
+  background-color: $gray-light;
 }
