@@ -55,3 +55,16 @@ $title-font: Work Sans, National, sans-serif;
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) { @content; }
 }
+
+// HELPERS: 
+
+@mixin lhCrop($line-height) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
+// Source: https://medium.com/codyhouse/line-height-crop-a-simple-css-formula-to-remove-top-space-from-your-text-9c3de06d7c6f
