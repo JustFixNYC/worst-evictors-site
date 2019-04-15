@@ -30,7 +30,7 @@ const RightsPage = () => (
 			    <h3>{data.contentfulKnowYourRightsPage.title}</h3>
 			    <div className="text-italic">{documentToReactComponents(data.contentfulKnowYourRightsPage.subtitle.json)}</div>
 			    <div className="divider d-invisible"></div>
-			    <div className="know-your-rights-content">
+			    <div className="rich-text-bulleted-list">
 			    {documentToReactComponents(data.contentfulKnowYourRightsPage.description.json)}
 			    </div>
 			  </div>

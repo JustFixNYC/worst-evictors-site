@@ -4,6 +4,19 @@
 @import "node_modules/spectre.css/src/spectre.scss";
 @import "node_modules/spectre.css/src/icons";
 
+// GLOBAL RULES: 
+
+.rich-text-bulleted-list {
+	
+	li {
+		
+	 & > p {
+			display: inline;
+		}	
+	}
+
+}
+
 // LANDING PAGE:
 
 .hero-centered {

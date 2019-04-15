@@ -19,6 +19,9 @@ const EvictorsListPage = () => (
           subtitle {
             json
           }
+          dishonorableMentions {
+            json
+          }
           evictorList {
             boroName 
             subtitle {
@@ -33,6 +36,12 @@ const EvictorsListPage = () => (
               description {
                 json
               }
+              boroUnits
+              boroFilings
+              boroPercentFiled
+              boroPercentRs
+              citywideUnits
+              citywideEvictions
               photo {
                 sizes(maxWidth: 613) {
                         aspectRatio
@@ -70,6 +79,12 @@ const EvictorsListPage = () => (
             key={list.boroName} 
             data={list} />
         )}
+        <div className="boro-list">
+          <h1 className="text-primary text-bold">Dishonorable Mentions</h1>
+          <div className="dishonorable-mentions-text rich-text-bulleted-list">
+            {documentToReactComponents(data.contentfulListPage.dishonorableMentions.json)}
+          </div>
+        </div>
       </Layout>
     )}
   />
