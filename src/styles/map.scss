@@ -1,4 +1,23 @@
+@import "_vars.scss";
+
+.map-title-banner {
+	height: 50px;
+	background-color: $carto-background;
+	padding-top: 3px; // offset for Carto Map iFrame border
+
+	h4 {
+		font-weight: 300;
+	}
+}
+
 .map-container {
 	width: 100%;
-	height: calc(100vh - 50px);
+	height: calc(100vh - 140px);
+}
+
+.map-bottom-banner {
+	height: 40px;
+	background-color: $carto-background;
+	border-top: 2px solid $gray-light;
+	font-weight: 300;
 }
