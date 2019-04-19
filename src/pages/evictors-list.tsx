@@ -60,7 +60,9 @@ const EvictorsListPage = () => (
         <section id="list-intro" className="list-intro hero bg-secondary text-light">
           <div className="hero-body">
             <h1>{data.contentfulListPage.title}</h1>
-            {documentToReactComponents(data.contentfulListPage.subtitle.json)}
+            <span className="list-subtitle">
+              {documentToReactComponents(data.contentfulListPage.subtitle.json)}
+            </span>
             <h3> Select a borough: </h3>
             <div className="btn-group">
               {data.contentfulListPage.evictorList.map(list => 

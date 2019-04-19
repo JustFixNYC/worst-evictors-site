@@ -17,6 +17,17 @@
 				margin-right: 0.5em;
 			}
 		}
+		.list-subtitle {
+			a {
+				color: $light;
+				text-decoration: underline;
+			}
+
+			a:hover {
+				color: $light;
+				text-decoration: none;
+			}
+		}
 	}
 }
 
@@ -49,8 +60,13 @@
 			}
 
 			sup {
-				font-size: 25%;
-				top: -2.25em;
+				font-size: 15%;
+				top: -4em;
+			}
+
+			small {
+				font-size: 0.7rem;
+				vertical-align: top;
 			}
 		}
 		.evictor-intro {
@@ -62,19 +78,23 @@
 			}
 
 			.evictor-corp {
+				font-weight: 500;
 			
 			}
 
-			.eviction-count {
-				font-size: 1.75rem;
-				font-weight: 900;
-			}
 		}
-		.eviction-stats {
-			td {
-				padding: 0.3rem;
-				font-size: 0.8rem;
-			}	
+		.evictor-stats {
+			margin-top: 2rem;
+			margin-bottom: 2rem;	
+
+			.column {
+				max-width: 250px;
+
+				.eviction-count {
+					font-size: 1.25rem;
+					font-weight: 900;
+				}
+			}
 		}
 		.evictor-pic {
 			width: 80%;

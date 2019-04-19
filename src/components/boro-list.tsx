@@ -47,7 +47,8 @@ render() {
     {this.props.data.evictors.map(evictor => 
     	<Evictor 
     		key={evictor.name + '-' + evictor.boro} 
-    		data={evictor} />
+    		data={evictor}
+            boroName={this.props.data.boroName} />
     )}
     </section>
 		);
