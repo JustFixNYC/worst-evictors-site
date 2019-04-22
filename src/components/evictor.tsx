@@ -1,5 +1,6 @@
 import React from 'react';
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { Link } from 'gatsby';
 
 // CONTENT MODEL:
 
@@ -210,10 +211,14 @@ render() {
 					</span> :
 					<div/>}
 					<div className="btn-group evictor-links">
-						<a 
-							className="btn btn-outline-secondary">Go to Evictions Map</a>
-						<a 
-							className="btn btn-outline-secondary">View Portfolio on Who Owns What</a>
+						<Link to="/map" className="btn btn-outline-secondary"
+			  			state={{ iframe: (this.props.data.evictionsMapUrl ? this.props.data.evictionsMapUrl.evictionsMapUrl : null) }}>
+				  			Go to Evictions Map
+				  		</Link>
+						<a className="btn btn-outline-secondary" target="_blank"
+						href={(this.props.data.whoOwnsWhatUrl ? this.props.data.whoOwnsWhatUrl : null)}>
+							View Portfolio on Who Owns What
+						</a>
 					</div>
 	        </div>
 	        <div className="column col-3 col-sm-12">
