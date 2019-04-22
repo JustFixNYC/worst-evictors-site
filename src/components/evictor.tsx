@@ -209,9 +209,11 @@ render() {
 						</div>
 					</span> :
 					<div/>}
-					<div className="btn-group">
-						<button className="btn btn-outline-secondary">Go to Evictions Map</button>
-						<button className="btn btn-outline-secondary">View Portfolio on Who Owns What</button>
+					<div className="btn-group evictor-links">
+						<a 
+							className="btn btn-outline-secondary">Go to Evictions Map</a>
+						<a 
+							className="btn btn-outline-secondary">View Portfolio on Who Owns What</a>
 					</div>
 	        </div>
 	        <div className="column col-3 col-sm-12">
