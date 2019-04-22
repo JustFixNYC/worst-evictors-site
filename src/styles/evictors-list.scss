@@ -47,7 +47,7 @@
 
 	.evictor-container {
 		margin-top: 20px;
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 
 		.evictor-rank {
 
@@ -102,6 +102,16 @@
   			position: relative;
 			background-color: black;
 
+		}
+		.organizing-photos {
+			display: flex;
+			flex-wrap: wrap;
+			padding-bottom: 30px;
+
+			.img-container {
+				width: 200px;
+				margin-right: 20px;
+			}
 		}
 	}
 

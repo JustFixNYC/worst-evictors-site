@@ -4,28 +4,68 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 // CONTENT MODEL:
 
 // data {
-//   boro
-//   rank
-//   name
-//   corporation
-//   evictions
-//   description {
-//     json
-//   }
-//   boroUnits
-//   boroFilings
-//   boroPercentFiled
-//   boroPercentRs
-//   citywideUnits
-//   citywideEvictions
-//   photo {
-//     sizes(maxWidth: 613) {
-//             aspectRatio
-//             src
-//             srcSet
-//             sizes
-//           } 
-//   }
+  // boro
+  // rank
+  // name
+  // corporation
+  // description {
+  //   json
+  // }
+  // photo {
+  //   sizes(maxWidth: 613) {
+  //     aspectRatio
+  //     src
+  //     srcSet
+  //     sizes
+  //   }
+  // }
+  // photoCaption
+  // evictions
+  // boroUnits
+  // boroFilings
+  // boroPercentFiled
+  // boroPercentRs
+  // citywideEvictions
+  // citywideUnits
+  // citywideFilings
+  // citywidePercentFiled
+  // citywidePercentRs
+  // banks
+  // lawyers
+  // organizingCta {
+  //   json
+  // }
+  // organizingPhoto1 {
+  //   fluid {
+  //     aspectRatio
+  //     src
+  //     srcSet
+  //     sizes
+  //   }
+  // }
+  // organizingPhotoCaption1
+  // organizingPhoto2 {
+  //   fluid {
+  //     aspectRatio
+  //     src
+  //     srcSet
+  //     sizes
+  //   }
+  // }
+  // organizingPhotoCaption2
+  // organizingPhoto3 {
+  //   fluid {
+  //     aspectRatio
+  //     src
+  //     srcSet
+  //     sizes
+  //   }
+  // }
+  // organizingPhotoCaption3
+  // evictionsMapUrl {
+  //   evictionsMapUrl
+  // }
+  // whoOwnsWhatUrl
 // }
 
 class Evictor extends React.Component {
@@ -89,29 +129,29 @@ render() {
 			    		<div className="column col-6 col-sm-12">
 			    			<h6 className="text-gray-medium">Citywide</h6>
 			    			<h4 className="eviction-count">
-		            			<span className="text-primary">{this.props.data.evictions}</span> Evictions
+		            			<span className="text-primary">{this.props.data.citywideEvictions}</span> Evictions
 		            		</h4>
 		            		<small>
 		            			<span className="text-primary text-bold mr-1">
-		            				{this.props.data.boroUnits}
+		            				{this.props.data.citywideUnits}
 		            			</span> families housed
 		            		</small>
 		            		<br/>
 		            		<small>
 		            			<span className="text-primary text-bold mr-1">
-		            				{this.props.data.boroFilings}
+		            				{this.props.data.citywideFilings}
 		            			</span> families sued
 		            		</small>
 		            		<br/>
 		            		<small>
 		            			<span className="text-primary text-bold mr-1">
-		            				{this.props.data.boroPercentFiled}
+		            				{this.props.data.citywidePercentFiled}
 		            			</span> lawsuits per family
 		            		</small>
 		            		<br/>
 		            		<small>
 		            			<span className="text-primary text-bold mr-1">
-		            				{this.props.data.boroPercentRs}%
+		            				{this.props.data.citywidePercentRs}%
 		            			</span> rent stabilized
 		            		</small>
 			    		</div>
@@ -120,19 +160,59 @@ render() {
 		    	<small>
 		    		Funded by<span>	</span>  
         			<span className="text-primary text-bold ml-2">
-        				Goldman Sacks, Merryl Lynch
+        				{this.props.data.banks}
         			</span>
 	            </small>
 	            <br/>
 	            <small>
-		    		Represented by<span>	</span>  
+		    		Represented by<span> </span>  
         			<span className="text-primary text-bold ml-2">
-        				Lawyer Pete, Lawyer Maggie
+        				{this.props.data.lawyers}
         			</span>
 	            </small>
 	            </div>
 				{documentToReactComponents(this.props.data.description.json)}
-				<div className="divider text-center" data-content="HOW TO GET INVOLVED"></div>
+				{this.props.data.organizingCta ? 
+					<span>
+						<br/>
+						<div className="divider text-center" data-content="HOW TO GET INVOLVED"></div>
+						<br/>
+						{documentToReactComponents(this.props.data.organizingCta.json)}
+						<div className="organizing-photos">
+							{this.props.data.organizingPhoto1 ?
+								<div className="img-container">
+									<img src={this.props.data.organizingPhoto1.fluid.src} className="img-responsive py-2" />
+									<small className="caption p-centered text-gray-medium text-center text-italic my-2">
+										{this.props.data.organizingPhotoCaption1}
+									</small>
+								</div> : 
+								<div/>
+							}
+							{this.props.data.organizingPhoto2 ?
+								<div className="img-container">
+									<img src={this.props.data.organizingPhoto1.fluid.src} className="img-responsive py-2" />
+									<small className="caption p-centered text-gray-medium text-center text-italic my-2">
+										{this.props.data.organizingPhotoCaption2}
+									</small>
+								</div> : 
+								<div/>
+							}
+							{this.props.data.organizingPhoto3 ?
+								<div className="img-container">
+									<img src={this.props.data.organizingPhoto1.fluid.src} className="img-responsive py-2" />
+									<small className="caption p-centered text-gray-medium text-center text-italic my-2">
+										{this.props.data.organizingPhotoCaption3}
+									</small>
+								</div> : 
+								<div/>
+							}
+						</div>
+					</span> :
+					<div/>}
+					<div className="btn-group">
+						<button className="btn btn-outline-secondary">Go to Evictions Map</button>
+						<button className="btn btn-outline-secondary">View Portfolio on Who Owns What</button>
+					</div>
 	        </div>
 	        <div className="column col-3 col-sm-12">
 	        	<div className="evictor-pic s-circle p-centered" style={style}></div>
