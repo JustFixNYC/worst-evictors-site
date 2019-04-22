@@ -2,7 +2,7 @@
 
 // PAGE CSS:
 
-.list-intro.hero {
+.list-hero.hero {
 	padding-left: 2.5em;
 	padding-right: 2.5em;
 	.hero-body {
@@ -26,6 +26,28 @@
 			a:hover {
 				color: $light;
 				text-decoration: none;
+			}
+		}
+	}
+	.dishonorable-mentions.hero-body {
+		.mention-category {
+			padding-bottom: 35px;
+
+			.laurel {
+				margin-top: 50px;
+				margin-bottom: 50px;
+
+				.laurel-img {
+					width: 250px;
+				}
+
+				.laurel-text {
+				    left: 50%; 
+				    top: 50%;    
+				    transform: translate(-50%, -50%);
+				    max-width: 150px; 
+				    font-family: Copperplate, "Copperplate Gothic Light";
+				}
 			}
 		}
 	}
@@ -118,9 +140,5 @@
 				margin-right: 20px;
 			}
 		}
-	}
-
-	.dishonorable-mentions-text {
-		margin-left: 2rem;
 	}
 }
