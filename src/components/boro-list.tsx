@@ -6,33 +6,73 @@ import Evictor from '../components/evictor'
 // CONTENT MODEL:
 
 // data {
-//   boroName 
-//   subtitle {
-//       json
-//   }
-//   evictors {
+//   boroName
+    // subtitle {
+    //   json
+    // }
+    // evictors {
     //   boro
     //   rank
     //   name
     //   corporation
-    //   evictions
     //   description {
     //     json
     //   }
+    //   photo {
+    //     sizes(maxWidth: 613) {
+    //       aspectRatio
+    //       src
+    //       srcSet
+    //       sizes
+    //     }
+    //   }
+    //   photoCaption
+    //   evictions
     //   boroUnits
     //   boroFilings
     //   boroPercentFiled
     //   boroPercentRs
-    //   citywideUnits
     //   citywideEvictions
-    //   photo {
-    //     sizes(maxWidth: 613) {
-    //             aspectRatio
-    //             src
-    //             srcSet
-    //             sizes
-    //           } 
+    //   citywideUnits
+    //   citywideFilings
+    //   citywidePercentFiled
+    //   citywidePercentRs
+    //   banks
+    //   lawyers
+    //   organizingCta {
+    //     json
     //   }
+    //   organizingPhoto1 {
+    //     fluid {
+    //       aspectRatio
+    //       src
+    //       srcSet
+    //       sizes
+    //     }
+    //   }
+    //   organizingPhotoCaption1
+    //   organizingPhoto2 {
+    //     fluid {
+    //       aspectRatio
+    //       src
+    //       srcSet
+    //       sizes
+    //     }
+    //   }
+    //   organizingPhotoCaption2
+    //   organizingPhoto3 {
+    //     fluid {
+    //       aspectRatio
+    //       src
+    //       srcSet
+    //       sizes
+    //     }
+    //   }
+    //   organizingPhotoCaption3
+    //   evictionsMapUrl {
+    //     evictionsMapUrl
+    //   }
+    //   whoOwnsWhatUrl
     // }  
 // }
 
@@ -47,7 +87,8 @@ render() {
     {this.props.data.evictors.map(evictor => 
     	<Evictor 
     		key={evictor.name + '-' + evictor.boro} 
-    		data={evictor} />
+    		data={evictor}
+            boroName={this.props.data.boroName} />
     )}
     </section>
 		);

@@ -23,33 +23,73 @@ const EvictorsListPage = () => (
             json
           }
           evictorList {
-            boroName 
+            boroName
             subtitle {
               json
-            }       
+            }
             evictors {
               boro
               rank
               name
               corporation
-              evictions
               description {
                 json
               }
+              photo {
+                sizes(maxWidth: 613) {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+              photoCaption
+              evictions
               boroUnits
               boroFilings
               boroPercentFiled
               boroPercentRs
-              citywideUnits
               citywideEvictions
-              photo {
-                sizes(maxWidth: 613) {
-                        aspectRatio
-                        src
-                        srcSet
-                        sizes
-                      } 
+              citywideUnits
+              citywideFilings
+              citywidePercentFiled
+              citywidePercentRs
+              banks
+              lawyers
+              organizingCta {
+                json
               }
+              organizingPhoto1 {
+                fluid {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+              organizingPhotoCaption1
+              organizingPhoto2 {
+                fluid {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+              organizingPhotoCaption2
+              organizingPhoto3 {
+                fluid {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+              organizingPhotoCaption3
+              evictionsMapUrl {
+                evictionsMapUrl
+              }
+              whoOwnsWhatUrl
             }
           }
         }
@@ -60,7 +100,9 @@ const EvictorsListPage = () => (
         <section id="list-intro" className="list-intro hero bg-secondary text-light">
           <div className="hero-body">
             <h1>{data.contentfulListPage.title}</h1>
-            {documentToReactComponents(data.contentfulListPage.subtitle.json)}
+            <span className="list-subtitle">
+              {documentToReactComponents(data.contentfulListPage.subtitle.json)}
+            </span>
             <h3> Select a borough: </h3>
             <div className="btn-group">
               {data.contentfulListPage.evictorList.map(list => 
