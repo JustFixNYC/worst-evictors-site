@@ -7,6 +7,11 @@ import { Link } from 'gatsby'
 
 import '../styles/evictors-list.scss'
 
+import laurel1 from '../images/laurel1.png'
+import laurel2 from '../images/laurel2.png'
+import laurel3 from '../images/laurel3.png'
+import laurel4 from '../images/laurel4.png'
+
 import Layout from '../components/layout'
 import BoroList from '../components/boro-list'
 
@@ -17,9 +22,6 @@ const EvictorsListPage = () => (
         contentfulListPage {
           title
           subtitle {
-            json
-          }
-          dishonorableMentions {
             json
           }
           evictorList {
@@ -92,12 +94,26 @@ const EvictorsListPage = () => (
               whoOwnsWhatUrl
             }
           }
+          dishonorableMentions {
+            landlordsOnMultipleLists {
+              json
+            }
+            landlordsWhoSueEveryone {
+              json
+            }
+            landlordsWhoSueAlmostEveryone {
+              json
+            }
+            notableMentions {
+              json
+            }
+          }
         }
       }
     `}
     render={data => (
       <Layout>
-        <section id="list-intro" className="list-intro hero bg-secondary text-light">
+        <section id="list-intro" className="list-hero hero bg-secondary text-light">
           <div className="hero-body">
             <h1>{data.contentfulListPage.title}</h1>
             <span className="list-subtitle">
@@ -121,12 +137,47 @@ const EvictorsListPage = () => (
             key={list.boroName} 
             data={list} />
         )}
-        <div className="boro-list">
-          <h1 className="text-primary text-bold">Dishonorable Mentions</h1>
-          <div className="dishonorable-mentions-text rich-text-bulleted-list">
-            {documentToReactComponents(data.contentfulListPage.dishonorableMentions.json)}
+        <section id="dishonorable-mentions" className="list-hero hero bg-secondary text-light">
+          <div className="dishonorable-mentions hero-body">
+            <h2 className="text-center text-bold text-uppercase">Dishonorable Mentions</h2>
+            <div className="mention-category">
+              <div className="laurel container p-relative">
+                <img className="laurel-img p-centered" src={laurel1} alt="laurel1"/>
+                <div className="laurel-text text-center p-absolute">ON MULTIPLE LISTS</div>
+              </div>
+              <span className="text-center">
+                {documentToReactComponents(data.contentfulListPage.dishonorableMentions.landlordsOnMultipleLists.json)}
+              </span>
+            </div>
+            <div className="mention-category">
+              <div className="laurel container p-relative">
+                <img className="laurel-img p-centered" src={laurel2} alt="laurel2"/>
+                <div className="laurel-text text-center p-absolute">SUES EVERYONE, AND THEN SUES THEM AGAIN</div>
+              </div>
+               <span className="text-center">
+                {documentToReactComponents(data.contentfulListPage.dishonorableMentions.landlordsWhoSueEveryone.json)}
+              </span>
+            </div>
+            <div className="mention-category">
+              <div className="laurel container p-relative">
+                <img className="laurel-img p-centered" src={laurel3} alt="laurel3"/>
+                <div className="laurel-text text-center p-absolute">SUES ALMOST EVERYONE</div>
+              </div>
+               <span className="text-center">
+                {documentToReactComponents(data.contentfulListPage.dishonorableMentions.landlordsWhoSueAlmostEveryone.json)}
+              </span>
+            </div>
+            <div className="mention-category">
+              <div className="laurel container p-relative">
+                <img className="laurel-img p-centered" src={laurel4} alt="laurel4"/>
+                <div className="laurel-text text-center p-absolute">OTHER BAD ACTORS</div>
+              </div>
+               <span className="text-center">
+                {documentToReactComponents(data.contentfulListPage.dishonorableMentions.notableMentions.json)}
+              </span>
+            </div>
           </div>
-        </div>
+        </section> 
       </Layout>
     )}
   />
