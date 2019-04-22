@@ -1,25 +1,9 @@
 @import "_vars.scss";
-@import "_button.scss";
+@import "_buttons.scss";
 @import "_fonts.scss";
+@import "_globals.scss";
 @import "node_modules/spectre.css/src/spectre.scss";
 @import "node_modules/spectre.css/src/icons";
-
-// GLOBAL RULES: 
-
-.rich-text-bulleted-list {
-	
-	li {
-		
-	 & > p {
-			display: inline;
-		}	
-	}
-
-}
-
-.text-gray-medium {
-	color: $gray-medium;
-}
 
 // LANDING PAGE:
 
