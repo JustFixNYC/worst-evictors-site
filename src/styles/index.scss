@@ -15,7 +15,7 @@
 .landing-intro {
 	padding-left: 50px;
 	padding-right: 50px;
-	height: calc(100vh - 50px);
+	height: calc(100vh - #{$header-height});
 	flex-direction: unset;
 	color: $light;
 	background-color: $dark;

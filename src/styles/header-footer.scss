@@ -1,8 +1,12 @@
 @import "_vars.scss";
 
 .navbar {
-  height: 50px;
+  top: 0px;
+  height: $header-height;
   padding-right: 20px;
+  background-color: $light;
+  width: 100%;
+  z-index: 1000;
 
   .btn.btn-link, .btn.btn-link:hover {
   	color: $dark;
@@ -38,8 +42,13 @@
 
 .navbar.footer {
   background-color: $gray-light;
+
+  .icon {
+    font-size: 24px;
+  }
 }
 
 .page-content {
-  min-height: calc(100vh - 100px);
+  margin-top: $header-height;
+  min-height: calc(100vh - 2*#{$header-height});
 }
