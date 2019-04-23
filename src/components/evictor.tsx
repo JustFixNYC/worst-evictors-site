@@ -108,10 +108,10 @@ render() {
 			            			</span> families housed
 			            		</small>
 			            		<br/>
-			            		<small>
+			            		<small className="tooltip" data-tooltip="Total from January 2013 to June 2015">
 			            			<span className="text-primary text-bold mr-1">
 			            				{this.props.data.boroFilings}
-			            			</span> families sued
+			            			</span> families sued<sup>*</sup>
 			            		</small>
 			            		<br/>
 			            		<small>
@@ -138,10 +138,10 @@ render() {
 		            			</span> families housed
 		            		</small>
 		            		<br/>
-		            		<small>
+		            		<small className="tooltip" data-tooltip="Total from January 2013 to June 2015">
 		            			<span className="text-primary text-bold mr-1">
 		            				{this.props.data.citywideFilings}
-		            			</span> families sued
+		            			</span> families sued<sup>*</sup>
 		            		</small>
 		            		<br/>
 		            		<small>
