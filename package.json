@@ -27,6 +27,7 @@
     "react-dom": "^16.8.6",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
+    "react-icons": "^3.6.1",
     "spectre.css": "^0.5.8",
     "tslint": "^5.15.0",
     "typescript": "^3.4.3"

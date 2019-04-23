@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import '../styles/header-footer.scss';
+import { FaGithub } from 'react-icons/fa';
 
 const Footer = () => (
   <header className="navbar footer">
@@ -11,7 +12,7 @@ const Footer = () => (
     </section>
     <section className="navbar-section">
       <Link activeClassName="active" className="btn btn-link" to="/about">About</Link>
-      <a href="https://github.com/JustFixNYC/worst-evictors-site" className="btn btn-link">Source</a>
+      <a href="https://github.com/JustFixNYC/worst-evictors-site" className="btn btn-link"> <FaGithub className="icon" /></a>
     </section>
   </header>
 )
