@@ -77,7 +77,7 @@ const LandingPage = () => (
           <div className="hero-body">
             <h1 className="title-font">{documentToReactComponents(data.contentfulLandingPage.openingTitle.json)}</h1>
             {documentToReactComponents(data.contentfulLandingPage.openingSubtitle.json)}
-            <AnchorLink href="#list-link" className="btn btn-outline-secondary btn-lg s-circle">
+            <AnchorLink offset='50' href="#list-link" className="btn btn-outline-secondary btn-lg s-circle">
               <i className="icon icon-2x icon-arrow-down"></i>
             </AnchorLink>
           </div>

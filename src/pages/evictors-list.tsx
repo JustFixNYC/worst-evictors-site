@@ -123,6 +123,7 @@ const EvictorsListPage = () => (
             <div className="btn-group">
               {data.contentfulListPage.evictorList.map(list => 
                 <AnchorLink 
+                  offset='50'
                   key={list.boroName} 
                   href={"#" + list.boroName} 
                   className="btn btn-lg btn-outline-secondary">

@@ -44,7 +44,7 @@ const MapPage = ({ data, location }) => (
 			</iframe> 
 			<div className="map-bottom-banner">
 				<AnchorLink href="#map-context" className="btn btn-link p-centered text-dark">
-		          Context <i className="icon icon-arrow-down"></i>
+		          About this map <i className="icon icon-arrow-down"></i>
 		        </AnchorLink>
 			</div>
 			<section id="map-context" className="landing-context hero">

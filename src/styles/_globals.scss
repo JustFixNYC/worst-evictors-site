@@ -1,5 +1,19 @@
 @import "_vars.scss";
 
+@include for-phone-only() {
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    h3 {
+        font-size: 1.05rem;
+    }
+}
+
+
+
 .hero-body {
     max-width: 70%;
     margin-left: auto;
