@@ -47,7 +47,7 @@ const MapPage = ({ data, location }) => (
 		          About this map <i className="icon icon-arrow-down"></i>
 		        </AnchorLink>
 			</div>
-			<section id="map-context" className="landing-context hero">
+			<section id="map-context" className="map-context landing-context hero">
 		      <div className="hero-body">
 		        {documentToReactComponents(data.contentfulMapPage.description.json)}
 		      </div>

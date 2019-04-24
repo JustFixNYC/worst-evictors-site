@@ -64,6 +64,10 @@ $title-font: Work Sans, National, sans-serif;
   @media (min-width: 1800px) { @content; }
 }
 
+@mixin for-carto-map-minimized {
+  @media (max-width: 775px) { @content; }
+}
+
 // HELPERS: 
 
 @mixin lhCrop($line-height) {
