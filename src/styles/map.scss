@@ -8,16 +8,51 @@
 	h4 {
 		font-weight: 300;
 	}
+
+	@include for-phone-only() {
+		height: 85px;
+
+		h4 {
+			.btn-group {
+				margin-top: 5px;
+			}
+		}
+	}
+
 }
 
 .map-container {
+	position: relative;
+	z-index: 1;
 	width: 100%;
 	height: calc(100vh - 140px);
+	background-color: $carto-background;
+
+	// remove Landlord widget by bringing margin up to cover it
+	@include for-carto-map-minimized() {
+		padding: 7px;
+		height: calc(100vh + 70px);
+		margin-bottom: -210px;
+	}
+
+	@include for-phone-only() {
+		height: calc(100vh + 35px);
+		margin-bottom: -210px;
+	}
+	
 }
 
 .map-bottom-banner {
+	position: relative;
+	z-index: 2;
 	height: 40px;
 	background-color: $carto-background;
 	border-top: 2px solid $gray-light;
 	font-weight: 300;
+}
+
+.map-context {
+	position: relative;
+	z-index: 2;
+	background-color: $light;
 }
