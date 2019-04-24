@@ -98,7 +98,12 @@ render() {
 	            	<h5 className="evictor-name text-uppercase text-secondary mb-1">{this.props.data.name}</h5>
 	            	<h6 className="evictor-corp text-dark">{this.props.data.corporation}</h6>
 		    	</div>
-		        <div className="evictor-pic s-circle p-centered show-sm" style={style}></div>
+		    	<div className="evictor-pic-container show-sm">
+		        	<div className="evictor-pic s-circle p-centered" style={style}></div>
+		        	<small className="caption p-centered text-gray-medium text-center text-italic my-2">
+						{this.props.data.photoCaption}
+					</small>
+				</div>
 		    	<div className="evictor-stats">
 			    	<div className="columns">
 			    		<div className="column col-6 col-md-12 my-2">
@@ -231,8 +236,11 @@ render() {
 						</a>
 					</div>
 	        </div>
-	        <div className="column col-3 hide-sm">
+	        <div className="evictor-pic-container column col-3 hide-sm">
 	        	<div className="evictor-pic s-circle p-centered" style={style}></div>
+	        	<small className="caption p-centered text-gray-medium text-center text-italic my-2">
+					{this.props.data.photoCaption}
+				</small>
 	        </div>
 	      </div>	
 		</div>
