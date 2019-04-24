@@ -39,13 +39,17 @@
 
 				.laurel-img {
 					width: 250px;
+
+					@include for-phone-only {
+						width: 210px;
+					}
 				}
 
 				.laurel-text {
 				    left: 50%; 
 				    top: 50%;    
 				    transform: translate(-50%, -50%);
-				    max-width: 150px; 
+				    width: 150px; 
 				    font-family: Copperplate, "Copperplate Gothic Light";
 				}
 			}
