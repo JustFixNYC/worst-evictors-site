@@ -123,6 +123,7 @@ const EvictorsListPage = () => (
             <div className="btn-group">
               {data.contentfulListPage.evictorList.map(list => 
                 <AnchorLink 
+                  offset='50'
                   key={list.boroName} 
                   href={"#" + list.boroName} 
                   className="btn btn-lg btn-outline-secondary">
@@ -131,15 +132,17 @@ const EvictorsListPage = () => (
               )}
 	        </div>
           </div>
-        </section> 
+        </section>
+        <div>
         {data.contentfulListPage.evictorList.map(list => 
           <BoroList 
             key={list.boroName} 
             data={list} />
         )}
+        </div>
         <section id="dishonorable-mentions" className="list-hero hero bg-secondary text-light">
           <div className="dishonorable-mentions hero-body">
-            <h2 className="text-center text-bold text-uppercase">Dishonorable Mentions</h2>
+            <h2 className="text-center text-bold text-uppercase p-sticky">Dishonorable Mentions</h2>
             <div className="mention-category">
               <div className="laurel container p-relative">
                 <img className="laurel-img p-centered" src={laurel1} alt="laurel1"/>

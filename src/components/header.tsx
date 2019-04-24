@@ -8,7 +8,7 @@ type Props = {
 }
 
 const Header = ({ siteTitle }: Props) => (
-  <header className="navbar header">
+  <header className="navbar header p-fixed">
     <section className="navbar-section"></section>
     <section className="navbar-center"></section>
     <section className="navbar-section hide-sm">

@@ -1,9 +1,9 @@
 @import "_vars.scss";
 @import "_buttons.scss";
 @import "_fonts.scss";
-@import "_globals.scss";
 @import "node_modules/spectre.css/src/spectre.scss";
 @import "node_modules/spectre.css/src/icons";
+@import "_globals.scss";
 
 // LANDING PAGE:
 
@@ -15,7 +15,7 @@
 .landing-intro {
 	padding-left: 50px;
 	padding-right: 50px;
-	height: calc(100vh - 50px);
+	height: calc(100vh - #{$header-height});
 	flex-direction: unset;
 	color: $light;
 	background-color: $dark;
@@ -40,14 +40,29 @@
 }
 
 .hero.half-vh {
-	height: 50vh;
+	height: calc(50vh - (#{$header-height}/2));
 	padding-left: 2rem;
 	padding-right: 2rem;
+
+	@include for-phone-only() {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
 
 	.hero-body {
 		align-self: center;
 		text-align: center;
 		max-width: 500px;
+
+		@include for-phone-only() {
+			h1 {
+				font-size: 1.05rem;
+				font-weight: 600;
+			}
+			p {
+				margin-bottom: 12px;
+			}
+		}
 	}
 }
 

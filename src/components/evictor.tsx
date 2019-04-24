@@ -83,10 +83,14 @@ render() {
 	return (
 		<div className="evictor-container">
 		  <div className="columns">
-		    <div className="column col-2 col-sm-2 evictor-rank">
-		        <h1 className="float-right">
+		    <div className="column col-2 col-sm-12 evictor-rank">
+		        <h1 className="float-right hide-sm">
 		        	<sup>{this.props.boroName}</sup>
 		        	{this.props.data.rank}
+		        </h1>
+		        <h1 className="show-sm">
+		        	{this.props.data.rank}
+		        	<sup>{this.props.boroName}</sup>
 		        </h1>
 		    </div>
 	        <div className="column col-7 col-sm-12">
@@ -94,83 +98,89 @@ render() {
 	            	<h5 className="evictor-name text-uppercase text-secondary mb-1">{this.props.data.name}</h5>
 	            	<h6 className="evictor-corp text-dark">{this.props.data.corporation}</h6>
 		    	</div>
+		        <div className="evictor-pic s-circle p-centered show-sm" style={style}></div>
 		    	<div className="evictor-stats">
 			    	<div className="columns">
-			    		<div className="column col-6 col-sm-12">
+			    		<div className="column col-6 col-md-12 my-2">
 			    			<h6 className="text-gray-medium">In RTC Zipcodes</h6>
 			    			<h4 className="eviction-count">
 		            			<span className="text-primary">{this.props.data.evictions}</span> Evictions
 		            		</h4>
-		            		<div className="left-border-bar">
-			            		<small>
+		            		<div className="secondary-data">
+			            		<span>
 			            			<span className="text-primary text-bold mr-1">
 			            				{this.props.data.boroUnits}
 			            			</span> families housed
-			            		</small>
-			            		<br/>
-			            		<small>
+			            		</span>
+			            		<br />
+			            		<span className="tooltip" data-tooltip="Total from January 2013 to June 2015">
 			            			<span className="text-primary text-bold mr-1">
 			            				{this.props.data.boroFilings}
-			            			</span> families sued
-			            		</small>
+			            			</span> families sued<sup>*</sup>
+			            		</span>
 			            		<br/>
-			            		<small>
+			            		<span>
 			            			<span className="text-primary text-bold mr-1">
 			            				{this.props.data.boroPercentFiled}
 			            			</span> lawsuits per family
-			            		</small>
+			            		</span>
 			            		<br/>
-			            		<small>
+			            		<span>
 			            			<span className="text-primary text-bold mr-1">
 			            				{this.props.data.boroPercentRs}%
 			            			</span> rent stabilized
-			            		</small>
+			            		</span>
 		            		</div>
 			    		</div>
-			    		<div className="column col-6 col-sm-12">
+			    		<div className="column col-6 col-md-12 my-2">
 			    			<h6 className="text-gray-medium">Citywide</h6>
 			    			<h4 className="eviction-count">
 		            			<span className="text-primary">{this.props.data.citywideEvictions}</span> Evictions
 		            		</h4>
-		            		<small>
-		            			<span className="text-primary text-bold mr-1">
-		            				{this.props.data.citywideUnits}
-		            			</span> families housed
-		            		</small>
-		            		<br/>
-		            		<small>
-		            			<span className="text-primary text-bold mr-1">
-		            				{this.props.data.citywideFilings}
-		            			</span> families sued
-		            		</small>
-		            		<br/>
-		            		<small>
-		            			<span className="text-primary text-bold mr-1">
-		            				{this.props.data.citywidePercentFiled}
-		            			</span> lawsuits per family
-		            		</small>
-		            		<br/>
-		            		<small>
-		            			<span className="text-primary text-bold mr-1">
-		            				{this.props.data.citywidePercentRs}%
-		            			</span> rent stabilized
-		            		</small>
+		            		<div className="secondary-data">
+			            		<span>
+			            			<span className="text-primary text-bold mr-1">
+			            				{this.props.data.citywideUnits}
+			            			</span> families housed
+			            		</span>
+			            		<br/>
+			            		<span className="tooltip" data-tooltip="Total from January 2013 to June 2015">
+			            			<span className="text-primary text-bold mr-1">
+			            				{this.props.data.citywideFilings}
+			            			</span> families sued<sup>*</sup>
+			            		</span>
+			            		<br/>
+			            		<span>
+			            			<span className="text-primary text-bold mr-1">
+			            				{this.props.data.citywidePercentFiled}
+			            			</span> lawsuits per family
+			            		</span>
+			            		<br/>
+			            		<span>
+			            			<span className="text-primary text-bold mr-1">
+			            				{this.props.data.citywidePercentRs}%
+			            			</span> rent stabilized
+			            		</span>
+			            	</div>
 			    		</div>
 			    	</div>
 			    <br/>
-		    	<small>
-		    		Funded by<span>	</span>  
-        			<span className="text-primary text-bold ml-2">
-        				{this.props.data.banks}
-        			</span>
-	            </small>
-	            <br/>
-	            <small>
-		    		Represented by<span> </span>  
-        			<span className="text-primary text-bold ml-2">
-        				{this.props.data.lawyers}
-        			</span>
-	            </small>
+			    	<div>
+				    	<span>
+				    		Funded by<span>	</span>  
+		        			<span className="text-primary text-bold ml-2">
+		        				{this.props.data.banks}
+		        			</span>
+			            </span>
+			            <br/>
+			            <br/>
+			            <span>
+				    		Represented by<span> </span>  
+		        			<span className="text-primary text-bold ml-2">
+		        				{this.props.data.lawyers}
+		        			</span>
+			            </span>
+			        </div>
 	            </div>
 				{documentToReactComponents(this.props.data.description.json)}
 				{this.props.data.organizingCta ? 
@@ -211,17 +221,17 @@ render() {
 					</span> :
 					<div/>}
 					<div className="btn-group evictor-links">
-						<Link to="/map" className="btn btn-outline-secondary"
+						<Link to="/map" className="btn btn-outline-secondary my-1"
 			  			state={{ iframe: (this.props.data.evictionsMapUrl ? this.props.data.evictionsMapUrl.evictionsMapUrl : null) }}>
 				  			Go to Evictions Map
 				  		</Link>
-						<a className="btn btn-outline-secondary" target="_blank"
+						<a className="btn btn-outline-secondary my-1" target="_blank"
 						href={(this.props.data.whoOwnsWhatUrl ? this.props.data.whoOwnsWhatUrl : null)}>
-							View Portfolio on Who Owns What
+							View on Who Owns What
 						</a>
 					</div>
 	        </div>
-	        <div className="column col-3 col-sm-12">
+	        <div className="column col-3 hide-sm">
 	        	<div className="evictor-pic s-circle p-centered" style={style}></div>
 	        </div>
 	      </div>	

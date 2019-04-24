@@ -2,6 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
+import '../styles/header-footer.scss';
+
 import Header from './header'
 import Footer from './footer'
 
@@ -17,7 +19,7 @@ const Layout = ({ children }: Props) => (
           <html lang="en" />
         </Helmet>
         <Header />
-        <div>
+        <div className="page-content">
           {children}
         </div>
         <Footer />

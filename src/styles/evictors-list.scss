@@ -64,6 +64,10 @@
 			font-weight: 700;
 			font-size: 5rem;
 			margin-bottom: 0.25rem;
+
+			@include for-phone-only() {
+		    	font-size: 2.5rem;
+		    }
 		}
 	}
 
@@ -79,11 +83,21 @@
 				font-weight: 700;
 				font-size: 5rem;
 				@include lhCrop(1.3);
+
+				@include for-phone-only() {
+					font-size: 7rem;
+					margin-bottom: 0px;
+	    		}
 			}
 
 			sup {
 				font-size: 15%;
 				top: -4em;
+			}
+
+			sub {
+				font-size: 25%;
+				bottom: 0em;
 			}
 
 			small {
@@ -106,7 +120,7 @@
 
 		}
 		.evictor-stats {
-			margin-top: 2rem;
+			margin-top: 1rem;
 			margin-bottom: 2rem;	
 
 			.column {
@@ -116,6 +130,10 @@
 					font-size: 1.25rem;
 					font-weight: 900;
 				}
+
+				.secondary-data {
+					line-height: 1.75;
+				}
 			}
 		}
 		.evictor-pic {
@@ -124,6 +142,13 @@
   			position: relative;
 			background-color: black;
 
+		}
+		.evictor-pic.show-sm {
+			margin-top: 20px;
+			margin-left: 0;
+			margin-bottom: 20px;
+			width: 60%;
+			padding-top: 60%;
 		}
 		.organizing-photos {
 			display: flex;
