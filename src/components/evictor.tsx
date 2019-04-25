@@ -2,6 +2,8 @@ import React from 'react';
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { Link } from 'gatsby';
 
+import evictorPlaceholder from '../images/evictor-placeholder.png'
+
 // CONTENT MODEL:
 
 // data {
@@ -72,7 +74,7 @@ import { Link } from 'gatsby';
 class Evictor extends React.Component {
 render() {
 
-	const imageURL = (this.props.data.photo ? this.props.data.photo.sizes.src : '');
+	const imageURL = (this.props.data.photo ? this.props.data.photo.sizes.src : evictorPlaceholder );
 	const style = {
 	    backgroundImage: "url("+imageURL+")",
 	    backgroundPosition: "center center",
