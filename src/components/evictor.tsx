@@ -175,7 +175,7 @@ render() {
 			    	<div>
 				    	<span>
 				    		Funded by<span>	</span>  
-		        			<span className="text-primary text-bold ml-2">
+		        			<span className="text-primary text-bold ml-2 tooltip tooltip-right" data-tooltip="List is not exhaustive">
 		        				{this.props.data.banks}
 		        			</span>
 			            </span>
@@ -183,7 +183,7 @@ render() {
 			            <br/>
 			            <span>
 				    		Represented by<span> </span>  
-		        			<span className="text-primary text-bold ml-2">
+		        			<span className="text-primary text-bold ml-2 tooltip tooltip-right" data-tooltip="List is not exhaustive">
 		        				{this.props.data.lawyers}
 		        			</span>
 			            </span>
@@ -208,7 +208,7 @@ render() {
 							}
 							{this.props.data.organizingPhoto2 ?
 								<div className="img-container">
-									<img src={this.props.data.organizingPhoto1.fluid.src} className="img-responsive py-2" />
+									<img src={this.props.data.organizingPhoto2.fluid.src} className="img-responsive py-2" />
 									<small className="caption p-centered text-gray-medium text-center text-italic my-2">
 										{this.props.data.organizingPhotoCaption2}
 									</small>
@@ -217,7 +217,7 @@ render() {
 							}
 							{this.props.data.organizingPhoto3 ?
 								<div className="img-container">
-									<img src={this.props.data.organizingPhoto1.fluid.src} className="img-responsive py-2" />
+									<img src={this.props.data.organizingPhoto3.fluid.src} className="img-responsive py-2" />
 									<small className="caption p-centered text-gray-medium text-center text-italic my-2">
 										{this.props.data.organizingPhotoCaption3}
 									</small>
