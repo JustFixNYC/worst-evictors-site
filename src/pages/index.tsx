@@ -7,6 +7,8 @@ import { Link } from 'gatsby'
 
 import '../styles/index.scss'
 
+import efnycIcon from '../images/efnyc-icon.svg'
+
 import Layout from '../components/layout'
 
 // Other images to include: mapBackground
@@ -35,6 +37,14 @@ const LandingPage = () => (
             json
           }
           listButton
+          listBackground {
+            fluid {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            } 
+          }
           mapTitle
           mapDescription {
             json
@@ -82,7 +92,13 @@ const LandingPage = () => (
             </AnchorLink>
           </div>
         </section>
-        <section id="list-link" className="list-link hero hero-centered half-vh bg-secondary text-light">
+        <section id="list-link" className="list-link hero hero-centered half-vh text-light"
+          style={{
+            backgroundImage: "url("+(data.contentfulLandingPage.listBackground ? data.contentfulLandingPage.listBackground.fluid.src : '')+")",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundRepeat:"no-repeat" 
+          }}>
           <div className="hero-body">
             <h1>{data.contentfulLandingPage.listTitle}</h1>
             {documentToReactComponents(data.contentfulLandingPage.listDescription.json)}
@@ -119,7 +135,7 @@ const LandingPage = () => (
           <div className="columns">
             <div id="efnyc" className="efnyc column col-6 col-sm-12 hero hero-sm text-light">
               <div className="hero-body">
-                <h3>{data.contentfulLandingPage.efnycTitle}</h3>
+                <h3>{data.contentfulLandingPage.efnycTitle}<img className="icon icon-3x mx-1 pb-2" src={efnycIcon} /></h3>
                 {documentToReactComponents(data.contentfulLandingPage.efnycDescription.json)}
                 <a href="https://www.evictionfreenyc.org/" className="btn btn-outline-efnyc">
                   {data.contentfulLandingPage.efnycButton}
