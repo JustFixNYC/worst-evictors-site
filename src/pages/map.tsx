@@ -25,36 +25,40 @@ const MapPage = ({ data, location }) => (
 			}
 	    `}
 	    render={data => {
+			const mapLoading = function() {
+				const loadingFrame = document.getElementById("map-iframe");
+				loadingFrame.className = "map-container d-invisible";
+				const loadingElem = document.getElementById("map-iframe-loading");
+				loadingElem.className = "loading loading-lg";
+			}
+			const mapLoaded = function() {
+				const loadingElem = document.getElementById("map-iframe-loading");
+				loadingElem.className = "";
+				const loadingFrame = document.getElementById("map-iframe");
+				loadingFrame.className = "map-container d-block";
+			}
 			return (<Layout>
 		  	<div className="map-title-banner">
 		  		<h4 className="p-2 mx-2">2018 Evictions in:
 			  		<div className="btn-group mx-1">
 			  			<Link to="/map" className={"btn mx-2 btn-" + (location && (!location.state || !location.state.iframe || (location.state.iframe == "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed")) ? "primary" : "default") }
-							onClick={()=> {
-								const loadingFrame = document.getElementById("map-iframe-loading");
-								loadingFrame.className = "loading loading-lg";
-							}}
+							onClick={()=>mapLoading()}
 			  			state={{ iframe: "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed" }}>
 				  			All NYC
 				  		</Link>
 				  		<Link to="/map" className={"btn mx-2 btn-" + (location && location.state && location.state.iframe && location.state.iframe !== "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed" ? "primary" : "default") }
-							onClick={()=> {
-								const loadingFrame = document.getElementById("map-iframe-loading");
-								loadingFrame.className = "loading loading-lg";
-							}}
+							onClick={()=>mapLoading()}
 			  			state={{ iframe: "https://ampitup.carto.com/builder/f48204aa-42f8-49dc-831b-3a68afcc3ab7/embed" }}>
 				  			RTC-Eligible Zipcodes
 				  		</Link>
 				  	</div>
 		  		</h4>
 		  	</div>
-			<div id="map-iframe-loading" className="loading loading-lg"></div>
-			<iframe className="map-container d-block" onLoad={()=>{
-				const loadingFrame = document.getElementById("map-iframe-loading");
-				loadingFrame.className = "";
-			}}
+			<div id="map-iframe-loading" className="loading loading-lg">
+			<iframe id="map-iframe" className="map-container d-invisible" onLoad={()=>mapLoaded()}
 			  	frameBorder="0" src={ (location && location.state && location.state.iframe ? location.state.iframe : "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed")}>
 			</iframe>
+			</div>
 			<div className="map-bottom-banner">
 				<AnchorLink href="#map-context" className="btn btn-link p-centered text-dark">
 		          About this map <i className="icon icon-arrow-down"></i>
