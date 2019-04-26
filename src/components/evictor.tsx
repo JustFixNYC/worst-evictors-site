@@ -175,7 +175,7 @@ render() {
 			    	<div>
 				    	<span>
 				    		Funded by<span>	</span>  
-		        			<span className="text-primary text-bold ml-2">
+		        			<span className="text-primary text-bold ml-2 tooltip tooltip-right" data-tooltip="List is not exhaustive">
 		        				{this.props.data.banks}
 		        			</span>
 			            </span>
@@ -183,7 +183,7 @@ render() {
 			            <br/>
 			            <span>
 				    		Represented by<span> </span>  
-		        			<span className="text-primary text-bold ml-2">
+		        			<span className="text-primary text-bold ml-2 tooltip tooltip-right" data-tooltip="List is not exhaustive">
 		        				{this.props.data.lawyers}
 		        			</span>
 			            </span>
