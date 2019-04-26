@@ -24,22 +24,22 @@ const MapPage = ({ data, location }) => (
 			  }
 			}
 	    `}
-	    render={data => <Layout>
+	    render={data => { return (<Layout>
 		  	<div className="map-title-banner">
 		  		<h4 className="p-2 mx-2">2018 Evictions in:
 			  		<div className="btn-group mx-1">
-			  			<Link to="/map" className={"btn mx-2 btn-" + (location && location.state && location.state.iframe && location.state.iframe == "https://ampitup.carto.com/builder/f48204aa-42f8-49dc-831b-3a68afcc3ab7/embed" ? "default" : "primary") }
+			  			<Link to="/map" className={"btn mx-2 btn-" + (location && location.state && ((location.state.iframe && location.state.iframe == "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed") || !location.state.iframe) ? "primary" : "default") }
 			  			state={{ iframe: "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed" }}>
 				  			All NYC
 				  		</Link>
-				  		<Link to="/map" className={"btn mx-2 btn-" + (location && location.state && location.state.iframe && location.state.iframe == "https://ampitup.carto.com/builder/f48204aa-42f8-49dc-831b-3a68afcc3ab7/embed" ? "primary" : "default") }
+				  		<Link to="/map" className={"btn mx-2 btn-" + (location && location.state && location.state.iframe && location.state.iframe !== "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed" ? "primary" : "default") }
 			  			state={{ iframe: "https://ampitup.carto.com/builder/f48204aa-42f8-49dc-831b-3a68afcc3ab7/embed" }}>
 				  			RTC-Eligible Zipcodes
 				  		</Link>
 				  	</div>
 		  		</h4>
 		  	</div>
-			<iframe className="map-container d-block"
+			<iframe className="map-container d-block" onLoad={()=>console.log("iframe loaded")}
 			  	frameBorder="0" src={ (location && location.state && location.state.iframe ? location.state.iframe : "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed")}>
 			</iframe>
 			<div className="map-bottom-banner">
@@ -52,7 +52,7 @@ const MapPage = ({ data, location }) => (
 		        {documentToReactComponents(data.contentfulMapPage.description.json)}
 		      </div>
 		    </section>
-		  </Layout>
+		  </Layout>)}
 		}
     />
 )
