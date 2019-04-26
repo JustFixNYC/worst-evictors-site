@@ -155,7 +155,7 @@ const EvictorsListPage = () => (
             <div className="mention-category">
               <div className="laurel container p-relative">
                 <img className="laurel-img p-centered" src={laurel2} alt="laurel2"/>
-                <div className="laurel-text text-center p-absolute">SUES EVERYONE, AND THEN SUES THEM AGAIN</div>
+                <div className="laurel-text text-center p-absolute">SUES PEOPLE MORE THAN ONCE</div>
               </div>
                <span className="text-center">
                 {documentToReactComponents(data.contentfulListPage.dishonorableMentions.landlordsWhoSueEveryone.json)}
@@ -163,20 +163,11 @@ const EvictorsListPage = () => (
             </div>
             <div className="mention-category">
               <div className="laurel container p-relative">
-                <img className="laurel-img p-centered" src={laurel3} alt="laurel3"/>
-                <div className="laurel-text text-center p-absolute">SUES ALMOST EVERYONE</div>
+                <img className="laurel-img p-centered" src={laurel4} alt="laurel4"/>
+                <div className="laurel-text text-center p-absolute">SUES A LOT</div>
               </div>
                <span className="text-center">
                 {documentToReactComponents(data.contentfulListPage.dishonorableMentions.landlordsWhoSueAlmostEveryone.json)}
-              </span>
-            </div>
-            <div className="mention-category">
-              <div className="laurel container p-relative">
-                <img className="laurel-img p-centered" src={laurel4} alt="laurel4"/>
-                <div className="laurel-text text-center p-absolute">OTHER BAD ACTORS</div>
-              </div>
-               <span className="text-center">
-                {documentToReactComponents(data.contentfulListPage.dishonorableMentions.notableMentions.json)}
               </span>
             </div>
           </div>
