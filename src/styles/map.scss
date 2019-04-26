@@ -5,6 +5,16 @@
 	background-color: $carto-background;
 	padding-top: 3px; // offset for Carto Map iFrame border
 
+	.btn-default {
+		opacity: 0.5;
+		&.btn:hover {
+			background: $gray-light;
+			opacity: 1;
+			-webkit-transition: opacity 0.5s;
+		  transition: opacity 0.5s;
+		}
+	}
+
 	h4 {
 		font-weight: 300;
 	}
@@ -39,7 +49,7 @@
 		height: calc(100vh + 35px);
 		margin-bottom: -210px;
 	}
-	
+
 }
 
 .map-bottom-banner {
