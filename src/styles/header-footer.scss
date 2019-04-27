@@ -20,12 +20,25 @@
     background-color: $light;
   	color: $gray-dark;
   	font-weight: 600;
+
+    &.dropdown-toggle {
+      background-color: $gray-light;
+    }
   } 
 
   .btn.btn-link:hover, .btn.btn-link:focus{
     background-color: $gray-light;
     color: $gray-dark;
   } 
+
+  .dropdown.dropdown-right .menu.d-block {
+    display: block;
+  }
+
+  .dropdown.dropdown-right .menu.d-none {
+    display: none;
+  }
+
 
 }
 
