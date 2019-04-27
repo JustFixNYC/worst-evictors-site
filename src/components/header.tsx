@@ -18,7 +18,7 @@ const Header = ({ siteTitle }: Props) => (
       <Link activeClassName="active" className="btn btn-link" to="/rights">My Rights</Link>
       <Link activeClassName="active" className="btn btn-link" to="/about">About</Link>
     </section>
-    <div className="dropdown show-sm">
+    <div className="dropdown dropdown-right show-sm">
       <a href="#" className="btn btn-link dropdown-toggle m-2" tabIndex="0">
         <i className="icon icon-menu"></i>
       </a>
