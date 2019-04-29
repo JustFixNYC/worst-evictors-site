@@ -12,7 +12,10 @@
     }
 }
 
-
+.page-content {
+    max-width: 100vw;
+    overflow: hidden;
+}
 
 .hero-body {
     max-width: 70%;
