@@ -28,7 +28,7 @@ const AboutPage = () => (
 			    <h3>{data.contentfulAboutPage.title}</h3>
 			    <div className="text-italic">{documentToReactComponents(data.contentfulAboutPage.subtitle.json)}</div>
 			    <div className="divider d-invisible"></div>
-			    <div>
+			    <div className="rich-text-bulleted-list">
 			    {documentToReactComponents(data.contentfulAboutPage.description.json)}
 			    </div>
 			  </div>
