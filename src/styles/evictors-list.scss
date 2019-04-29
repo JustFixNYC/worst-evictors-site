@@ -111,6 +111,11 @@
 			padding-right: 1rem;
 			text-align: center;
 
+			@include for-phone-only() {
+				display: flex;
+    			align-items: center;
+    		}
+
 			h1 {
 				font-weight: 700;
 				font-size: 5rem;
@@ -119,7 +124,6 @@
 
 				@include for-phone-only() {
 					font-size: 7rem;
-					margin-bottom: 0px;
 	    		}
 			}
 

@@ -85,29 +85,27 @@ render() {
 	return (
 		<div className="evictor-container">
 		  <div className="columns">
-		    <div className="column col-2 col-sm-12 evictor-rank">
+		    <div className="column col-2 col-sm-4 evictor-rank">
 		    	<div>
-			        <h1 className="hide-sm">
+			        <h1>
 			        	{this.props.data.rank}
 			        </h1>
-			        <h1 className="show-sm">
-			        	{this.props.data.rank}
-			        	<sup>{this.props.boroName}</sup>
-			        </h1>
-			        <small className="p-centered hide-sm">{this.props.boroName}</small>
+			        <small>{this.props.boroName}</small>
 		        </div>
 		    </div>
-	        <div className="column col-7 col-sm-12">
-	        	<div className="evictor-intro">
-	            	<h5 className="evictor-name text-uppercase text-secondary mb-1">{this.props.data.name}</h5>
-	            	<h6 className="evictor-corp text-dark">{this.props.data.corporation}</h6>
-		    	</div>
-		    	<div className="evictor-pic-container show-sm">
+		   	<div className="column col-8 col-sm-8 show-sm">
+			   	<div className="evictor-pic-container">
 		        	<div className="evictor-pic s-circle p-centered" style={style}></div>
 		        	<small className="caption p-centered text-gray-medium text-center text-italic my-2">
 						{this.props.data.photoCaption}
 					</small>
 				</div>
+			</div>
+	        <div className="column col-7 col-sm-12">
+	        	<div className="evictor-intro">
+	            	<h5 className="evictor-name text-uppercase text-secondary mb-1">{this.props.data.name}</h5>
+	            	<h6 className="evictor-corp text-dark">{this.props.data.corporation}</h6>
+		    	</div>
 		    	<div className="evictor-stats">
 			    	<div className="columns">
 			    		<div className="column col-6 col-md-12 rtc-data">
