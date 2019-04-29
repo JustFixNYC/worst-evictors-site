@@ -139,6 +139,7 @@
 		}
 		.evictor-intro {
 			align-self: center;
+			margin-top: 1rem;
 			
 			.evictor-name {
 			 	font-size: 1.75rem;
@@ -153,20 +154,30 @@
 		}
 		.evictor-stats {
 			margin-top: 1rem;
-			margin-bottom: 2rem;	
+			margin-bottom: 1rem;	
 
 			.column {
 				max-width: 250px;
+				margin-top: 0.4rem;
+				margin-bottom: 0.4rem;
+
+				@include for-phone-only() {
+					margin-top: 0.4rem;
+					margin-bottom: 0.8rem;
+				} 
 
 				.eviction-count {
 					font-size: 1.25rem;
 					font-weight: 900;
+					margin-bottom: 8px;
 				}
 
 				.secondary-data {
 					line-height: 1.75;
 				}
 			}
+
+
 		}
 		.evictor-pic {
 			width: 80%;
@@ -186,6 +197,13 @@
 			}
 			
 		}
+		.get-involved {
+			.divider {
+				margin-top: 2rem;
+				margin-bottom: 1rem;
+			}
+		}
+
 		.organizing-photos {
 			display: flex;
 			flex-wrap: wrap;
@@ -197,6 +215,7 @@
 			}
 		}
 		.evictor-links {
+			margin-bottom: 1.5rem;
 			.btn {
 				margin-right: 20px;
 			}
