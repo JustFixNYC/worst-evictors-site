@@ -121,7 +121,7 @@ const EvictorsListPage = () => (
             </span>
           </div>
         </section>
-        <div>
+        <div className="list-content">
           <div className="boro-list-selector hero bg-secondary text-light">
             <div className="hero-body">
               <div>
@@ -151,12 +151,15 @@ const EvictorsListPage = () => (
               </div>
             </div>
           </div>
+
           <div className="red-space bg-secondary" />
-        {data.contentfulListPage.evictorList.map(list => 
+
+          {data.contentfulListPage.evictorList.map(list => 
           <BoroList 
             key={list.boroName} 
             data={list} />
-        )}
+          )}
+          
         </div>
         <section id="dishonorable-mentions" className="list-hero hero bg-secondary text-light">
           <div className="dishonorable-mentions hero-body">

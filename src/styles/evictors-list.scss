@@ -67,6 +67,10 @@
 				border-radius: 5px;
 				max-width: 190px;
 			}
+			.btn:focus {
+				background-color: $light;
+			}
+
 			.icon {
 				margin-left: 0.5em;
 				margin-right: 0.5em;
@@ -105,10 +109,12 @@
 		.evictor-rank {
 
 			padding-right: 1rem;
+			text-align: center;
 
 			h1 {
 				font-weight: 700;
 				font-size: 5rem;
+				margin-bottom: -18px;
 				@include lhCrop(1.3);
 
 				@include for-phone-only() {
@@ -126,10 +132,9 @@
 				font-size: 25%;
 				bottom: 0em;
 			}
-
 			small {
-				font-size: 0.7rem;
-				vertical-align: top;
+				font-weight: 700;
+				font-size: 0.75rem;
 			}
 		}
 		.evictor-intro {

@@ -86,14 +86,16 @@ render() {
 		<div className="evictor-container">
 		  <div className="columns">
 		    <div className="column col-2 col-sm-12 evictor-rank">
-		        <h1 className="float-right hide-sm">
-		        	<sup>{this.props.boroName}</sup>
-		        	{this.props.data.rank}
-		        </h1>
-		        <h1 className="show-sm">
-		        	{this.props.data.rank}
-		        	<sup>{this.props.boroName}</sup>
-		        </h1>
+		    	<div>
+			        <h1 className="hide-sm">
+			        	{this.props.data.rank}
+			        </h1>
+			        <h1 className="show-sm">
+			        	{this.props.data.rank}
+			        	<sup>{this.props.boroName}</sup>
+			        </h1>
+			        <small className="p-centered hide-sm">{this.props.boroName}</small>
+		        </div>
 		    </div>
 	        <div className="column col-7 col-sm-12">
 	        	<div className="evictor-intro">
