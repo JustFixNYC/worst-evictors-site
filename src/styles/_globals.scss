@@ -12,9 +12,12 @@
     }
 }
 
-.page-content {
-    max-width: 100vw;
-    overflow: hidden;
+@include for-tablet-landscape-down() {
+
+    .page-content {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
 }
 
 .hero-body {
