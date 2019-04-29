@@ -146,7 +146,7 @@ const EvictorsListPage = () => (
             <div className="mention-category">
               <div className="laurel container p-relative">
                 <img className="laurel-img p-centered" src={laurel1} alt="laurel1"/>
-                <div className="laurel-text text-center p-absolute">ON MULTIPLE LISTS</div>
+                <div className="laurel-text text-center p-absolute">ON MULTIPLE BOROUGH LISTS</div>
               </div>
               <span className="text-center">
                 {documentToReactComponents(data.contentfulListPage.dishonorableMentions.landlordsOnMultipleLists.json)}
