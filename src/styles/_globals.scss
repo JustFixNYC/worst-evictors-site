@@ -12,12 +12,19 @@
     }
 }
 
-
+.page-content {
+    max-width: 100vw;
+    overflow: hidden;
+}
 
 .hero-body {
     max-width: 70%;
     margin-left: auto;
     margin-right: auto;
+
+    @include for-small-desktop-down() {
+        max-width: 80%;
+    }
 
     @include for-tablet-landscape-down() {
     	max-width: 90%;

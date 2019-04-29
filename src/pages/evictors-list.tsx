@@ -119,26 +119,47 @@ const EvictorsListPage = () => (
             <span className="list-subtitle">
               {documentToReactComponents(data.contentfulListPage.subtitle.json)}
             </span>
-            <h3> Select a borough: </h3>
-            <div className="btn-group">
-              {data.contentfulListPage.evictorList.map(list => 
-                <AnchorLink 
-                  offset='50'
-                  key={list.boroName} 
-                  href={"#" + list.boroName} 
-                  className="btn btn-lg btn-outline-secondary">
-                    {list.boroName}
-                </AnchorLink>
-              )}
-	        </div>
           </div>
         </section>
-        <div>
-        {data.contentfulListPage.evictorList.map(list => 
+        <div className="list-content">
+          <div className="boro-list-selector hero bg-secondary text-light">
+            <div className="hero-body">
+              <div>
+                <h3> Select a borough: </h3>
+                <div className="btn-group show-md">
+                  {data.contentfulListPage.evictorList.map(list => 
+                    <AnchorLink 
+                      offset='50'
+                      key={list.boroName} 
+                      href={"#" + list.boroName} 
+                      className="btn btn-lg btn-outline-secondary">
+                        {list.boroName}
+                    </AnchorLink>
+                  )}
+                </div>
+                <div className="btn-group hide-md">
+                  {data.contentfulListPage.evictorList.map(list => 
+                    <AnchorLink 
+                      offset='160'
+                      key={list.boroName} 
+                      href={"#" + list.boroName} 
+                      className="btn btn-lg btn-outline-secondary">
+                        {list.boroName}
+                    </AnchorLink>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="red-space bg-secondary" />
+
+          {data.contentfulListPage.evictorList.map(list => 
           <BoroList 
             key={list.boroName} 
             data={list} />
-        )}
+          )}
+          
         </div>
         <section id="dishonorable-mentions" className="list-hero hero bg-secondary text-light">
           <div className="dishonorable-mentions hero-body">
@@ -146,7 +167,7 @@ const EvictorsListPage = () => (
             <div className="mention-category">
               <div className="laurel container p-relative">
                 <img className="laurel-img p-centered" src={laurel1} alt="laurel1"/>
-                <div className="laurel-text text-center p-absolute">ON MULTIPLE LISTS</div>
+                <div className="laurel-text text-center p-absolute">ON MULTIPLE BOROUGH LISTS</div>
               </div>
               <span className="text-center">
                 {documentToReactComponents(data.contentfulListPage.dishonorableMentions.landlordsOnMultipleLists.json)}

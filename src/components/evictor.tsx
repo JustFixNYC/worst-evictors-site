@@ -85,30 +85,30 @@ render() {
 	return (
 		<div className="evictor-container">
 		  <div className="columns">
-		    <div className="column col-2 col-sm-12 evictor-rank">
-		        <h1 className="float-right hide-sm">
-		        	<sup>{this.props.boroName}</sup>
-		        	{this.props.data.rank}
-		        </h1>
-		        <h1 className="show-sm">
-		        	{this.props.data.rank}
-		        	<sup>{this.props.boroName}</sup>
-		        </h1>
+		    <div className="column col-2 col-sm-4 evictor-rank">
+		    	<div>
+			        <h1>
+			        	{this.props.data.rank}
+			        </h1>
+			        <small>{this.props.boroName}</small>
+		        </div>
 		    </div>
-	        <div className="column col-7 col-sm-12">
-	        	<div className="evictor-intro">
-	            	<h5 className="evictor-name text-uppercase text-secondary mb-1">{this.props.data.name}</h5>
-	            	<h6 className="evictor-corp text-dark">{this.props.data.corporation}</h6>
-		    	</div>
-		    	<div className="evictor-pic-container show-sm">
+		   	<div className="column col-8 col-sm-8 show-sm">
+			   	<div className="evictor-pic-container">
 		        	<div className="evictor-pic s-circle p-centered" style={style}></div>
 		        	<small className="caption p-centered text-gray-medium text-center text-italic my-2">
 						{this.props.data.photoCaption}
 					</small>
 				</div>
+			</div>
+	        <div className="column col-7 col-sm-12">
+	        	<div className="evictor-intro">
+	            	<h5 className="evictor-name text-uppercase text-secondary mb-1">{this.props.data.name}</h5>
+	            	<h6 className="evictor-corp text-dark">{this.props.data.corporation}</h6>
+		    	</div>
 		    	<div className="evictor-stats">
 			    	<div className="columns">
-			    		<div className="column col-6 col-md-12 my-2">
+			    		<div className="column col-6 col-md-12 rtc-data">
 			    			<h6 className="text-gray-medium">In RTC Zipcodes</h6>
 			    			<h4 className="eviction-count">
 		            			<span className="text-primary">{this.props.data.evictions}</span> Evictions
@@ -139,7 +139,7 @@ render() {
 			            		</span>
 		            		</div>
 			    		</div>
-			    		<div className="column col-6 col-md-12 my-2">
+			    		<div className="column col-6 col-md-12 citywide-data">
 			    			<h6 className="text-gray-medium">Citywide</h6>
 			    			<h4 className="eviction-count">
 		            			<span className="text-primary">{this.props.data.citywideEvictions}</span> Evictions
@@ -171,15 +171,13 @@ render() {
 			            	</div>
 			    		</div>
 			    	</div>
-			    <br/>
-			    	<div>
+			    	<div className="mb-2">
 				    	<span>
 				    		Funded by<span>	</span>  
 		        			<span className="text-primary text-bold ml-2 tooltip tooltip-right" data-tooltip="List is not exhaustive">
 		        				{this.props.data.banks}
 		        			</span>
 			            </span>
-			            <br/>
 			            <br/>
 			            <span>
 				    		Represented by<span> </span>  
@@ -189,12 +187,20 @@ render() {
 			            </span>
 			        </div>
 	            </div>
+	            <div className="btn-group evictor-links">
+					<Link to="/map" className="btn btn-primary my-1"
+		  			state={{ iframe: (this.props.data.evictionsMapUrl ? this.props.data.evictionsMapUrl.evictionsMapUrl : null) }}>
+			  			Go to Evictions Map
+			  		</Link>
+					<a className="btn btn-primary my-1" target="_blank"
+					href={(this.props.data.whoOwnsWhatUrl ? this.props.data.whoOwnsWhatUrl : null)}>
+						View on Who Owns What
+					</a>
+				</div>
 				{documentToReactComponents(this.props.data.description.json)}
 				{this.props.data.organizingCta ? 
-					<span>
-						<br/>
+					<span className="get-involved">
 						<div className="divider text-center" data-content="HOW TO GET INVOLVED"></div>
-						<br/>
 						{documentToReactComponents(this.props.data.organizingCta.json)}
 						<div className="organizing-photos">
 							{this.props.data.organizingPhoto1 ?
@@ -227,16 +233,6 @@ render() {
 						</div>
 					</span> :
 					<div/>}
-					<div className="btn-group evictor-links">
-						<Link to="/map" className="btn btn-outline-secondary my-1"
-			  			state={{ iframe: (this.props.data.evictionsMapUrl ? this.props.data.evictionsMapUrl.evictionsMapUrl : null) }}>
-				  			Go to Evictions Map
-				  		</Link>
-						<a className="btn btn-outline-secondary my-1" target="_blank"
-						href={(this.props.data.whoOwnsWhatUrl ? this.props.data.whoOwnsWhatUrl : null)}>
-							View on Who Owns What
-						</a>
-					</div>
 	        </div>
 	        <div className="evictor-pic-container column col-3 hide-sm">
 	        	<div className="evictor-pic s-circle p-centered" style={style}></div>

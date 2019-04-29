@@ -13,18 +13,41 @@
   @include button-variant($gray);
 }
 
+
+// Override of Standard Mixin: 
+@mixin button-outline-variant($color: $primary-color) {
+  background: $light-color;
+  border-color: $color;
+  color: $color;
+  &:focus {
+    @include control-shadow($color);
+  }
+  &:focus,
+  &:hover {
+    background: $gray-light;
+    border-color: darken($color, 2%);
+    color: $color;
+  }
+  &:active,
+  &.active {
+    background: $gray-light;
+    border-color: darken($color, 5%);
+    color: $color;
+  }
+  &.loading {
+    &::after {
+      border-bottom-color: $color;
+      border-left-color: $color;
+    }
+  }
+}
+
 .btn.btn-outline-primary {
   @include button-outline-variant($primary-color);
 }
 
 .btn.btn-outline-secondary {
   @include button-outline-variant($secondary-color);
-
-  // override because secondary color is too light
-  &:focus,
-  &:hover {
-    background: lighten($secondary-color, 20%);
-  }
 }
 
 .btn.btn-outline-efnyc {
