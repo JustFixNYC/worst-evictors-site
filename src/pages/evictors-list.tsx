@@ -119,21 +119,39 @@ const EvictorsListPage = () => (
             <span className="list-subtitle">
               {documentToReactComponents(data.contentfulListPage.subtitle.json)}
             </span>
-            <h3> Select a borough: </h3>
-            <div className="btn-group">
-              {data.contentfulListPage.evictorList.map(list => 
-                <AnchorLink 
-                  offset='50'
-                  key={list.boroName} 
-                  href={"#" + list.boroName} 
-                  className="btn btn-lg btn-outline-secondary">
-                    {list.boroName}
-                </AnchorLink>
-              )}
-	        </div>
           </div>
         </section>
         <div>
+          <div className="boro-list-selector hero bg-secondary text-light">
+            <div className="hero-body">
+              <div>
+                <h3> Select a borough: </h3>
+                <div className="btn-group show-md">
+                  {data.contentfulListPage.evictorList.map(list => 
+                    <AnchorLink 
+                      offset='50'
+                      key={list.boroName} 
+                      href={"#" + list.boroName} 
+                      className="btn btn-lg btn-outline-secondary">
+                        {list.boroName}
+                    </AnchorLink>
+                  )}
+                </div>
+                <div className="btn-group hide-md">
+                  {data.contentfulListPage.evictorList.map(list => 
+                    <AnchorLink 
+                      offset='160'
+                      key={list.boroName} 
+                      href={"#" + list.boroName} 
+                      className="btn btn-lg btn-outline-secondary">
+                        {list.boroName}
+                    </AnchorLink>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="red-space bg-secondary" />
         {data.contentfulListPage.evictorList.map(list => 
           <BoroList 
             key={list.boroName} 
