@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { StaticQuery, graphql } from 'gatsby'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types'
+import contentfulOptions from '../utils/contentful-rich-text-options'
 import { Link } from 'gatsby'
 
 import '../styles/evictors-list.scss'
@@ -112,12 +114,12 @@ const EvictorsListPage = () => (
       }
     `}
     render={data => (
-      <Layout>
+      <Layout className="list-page">
         <section id="list-intro" className="list-hero hero bg-secondary text-light">
           <div className="hero-body">
             <h1>{data.contentfulListPage.title}</h1>
             <span className="list-subtitle">
-              {documentToReactComponents(data.contentfulListPage.subtitle.json)}
+              {documentToReactComponents(data.contentfulListPage.subtitle.json, contentfulOptions)}
             </span>
           </div>
         </section>
