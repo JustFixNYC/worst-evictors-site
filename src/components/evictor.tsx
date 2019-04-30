@@ -177,16 +177,18 @@ render() {
 			    	<div className="mb-2">
 				    	<span>
 				    		Funded by<span>	</span>  
-		        			<span className="text-primary text-bold ml-2 tooltip tooltip-right" data-tooltip="List is not exhaustive">
+		        			<span className="text-primary text-bold ml-2 tooltip tooltip-right">
 		        				{this.props.data.banks}
 		        			</span>
+		        			<nobr className="text-gray-medium text-italic pl-1">(Among Others)</nobr>
 			            </span>
 			            <br/>
 			            <span>
 				    		Represented by<span> </span>  
-		        			<span className="text-primary text-bold ml-2 tooltip tooltip-right" data-tooltip="List is not exhaustive">
+		        			<span className="text-primary text-bold ml-2 tooltip tooltip-right">
 		        				{this.props.data.lawyers}
 		        			</span>
+		        			<nobr className="text-gray-medium text-italic pl-1">(Among Others)</nobr>
 			            </span>
 			        </div>
 	            </div>
