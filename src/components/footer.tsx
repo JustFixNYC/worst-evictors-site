@@ -1,21 +1,37 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import '../styles/header-footer.scss';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaFacebook } from 'react-icons/fa';
+import rtcLogo from '../images/RTC_logo.png';
+import { OutboundLink } from './outbound-link';
+import { IconType } from 'react-icons/lib/cjs';
+
+const SocialLink = (props: { href: string, icon: IconType, title: string }) => (
+  <OutboundLink href={props.href} title={props.title} className="btn btn-link">
+    <props.icon className="icon" />
+  </OutboundLink>
+);
 
 const Footer = () => (
-  <header className="navbar footer">
-    <section className="navbar-section"></section>
-    <section className="navbar-center text-small px-2 pt-1">
-        <span className="hide-md">Made with ♡ by <a href="https://www.righttocounselnyc.org/" target="_blank">Right to Counsel Coalition</a>, the <a href="https://www.antievictionmap.com/" target="_blank">Anti-Eviction Mapping Project</a>, and <a href="https://www.justfix.nyc/" target="_blank">JustFix.nyc</a></span>
-        <span className="show-md">By <a href="https://www.righttocounselnyc.org/" target="_blank">RTC Coalition</a>, <a href="https://www.antievictionmap.com/" target="_blank">AEMP</a>, and <a href="https://www.justfix.nyc/" target="_blank">JustFix.nyc</a></span>
-    </section>
-    <section className="navbar-section">
-      <Link className="btn btn-link" to="/about">About</Link>
-      <a href="https://github.com/JustFixNYC/worst-evictors-site" className="btn btn-link"> <FaGithub className="icon" /></a>
-    </section>
-  </header>
+  <footer className="Footer">
+    <img src={rtcLogo} alt={`Right to Counsel logo`} />
+    <span>
+      This resource is made &ldquo;by tenants for tenants&rdquo; and is maintained by the <OutboundLink
+        href="https://www.righttocounselnyc.org/">Right to Counsel NYC Coalition</OutboundLink>.
+      <br/><br/>
+      <OutboundLink href="#TODO">Click here</OutboundLink> to provide feedback about the website.
+    </span>
+    <div className="Footer_JustFix col-ml-auto">
+      <div>
+        <SocialLink href="https://github.com/JustFixNYC/worst-evictors-site" title="Fork us on GitHub" icon={FaGithub} />
+        <SocialLink href="https://www.facebook.com/RTCNY/" title="Visit us on Facebook" icon={FaFacebook} />
+        <SocialLink href="https://twitter.com/rtcnyc" title="Follow us on Twitter" icon={FaTwitter} />
+      </div>
+      Made with NYC ♥ by the team at <OutboundLink
+        href="https://justfix.nyc">JustFix.nyc</OutboundLink> and the <OutboundLink
+        href="https://antievictionmap.com/">Anti&#8209;Eviction Mapping Project</OutboundLink>.
+    </div>
+  </footer>
 )
 
 export default Footer
