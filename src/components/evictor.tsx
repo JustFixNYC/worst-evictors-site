@@ -177,7 +177,7 @@ render() {
 			    	<div className="mb-2">
 				    	<span>
 				    		Funded by<span>	</span>  
-		        			<span className="text-primary text-bold ml-2 tooltip tooltip-right">
+		        			<span className="text-primary text-bold ml-2">
 		        				{this.props.data.banks}
 		        			</span>
 		        			<nobr className="text-gray-medium text-italic pl-1">(Among Others)</nobr>
@@ -185,7 +185,7 @@ render() {
 			            <br/>
 			            <span>
 				    		Represented by<span> </span>  
-		        			<span className="text-primary text-bold ml-2 tooltip tooltip-right">
+		        			<span className="text-primary text-bold ml-2">
 		        				{this.props.data.lawyers}
 		        			</span>
 		        			<nobr className="text-gray-medium text-italic pl-1">(Among Others)</nobr>
@@ -195,7 +195,7 @@ render() {
 	            <div className="btn-group evictor-links">
 					<Link to="/map" className="btn btn-primary my-1"
 		  			state={{ iframe: (this.props.data.evictionsMapUrl ? this.props.data.evictionsMapUrl.evictionsMapUrl : null) }}>
-			  			Go to Evictions Map
+			  			View on Evictions Map
 			  		</Link>
 					<a className="btn btn-primary my-1" target="_blank"
 					href={(this.props.data.whoOwnsWhatUrl ? this.props.data.whoOwnsWhatUrl : null)}>
