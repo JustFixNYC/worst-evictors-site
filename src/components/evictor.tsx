@@ -1,5 +1,7 @@
 import React from 'react';
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
+import contentfulOptions from '../utils/contentful-rich-text-options';
 import { Link } from 'gatsby';
 
 import evictorPlaceholder from '../images/evictor-placeholder.png'
@@ -70,6 +72,7 @@ import evictorPlaceholder from '../images/evictor-placeholder.png'
   // }
   // whoOwnsWhatUrl
 // }
+
 
 class Evictor extends React.Component {
 render() {
@@ -197,11 +200,11 @@ render() {
 						View on Who Owns What
 					</a>
 				</div>
-				{documentToReactComponents(this.props.data.description.json)}
+				{documentToReactComponents(this.props.data.description.json, contentfulOptions)}
 				{this.props.data.organizingCta ? 
 					<span className="get-involved">
 						<div className="divider text-center" data-content="HOW TO GET INVOLVED"></div>
-						{documentToReactComponents(this.props.data.organizingCta.json)}
+						{documentToReactComponents(this.props.data.organizingCta.json, contentfulOptions)}
 						<div className="organizing-photos">
 							{this.props.data.organizingPhoto1 ?
 								<div className="img-container">

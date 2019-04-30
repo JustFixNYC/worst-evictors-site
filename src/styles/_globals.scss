@@ -1,5 +1,7 @@
 @import "_vars.scss";
 
+
+// Smaller header sizes on mobile
 @include for-phone-only() {
     h1 {
         font-size: 1.5rem;
@@ -12,6 +14,7 @@
     }
 }
 
+// No horizontal overflow on mobile
 @include for-tablet-landscape-down() {
 
     .page-content {
@@ -20,6 +23,7 @@
     }
 }
 
+// Responsive content margins
 .hero-body {
     max-width: 70%;
     margin-left: auto;
@@ -38,6 +42,7 @@
     }
 }
 
+// Class for formatting bulleted lists from Contentful rich text elements
 .rich-text-bulleted-list {
 	
 	li {
@@ -49,6 +54,25 @@
 
 }
 
+
+// Site-wide styling for inline hyperlinks
+p {
+    a {
+        text-decoration: underline;
+        color: $primary;
+    }
+
+    a:visited {
+        color: $primary;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: $gray-medium;
+    }
+}
+
+// Additional font-color class
 .text-gray-medium {
 	color: $gray-medium;
 }
