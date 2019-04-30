@@ -40,7 +40,7 @@ class Header extends React.Component {
           <Link activeClassName="active" className="btn btn-link" to="/about">About</Link>
         </section>
         <div className="dropdown dropdown-right show-sm">
-          <a href="#" className={"btn btn-link dropdown-toggle m-2" + (this.state.isDropdownVisible ? " active" : "")}
+          <a className={"btn btn-link dropdown-toggle m-2" + (this.state.isDropdownVisible ? " active" : "")}
           onClick={this.toggleDropdown} tabIndex="0">
             <i className={"icon " + (this.state.isDropdownVisible ? "icon-cross" : "icon-menu")}></i>
           </a>
