@@ -26,7 +26,11 @@ class Header extends React.Component {
   render() {
     return (
       <header className="navbar header p-fixed">
-        <section className="navbar-section"></section>
+        <section className="navbar-section website-title">
+          <span className="hide-md">
+          NYC's Worst Evictors
+          </span>
+        </section>
         <section className="navbar-center"></section>
         <section className="navbar-section hide-sm">
           <Link activeClassName="active" className="btn btn-link" to="/">Home</Link>
