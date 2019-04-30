@@ -3,8 +3,6 @@ import { Link } from 'gatsby';
 
 import '../styles/header-footer.scss';
 
-import favicon2 from '../images/favicon2.png'
-
 type Props = {
   siteTitle: string
 }
