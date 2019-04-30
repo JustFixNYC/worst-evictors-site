@@ -216,6 +216,22 @@
 			.img-container {
 				width: 200px;
 				margin-right: 20px;
+
+				img {
+					height: 200px;
+					display: block;
+					object-fit: cover;
+				}	
+			}
+
+			.modal {
+				.content {
+					.img-responsive {
+						max-width: 80%;
+						margin-left: auto;
+						margin-right: auto;
+					}
+				}
 			}
 		}
 		.evictor-links {

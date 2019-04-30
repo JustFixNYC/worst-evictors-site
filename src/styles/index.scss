@@ -28,9 +28,9 @@
 			height: 3rem;
 		}
 
-		.btn-outline-secondary {
-			color: $dark;
-			border-color: $dark;
+		.btn-lg:focus:not(:hover) {
+			background-color: $light;
+			box-shadow: none;
 		}
 
 		.icon {
