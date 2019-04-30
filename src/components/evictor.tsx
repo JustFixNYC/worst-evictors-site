@@ -75,6 +75,24 @@ import evictorPlaceholder from '../images/evictor-placeholder.png'
 
 
 class Evictor extends React.Component {
+
+constructor(props) {
+    super(props);
+    this.state = {organizingModal: null};
+  }
+
+onModalOpen(modalNumber) {
+    this.setState({
+      organizingModal: modalNumber
+    });
+  };
+
+onModalClose() {
+    this.setState({
+      organizingModal: null
+    });
+  };
+
 render() {
 
 	const imageURL = (this.props.data.photo ? this.props.data.photo.sizes.src : evictorPlaceholder );
@@ -209,29 +227,83 @@ render() {
 						{documentToReactComponents(this.props.data.organizingCta.json, contentfulOptions)}
 						<div className="organizing-photos">
 							{this.props.data.organizingPhoto1 ?
-								<div className="img-container">
-									<img src={this.props.data.organizingPhoto1.fluid.src} className="img-responsive py-2" />
-									<small className="caption p-centered text-gray-medium text-center text-italic my-2">
-										{this.props.data.organizingPhotoCaption1}
-									</small>
-								</div> : 
+								<div>
+									<div className="img-container mb-2">
+										<img src={this.props.data.organizingPhoto1.fluid.src} onClick={() => this.onModalOpen(1)} className="img-responsive my-2" />
+										<small className="caption p-centered text-gray-medium text-center text-italic my-2">
+											{this.props.data.organizingPhotoCaption1}
+										</small>
+									</div>
+									<div className={"modal" + (this.state.organizingModal === 1 ? " active" : "")} id="modal-id">
+									  <a onClick={() => this.onModalClose()} className="modal-overlay" aria-label="Close"></a>
+									  <div className="modal-container">
+									    <div className="modal-header">
+									      <a onClick={() => this.onModalClose()} className="btn btn-clear float-right" aria-label="Close"></a>
+									    </div>
+									    <div className="modal-body">
+									      <div className="content">
+									        <img src={this.props.data.organizingPhoto1.fluid.src} className="img-responsive my-2" />
+											<small className="caption p-centered text-gray-medium text-center text-italic my-2">
+												{this.props.data.organizingPhotoCaption1}
+											</small>
+									      </div>
+									    </div>
+									  </div>
+									</div> 
+								</div>: 
 								<div/>
 							}
 							{this.props.data.organizingPhoto2 ?
-								<div className="img-container">
-									<img src={this.props.data.organizingPhoto2.fluid.src} className="img-responsive py-2" />
-									<small className="caption p-centered text-gray-medium text-center text-italic my-2">
-										{this.props.data.organizingPhotoCaption2}
-									</small>
+								<div>
+									<div className="img-container mb-2">
+										<img src={this.props.data.organizingPhoto2.fluid.src} onClick={() => this.onModalOpen(2)} className="img-responsive my-2" />
+										<small className="caption p-centered text-gray-medium text-center text-italic my-2">
+											{this.props.data.organizingPhotoCaption2}
+										</small>
+									</div>
+									<div className={"modal" + (this.state.organizingModal === 2 ? " active" : "")} id="modal-id">
+									  <a onClick={() => this.onModalClose()} className="modal-overlay" aria-label="Close"></a>
+									  <div className="modal-container">
+									    <div className="modal-header">
+									      <a onClick={() => this.onModalClose()} className="btn btn-clear float-right" aria-label="Close"></a>
+									    </div>
+									    <div className="modal-body">
+									      <div className="content">
+									        <img src={this.props.data.organizingPhoto2.fluid.src} className="img-responsive my-2" />
+											<small className="caption p-centered text-gray-medium text-center text-italic my-2">
+												{this.props.data.organizingPhotoCaption2}
+											</small>
+									      </div>
+									    </div>
+									  </div>
+									</div> 
 								</div> : 
 								<div/>
 							}
 							{this.props.data.organizingPhoto3 ?
-								<div className="img-container">
-									<img src={this.props.data.organizingPhoto3.fluid.src} className="img-responsive py-2" />
-									<small className="caption p-centered text-gray-medium text-center text-italic my-2">
-										{this.props.data.organizingPhotoCaption3}
-									</small>
+								<div>
+									<div className="img-container mb-2">
+										<img src={this.props.data.organizingPhoto3.fluid.src} onClick={() => this.onModalOpen(3)} className="img-responsive my-2" />
+										<small className="caption p-centered text-gray-medium text-center text-italic my-2">
+											{this.props.data.organizingPhotoCaption3}
+										</small>
+									</div>
+									<div className={"modal" + (this.state.organizingModal === 3 ? " active" : "")} id="modal-id">
+									  <a onClick={() => this.onModalClose()} className="modal-overlay" aria-label="Close"></a>
+									  <div className="modal-container">
+									    <div className="modal-header">
+									      <a onClick={() => this.onModalClose()} className="btn btn-clear float-right" aria-label="Close"></a>
+									    </div>
+									    <div className="modal-body">
+									      <div className="content">
+									        <img src={this.props.data.organizingPhoto3.fluid.src} className="img-responsive my-2" />
+											<small className="caption p-centered text-gray-medium text-center text-italic my-2">
+												{this.props.data.organizingPhotoCaption3}
+											</small>
+									      </div>
+									    </div>
+									  </div>
+									</div> 
 								</div> : 
 								<div/>
 							}
