@@ -28,8 +28,8 @@ const Footer = () => (
         <SocialLink href="https://twitter.com/rtcnyc" title="Follow us on Twitter" icon={FaTwitter} />
       </div>
       Made with NYC ♥ by the team at <OutboundLink
-        href="https://justfix.nyc">JustFix.nyc</OutboundLink> and the <OutboundLink
-        href="https://antievictionmap.com/">Anti&#8209;Eviction Mapping Project</OutboundLink>.
+        href="https://justfix.nyc">JustFix.nyc</OutboundLink> and the <nobr><OutboundLink
+        href="https://antievictionmap.com/">Anti&#8209;Eviction Mapping Project</OutboundLink></nobr>.
     </div>
   </footer>
 )
