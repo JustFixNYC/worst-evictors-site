@@ -214,13 +214,19 @@
 			padding-bottom: 30px;
 
 			.img-container {
-				width: 200px;
+				width: 100px;
 				margin-right: 20px;
 
 				img {
-					height: 200px;
+					height: 100px;
 					display: block;
 					object-fit: cover;
+					cursor: pointer;
+				}
+
+				img:hover {
+					-webkit-filter: brightness(60%); /* Safari 6.0 - 9.0 */
+  					filter: brightness(60%);
 				}	
 			}
 
