@@ -160,7 +160,7 @@ render() {
 			            		</span>
 		            		</div>
 			    		</div>
-			    		<div className="column col-6 col-md-12 citywide-data">
+			    		<div className="column col-6 col-md-12 citywide-data d-hide">
 			    			<h6 className="text-gray-medium">Citywide</h6>
 			    			<h4 className="eviction-count">
 		            			<span className="text-primary">{this.props.data.citywideEvictions}</span> Evictions
@@ -211,11 +211,11 @@ render() {
 			        </div>
 	            </div>
 	            <div className="btn-group evictor-links">
-					<Link to="/map" className="btn btn-primary my-1"
+					<Link to="/map" className="btn btn-outline-primary my-1"
 		  			state={{ iframe: (this.props.data.evictionsMapUrl ? this.props.data.evictionsMapUrl.evictionsMapUrl : null) }}>
 			  			View on Evictions Map
 			  		</Link>
-					<a className="btn btn-primary my-1" target="_blank"
+					<a className="btn btn-outline-primary my-1" target="_blank"
 					href={(this.props.data.whoOwnsWhatUrl ? this.props.data.whoOwnsWhatUrl : null)}>
 						View on Who Owns What
 					</a>
@@ -230,9 +230,6 @@ render() {
 								<div>
 									<div className="img-container mb-2">
 										<img src={this.props.data.organizingPhoto1.fluid.src} onClick={() => this.onModalOpen(1)} className="img-responsive my-2" />
-										<small className="caption p-centered text-gray-medium text-center text-italic my-2">
-											{this.props.data.organizingPhotoCaption1}
-										</small>
 									</div>
 									<div className={"modal" + (this.state.organizingModal === 1 ? " active" : "")} id="modal-id">
 									  <a onClick={() => this.onModalClose()} className="modal-overlay" aria-label="Close"></a>
@@ -257,9 +254,6 @@ render() {
 								<div>
 									<div className="img-container mb-2">
 										<img src={this.props.data.organizingPhoto2.fluid.src} onClick={() => this.onModalOpen(2)} className="img-responsive my-2" />
-										<small className="caption p-centered text-gray-medium text-center text-italic my-2">
-											{this.props.data.organizingPhotoCaption2}
-										</small>
 									</div>
 									<div className={"modal" + (this.state.organizingModal === 2 ? " active" : "")} id="modal-id">
 									  <a onClick={() => this.onModalClose()} className="modal-overlay" aria-label="Close"></a>
@@ -284,9 +278,6 @@ render() {
 								<div>
 									<div className="img-container mb-2">
 										<img src={this.props.data.organizingPhoto3.fluid.src} onClick={() => this.onModalOpen(3)} className="img-responsive my-2" />
-										<small className="caption p-centered text-gray-medium text-center text-italic my-2">
-											{this.props.data.organizingPhotoCaption3}
-										</small>
 									</div>
 									<div className={"modal" + (this.state.organizingModal === 3 ? " active" : "")} id="modal-id">
 									  <a onClick={() => this.onModalClose()} className="modal-overlay" aria-label="Close"></a>

@@ -19,6 +19,10 @@
 				text-decoration: none;
 			}
 		}
+
+		h3 {
+			margin-bottom: 0px;
+		}
 	}
 	.dishonorable-mentions.hero-body {
 		.mention-category {
@@ -76,6 +80,12 @@
 				margin-right: 0.5em;
 			}
 		}
+
+		.btn-group.hide-md {
+			.btn {
+				margin-bottom: 0px;
+			}
+		}
 	}
 }
 
@@ -103,8 +113,8 @@
 	}
 
 	.evictor-container {
-		margin-top: 20px;
-		margin-bottom: 40px;
+		margin-top: 1rem;
+   		margin-bottom: 6rem;
 
 		.evictor-rank {
 
@@ -143,7 +153,6 @@
 		}
 		.evictor-intro {
 			align-self: center;
-			margin-top: 1rem;
 			
 			.evictor-name {
 			 	font-size: 1.75rem;
@@ -183,13 +192,16 @@
 
 
 		}
-		.evictor-pic {
-			width: 80%;
-			padding-top: 80%; /* 1:1 Aspect Ratio */
-  			position: relative;
-			background-color: black;
-
+		.evictor-pic-container {
+			max-width: 250px;
+			.evictor-pic {
+				width: 80%;
+				padding-top: 80%; /* 1:1 Aspect Ratio */
+	  			position: relative;
+				background-color: black;
+			}
 		}
+		
 		.evictor-pic-container.show-sm {
 			margin-top: 40px;
 			margin-bottom: 40px;
@@ -214,13 +226,19 @@
 			padding-bottom: 30px;
 
 			.img-container {
-				width: 200px;
+				width: 100px;
 				margin-right: 20px;
 
 				img {
-					height: 200px;
+					height: 100px;
 					display: block;
 					object-fit: cover;
+					cursor: pointer;
+				}
+
+				img:hover {
+					-webkit-filter: brightness(60%); /* Safari 6.0 - 9.0 */
+  					filter: brightness(60%);
 				}	
 			}
 

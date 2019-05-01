@@ -48,9 +48,25 @@
   }
   .navbar-section.website-title {
     justify-content: flex-start;
-    font-size: 0.9rem;
-    font-weight: 100;
     padding-left: 1rem;
+
+    a, a:active, a:hover, a:focus {
+      color: $dark;
+      text-decoration: none;
+      box-shadow: none;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+
+    span {
+      vertical-align: middle;
+      padding-left: 0.5rem;
+    }
+
   }
 }
 

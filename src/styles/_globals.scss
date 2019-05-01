@@ -72,6 +72,12 @@ p, .Footer {
     }
 }
 
+// Modal overlay background color: 
+
+.modal:target .modal-overlay, .modal.active .modal-overlay {
+    background-color: rgba(80, 80, 80, 0.75);
+}
+
 // Additional font-color class
 .text-gray-medium {
 	color: $gray-medium;
