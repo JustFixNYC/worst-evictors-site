@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 
 import '../styles/header-footer.scss';
 
+import favicon from '../images/favicon.png';
+
 type Props = {
   siteTitle: string
 }
@@ -26,11 +28,14 @@ class Header extends React.Component {
   render() {
     return (
       <header className="navbar header p-fixed">
-        <section className="navbar-section website-title">
-          <span className="hide-md">
-          NYC's Worst Evictors
-          </span>
-        </section>
+        <div className="navbar-section website-title">
+          <Link to="/">
+            <img src={favicon} />
+            <span className="hide-md">
+              NYC's Worst Evictors
+            </span>
+          </Link>
+        </div>
         <section className="navbar-center"></section>
         <section className="navbar-section hide-sm">
           <Link activeClassName="active" className="btn btn-link" to="/">Home</Link>
