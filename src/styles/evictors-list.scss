@@ -153,6 +153,10 @@
 		}
 		.evictor-intro {
 			align-self: center;
+
+			@include for-phone-only() {
+				padding-top: 1rem;
+    		}
 			
 			.evictor-name {
 			 	font-size: 1.75rem;
