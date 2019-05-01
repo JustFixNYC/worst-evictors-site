@@ -121,13 +121,13 @@ const EvictorsListPage = () => (
             <span className="list-subtitle">
               {documentToReactComponents(data.contentfulListPage.subtitle.json, contentfulOptions)}
             </span>
+            <h3> Select a borough: </h3>
           </div>
         </section>
         <div className="list-content">
           <div className="boro-list-selector hero bg-secondary text-light">
             <div className="hero-body">
               <div>
-                <h3> Select a borough: </h3>
                 <div className="btn-group show-md">
                   {data.contentfulListPage.evictorList.map(list => 
                     <AnchorLink 
