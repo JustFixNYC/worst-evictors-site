@@ -28,10 +28,10 @@ class Header extends React.Component {
   render() {
     return (
       <header className="navbar header p-fixed">
-        <div className="navbar-section website-title">
+        <div className="navbar-section website-title hide-md">
           <Link to="/">
             <img src={favicon} />
-            <span className="hide-md">
+            <span>
               NYC's Worst Evictors
             </span>
           </Link>
