@@ -34,7 +34,7 @@ class Header extends React.Component {
         <section className="navbar-center"></section>
         <section className="navbar-section hide-sm">
           <Link activeClassName="active" className="btn btn-link" to="/">Home</Link>
-          <Link activeClassName="active" className="btn btn-link" to="/evictors-list">Worst Evictors List</Link>
+          <Link activeClassName="active" className="btn btn-link" to="/evictors-list">RTC Worst Evictors List</Link>
           <Link activeClassName="active" className="btn btn-link" to="/map">Evictions Map</Link>
           <Link activeClassName="active" className="btn btn-link" to="/rights">My Rights</Link>
           <Link activeClassName="active" className="btn btn-link" to="/about">About</Link>
