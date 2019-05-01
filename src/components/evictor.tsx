@@ -160,7 +160,7 @@ render() {
 			            		</span>
 		            		</div>
 			    		</div>
-			    		<div className="column col-6 col-md-12 citywide-data">
+			    		<div className="column col-6 col-md-12 citywide-data d-hide">
 			    			<h6 className="text-gray-medium">Citywide</h6>
 			    			<h4 className="eviction-count">
 		            			<span className="text-primary">{this.props.data.citywideEvictions}</span> Evictions
