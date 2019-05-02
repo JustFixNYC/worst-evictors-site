@@ -19,7 +19,7 @@ const Footer = () => (
       This resource is made &ldquo;by tenants for tenants&rdquo; and is maintained by the <OutboundLink
         href="https://www.righttocounselnyc.org/">Right to Counsel NYC Coalition</OutboundLink>.
       <br/><br/>
-      <OutboundLink href="#TODO">Click here</OutboundLink> to provide feedback about the website.
+      <OutboundLink href="https://docs.google.com/forms/d/e/1FAIpQLSfOwTTtRuCSb06_gYR7Zjjm-c0BWXzJlriJHRl8JwDVEnc-0g/viewform?usp=sf_link">Click here</OutboundLink> to provide feedback about the website.
     </span>
     <div className="Footer_JustFix col-ml-auto">
       <div>
