@@ -16,7 +16,7 @@ It is based on a [Gatsby starter](https://github.com/fhavrlent/gatsby-contentful
 
 1. **Set Contentful API keys.**
 
-  Copy **`.env.sample`** to **`.env`** and set your Contentful API variables.
+  Copy **`.env.sample`** to **`.env`** and set your Contentful API variables. This will require you to make an account with [Contentful](https://www.contentful.com/). 
 
 2. **Install dependencies.**
 
@@ -24,7 +24,7 @@ It is based on a [Gatsby starter](https://github.com/fhavrlent/gatsby-contentful
 
 3. **Start developing.**
 
-  Run `yarn develop` to start developing.
+  Run `gatsby develop` to start developing.
 
   Your site is now running at `http://localhost:8000`!
 
