@@ -4,8 +4,6 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import '../styles/header-footer.scss'
 
-import socialImage from '../images/social-image.png'
-
 import Header from './header'
 import Footer from './footer'
 
@@ -23,7 +21,7 @@ const Layout = ({ children }: Props) => (
           <meta property="og:title" content="These NYC landlords use evictions to displace people. We are fighting back." />
           <meta property="og:description" content="This website brings transparency to evictions, the landlords who benefit, and what you can do to fight back. We are here to fight with you. When you fight, we all win." />
           <meta property="og:url" content="https://www.worstevictorsnyc.org" />
-          <meta property="og:image" content={socialImage} />
+          <meta property="og:image" content="https://i.imgur.com/RkMxfbS.png" />
           <meta property="og:type" content="website" />
 
           <meta name="twitter:card" content="summary_large_image" />
@@ -32,7 +30,7 @@ const Layout = ({ children }: Props) => (
           <meta name="twitter:title" content="These NYC landlords use evictions to displace people. We are fighting back." />
           <meta name="twitter:description" content="This website brings transparency to evictions, the landlords who benefit, and what you can do to fight back. We are here to fight with you. When you fight, we all win." />
           <meta name="twitter:url" content="https://www.worstevictorsnyc.org" />
-          <meta name="twitter:image" content={socialImage} />
+          <meta name="twitter:image" content="https://i.imgur.com/RkMxfbS.png" />
           <meta name="twitter:image:alt" content="NYC's Worst Evictors" />
         </Helmet>
         <Header />
