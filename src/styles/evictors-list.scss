@@ -191,6 +191,14 @@
 
 				.secondary-data {
 					line-height: 1.75;
+
+					@include for-phone-only() {
+
+						.tooltip:focus::after, .tooltip:hover::after {
+						    -webkit-transform: translate(-35%, -0.2rem);
+						    transform: translate(-35%, -0.2rem);
+						}
+					}
 				}
 			}
 
