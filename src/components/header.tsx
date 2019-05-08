@@ -28,7 +28,7 @@ class Header extends React.Component {
   render() {
     return (
       <header className="navbar header p-fixed">
-        <div className="navbar-section website-title hide-md">
+        <div className="navbar-section website-title">
           <Link to="/">
             <img src={favicon} />
             <span>
@@ -37,14 +37,14 @@ class Header extends React.Component {
           </Link>
         </div>
         <section className="navbar-center"></section>
-        <section className="navbar-section hide-sm">
+        <section className="navbar-section hide-md">
           <Link activeClassName="active" className="btn btn-link" to="/">Home</Link>
           <Link activeClassName="active" className="btn btn-link" to="/evictors-list">RTC Worst Evictors List</Link>
           <Link activeClassName="active" className="btn btn-link" to="/map">Evictions Map</Link>
           <Link activeClassName="active" className="btn btn-link" to="/rights">My Rights</Link>
           <Link activeClassName="active" className="btn btn-link" to="/about">About</Link>
         </section>
-        <div className="dropdown dropdown-right show-sm">
+        <div className="dropdown dropdown-right show-md">
           <a className={"btn btn-link dropdown-toggle m-2" + (this.state.isDropdownVisible ? " active" : "")}
           onClick={this.toggleDropdown} tabIndex="0">
             <i className={"icon " + (this.state.isDropdownVisible ? "icon-cross" : "icon-menu")}></i>
