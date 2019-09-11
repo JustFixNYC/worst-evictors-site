@@ -20,6 +20,17 @@
 	color: $light;
 	background-color: $dark;
 
+	.tile.tribunal-banner {
+		top: $header-height;
+		width: 100%;
+
+		.tile-content {
+			p {
+				margin: 0;
+			}
+		}
+	}
+
 	.hero-body {
 		text-align: center;
 
