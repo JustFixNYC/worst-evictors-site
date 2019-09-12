@@ -22,6 +22,9 @@ const LandingPage = () => (
             bannerText {
               json
             }
+            bannerTextOnMobile {
+              json
+            }
             bannerButtonUrl
             bannerButtonText
           }
@@ -92,11 +95,12 @@ const LandingPage = () => (
             backgroundRepeat:"no-repeat" 
           }}>
           <div className="tile tribunal-banner p-absolute text-center bg-secondary">
-            <div className="tile-content text-center text-italic m-2 flex-centered">
-              <span>{documentToReactComponents(data.contentfulLandingPage.tribunalBanner.bannerText.json)}</span>
+            <div className="tile-content text-center text-italic m-2 p-2 flex-centered">
+              <span className="text-large hide-sm mr-2">{documentToReactComponents(data.contentfulLandingPage.tribunalBanner.bannerText.json)}</span>
+              <span className="show-sm">{documentToReactComponents(data.contentfulLandingPage.tribunalBanner.bannerTextOnMobile.json)}</span>
               <a className="btn btn-primary mx-2"
-              href={data.contentfulLandingPage.tribunalBanner.bannerButtonUrl}
-              target="_blank" rel="noopener noreferrer">{data.contentfulLandingPage.tribunalBanner.bannerButtonText}</a>
+                href={data.contentfulLandingPage.tribunalBanner.bannerButtonUrl}
+                target="_blank" rel="noopener noreferrer">{data.contentfulLandingPage.tribunalBanner.bannerButtonText}</a>
             </div>
           </div>
           <div className="hero-body">
