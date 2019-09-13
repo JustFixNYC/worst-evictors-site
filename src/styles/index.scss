@@ -20,6 +20,29 @@
 	color: $light;
 	background-color: $dark;
 
+	@include for-phone-only() {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.tile.tribunal-banner {
+		top: $header-height;
+		width: 100%;
+
+		.tile-content {
+			p {
+				margin: 0;
+			}
+
+			@include for-phone-only() {
+
+				.text-large {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+
 	.hero-body {
 		text-align: center;
 
@@ -36,6 +59,12 @@
 		.icon {
 			height: 0em;
 			font-size: 1.1rem;
+		}
+
+		@include for-phone-only() {
+			h1 {
+				margin-top: 3rem;
+			}
 		}
 	}
 }
