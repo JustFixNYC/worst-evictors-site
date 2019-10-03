@@ -121,7 +121,7 @@ const LandingPage = () => (
           <div className="hero-body">
             <h1>{data.contentfulLandingPage.listTitle}</h1>
             {documentToReactComponents(data.contentfulLandingPage.listDescription.json)}
-            <Link to="/evictors-list" className="btn btn-outline-secondary">
+            <Link to="/evictors-list/rtc" className="btn btn-outline-secondary">
               {data.contentfulLandingPage.listButton}
               <i className="icon icon-forward ml-2"></i>
             </Link>
