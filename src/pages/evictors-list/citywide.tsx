@@ -18,7 +18,7 @@ import Layout from '../../components/layout'
 import BoroList from '../../components/boro-list'
 import Evictor from '../../components/evictor'
 
-const EvictorsListPage = () => (
+const CitywideEvictorsListPage = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -143,4 +143,4 @@ const EvictorsListPage = () => (
   />
 )
 
-export default EvictorsListPage
+export default CitywideEvictorsListPage

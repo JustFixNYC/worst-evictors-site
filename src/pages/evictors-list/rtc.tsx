@@ -17,7 +17,7 @@ import laurel4 from '../../images/laurel4.png'
 import Layout from '../../components/layout'
 import BoroList from '../../components/boro-list'
 
-const EvictorsListPage = () => (
+const RtcEvictorsListPage = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -200,4 +200,4 @@ const EvictorsListPage = () => (
   />
 )
 
-export default EvictorsListPage
+export default RtcEvictorsListPage
