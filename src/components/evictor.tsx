@@ -142,7 +142,7 @@ render() {
 		    	<div className="evictor-stats">
 			    	<div className="columns">
 			    		<div className="column col-6 col-md-12 rtc-data">
-			    			<h6 className="text-gray-medium">In RTC Zipcodes</h6>
+			    			<h6 className="text-gray-medium">{citywide ? "Citywide" : "In RTC Zipcodes"}</h6>
 			    			<h4 className="eviction-count">
 		            			<span className="text-primary">{citywide ? this.props.data.citywideEvictions : this.props.data.evictions}</span> Evictions
 		            		</h4>

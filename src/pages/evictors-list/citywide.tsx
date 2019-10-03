@@ -76,8 +76,8 @@ const EvictorsListPage = () => (
             <AnchorLink 
               offset='50'
               href="#citywide-list"
-              className="btn btn-lg btn-outline-secondary citywide-list-anchor mt-2">
-              Take a look
+              className="btn btn-lg btn-outline-secondary citywide-list-anchor">
+              View list
             </AnchorLink>
           </div>
         </section>
