@@ -105,14 +105,14 @@ render() {
 	const citywide = this.props.isCitywideEvictor || false;
 
 	// Data inconsistency Checking
-	if this.props.data.boroUnits && this.props.data.citywideUnits && 
-	this.props.data.boroUnits > this.props.data.citywideUnits {
-		console.log('Check mismatch in units for ' + this.props.data.name)
+	if (this.props.data.boroUnits && this.props.data.citywideUnits && 
+	this.props.data.boroUnits > this.props.data.citywideUnits) {
+		console.log('Check mismatch in units for ' + this.props.data.name);
 	}
 
-	if this.props.data.boroFilings && this.props.data.citywideFilings && 
-	this.props.data.boroFilings > this.props.data.citywideFilings{
-		console.log('Check mismatch in filings for ' + this.props.data.name)
+	if (this.props.data.boroFilings && this.props.data.citywideFilings && 
+	this.props.data.boroFilings > this.props.data.citywideFilings) {
+		console.log('Check mismatch in filings for ' + this.props.data.name);
 	}
 
 	return (
@@ -192,9 +192,9 @@ render() {
 			        </div>
 	            </div>
 	            <div className="btn-group evictor-links">
-					{this.props.data.evictionsMapUrl && 
+					{this.props.data.evictionsMapUrl && this.props.data.evictionsMapUrl.evictionsMapUrl && 
 					<Link to="/map" className="btn btn-outline-primary my-1"
-		  			state={{ iframe: this.props.data.evictionsMapUrl}}>
+		  			state={{ iframe: this.props.data.evictionsMapUrl.evictionsMapUrl}}>
 			  			View on Evictions Map
 			  		</Link>}
 					{this.props.data.whoOwnsWhatUrl && 
@@ -203,7 +203,8 @@ render() {
 						View on Who Owns What
 					</a>}
 				</div>
-				{this.props.data.description && this.props.data.description.json && documentToReactComponents(this.props.data.description.json, contentfulOptions)}
+				{!citywide && this.props.data.description && this.props.data.description.json && documentToReactComponents(this.props.data.description.json, contentfulOptions)}
+				{citywide && this.props.data.citywideListDescription && this.props.data.citywideListDescription.json && documentToReactComponents(this.props.data.citywideListDescription.json, contentfulOptions)}
 				{this.props.data.organizingCta ? 
 					<span className="get-involved">
 						<div className="divider text-center" data-content="HOW TO GET INVOLVED"></div>

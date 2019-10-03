@@ -31,6 +31,9 @@ const EvictorsListPage = () => (
             boro
             citywideRank
             name
+      			citywideListDescription {
+              json
+            }
             corporation
             photo {
               sizes(maxWidth: 613) {
@@ -41,6 +44,9 @@ const EvictorsListPage = () => (
               }
             }
             photoCaption
+      			evictions
+      			boroUnits
+      			boroFilings
             citywideEvictions
             citywideUnits
             citywideFilings
@@ -48,8 +54,8 @@ const EvictorsListPage = () => (
             citywidePercentRs
             banks
             lawyers
-            evictionsMapUrl {
-              evictionsMapUrl
+            citywideEvictionsMapUrl {
+              citywideEvictionsMapUrl
             }
             whoOwnsWhatUrl
           }
@@ -101,8 +107,6 @@ const EvictorsListPage = () => (
           </div> */}
 
           <div className="red-space bg-secondary" />
-
-
 
           <section className="boro-list">
             {data.contentfulCitywideListPage.evictors.map(evictor => 
