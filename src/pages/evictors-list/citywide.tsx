@@ -73,7 +73,12 @@ const EvictorsListPage = () => (
             <span className="list-subtitle">
               {documentToReactComponents(data.contentfulCitywideListPage.subtitle.json, contentfulOptions)}
             </span>
-            <h3> Select a borough: </h3>
+            <AnchorLink 
+              offset='50'
+              href="#citywide-list"
+              className="btn btn-lg btn-outline-secondary citywide-list-anchor mt-2">
+              Take a look
+            </AnchorLink>
           </div>
         </section>
         <div className="list-content">
@@ -108,7 +113,7 @@ const EvictorsListPage = () => (
 
           <div className="red-space bg-secondary" />
 
-          <section className="boro-list">
+          <section className="boro-list" id="citywide-list">
             {data.contentfulCitywideListPage.evictors.map(evictor => 
               <Evictor 
               key={evictor.name + '-' + evictor.boro} 
@@ -125,6 +130,7 @@ const EvictorsListPage = () => (
             <div className="mention-category">
               <div className="laurel container p-relative">
                 <img className="laurel-img p-centered" src={laurel1} alt="laurel1"/>
+                <div className="laurel-text text-center p-absolute">PROPERTY MANAGERS</div>
               </div>
               <span className="text-center">
                 {documentToReactComponents(data.contentfulCitywideListPage.citywideDishonorableMentions.json)}
