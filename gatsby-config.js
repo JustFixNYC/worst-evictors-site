@@ -43,6 +43,7 @@ module.exports = {
         // replace "UA-XXXXXXXXX-X" with your own Tracking ID
         trackingId: "UA-67069242-7",
       },
-    }
+    },
+    `gatsby-plugin-client-side-redirect`
   ],
 }
