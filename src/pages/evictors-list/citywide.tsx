@@ -82,34 +82,6 @@ const CitywideEvictorsListPage = () => (
           </div>
         </section>
         <div className="list-content">
-          {/* <div className="boro-list-selector hero bg-secondary text-light">
-            <div className="hero-body">
-              <div>
-                <div className="btn-group show-md">
-                  {data.contentfulCitywideListPage.evictorList.map(list => 
-                    <AnchorLink 
-                      offset='50'
-                      key={list.boroName} 
-                      href={"#" + list.boroName} 
-                      className="btn btn-lg btn-outline-secondary">
-                        {list.boroName}
-                    </AnchorLink>
-                  )}
-                </div>
-                <div className="btn-group hide-md">
-                  {data.contentfulCitywideListPage.evictorList.map(list => 
-                    <AnchorLink 
-                      offset='120'
-                      key={list.boroName} 
-                      href={"#" + list.boroName} 
-                      className="btn btn-lg btn-outline-secondary">
-                        {list.boroName}
-                    </AnchorLink>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div> */}
 
           <div className="red-space bg-secondary" />
 
