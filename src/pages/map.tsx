@@ -27,7 +27,7 @@ const MapPage = ({ data, location }) => (
 			  }
 			}
 	    `}
-	    render={data => { 
+	    render={data => {
 			const mapLoading = function() {
 				const loadingFrame = document.getElementById("map-iframe");
 				loadingFrame.className = "map-container d-invisible";
