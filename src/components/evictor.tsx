@@ -196,6 +196,11 @@ render() {
 					<Link to="/map" className="btn btn-outline-primary my-1"
 		  			state={{ iframe: this.props.data.updatedRtcEvictionsMapUrl.updatedRtcEvictionsMapUrl}}>
 			  			View on Evictions Map
+					  </Link>}
+					{citywide && this.props.data.citywideEvictionsMapUrl && this.props.data.citywideEvictionsMapUrl.citywideEvictionsMapUrl && 
+					<Link to="/map" className="btn btn-outline-primary my-1"
+		  			state={{ iframe: this.props.data.citywideEvictionsMapUrl.citywideEvictionsMapUrl}}>
+			  			View on Evictions Map
 			  		</Link>}
 					{this.props.data.whoOwnsWhatUrl && 
 					<a className="btn btn-outline-primary my-1" target="_blank"
