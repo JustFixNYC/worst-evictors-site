@@ -90,8 +90,8 @@ const RtcEvictorsListPage = () => (
                 }
               }
               organizingPhotoCaption3
-              evictionsMapUrl {
-                evictionsMapUrl
+              updatedRtcEvictionsMapUrl {
+                updatedRtcEvictionsMapUrl
               }
               whoOwnsWhatUrl
             }

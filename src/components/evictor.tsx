@@ -192,9 +192,9 @@ render() {
 			        </div>
 	            </div>
 	            <div className="btn-group evictor-links">
-					{this.props.data.evictionsMapUrl && this.props.data.evictionsMapUrl.evictionsMapUrl && 
+					{!citywide && this.props.data.updatedRtcEvictionsMapUrl && this.props.data.updatedRtcEvictionsMapUrl.updatedRtcEvictionsMapUrl && 
 					<Link to="/map" className="btn btn-outline-primary my-1"
-		  			state={{ iframe: this.props.data.evictionsMapUrl.evictionsMapUrl}}>
+		  			state={{ iframe: this.props.data.updatedRtcEvictionsMapUrl.updatedRtcEvictionsMapUrl}}>
 			  			View on Evictions Map
 			  		</Link>}
 					{this.props.data.whoOwnsWhatUrl && 
