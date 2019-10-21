@@ -9,6 +9,9 @@ import '../styles/map.scss'
 
 import Layout from '../components/layout'
 
+const CITYWIDE_MAP_URL = 'https://ampitup.carto.com/builder/4eea8576-9c57-4cf5-a1cf-55ea44bce496/embed'
+const RTC_ZIPS_MAP_URL = 'https://ampitup.carto.com/builder/324065d6-b916-4d9b-ba09-5dbc44a818db/embed'
+
 const MapPage = ({ data, location }) => (
 <StaticQuery
 	    query={graphql`
@@ -43,14 +46,14 @@ const MapPage = ({ data, location }) => (
 		  			<span className="mr-2 map-buttons-leadin">2018 Evictions in:</span> 
 		  				<br className="show-sm" />
 			  		<div className="btn-group">
-			  			<Link to="/map" className={"btn btn-" + (location && (!location.state || !location.state.iframe || (location.state.iframe == "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed")) ? "primary" : "default") }
+			  			<Link to="/map" className={"btn btn-" + (location && (!location.state || !location.state.iframe || (location.state.iframe == CITYWIDE_MAP_URL)) ? "primary" : "default") }
 							onClick={()=>mapLoading()}
-			  			state={{ iframe: "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed" }}>
+			  			state={{ iframe: CITYWIDE_MAP_URL }}>
 				  			All NYC
 				  		</Link>
-				  		<Link to="/map" className={"btn  btn-" + (location && location.state && location.state.iframe && location.state.iframe !== "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed" ? "primary" : "default") }
+				  		<Link to="/map" className={"btn  btn-" + (location && location.state && location.state.iframe && location.state.iframe !== CITYWIDE_MAP_URL ? "primary" : "default") }
 							onClick={()=>mapLoading()}
-			  			state={{ iframe: "https://ampitup.carto.com/builder/f48204aa-42f8-49dc-831b-3a68afcc3ab7/embed" }}>
+			  			state={{ iframe: RTC_ZIPS_MAP_URL }}>
 				  			RTC-Eligible Zipcodes
 				  		</Link>
 				  	</div>
@@ -58,7 +61,7 @@ const MapPage = ({ data, location }) => (
 		  	</div>
 			<div id="map-iframe-loading" className="loading loading-lg">
 			<iframe id="map-iframe" className="map-container d-invisible" onLoad={()=>mapLoaded()}
-			  	frameBorder="0" src={ (location && location.state && location.state.iframe ? location.state.iframe : "https://ampitup.carto.com/builder/4641b54d-5007-47e7-b5b2-eb4903358a94/embed")}>
+			  	frameBorder="0" src={ (location && location.state && location.state.iframe ? location.state.iframe : CITYWIDE_MAP_URL)}>
 			</iframe>
 			</div>
 			<div className="map-bottom-banner">
