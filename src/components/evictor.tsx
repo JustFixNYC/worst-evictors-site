@@ -194,12 +194,18 @@ render() {
 	            <div className="btn-group evictor-links">
 					{!citywide && this.props.data.updatedRtcEvictionsMapUrl && this.props.data.updatedRtcEvictionsMapUrl.updatedRtcEvictionsMapUrl && 
 					<Link to="/map" className="btn btn-outline-primary my-1"
-		  			state={{ iframe: this.props.data.updatedRtcEvictionsMapUrl.updatedRtcEvictionsMapUrl}}>
+					  state={{ 
+						  iframe: this.props.data.updatedRtcEvictionsMapUrl.updatedRtcEvictionsMapUrl,
+						  mapType: 'rtc'
+					  }}>
 			  			View on Evictions Map
 					  </Link>}
 					{citywide && this.props.data.citywideEvictionsMapUrl && this.props.data.citywideEvictionsMapUrl.citywideEvictionsMapUrl && 
 					<Link to="/map" className="btn btn-outline-primary my-1"
-		  			state={{ iframe: this.props.data.citywideEvictionsMapUrl.citywideEvictionsMapUrl}}>
+		  			state={{ 
+						  iframe: this.props.data.citywideEvictionsMapUrl.citywideEvictionsMapUrl,
+						  mapType: 'citywide'
+						  }}>
 			  			View on Evictions Map
 			  		</Link>}
 					{this.props.data.whoOwnsWhatUrl && 

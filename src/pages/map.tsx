@@ -46,14 +46,20 @@ const MapPage = ({ data, location }) => (
 		  			<span className="mr-2 map-buttons-leadin">2018 Evictions in:</span> 
 		  				<br className="show-sm" />
 			  		<div className="btn-group">
-			  			<Link to="/map" className={"btn btn-" + (location && (!location.state || !location.state.iframe || (location.state.iframe == CITYWIDE_MAP_URL)) ? "primary" : "default") }
+			  			<Link to="/map" className={"btn btn-" + (location && (!location.state || !location.state.iframe || (location.state.iframe == CITYWIDE_MAP_URL) || (location.state.mapType && location.state.mapType == 'citywide')) ? "primary" : "default") }
 							onClick={()=>mapLoading()}
-			  			state={{ iframe: CITYWIDE_MAP_URL }}>
+						  state={{ 
+							  iframe: CITYWIDE_MAP_URL,
+							  maptype: 'citywide'
+						   }}>
 				  			All NYC
 				  		</Link>
-				  		<Link to="/map" className={"btn  btn-" + (location && location.state && location.state.iframe && location.state.iframe !== CITYWIDE_MAP_URL ? "primary" : "default") }
+				  		<Link to="/map" className={"btn  btn-" + (location && location.state && location.state.iframe && (location.state.iframe == RTC_ZIPS_MAP_URL || (location.state.mapType && location.state.mapType == 'rtc'))? "primary" : "default") }
 							onClick={()=>mapLoading()}
-			  			state={{ iframe: RTC_ZIPS_MAP_URL }}>
+						  state={{ 
+							  iframe: RTC_ZIPS_MAP_URL,
+							  maptype: 'rtc' 
+						  }}>
 				  			RTC-Eligible Zipcodes
 				  		</Link>
 				  	</div>
