@@ -43,7 +43,7 @@ const MapPage = ({ data, location }) => (
 			return (<Layout
 				customTitle="Interactive Map of Evictions Across NYC in 2018" 
 				customImage="https://i.imgur.com/21ukLGA.png"
-				customUrl="https://www.worstevictorsnyc.org/map"
+				customUrl="https://www.worstevictorsnyc.org/map/"
 			>
 		  	<div className="map-title-banner">
 		  		<h4 className="p-2 mx-2">

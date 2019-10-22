@@ -47,7 +47,6 @@ const Layout = ({ children, customTitle, customUrl, customImage }: Props) => {
           { name: 'twitter:image:alt', content: "NYC's Worst Evictors"}
         ]}>
           <html lang="en" />
-          <meta property="og:url" content={url} />
         </Helmet>
         <Header />
         <div className="page-content">

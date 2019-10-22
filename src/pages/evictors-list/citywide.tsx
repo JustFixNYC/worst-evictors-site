@@ -69,7 +69,7 @@ const CitywideEvictorsListPage = () => (
       <Layout 
         customTitle="NYC's Top 20 Worst Evictors in 2018" 
         customImage="https://i.imgur.com/NiEQZ6x.png"
-        customUrl="https://www.worstevictorsnyc.org/evictors-list/citywide"
+        customUrl="https://www.worstevictorsnyc.org/evictors-list/citywide/"
         className="list-page">
         <section id="list-intro" className="list-hero hero bg-secondary text-light">
           <div className="hero-body">
