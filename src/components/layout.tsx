@@ -35,7 +35,6 @@ const Layout = ({ children, customTitle, customUrl, customImage }: Props) => {
           { property: 'og:description', content: description},
           { property: 'og:image', content: shareImageURL},
           { property: 'og:type', content: 'website'},
-          { property: 'og:url', content: url},
           { property: 'fb:app_id', content: "247990609143668"},
 
           { name: 'twitter:card', content: 'summary_large_image'},
