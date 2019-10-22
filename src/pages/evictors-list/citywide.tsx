@@ -66,7 +66,11 @@ const CitywideEvictorsListPage = () => (
       }
     `}
     render={data => (
-      <Layout isCitywideList={true} className="list-page">
+      <Layout 
+        customTitle="NYC's Top 20 Worst Evictors in 2018" 
+        customImage="https://i.imgur.com/NiEQZ6x.png"
+        customUrl="https://www.worstevictorsnyc.org/evictors-list/citywide"
+        className="list-page">
         <section id="list-intro" className="list-hero hero bg-secondary text-light">
           <div className="hero-body">
             <h1>{data.contentfulCitywideListPage.title}</h1>

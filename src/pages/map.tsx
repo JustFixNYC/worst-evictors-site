@@ -40,7 +40,11 @@ const MapPage = ({ data, location }) => (
 				const loadingFrame = document.getElementById("map-iframe");
 				loadingFrame.className = "map-container d-block";
 			}
-			return (<Layout>
+			return (<Layout
+				customTitle="Interactive Map of Evictions Across NYC in 2018" 
+				customImage="https://i.imgur.com/21ukLGA.png"
+				customUrl="https://www.worstevictorsnyc.org/map"
+			>
 		  	<div className="map-title-banner">
 		  		<h4 className="p-2 mx-2">
 		  			<span className="mr-2 map-buttons-leadin">2018 Evictions in:</span> 
