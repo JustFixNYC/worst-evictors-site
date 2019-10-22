@@ -102,6 +102,18 @@ render() {
 	    backgroundSize: "cover",
 	    backgroundRepeat:"no-repeat"
 	};
+	const citywide = this.props.isCitywideEvictor || false;
+
+	// Data inconsistency Checking
+	if (this.props.data.boroUnits && this.props.data.citywideUnits && 
+	this.props.data.boroUnits > this.props.data.citywideUnits) {
+		console.log('Check mismatch in units for ' + this.props.data.name);
+	}
+
+	if (this.props.data.boroFilings && this.props.data.citywideFilings && 
+	this.props.data.boroFilings > this.props.data.citywideFilings) {
+		console.log('Check mismatch in filings for ' + this.props.data.name);
+	}
 
 	return (
 		<div className="evictor-container">
@@ -109,9 +121,9 @@ render() {
 		    <div className="column col-2 col-sm-4 evictor-rank">
 		    	<div>
 			        <h1>
-			        	{this.props.data.rank}
+			        	{citywide ? this.props.data.citywideRank : this.props.data.rank}
 			        </h1>
-			        <small>{this.props.boroName}</small>
+			        {!citywide && <small>{this.props.boroName}</small>}
 		        </div>
 		    </div>
 		   	<div className="column col-8 col-sm-8 show-sm">
@@ -130,66 +142,35 @@ render() {
 		    	<div className="evictor-stats">
 			    	<div className="columns">
 			    		<div className="column col-6 col-md-12 rtc-data">
-			    			<h6 className="text-gray-medium">In RTC Zipcodes</h6>
+			    			<h6 className="text-gray-medium">{citywide ? "Citywide" : "In RTC Zipcodes"}</h6>
 			    			<h4 className="eviction-count">
-		            			<span className="text-primary">{this.props.data.evictions}</span> Evictions
+		            			<span className="text-primary">{citywide ? this.props.data.citywideEvictions : this.props.data.evictions}</span> Evictions
 		            		</h4>
 		            		<div className="secondary-data">
 			            		<span>
 			            			<span className="text-primary text-bold mr-1">
-			            				{this.props.data.boroUnits}
+										{citywide ? this.props.data.citywideUnits : this.props.data.boroUnits}
 			            			</span> families housed
 			            		</span>
 			            		<br />
 			            		<span className="tooltip" data-tooltip="Total from January 2013 to June 2015">
 			            			<span className="text-primary text-bold mr-1">
-			            				{this.props.data.boroFilings}
+										{citywide ? this.props.data.citywideFilings : this.props.data.boroFilings}
 			            			</span> families sued<sup>*</sup>
 			            		</span>
 			            		<br/>
 			            		<span>
 			            			<span className="text-primary text-bold mr-1">
-			            				{this.props.data.boroPercentFiled}
+			            				{citywide ? this.props.data.citywidePercentFiled : this.props.data.boroPercentFiled}
 			            			</span> lawsuits per family
 			            		</span>
 			            		<br/>
 			            		<span>
 			            			<span className="text-primary text-bold mr-1">
-			            				{this.props.data.boroPercentRs}%
+										{citywide ? this.props.data.citywidePercentRs : this.props.data.boroPercentRs}%
 			            			</span> rent stabilized
 			            		</span>
 		            		</div>
-			    		</div>
-			    		<div className="column col-6 col-md-12 citywide-data d-hide">
-			    			<h6 className="text-gray-medium">Citywide</h6>
-			    			<h4 className="eviction-count">
-		            			<span className="text-primary">{this.props.data.citywideEvictions}</span> Evictions
-		            		</h4>
-		            		<div className="secondary-data">
-			            		<span>
-			            			<span className="text-primary text-bold mr-1">
-			            				{this.props.data.citywideUnits}
-			            			</span> families housed
-			            		</span>
-			            		<br/>
-			            		<span className="tooltip" data-tooltip="Total from January 2013 to June 2015">
-			            			<span className="text-primary text-bold mr-1">
-			            				{this.props.data.citywideFilings}
-			            			</span> families sued<sup>*</sup>
-			            		</span>
-			            		<br/>
-			            		<span>
-			            			<span className="text-primary text-bold mr-1">
-			            				{this.props.data.citywidePercentFiled}
-			            			</span> lawsuits per family
-			            		</span>
-			            		<br/>
-			            		<span>
-			            			<span className="text-primary text-bold mr-1">
-			            				{this.props.data.citywidePercentRs}%
-			            			</span> rent stabilized
-			            		</span>
-			            	</div>
 			    		</div>
 			    	</div>
 			    	<div className="mb-2">
@@ -211,16 +192,30 @@ render() {
 			        </div>
 	            </div>
 	            <div className="btn-group evictor-links">
+					{!citywide && this.props.data.updatedRtcEvictionsMapUrl && this.props.data.updatedRtcEvictionsMapUrl.updatedRtcEvictionsMapUrl && 
 					<Link to="/map" className="btn btn-outline-primary my-1"
-		  			state={{ iframe: (this.props.data.evictionsMapUrl ? this.props.data.evictionsMapUrl.evictionsMapUrl : null) }}>
+					  state={{ 
+						  iframe: this.props.data.updatedRtcEvictionsMapUrl.updatedRtcEvictionsMapUrl,
+						  mapType: 'rtc'
+					  }}>
 			  			View on Evictions Map
-			  		</Link>
+					  </Link>}
+					{citywide && this.props.data.citywideEvictionsMapUrl && this.props.data.citywideEvictionsMapUrl.citywideEvictionsMapUrl && 
+					<Link to="/map" className="btn btn-outline-primary my-1"
+		  			state={{ 
+						  iframe: this.props.data.citywideEvictionsMapUrl.citywideEvictionsMapUrl,
+						  mapType: 'citywide'
+						  }}>
+			  			View on Evictions Map
+			  		</Link>}
+					{this.props.data.whoOwnsWhatUrl && 
 					<a className="btn btn-outline-primary my-1" target="_blank"
-					href={(this.props.data.whoOwnsWhatUrl ? this.props.data.whoOwnsWhatUrl : null)}>
+					href={this.props.data.whoOwnsWhatUrl}>
 						View on Who Owns What
-					</a>
+					</a>}
 				</div>
-				{documentToReactComponents(this.props.data.description.json, contentfulOptions)}
+				{!citywide && this.props.data.description && this.props.data.description.json && documentToReactComponents(this.props.data.description.json, contentfulOptions)}
+				{citywide && this.props.data.citywideListDescription && this.props.data.citywideListDescription.json && documentToReactComponents(this.props.data.citywideListDescription.json, contentfulOptions)}
 				{this.props.data.organizingCta ? 
 					<span className="get-involved">
 						<div className="divider text-center" data-content="HOW TO GET INVOLVED"></div>

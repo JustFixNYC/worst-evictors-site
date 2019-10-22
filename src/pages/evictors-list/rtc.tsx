@@ -4,20 +4,20 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { StaticQuery, graphql } from 'gatsby'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types'
-import contentfulOptions from '../utils/contentful-rich-text-options'
+import contentfulOptions from '../../utils/contentful-rich-text-options'
 import { Link } from 'gatsby'
 
-import '../styles/evictors-list.scss'
+import '../../styles/evictors-list.scss'
 
-import laurel1 from '../images/laurel1.png'
-import laurel2 from '../images/laurel2.png'
-import laurel3 from '../images/laurel3.png'
-import laurel4 from '../images/laurel4.png'
+import laurel1 from '../../images/laurel1.png'
+import laurel2 from '../../images/laurel2.png'
+import laurel3 from '../../images/laurel3.png'
+import laurel4 from '../../images/laurel4.png'
 
-import Layout from '../components/layout'
-import BoroList from '../components/boro-list'
+import Layout from '../../components/layout'
+import BoroList from '../../components/boro-list'
 
-const EvictorsListPage = () => (
+const RtcEvictorsListPage = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -90,8 +90,8 @@ const EvictorsListPage = () => (
                 }
               }
               organizingPhotoCaption3
-              evictionsMapUrl {
-                evictionsMapUrl
+              updatedRtcEvictionsMapUrl {
+                updatedRtcEvictionsMapUrl
               }
               whoOwnsWhatUrl
             }
@@ -200,4 +200,4 @@ const EvictorsListPage = () => (
   />
 )
 
-export default EvictorsListPage
+export default RtcEvictorsListPage

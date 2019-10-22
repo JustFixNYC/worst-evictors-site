@@ -5,6 +5,7 @@ if (process.env.ENVIROMENT !== 'production') {
 const contentfulConfig = {
   spaceId: process.env.SPACE_ID,
   accessToken: process.env.ACCESS_TOKEN,
+  host: process.env.CONTENTFUL_HOST || 'cdn.contentful.com'
 }
 
 module.exports = {
@@ -43,6 +44,7 @@ module.exports = {
         // replace "UA-XXXXXXXXX-X" with your own Tracking ID
         trackingId: "UA-67069242-7",
       },
-    }
+    },
+    `gatsby-plugin-client-side-redirect`
   ],
 }

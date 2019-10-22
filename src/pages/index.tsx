@@ -46,7 +46,6 @@ const LandingPage = () => (
           listDescription {
             json
           }
-          listButton
           listBackground {
             fluid {
               aspectRatio
@@ -121,10 +120,16 @@ const LandingPage = () => (
           <div className="hero-body">
             <h1>{data.contentfulLandingPage.listTitle}</h1>
             {documentToReactComponents(data.contentfulLandingPage.listDescription.json)}
-            <Link to="/evictors-list" className="btn btn-outline-secondary">
-              {data.contentfulLandingPage.listButton}
-              <i className="icon icon-forward ml-2"></i>
-            </Link>
+            <div className="d-inline-flex">
+              <Link to="/evictors-list/citywide" className="btn btn-outline-secondary mx-2 d-inline-block">
+                Citywide List
+                <i className="icon icon-forward ml-2"></i>
+              </Link>
+              <Link to="/evictors-list/rtc" className="btn btn-outline-secondary mx-2 d-inline-block">
+                RTC <span className="hide-sm">Zipcode </span>List
+                <i className="icon icon-forward ml-2"></i>
+              </Link>
+            </div>
           </div>
         </section>
         <section id="map-link" className="map-link hero hero-centered half-vh text-light"
