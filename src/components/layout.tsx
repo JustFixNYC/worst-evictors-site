@@ -23,30 +23,29 @@ const Layout = ({ children, customTitle, customUrl, customImage }: Props) => {
 
   return (
       <>
-        <Helmet
-        title={title}
-        meta={[
-          { name: 'description', content: description },
-          { name: 'keywords', content: "nyc, worst, evictions, evictors, rtc, right, to, counsel, tenant, organizing, landlord, map" },
-          { name: 'author', content: "Right to Counsel Coalition, JustFix.nyc, and the Anti-Eviction Mapping Project"},
-
-          { property: 'og:site_name', content: title },
-          { property: 'og:title', content: title },
-          { property: 'og:description', content: description},
-          { property: 'og:image', content: shareImageURL},
-          { property: 'og:type', content: 'website'},
-          { property: 'fb:app_id', content: "247990609143668"},
-
-          { name: 'twitter:card', content: 'summary_large_image'},
-          { name: 'twitter:site', content: "@RTCNYC" },
-          { name: 'twitter:creator', content: "@RTCNYC" },
-          { name: 'twitter:title', content: title},
-          { name: 'twitter:description', content: description},
-          { name: 'twitter:url', content: url},
-          { name: 'twitter:image', content: shareImageURL },
-          { name: 'twitter:image:alt', content: "NYC's Worst Evictors"}
-        ]}>
+        <Helmet>
           <html lang="en" />
+          <title>{title}</title>
+          <meta name="description" content="This website brings transparency to evictions, the landlords who benefit, and what you can do to fight back. We are here to fight with you. When you fight, we all win." />
+          <meta name="keywords" content="nyc, worst, evictions, evictors, rtc, right, to, counsel, tenant, organizing, landlord, map" />
+          <meta name="author" content="Right to Counsel Coalition, JustFix.nyc, and the Anti-Eviction Mapping Project" />
+
+          <meta property="fb:app_id" content="247990609143668" />
+          <meta property="og:site_name" content="NYC's Worst Evictors" />
+          <meta property="og:title" content={title !== "NYC's Worst Evictors" ? title : "These NYC landlords use evictions to displace people. We are fighting back."} />
+          <meta property="og:description" content="This website brings transparency to evictions, the landlords who benefit, and what you can do to fight back. We are here to fight with you. When you fight, we all win." />
+          <meta property="og:url" content={url} />
+          <meta property="og:image" content={shareImageURL} />
+          <meta property="og:type" content="website" />
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@RTCNYC" />
+          <meta name="twitter:creator" content="@RTCNYC" />
+          <meta name="twitter:title" content={title !== "NYC's Worst Evictors" ? title : "These NYC landlords use evictions to displace people. We are fighting back."} />
+          <meta name="twitter:description" content="This website brings transparency to evictions, the landlords who benefit, and what you can do to fight back. We are here to fight with you. When you fight, we all win." />
+          <meta name="twitter:url" content={url} />
+          <meta name="twitter:image" content={shareImageURL} />
+          <meta name="twitter:image:alt" content="NYC's Worst Evictors" />
         </Helmet>
         <Header />
         <div className="page-content">
