@@ -19,7 +19,7 @@ const Layout = ({ children, customTitle, customUrl, customImage }: Props) => {
   const title = (customTitle || "NYC's Worst Evictors");
   const description = "This website brings transparency to evictions, the landlords who benefit, and what you can do to fight back. We are here to fight with you. When you fight, we all win.";
   const url = customUrl || "https://www.worstevictorsnyc.org";
-  const shareImageURL = customUrl || "https://i.imgur.com/RkMxfbS.png"; 
+  const shareImageURL = customImage || "https://i.imgur.com/RkMxfbS.png"; 
 
   return (
       <>
