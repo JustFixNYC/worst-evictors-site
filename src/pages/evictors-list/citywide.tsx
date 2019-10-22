@@ -66,7 +66,7 @@ const CitywideEvictorsListPage = () => (
       }
     `}
     render={data => (
-      <Layout className="list-page">
+      <Layout isCitywideList={true} className="list-page">
         <section id="list-intro" className="list-hero hero bg-secondary text-light">
           <div className="hero-body">
             <h1>{data.contentfulCitywideListPage.title}</h1>
