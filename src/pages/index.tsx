@@ -18,16 +18,6 @@ const LandingPage = () => (
     query={graphql`
       query {
         contentfulLandingPage {
-          tribunalBanner {
-            bannerText {
-              json
-            }
-            bannerTextOnMobile {
-              json
-            }
-            bannerButtonUrl
-            bannerButtonText
-          }
           openingTitle {
             json
           }
@@ -93,15 +83,6 @@ const LandingPage = () => (
             backgroundSize: "cover",
             backgroundRepeat:"no-repeat" 
           }}>
-          <div className="tile tribunal-banner p-absolute text-center bg-secondary">
-            <div className="tile-content text-center m-2 p-2 flex-centered">
-              <span className="text-large hide-sm mr-2">{documentToReactComponents(data.contentfulLandingPage.tribunalBanner.bannerText.json)}</span>
-              <span className="show-sm text-italic">{documentToReactComponents(data.contentfulLandingPage.tribunalBanner.bannerTextOnMobile.json)}</span>
-              <a className="btn btn-primary ml-2"
-                href={data.contentfulLandingPage.tribunalBanner.bannerButtonUrl}
-                target="_blank" rel="noopener noreferrer">{data.contentfulLandingPage.tribunalBanner.bannerButtonText}</a>
-            </div>
-          </div>
           <div className="hero-body">
             <h1 className="title-font">{documentToReactComponents(data.contentfulLandingPage.openingTitle.json)}</h1>
             {documentToReactComponents(data.contentfulLandingPage.openingSubtitle.json)}
