@@ -27,7 +27,7 @@ const Footer = () => (
         <SocialLink href="https://www.facebook.com/RTCNY/" title="Visit us on Facebook" icon={FaFacebook} />  
         <SocialLink href="https://twitter.com/rtcnyc" title="Follow us on Twitter" icon={FaTwitter} />
         <OutboundLink href="https://www.netlify.com" className="hide-sm">
-          <img src="https://www.netlify.com/img/global/badges/netlify-light.svg"/>
+          <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" width="100" />
         </OutboundLink>
       </div>
       Made with NYC ♥ by the team at <OutboundLink
