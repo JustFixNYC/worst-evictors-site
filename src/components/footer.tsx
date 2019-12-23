@@ -24,8 +24,11 @@ const Footer = () => (
     <div className="Footer_JustFix col-ml-auto">
       <div>
         <SocialLink href="https://github.com/JustFixNYC/worst-evictors-site" title="Fork us on GitHub" icon={FaGithub} />
-        <SocialLink href="https://www.facebook.com/RTCNY/" title="Visit us on Facebook" icon={FaFacebook} />
+        <SocialLink href="https://www.facebook.com/RTCNY/" title="Visit us on Facebook" icon={FaFacebook} />  
         <SocialLink href="https://twitter.com/rtcnyc" title="Follow us on Twitter" icon={FaTwitter} />
+        <OutboundLink href="https://www.netlify.com" className="hide-sm">
+          <img src="https://www.netlify.com/img/global/badges/netlify-light.svg"/>
+        </OutboundLink>
       </div>
       Made with NYC ♥ by the team at <OutboundLink
         href="https://justfix.nyc">JustFix.nyc</OutboundLink> and the <nobr><OutboundLink
