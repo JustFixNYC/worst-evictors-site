@@ -11,6 +11,8 @@ This repository contains the Right To Counsel (RTC) NYC Coalition's Worst Evicto
 
 It is based on a [Gatsby starter](https://github.com/fhavrlent/gatsby-contentful-typescript-starter). Almost all of the content is pulled from [Contentful](https://www.contentful.com/).
 
+Read about the Housing Data Coalition's code of conduct on our [About Page](https://www.housingdatanyc.org/). 
+
 
 ## 🚀 Quick start
 
