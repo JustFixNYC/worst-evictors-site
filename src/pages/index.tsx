@@ -13,6 +13,21 @@ import Layout from '../components/layout'
 
 // Other images to include: mapBackground
 
+const MoratoriumBanner = () => (
+  <div className="tile moratorium-banner p-absolute text-center bg-secondary">
+    <div className="tile-content text-center flex-centered">
+      <span className="text-large">
+        An Eviction Moratorium is in place in NY State due to the Covid-19 public health crisis. 
+        This means you cannot be evicted <b>for any reason</b>. 
+        All courts that hear eviction cases are closed.
+        {' '}<a className="text-light text-italic"
+          href="https://www.righttocounselnyc.org/moratorium_faq"
+          target="_blank" rel="noopener noreferrer"><nobr>Learn more</nobr></a>
+      </span>
+    </div>
+  </div>
+)
+
 const LandingPage = () => (
   <StaticQuery
     query={graphql`
@@ -84,18 +99,7 @@ const LandingPage = () => (
             backgroundSize: "cover",
             backgroundRepeat:"no-repeat" 
           }}>
-          <div className="tile moratorium-banner p-absolute text-center bg-secondary">
-            <div className="tile-content text-center flex-centered">
-              <span className="text-large">
-                An Eviction Moratorium is in place in NY State due to the Covid-19 public health crisis. 
-                This means you cannot be evicted <b>for any reason</b>. 
-                All courts that hear eviction cases are closed.
-                {' '}<a className="text-light text-italic"
-                  href="https://www.righttocounselnyc.org/moratorium_faq"
-                  target="_blank" rel="noopener noreferrer"><nobr>Learn more</nobr></a>
-              </span>
-            </div>
-          </div>
+          <MoratoriumBanner />
           <div className="hero-body">
             <h1 className="title-font">{documentToReactComponents(data.contentfulLandingPage.openingTitle.json)}</h1>
             {documentToReactComponents(data.contentfulLandingPage.openingSubtitle.json)}

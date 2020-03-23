@@ -45,6 +45,9 @@ $title-font: Work Sans, National, sans-serif;
 
 // SIZE RANGES:
 
+@mixin for-small-phone-only {
+  @media (max-width: 400px) { @content; }
+}
 @mixin for-phone-only {
   @media (max-width: 600px) { @content; }
 }

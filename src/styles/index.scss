@@ -37,7 +37,7 @@
 				margin: 0;
 			}
 
-			@include for-phone-only() {
+			@include for-small-phone-only() {
 				margin: 4px;
 				padding: 4px;
 
