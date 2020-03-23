@@ -18,16 +18,6 @@ const LandingPage = () => (
     query={graphql`
       query {
         contentfulLandingPage {
-          tribunalBanner {
-            bannerText {
-              json
-            }
-            bannerTextOnMobile {
-              json
-            }
-            bannerButtonUrl
-            bannerButtonText
-          }
           openingTitle {
             json
           }
@@ -94,13 +84,16 @@ const LandingPage = () => (
             backgroundSize: "cover",
             backgroundRepeat:"no-repeat" 
           }}>
-          <div className="tile tribunal-banner p-absolute text-center bg-secondary">
-            <div className="tile-content text-center m-2 p-2 flex-centered">
-              <span className="text-large hide-sm mr-2">{documentToReactComponents(data.contentfulLandingPage.tribunalBanner.bannerText.json)}</span>
-              <span className="show-sm text-italic">{documentToReactComponents(data.contentfulLandingPage.tribunalBanner.bannerTextOnMobile.json)}</span>
-              <a className="btn btn-primary ml-2"
-                href={data.contentfulLandingPage.tribunalBanner.bannerButtonUrl}
-                target="_blank" rel="noopener noreferrer">{data.contentfulLandingPage.tribunalBanner.bannerButtonText}</a>
+          <div className="tile moratorium-banner p-absolute text-center bg-secondary">
+            <div className="tile-content text-center flex-centered">
+              <span className="text-large">
+                An Eviction Moratorium is in place in NY State due to the Covid-19 public health crisis. 
+                This means you cannot be evicted <b>for any reason</b>. 
+                All courts that hear eviction cases are closed.
+                {' '}<a className="text-light text-italic"
+                  href="https://www.righttocounselnyc.org/moratorium_faq"
+                  target="_blank" rel="noopener noreferrer"><nobr>Learn more</nobr></a>
+              </span>
             </div>
           </div>
           <div className="hero-body">

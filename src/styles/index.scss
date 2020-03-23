@@ -25,19 +25,24 @@
 		padding-right: 15px;
 	}
 
-	.tile.tribunal-banner {
+	.tile.moratorium-banner {
 		top: $header-height;
 		width: 100%;
 
 		.tile-content {
+			margin: 8px;
+			padding: 8px;
+
 			p {
 				margin: 0;
 			}
 
 			@include for-phone-only() {
+				margin: 4px;
+				padding: 4px;
 
 				.text-large {
-					font-size: 0.8rem;
+					font-size: 0.65rem;
 				}
 			}
 		}
