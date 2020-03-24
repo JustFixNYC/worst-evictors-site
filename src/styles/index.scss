@@ -20,6 +20,34 @@
 	color: $light;
 	background-color: $dark;
 
+	@include for-phone-only() {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.tile.moratorium-banner {
+		top: $header-height;
+		width: 100%;
+
+		.tile-content {
+			margin: 8px;
+			padding: 8px;
+
+			p {
+				margin: 0;
+			}
+
+			@include for-small-phone-only() {
+				margin: 4px;
+				padding: 4px;
+
+				.text-large {
+					font-size: 0.65rem;
+				}
+			}
+		}
+	}
+
 	.hero-body {
 		text-align: center;
 
@@ -36,6 +64,12 @@
 		.icon {
 			height: 0em;
 			font-size: 1.1rem;
+		}
+
+		@include for-phone-only() {
+			h1 {
+				margin-top: 3rem;
+			}
 		}
 	}
 }
