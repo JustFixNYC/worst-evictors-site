@@ -116,7 +116,7 @@ render() {
 	}
 
 	return (
-		<div className="evictor-container">
+		<div className="evictor-container" id={citywide ? this.props.data.citywideRank : (this.props.boroName + this.props.data.rank)}>
 		  <div className="columns">
 		    <div className="column col-2 col-sm-4 evictor-rank">
 		    	<div>
