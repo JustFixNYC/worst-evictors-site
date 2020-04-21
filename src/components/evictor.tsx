@@ -120,7 +120,7 @@ render() {
 		  <div className="columns">
 		    <div className="column col-2 col-sm-4 evictor-rank">
 		    	<div>
-			        <h1>
+			        <h1 className={citywide && this.props.data.citywideRank > 9 ? "double-digit" : ""}>
 			        	{citywide ? this.props.data.citywideRank : this.props.data.rank}
 			        </h1>
 			        {!citywide && <small>{this.props.boroName}</small>}
