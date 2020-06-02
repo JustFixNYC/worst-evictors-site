@@ -47,20 +47,7 @@ class Header extends React.Component {
         <section className="navbar-center"></section>
         <section className="navbar-section hide-md">
           <Link activeClassName="active" className="btn btn-link" to="/">Home</Link>
-          <div className="dropdown dropdown-right">
-            <a className={"btn btn-link dropdown-toggle m-2" + (this.state.isListDropdownVisible ? " active" : "")}
-            onClick={this.toggleListDropdown} tabIndex="0">
-              Worst Evictors Lists
-            </a>
-            <ul className={"menu menu-reverse " + (this.state.isListDropdownVisible ? "d-block" : "d-none")}>
-              <li className="menu-item">
-                <Link activeClassName="active" className="btn btn-link" to="/evictors-list/citywide">Citywide</Link>
-              </li>
-              <li className="menu-item">
-                <Link activeClassName="active" className="btn btn-link" to="/evictors-list/rtc">RTC Zipcodes</Link>
-              </li>
-            </ul>
-          </div>
+          <Link activeClassName="active" className="btn btn-link" to="/evictors-list/citywide">Worst Evictors List</Link>
           <Link activeClassName="active" className="btn btn-link" to="/map">Evictions Map</Link>
           <Link activeClassName="active" className="btn btn-link" to="/rights">My Rights</Link>
           <Link activeClassName="active" className="btn btn-link" to="/about">About</Link>
