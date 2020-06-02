@@ -67,7 +67,7 @@ const CitywideEvictorsListPage = () => (
     `}
     render={data => (
       <Layout 
-        customTitle="NYC's Top 20 Worst Evictors in 2018" 
+        customTitle="NYC's Top 20 Worst Evictors in 2019" 
         customImage="https://i.imgur.com/NiEQZ6x.png"
         customUrl="https://www.worstevictorsnyc.org/evictors-list/citywide/"
         className="list-page">
