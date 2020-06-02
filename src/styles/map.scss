@@ -23,16 +23,6 @@
 		}
 	}
 
-	@include for-phone-only() {
-		height: 85px;
-
-		h4 {
-			.btn-group {
-				margin-top: 5px;
-			}
-		}
-	}
-
 }
 
 #map-iframe-loading, #map-iframe {
@@ -52,12 +42,6 @@
 		height: calc(100vh + 70px);
 		margin-bottom: -210px;
 	}
-
-	@include for-phone-only() {
-		height: calc(100vh + 35px);
-		margin-bottom: -210px;
-	}
-
 }
 
 .map-bottom-banner {

@@ -41,32 +41,13 @@ const MapPage = ({ data, location }) => (
 				loadingFrame.className = "map-container d-block";
 			}
 			return (<Layout
-				customTitle="Interactive Map of Evictions Across NYC in 2018" 
+				customTitle="Interactive Map of Evictions Across NYC in 2019" 
 				customImage="https://i.imgur.com/21ukLGA.png"
 				customUrl="https://www.worstevictorsnyc.org/map/"
 			>
 		  	<div className="map-title-banner">
 		  		<h4 className="p-2 mx-2">
-		  			<span className="mr-2 map-buttons-leadin">2018 Evictions in:</span> 
-		  				<br className="show-sm" />
-			  		<div className="btn-group">
-			  			<Link to="/map" className={"btn btn-" + (location && (!location.state || !location.state.iframe || (location.state.iframe == CITYWIDE_MAP_URL) || (location.state.mapType && location.state.mapType == 'citywide')) ? "primary" : "default") }
-							onClick={()=>mapLoading()}
-						  state={{ 
-							  iframe: CITYWIDE_MAP_URL,
-							  maptype: 'citywide'
-						   }}>
-				  			All NYC
-				  		</Link>
-				  		<Link to="/map" className={"btn  btn-" + (location && location.state && location.state.iframe && (location.state.iframe == RTC_ZIPS_MAP_URL || (location.state.mapType && location.state.mapType == 'rtc'))? "primary" : "default") }
-							onClick={()=>mapLoading()}
-						  state={{ 
-							  iframe: RTC_ZIPS_MAP_URL,
-							  maptype: 'rtc' 
-						  }}>
-				  			RTC-Eligible Zipcodes
-				  		</Link>
-				  	</div>
+		  			<span className="mr-2 map-buttons-leadin">2019 Evictions in NYC</span> 
 		  		</h4>
 		  	</div>
 			<div id="map-iframe-loading" className="loading loading-lg">
