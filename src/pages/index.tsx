@@ -119,11 +119,7 @@ const LandingPage = () => (
             {documentToReactComponents(data.contentfulLandingPage.listDescription.json)}
             <div className="d-inline-flex">
               <Link to="/evictors-list/citywide" className="btn btn-outline-secondary mx-2 d-inline-block">
-                Citywide List
-                <i className="icon icon-forward ml-2"></i>
-              </Link>
-              <Link to="/evictors-list/rtc" className="btn btn-outline-secondary mx-2 d-inline-block">
-                RTC <span className="hide-sm">Zipcode </span>List
+                Explore List
                 <i className="icon icon-forward ml-2"></i>
               </Link>
             </div>
