@@ -53,6 +53,7 @@ const CitywideEvictorsListPage = () => (
             banks
             lawyers
             marshals
+            estimatedWorth
             citywideEvictionsMapUrl {
               citywideEvictionsMapUrl
             }

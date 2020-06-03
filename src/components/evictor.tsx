@@ -161,14 +161,14 @@ render() {
 			            		<br/>
 			            		<span>
 			            			<span className="text-primary text-bold mr-1">
-			            				{citywide ? this.props.data.citywidePercentFiled : this.props.data.boroPercentFiled}
-			            			</span> lawsuits per family
-			            		</span>
-			            		<br/>
-			            		<span>
-			            			<span className="text-primary text-bold mr-1">
 										{citywide ? this.props.data.citywidePercentRs : this.props.data.boroPercentRs}%
 			            			</span> rent stabilized
+			            		</span>
+								<br/>
+			            		<span>
+			            			<span className="text-primary text-bold mr-1">
+			            				{this.props.data.estimatedWorth}
+			            			</span> net worth
 			            		</span>
 		            		</div>
 			    		</div>
