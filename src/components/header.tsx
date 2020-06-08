@@ -62,9 +62,6 @@ class Header extends React.Component {
               <Link activeClassName="active" className="btn btn-link" to="/">Home</Link>
             </li>
             <li className="menu-item">
-              <Link activeClassName="active" className="btn btn-link" to="/evictors-list/rtc">RTC Worst Evictors List</Link>
-            </li>
-            <li className="menu-item">
               <Link activeClassName="active" className="btn btn-link" to="/evictors-list/citywide">Citywide Worst Evictors List</Link>
             </li>
             <li className="menu-item">
