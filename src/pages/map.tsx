@@ -9,8 +9,7 @@ import '../styles/map.scss'
 
 import Layout from '../components/layout'
 
-const CITYWIDE_MAP_URL = 'https://ampitup.carto.com/builder/4eea8576-9c57-4cf5-a1cf-55ea44bce496/embed'
-const RTC_ZIPS_MAP_URL = 'https://ampitup.carto.com/builder/324065d6-b916-4d9b-ba09-5dbc44a818db/embed'
+const CITYWIDE_MAP_URL = 'https://ampitup.carto.com/builder/bc1cb25d-0d57-4735-bcf0-9fd134668f47/embed'
 
 const MapPage = ({ data, location }) => (
 <StaticQuery
