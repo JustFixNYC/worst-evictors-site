@@ -165,10 +165,10 @@ render() {
 			            			</span> rent stabilized
 			            		</span>
 								<br/>
-			            		<span>
+			            		<span className="tooltip" data-tooltip="Total of all building purchase amounts">
 			            			<span className="text-primary text-bold mr-1">
 			            				{this.props.data.estimatedWorth}
-			            			</span> net worth
+			            			</span> building cost<sup>*</sup>
 			            		</span>
 		            		</div>
 			    		</div>
@@ -191,7 +191,7 @@ render() {
 			            </span>
 						<br/>
 						<span>
-				    		Evicted by<span> </span>  
+				    		Marshals used<span> </span>  
 		        			<span className="text-primary text-bold ml-2">
 		        				{this.props.data.marshals}
 		        			</span>
