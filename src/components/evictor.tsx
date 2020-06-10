@@ -142,7 +142,7 @@ render() {
 		    	</div>
 		    	<div className="evictor-stats">
 			    	<div className="columns">
-			    		<div className="column col-6 col-md-12 rtc-data">
+			    		<div className="column col-12 rtc-data">
 			    			<h4 className="eviction-count">
 		            			<span className="text-primary">{citywide ? this.props.data.citywideEvictions : this.props.data.evictions}</span> Evictions
 		            		</h4>
@@ -165,10 +165,10 @@ render() {
 			            			</span> rent stabilized
 			            		</span>
 								<br/>
-			            		<span className="tooltip" data-tooltip="Total of all building purchase amounts">
+			            		<span className="tooltip" data-tooltip="Landlord's net worth likely much higher.">
 			            			<span className="text-primary text-bold mr-1">
 			            				{this.props.data.estimatedWorth}
-			            			</span> building cost<sup>*</sup>
+			            			</span> paid for buildings<sup>*</sup>
 			            		</span>
 		            		</div>
 			    		</div>
@@ -191,7 +191,7 @@ render() {
 			            </span>
 						<br/>
 						<span>
-				    		Marshals used<span> </span>  
+				    		Evictions conducted by<span> </span>  
 		        			<span className="text-primary text-bold ml-2">
 		        				{this.props.data.marshals}
 		        			</span>
