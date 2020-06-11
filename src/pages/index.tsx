@@ -21,7 +21,7 @@ const MoratoriumBanner = () => (
         This means you cannot be evicted <b>for any reason</b>. 
         For info about your rights after June 20: 
         {' '}<a className="text-dark text-bold"
-          href="https://www.righttocounselnyc.org/moratorium_faq"
+          href="https://www.righttocounselnyc.org/ny_eviction_moratorium_faq"
           target="_blank" rel="noopener noreferrer"><nobr>Learn more</nobr></a>
       </p>
     </div>
