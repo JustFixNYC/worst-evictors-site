@@ -9,8 +9,7 @@ import '../styles/map.scss'
 
 import Layout from '../components/layout'
 
-const CITYWIDE_MAP_URL = 'https://ampitup.carto.com/builder/4eea8576-9c57-4cf5-a1cf-55ea44bce496/embed'
-const RTC_ZIPS_MAP_URL = 'https://ampitup.carto.com/builder/324065d6-b916-4d9b-ba09-5dbc44a818db/embed'
+const CITYWIDE_MAP_URL = 'https://ampitup.carto.com/builder/bc1cb25d-0d57-4735-bcf0-9fd134668f47/embed'
 
 const MapPage = ({ data, location }) => (
 <StaticQuery
@@ -41,32 +40,13 @@ const MapPage = ({ data, location }) => (
 				loadingFrame.className = "map-container d-block";
 			}
 			return (<Layout
-				customTitle="Interactive Map of Evictions Across NYC in 2018" 
+				customTitle="Interactive Map of Evictions Across NYC in 2019" 
 				customImage="https://i.imgur.com/21ukLGA.png"
 				customUrl="https://www.worstevictorsnyc.org/map/"
 			>
 		  	<div className="map-title-banner">
 		  		<h4 className="p-2 mx-2">
-		  			<span className="mr-2 map-buttons-leadin">2018 Evictions in:</span> 
-		  				<br className="show-sm" />
-			  		<div className="btn-group">
-			  			<Link to="/map" className={"btn btn-" + (location && (!location.state || !location.state.iframe || (location.state.iframe == CITYWIDE_MAP_URL) || (location.state.mapType && location.state.mapType == 'citywide')) ? "primary" : "default") }
-							onClick={()=>mapLoading()}
-						  state={{ 
-							  iframe: CITYWIDE_MAP_URL,
-							  maptype: 'citywide'
-						   }}>
-				  			All NYC
-				  		</Link>
-				  		<Link to="/map" className={"btn  btn-" + (location && location.state && location.state.iframe && (location.state.iframe == RTC_ZIPS_MAP_URL || (location.state.mapType && location.state.mapType == 'rtc'))? "primary" : "default") }
-							onClick={()=>mapLoading()}
-						  state={{ 
-							  iframe: RTC_ZIPS_MAP_URL,
-							  maptype: 'rtc' 
-						  }}>
-				  			RTC-Eligible Zipcodes
-				  		</Link>
-				  	</div>
+		  			<span className="mr-2 map-buttons-leadin">2019 Evictions in NYC</span> 
 		  		</h4>
 		  	</div>
 			<div id="map-iframe-loading" className="loading loading-lg">

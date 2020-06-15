@@ -30,6 +30,7 @@ const CitywideEvictorsListPage = () => (
           evictors {
             boro
             citywideRank
+            rankLastYear
             name
       			citywideListDescription {
               json
@@ -44,9 +45,6 @@ const CitywideEvictorsListPage = () => (
               }
             }
             photoCaption
-      			evictions
-      			boroUnits
-      			boroFilings
             citywideEvictions
             citywideUnits
             citywideFilings
@@ -54,10 +52,15 @@ const CitywideEvictorsListPage = () => (
             citywidePercentRs
             banks
             lawyers
+            marshals
+            estimatedWorth
             citywideEvictionsMapUrl {
               citywideEvictionsMapUrl
             }
             whoOwnsWhatUrl
+          }
+          nychaDishonorableMention {
+            json
           }
           citywideDishonorableMentions {
             json
@@ -67,7 +70,7 @@ const CitywideEvictorsListPage = () => (
     `}
     render={data => (
       <Layout 
-        customTitle="NYC's Top 20 Worst Evictors in 2018" 
+        customTitle="NYC's Top 20 Worst Evictors in 2019" 
         customImage="https://i.imgur.com/NiEQZ6x.png"
         customUrl="https://www.worstevictorsnyc.org/evictors-list/citywide/"
         className="list-page">
@@ -105,7 +108,16 @@ const CitywideEvictorsListPage = () => (
             <h2 className="text-center text-bold text-uppercase p-sticky">Dishonorable Mentions</h2>
             <div className="mention-category">
               <div className="laurel container p-relative">
-                <img className="laurel-img p-centered" src={laurel1} alt="laurel1"/>
+                <img className="laurel-img p-centered" src={laurel2} alt="laurel1"/>
+                <div className="laurel-text text-center p-absolute">PUBLIC HOUSING</div>
+              </div>
+              <span className="text-center">
+                {documentToReactComponents(data.contentfulCitywideListPage.nychaDishonorableMention.json)}
+              </span>
+            </div>
+            <div className="mention-category">
+              <div className="laurel container p-relative">
+                <img className="laurel-img p-centered" src={laurel1} alt="laurel2"/>
                 <div className="laurel-text text-center p-absolute">PROPERTY MANAGERS</div>
               </div>
               <span className="text-center">

@@ -138,11 +138,11 @@ render() {
 	        	<div className="evictor-intro">
 	            	<h5 className="evictor-name text-uppercase text-secondary mb-1">{this.props.data.name}</h5>
 	            	<h6 className="evictor-corp text-dark">{this.props.data.corporation}</h6>
+					<h6 className="text-gray-medium text-italic">Last year's rank: {this.props.data.rankLastYear ? <><sup>#</sup>{this.props.data.rankLastYear}</>: 'N/A'}</h6>
 		    	</div>
 		    	<div className="evictor-stats">
 			    	<div className="columns">
-			    		<div className="column col-6 col-md-12 rtc-data">
-			    			<h6 className="text-gray-medium">{citywide ? "Citywide" : "In RTC Zipcodes"}</h6>
+			    		<div className="column col-12 rtc-data">
 			    			<h4 className="eviction-count">
 		            			<span className="text-primary">{citywide ? this.props.data.citywideEvictions : this.props.data.evictions}</span> Evictions
 		            		</h4>
@@ -161,14 +161,14 @@ render() {
 			            		<br/>
 			            		<span>
 			            			<span className="text-primary text-bold mr-1">
-			            				{citywide ? this.props.data.citywidePercentFiled : this.props.data.boroPercentFiled}
-			            			</span> lawsuits per family
-			            		</span>
-			            		<br/>
-			            		<span>
-			            			<span className="text-primary text-bold mr-1">
 										{citywide ? this.props.data.citywidePercentRs : this.props.data.boroPercentRs}%
 			            			</span> rent stabilized
+			            		</span>
+								<br/>
+			            		<span className="tooltip" data-tooltip="Landlord's net worth likely much higher.">
+			            			<span className="text-primary text-bold mr-1">
+			            				{this.props.data.estimatedWorth}
+			            			</span> paid for buildings<sup>*</sup>
 			            		</span>
 		            		</div>
 			    		</div>
@@ -186,6 +186,14 @@ render() {
 				    		Represented by<span> </span>  
 		        			<span className="text-primary text-bold ml-2">
 		        				{this.props.data.lawyers}
+		        			</span>
+		        			<nobr className="text-gray-medium text-italic pl-1">(Among Others)</nobr>
+			            </span>
+						<br/>
+						<span>
+				    		Evictions conducted by<span> </span>  
+		        			<span className="text-primary text-bold ml-2">
+		        				{this.props.data.marshals}
 		        			</span>
 		        			<nobr className="text-gray-medium text-italic pl-1">(Among Others)</nobr>
 			            </span>
