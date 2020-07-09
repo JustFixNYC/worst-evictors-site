@@ -11,8 +11,6 @@ This repository contains the Right To Counsel (RTC) NYC Coalition's Worst Evicto
 
 It is based on a [Gatsby starter](https://github.com/fhavrlent/gatsby-contentful-typescript-starter). Almost all of the content is pulled from [Contentful](https://www.contentful.com/).
 
-Read about the Housing Data Coalition's code of conduct on our [About Page](https://www.housingdatanyc.org/). 
-
 
 ## 🚀 Quick start
 
@@ -35,3 +33,22 @@ Read about the Housing Data Coalition's code of conduct on our [About Page](http
 4. **Edit some files!**
 
   Open the the repository's root directory in your code editor of choice and edit `src/pages/index.tsx`. Save your changes and the browser will update in real time!
+
+## Docker setup
+
+You can also run the site using Docker. Create an `.env` file as per the quick start instructions, but then run:
+
+```
+docker-compose run app yarn --frozen-lockfile
+docker-compose up
+```
+
+Then visit `http://localhost:8000`!
+
+## Deployment 
+
+  We deploy our version of the site using [Netlify](https://www.netlify.com/), which links directly to this repo and deploys on commits to the master branch. To use Netlify in deploying your own version, follow this [step-by-step guide](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/).
+  
+## Code of Conduct
+
+  Read about JustFix's code of conduct as an organization on our [Mission page](https://www.justfix.nyc/our-mission/).
