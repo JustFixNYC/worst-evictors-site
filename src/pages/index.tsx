@@ -17,12 +17,17 @@ const MoratoriumBanner = () => (
   <div className="tile moratorium-banner p-absolute text-center bg-warning">
     <div className="tile-content text-center flex-centered">
       <p className="text-large text-dark">
-        Until June 20, there is an eviction moratorium in place for all tenants in NY State.
-        This means you cannot be evicted <b>for any reason</b>. 
-        For info about your rights after June 20: 
-        {' '}<a className="text-dark text-bold"
+        An Eviction Moratorium is in place in NY State due to the Covid-19
+        public health crisis. This means you cannot be evicted{" "}
+        <b>for any reason</b>.{" "}
+        <a
+          className="text-dark text-bold"
           href="https://www.righttocounselnyc.org/ny_eviction_moratorium_faq"
-          target="_blank" rel="noopener noreferrer"><nobr>Learn more</nobr></a>
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <nobr>Learn more</nobr>
+        </a>
       </p>
     </div>
   </div>
