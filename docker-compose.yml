@@ -1,0 +1,18 @@
+version: '2'
+services:
+  app: 
+    image: node:12
+    volumes:
+      - .:/website:delegated
+      - node-modules:/website/node_modules/
+      - yarn-cache:/var/yarn-cache/
+    working_dir: /website
+    command: yarn develop -H 0.0.0.0
+    environment:
+      - CHOKIDAR_USEPOLLING=1
+      - YARN_CACHE_FOLDER=/var/yarn-cache
+    ports:
+      - 8000:8000
+volumes:
+  node-modules:
+  yarn-cache:
