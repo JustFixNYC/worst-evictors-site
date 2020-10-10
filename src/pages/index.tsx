@@ -103,7 +103,6 @@ const LandingPage = () => (
             backgroundSize: "cover",
             backgroundRepeat:"no-repeat" 
           }}>
-          <MoratoriumBanner />
           <div className="hero-body">
             <h1 className="title-font">{documentToReactComponents(data.contentfulLandingPage.openingTitle.json)}</h1>
             {documentToReactComponents(data.contentfulLandingPage.openingSubtitle.json)}
