@@ -10,7 +10,7 @@ import "../styles/map.scss";
 import Layout from "../components/layout";
 
 const CITYWIDE_MAP_URL =
-  "https://ampitup.carto.com/builder/bc1cb25d-0d57-4735-bcf0-9fd134668f47/embed";
+  "https://ampitup.carto.com/builder/740ca688-2c74-4f0f-8aea-90d527dc6cdc/embed";
 
 const MapPage = ({ data, location }) => (
   <StaticQuery
