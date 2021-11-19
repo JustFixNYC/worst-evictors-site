@@ -40,7 +40,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "yarn test && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.tsx'",
     "prettier": "prettier",
