@@ -8,28 +8,30 @@
   width: 100%;
   z-index: 1000;
 
-  .btn.btn-link, .btn.btn-link:hover {
-  	color: $dark;
+  .btn.btn-link,
+  .btn.btn-link:hover {
+    color: $dark;
   }
 
   .text-small {
-  	font-size: 0.8em;
+    font-size: 0.8em;
   }
 
   .btn.btn-link.active {
     background-color: $light;
-  	color: $gray-dark;
-  	font-weight: 600;
+    color: $gray-dark;
+    font-weight: 600;
 
     &.dropdown-toggle {
       background-color: $gray-light;
     }
-  } 
+  }
 
-  .btn.btn-link:hover, .btn.btn-link:focus{
+  .btn.btn-link:hover,
+  .btn.btn-link:focus {
     background-color: $gray-light;
     color: $gray-dark;
-  } 
+  }
 
   .dropdown.dropdown-right .menu.d-block {
     display: block;
@@ -38,8 +40,6 @@
   .dropdown.dropdown-right .menu.d-none {
     display: none;
   }
-
-
 }
 
 .navbar.header {
@@ -50,7 +50,10 @@
     justify-content: flex-start;
     padding-left: 1rem;
 
-    a, a:active, a:hover, a:focus {
+    a,
+    a:active,
+    a:hover,
+    a:focus {
       color: $dark;
       text-decoration: none;
       box-shadow: none;
@@ -66,7 +69,6 @@
       vertical-align: middle;
       padding-left: 0.5rem;
     }
-
   }
 }
 
@@ -86,19 +88,16 @@
 
   align-items: flex-end;
 
+  span {
+    max-width: 400px;
+  }
 
-    span {
-      max-width: 400px;
-    }
-
-    img {
-      max-width: 72px;
-      margin-right: 32px;
-    }
-
+  img {
+    max-width: 72px;
+    margin-right: 32px;
+  }
 
   .Footer_JustFix {
-
     text-align: right;
 
     img {
@@ -108,7 +107,6 @@
       margin-left: 4px;
       margin-right: 0;
     }
-
   }
 
   @include for-phone-only() {
@@ -126,7 +124,6 @@
     }
 
     .Footer_JustFix {
-
       text-align: center;
 
       img {
@@ -135,8 +132,6 @@
         top: 8px;
         margin: 0 auto;
       }
-
     }
   }
-
 }

@@ -1,5 +1,5 @@
-import React from 'react'
-import { MARKS } from '@contentful/rich-text-types'
+import React from "react";
+import { MARKS } from "@contentful/rich-text-types";
 
 const contentfulOptions = {
   renderMark: {

@@ -3,11 +3,11 @@
 $header-height: 50px;
 $footer-height: 60px;
 
-// COLORS: 
+// COLORS:
 
 $primary: #051171;
-$secondary: #EE674F;
-$accent: #EE674F;
+$secondary: #ee674f;
+$accent: #ee674f;
 $dark: #000;
 $gray-dark: #3f3f3f;
 $gray: #b1b1b1;
@@ -23,7 +23,7 @@ $error: #e85600;
 $efnyc-red: #980048;
 $efnyc-blue: #031e40;
 
-$carto-background: #F2F6F9;
+$carto-background: #f2f6f9;
 
 $primary-color: $primary;
 $primary-color-dark: darken($primary-color, 3%);
@@ -46,42 +46,62 @@ $title-font: Work Sans, National, sans-serif;
 // SIZE RANGES:
 
 @mixin for-small-phone-only {
-  @media (max-width: 400px) { @content; }
+  @media (max-width: 400px) {
+    @content;
+  }
 }
 @mixin for-phone-only {
-  @media (max-width: 600px) { @content; }
+  @media (max-width: 600px) {
+    @content;
+  }
 }
 @mixin for-tablet-landscape-down {
-  @media (max-width: 840px) { @content; }
+  @media (max-width: 840px) {
+    @content;
+  }
 }
 @mixin for-small-desktop-down {
-  @media (max-width: 960px) { @content; }
+  @media (max-width: 960px) {
+    @content;
+  }
 }
 @mixin for-tablet-portrait-up {
-  @media (min-width: 601px) { @content; }
+  @media (min-width: 601px) {
+    @content;
+  }
 }
 @mixin for-tablet-landscape-up {
-  @media (min-width: 841px) { @content; }
+  @media (min-width: 841px) {
+    @content;
+  }
 }
 @mixin for-small-desktop-up {
-  @media (min-width: 961px) { @content; }
+  @media (min-width: 961px) {
+    @content;
+  }
 }
 @mixin for-desktop-up {
-  @media (min-width: 1280px) { @content; }
+  @media (min-width: 1280px) {
+    @content;
+  }
 }
 @mixin for-big-desktop-up {
-  @media (min-width: 1800px) { @content; }
+  @media (min-width: 1800px) {
+    @content;
+  }
 }
 
 @mixin for-carto-map-minimized {
-  @media (max-width: 775px) { @content; }
+  @media (max-width: 775px) {
+    @content;
+  }
 }
 
-// HELPERS: 
+// HELPERS:
 
 @mixin lhCrop($line-height) {
   &::before {
-    content: '';
+    content: "";
     display: block;
     height: 0;
     width: 0;

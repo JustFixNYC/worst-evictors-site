@@ -40,9 +40,12 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "yarn prettier:check && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.tsx'",
+    "prettier": "prettier",
+    "prettier:check": "prettier \"**/*.{ts,tsx,js,scss}\" --check",
+    "prettier:fix": "prettier \"**/*.{ts,tsx,js,scss}\" --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

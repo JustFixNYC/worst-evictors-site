@@ -13,8 +13,7 @@
   @include button-variant($gray);
 }
 
-
-// Override of Standard Mixin: 
+// Override of Standard Mixin:
 @mixin button-outline-variant($color: $primary-color) {
   background: $light-color;
   border-color: $color;

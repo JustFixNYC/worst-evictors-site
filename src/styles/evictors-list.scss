@@ -134,10 +134,10 @@
         @include lhCrop(1.3);
 
         @include for-phone-only() {
-		  font-size: 7rem;
-		  &.double-digit {
-			  font-size: 4rem;
-		  }
+          font-size: 7rem;
+          &.double-digit {
+            font-size: 4rem;
+          }
         }
       }
 

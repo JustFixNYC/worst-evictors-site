@@ -2,9 +2,14 @@
 @import "_vars.scss";
 
 * {
-	font-family: $body-font;
+  font-family: $body-font;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: $title-font;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-font;
 }
