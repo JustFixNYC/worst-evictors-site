@@ -1,60 +1,60 @@
 @import "_vars.scss";
 
 .map-title-banner {
-	height: 50px;
-	background-color: $carto-background;
-	padding-top: 3px; // offset for Carto Map iFrame border
+  height: 50px;
+  background-color: $carto-background;
+  padding-top: 3px; // offset for Carto Map iFrame border
 
-	.btn-default {
-		opacity: 0.5;
-		&.btn:hover {
-			background: $gray-light;
-			opacity: 1;
-			-webkit-transition: opacity 0.5s;
-		  transition: opacity 0.5s;
-		}
-	}
+  .btn-default {
+    opacity: 0.5;
+    &.btn:hover {
+      background: $gray-light;
+      opacity: 1;
+      -webkit-transition: opacity 0.5s;
+      transition: opacity 0.5s;
+    }
+  }
 
-	h4 {
-		font-weight: 300;
+  h4 {
+    font-weight: 300;
 
-		.map-buttons-leadin {
-			vertical-align: middle;
-		}
-	}
-
+    .map-buttons-leadin {
+      vertical-align: middle;
+    }
+  }
 }
 
-#map-iframe-loading, #map-iframe {
-	background-color: $carto-background;
+#map-iframe-loading,
+#map-iframe {
+  background-color: $carto-background;
 }
 
 .map-container {
-	position: relative;
-	z-index: 1;
-	width: 100%;
-	height: calc(100vh - 140px);
-	background-color: $carto-background;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: calc(100vh - 140px);
+  background-color: $carto-background;
 
-	// remove Landlord widget by bringing margin up to cover it
-	@include for-carto-map-minimized() {
-		padding: 7px;
-		height: calc(100vh + 70px);
-		margin-bottom: -210px;
-	}
+  // remove Landlord widget by bringing margin up to cover it
+  @include for-carto-map-minimized() {
+    padding: 7px;
+    height: calc(100vh + 70px);
+    margin-bottom: -210px;
+  }
 }
 
 .map-bottom-banner {
-	position: relative;
-	z-index: 2;
-	height: 40px;
-	background-color: $carto-background;
-	border-top: 2px solid $gray-light;
-	font-weight: 300;
+  position: relative;
+  z-index: 2;
+  height: 40px;
+  background-color: $carto-background;
+  border-top: 2px solid $gray-light;
+  font-weight: 300;
 }
 
 .map-context {
-	position: relative;
-	z-index: 2;
-	background-color: $light;
+  position: relative;
+  z-index: 2;
+  background-color: $light;
 }
