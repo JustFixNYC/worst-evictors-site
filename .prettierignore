@@ -1,0 +1,6 @@
+# Yikes! Don't go in there!
+node_modules
+.devcontainer
+
+.cache
+public
