@@ -19,7 +19,7 @@ const Layout = ({
   customTitle,
   customUrl,
   customImage,
-  className,
+  className
 }: Props) => {
   const title = customTitle || "NYC's Worst Evictors";
   const description =

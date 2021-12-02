@@ -80,7 +80,7 @@ type EvictorProps = {
   data: any;
 };
 
-const Evictor: React.FC<EvictorProps> = (props) => {
+const Evictor: React.FC<EvictorProps> = props => {
   const imageURL = props.data.photo
     ? props.data.photo.sizes.src
     : evictorPlaceholder;
@@ -88,7 +88,7 @@ const Evictor: React.FC<EvictorProps> = (props) => {
     backgroundImage: "url(" + imageURL + ")",
     backgroundPosition: "center center",
     backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
+    backgroundRepeat: "no-repeat"
   };
 
   // Data inconsistency Checking
@@ -229,7 +229,7 @@ const Evictor: React.FC<EvictorProps> = (props) => {
                     iframe:
                       props.data.citywideEvictionsMapUrl
                         .citywideEvictionsMapUrl,
-                    mapType: "citywide",
+                    mapType: "citywide"
                   }}
                 >
                   View on Evictions Map

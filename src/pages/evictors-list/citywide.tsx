@@ -62,7 +62,7 @@ const CitywideEvictorsListPage = () => (
         }
       }
     `}
-    render={(data) => (
+    render={data => (
       <Layout
         customTitle="NYC's Top 20 Worst Evictors in 2019"
         customImage="https://i.imgur.com/NiEQZ6x.png"

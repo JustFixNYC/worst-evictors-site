@@ -17,7 +17,7 @@ class Header extends React.Component<Props, State> {
     super(props);
     this.state = {
       isDropdownVisible: false,
-      isListDropdownVisible: false,
+      isListDropdownVisible: false
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -26,13 +26,13 @@ class Header extends React.Component<Props, State> {
 
   toggleDropdown() {
     this.setState({
-      isDropdownVisible: !this.state.isDropdownVisible,
+      isDropdownVisible: !this.state.isDropdownVisible
     });
   }
 
   toggleListDropdown() {
     this.setState({
-      isListDropdownVisible: !this.state.isListDropdownVisible,
+      isListDropdownVisible: !this.state.isListDropdownVisible
     });
   }
 

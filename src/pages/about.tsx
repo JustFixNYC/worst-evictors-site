@@ -20,7 +20,7 @@ const AboutPage = () => (
         }
       }
     `}
-    render={(data) => (
+    render={data => (
       <Layout>
         <section id="context" className="landing-context hero">
           <div className="hero-body">

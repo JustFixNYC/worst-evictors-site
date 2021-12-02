@@ -25,7 +25,7 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
         }
       }
     `}
-    render={(data) => {
+    render={data => {
       const mapLoaded = function() {
         const loadingElem = document.getElementById("map-iframe-loading");
         if (!!loadingElem) loadingElem.className = "";

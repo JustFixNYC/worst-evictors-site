@@ -69,7 +69,7 @@ const LandingPage = () => (
         }
       }
     `}
-    render={(data) => (
+    render={data => (
       <Layout>
         <section
           id="intro"
@@ -83,7 +83,7 @@ const LandingPage = () => (
               ")",
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
+            backgroundRepeat: "no-repeat"
           }}
         >
           <div className="hero-body">
@@ -116,7 +116,7 @@ const LandingPage = () => (
               ")",
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
+            backgroundRepeat: "no-repeat"
           }}
         >
           <div className="hero-body">
@@ -147,7 +147,7 @@ const LandingPage = () => (
               ")",
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
+            backgroundRepeat: "no-repeat"
           }}
         >
           <div className="hero-body">
