@@ -1,9 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { StaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import contentfulOptions from "../utils/contentful-rich-text-options";
-import { Link } from "gatsby";
 
 import "../styles/rights.scss";
 

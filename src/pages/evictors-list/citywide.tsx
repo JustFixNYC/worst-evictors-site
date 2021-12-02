@@ -1,21 +1,15 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { StaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import contentfulOptions from "../../utils/contentful-rich-text-options";
-import { Link } from "gatsby";
 
 import "../../styles/evictors-list.scss";
 
-import laurel1 from "../../images/laurel1.png";
-import laurel2 from "../../images/laurel2.png";
-import laurel3 from "../../images/laurel3.png";
-import laurel4 from "../../images/laurel4.png";
+const laurel1 = require("../../images/laurel1.png");
+const laurel2 = require("../../images/laurel2.png");
 
 import Layout from "../../components/layout";
-import BoroList from "../../components/boro-list";
 import Evictor from "../../components/evictor";
 
 const CitywideEvictorsListPage = () => (
@@ -100,12 +94,8 @@ const CitywideEvictorsListPage = () => (
           <div className="red-space bg-secondary" />
 
           <section className="boro-list" id="citywide-list">
-            {data.contentfulCitywideListPage.evictors.map(evictor => (
-              <Evictor
-                key={evictor.name + "-" + evictor.boro}
-                data={evictor}
-                isCitywideEvictor={true}
-              />
+            {data.contentfulCitywideListPage.evictors.map((evictor: any) => (
+              <Evictor key={evictor.name + "-" + evictor.boro} data={evictor} />
             ))}
           </section>
         </div>

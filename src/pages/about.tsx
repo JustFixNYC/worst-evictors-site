@@ -1,10 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { StaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import contentfulOptions from "../utils/contentful-rich-text-options";
-import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 
