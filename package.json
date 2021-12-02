@@ -7,6 +7,7 @@
     "@babel/core": "^7.4.3",
     "@contentful/rich-text-html-renderer": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^13.2.0",
+    "@types/react-anchor-link-smooth-scroll": "^1.0.2",
     "@types/react-helmet": "^5.0.8",
     "dotenv": "^6.2.0",
     "emotion": "^9.2.12",

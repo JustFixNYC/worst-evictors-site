@@ -1,9 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { StaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Link } from "gatsby";
 
 import "../styles/map.scss";
 
@@ -12,7 +10,7 @@ import Layout from "../components/layout";
 const CITYWIDE_MAP_URL =
   "https://ampitup.carto.com/builder/bc1cb25d-0d57-4735-bcf0-9fd134668f47/embed";
 
-const MapPage = ({ data, location }) => (
+const MapPage: React.FC<{ location: any }> = ({ location }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -27,18 +25,12 @@ const MapPage = ({ data, location }) => (
         }
       }
     `}
-    render={data => {
-      const mapLoading = function() {
-        const loadingFrame = document.getElementById("map-iframe");
-        loadingFrame.className = "map-container d-invisible";
-        const loadingElem = document.getElementById("map-iframe-loading");
-        loadingElem.className = "loading loading-lg";
-      };
+    render={(data) => {
       const mapLoaded = function() {
         const loadingElem = document.getElementById("map-iframe-loading");
-        loadingElem.className = "";
+        if (!!loadingElem) loadingElem.className = "";
         const loadingFrame = document.getElementById("map-iframe");
-        loadingFrame.className = "map-container d-block";
+        if (!!loadingFrame) loadingFrame.className = "map-container d-block";
       };
       return (
         <Layout

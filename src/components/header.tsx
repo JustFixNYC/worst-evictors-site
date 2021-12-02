@@ -3,18 +3,21 @@ import { Link } from "gatsby";
 
 import "../styles/header-footer.scss";
 
-import favicon from "../images/favicon.png";
+const favicon = require("../images/favicon.png");
 
-type Props = {
-  siteTitle: string;
+type Props = {};
+
+type State = {
+  isDropdownVisible: boolean;
+  isListDropdownVisible: boolean;
 };
 
-class Header extends React.Component {
-  constructor() {
-    super();
+class Header extends React.Component<Props, State> {
+  constructor(props) {
+    super(props);
     this.state = {
       isDropdownVisible: false,
-      isListDropdownVisible: false
+      isListDropdownVisible: false,
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -23,13 +26,13 @@ class Header extends React.Component {
 
   toggleDropdown() {
     this.setState({
-      isDropdownVisible: !this.state.isDropdownVisible
+      isDropdownVisible: !this.state.isDropdownVisible,
     });
   }
 
   toggleListDropdown() {
     this.setState({
-      isListDropdownVisible: !this.state.isListDropdownVisible
+      isListDropdownVisible: !this.state.isListDropdownVisible,
     });
   }
 
@@ -71,7 +74,7 @@ class Header extends React.Component {
               (this.state.isDropdownVisible ? " active" : "")
             }
             onClick={this.toggleDropdown}
-            tabIndex="0"
+            tabIndex={0}
           >
             <i
               className={

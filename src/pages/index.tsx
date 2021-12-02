@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { StaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -7,31 +6,7 @@ import { Link } from "gatsby";
 
 import "../styles/index.scss";
 
-import efnycIcon from "../images/efnyc-icon.svg";
-
 import Layout from "../components/layout";
-
-// Other images to include: mapBackground
-
-const MoratoriumBanner = () => (
-  <div className="tile moratorium-banner p-absolute text-center bg-warning">
-    <div className="tile-content text-center flex-centered">
-      <p className="text-large text-dark">
-        An Eviction Moratorium is in place in NY State due to the Covid-19
-        public health crisis. This means you cannot be evicted{" "}
-        <b>for any reason</b>.{" "}
-        <a
-          className="text-dark text-bold"
-          href="https://www.righttocounselnyc.org/ny_eviction_moratorium_faq"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <nobr>Learn more</nobr>
-        </a>
-      </p>
-    </div>
-  </div>
-);
 
 const LandingPage = () => (
   <StaticQuery
@@ -94,7 +69,7 @@ const LandingPage = () => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <Layout>
         <section
           id="intro"
@@ -108,7 +83,7 @@ const LandingPage = () => (
               ")",
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundRepeat: "no-repeat"
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div className="hero-body">
@@ -141,7 +116,7 @@ const LandingPage = () => (
               ")",
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundRepeat: "no-repeat"
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div className="hero-body">
@@ -172,7 +147,7 @@ const LandingPage = () => (
               ")",
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundRepeat: "no-repeat"
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div className="hero-body">
@@ -202,10 +177,7 @@ const LandingPage = () => (
               className="efnyc column col-6 col-sm-12 hero hero-sm text-light"
             >
               <div className="hero-body">
-                <h3>
-                  {data.contentfulLandingPage.efnycTitle}
-                  <img className="icon icon-3x mx-1 pb-2" src={efnycIcon} />
-                </h3>
+                <h3>{data.contentfulLandingPage.efnycTitle}</h3>
                 {documentToReactComponents(
                   data.contentfulLandingPage.efnycDescription.json
                 )}

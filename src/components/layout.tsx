@@ -1,6 +1,5 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
 
 import "../styles/header-footer.scss";
 
@@ -12,10 +11,16 @@ type Props = {
   customTitle?: string;
   customUrl?: string;
   customImage?: string;
+  className?: string;
 };
 
-const Layout = ({ children, customTitle, customUrl, customImage }: Props) => {
-  console.log(customTitle);
+const Layout = ({
+  children,
+  customTitle,
+  customUrl,
+  customImage,
+  className,
+}: Props) => {
   const title = customTitle || "NYC's Worst Evictors";
   const description =
     "This website brings transparency to evictions, the landlords who benefit, and what you can do to fight back. We are here to fight with you. When you fight, we all win.";
@@ -23,14 +28,11 @@ const Layout = ({ children, customTitle, customUrl, customImage }: Props) => {
   const shareImageURL = customImage || "https://i.imgur.com/RkMxfbS.png";
 
   return (
-    <>
+    <div className={className}>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
-        <meta
-          name="description"
-          content="This website brings transparency to evictions, the landlords who benefit, and what you can do to fight back. We are here to fight with you. When you fight, we all win."
-        />
+        <meta name="description" content={description} />
         <meta
           name="keywords"
           content="nyc, worst, evictions, evictors, rtc, right, to, counsel, tenant, organizing, landlord, map"
@@ -50,10 +52,7 @@ const Layout = ({ children, customTitle, customUrl, customImage }: Props) => {
               : "These NYC landlords use evictions to displace people. We are fighting back."
           }
         />
-        <meta
-          property="og:description"
-          content="This website brings transparency to evictions, the landlords who benefit, and what you can do to fight back. We are here to fight with you. When you fight, we all win."
-        />
+        <meta property="og:description" content={description} />
         <meta property="og:url" content={url} />
         <meta property="og:image" content={shareImageURL} />
         <meta property="og:type" content="website" />
@@ -80,7 +79,7 @@ const Layout = ({ children, customTitle, customUrl, customImage }: Props) => {
       <Header />
       <div className="page-content">{children}</div>
       <Footer />
-    </>
+    </div>
   );
 };
 
