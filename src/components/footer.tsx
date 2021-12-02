@@ -2,9 +2,10 @@ import React from "react";
 
 import "../styles/header-footer.scss";
 import { FaGithub, FaTwitter, FaFacebook } from "react-icons/fa";
-import rtcLogo from "../images/RTC_logo.png";
 import { OutboundLink } from "./outbound-link";
 import { IconType } from "react-icons/lib/cjs";
+
+const rtcLogo = require("../images/RTC_logo.png");
 
 const SocialLink = (props: { href: string; icon: IconType; title: string }) => (
   <OutboundLink href={props.href} title={props.title} className="btn btn-link">
@@ -56,11 +57,11 @@ const Footer = () => (
       Made with NYC ♥ by the team at{" "}
       <OutboundLink href="https://justfix.nyc">JustFix.nyc</OutboundLink> and
       the{" "}
-      <nobr>
+      <span className="nobr">
         <OutboundLink href="https://antievictionmap.com/">
           Anti&#8209;Eviction Mapping Project
         </OutboundLink>
-      </nobr>
+      </span>
       .
     </div>
   </footer>
