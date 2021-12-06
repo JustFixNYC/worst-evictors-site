@@ -91,23 +91,6 @@ const Evictor: React.FC<EvictorProps> = props => {
     backgroundRepeat: "no-repeat"
   };
 
-  // Data inconsistency Checking
-  if (
-    props.data.boroUnits &&
-    props.data.citywideUnits &&
-    props.data.boroUnits > props.data.citywideUnits
-  ) {
-    console.log("Check mismatch in units for " + props.data.name);
-  }
-
-  if (
-    props.data.boroFilings &&
-    props.data.citywideFilings &&
-    props.data.boroFilings > props.data.citywideFilings
-  ) {
-    console.log("Check mismatch in filings for " + props.data.name);
-  }
-
   return (
     <div className="evictor-container" id={props.data.citywideRank}>
       <div className="columns">

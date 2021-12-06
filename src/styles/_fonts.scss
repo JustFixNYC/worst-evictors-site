@@ -1,8 +1,40 @@
 // GLOBAL RULES/OVERRIDES:
 @import "_vars.scss";
 
+@font-face {
+  font-family: "Degular";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Degular_Text-Medium.woff2") format("woff2"),
+    url("../fonts/Degular_Text-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Degular";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/Degular_Text-Semibold.woff2") format("woff2"),
+    url("../fonts/Degular_Text-Semibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Degular Display";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Degular_Display-Medium.woff2") format("woff2"),
+    url("../fonts/Degular_Display-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Suisse Int'l Mono";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/SuisseIntlMono-Regular-WebS.woff2") format("woff2"),
+    url("../fonts/SuisseIntlMono-Regular-WebS.woff") format("woff");
+}
+
 * {
-  font-family: $body-font;
+  font-family: "Degular", Arial, Helvetica, sans-serif;
 }
 
 h1,
@@ -11,5 +43,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $title-font;
+  font-family: "Degular Display", Arial, Helvetica, sans-serif;
+}
+
+.eyebrow {
+  font-family: "Suisse Int'l Mono", "Courier New", Courier, monospace;
+  text-transform: uppercase;
 }
