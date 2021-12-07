@@ -58,12 +58,23 @@ const LandingPage = () => (
                 }
               }
             }
+            dishonorableMentionImage {
+              sizes(maxWidth: 613) {
+                aspectRatio
+                src
+                srcSet
+                sizes
+              }
+            }
           }
         }
       }
     `}
     render={data => {
-      const { evictors } = data.contentfulLandingPage.evictorsList;
+      const {
+        evictors,
+        dishonorableMentionImage
+      } = data.contentfulLandingPage.evictorsList;
       return (
         <Layout>
           <div className="homepage">
@@ -113,6 +124,29 @@ const LandingPage = () => (
                       </>
                     </Link>
                   ))}
+                  {/* TODO: Update LINK to dishonorable mention */}
+                  <Link
+                    key={`e-dishonor`}
+                    to="/"
+                    className="column col-3 bg-error"
+                  >
+                    <>
+                      <div className="container">
+                        <div
+                          className="evictor-icon"
+                          style={
+                            dishonorableMentionImage && {
+                              backgroundImage: `url(${dishonorableMentionImage.sizes.src})`
+                            }
+                          }
+                        />
+                        <div className="eyebrow">*</div>
+                      </div>
+                      <div className="hover-label text-right">
+                        Dishonorable Mentions
+                      </div>
+                    </>
+                  </Link>
                 </div>
               </div>
             </div>
