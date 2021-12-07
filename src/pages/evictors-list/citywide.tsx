@@ -6,9 +6,6 @@ import contentfulOptions from "../../utils/contentful-rich-text-options";
 
 import "../../styles/evictors-list.scss";
 
-const laurel1 = require("../../images/laurel1.png");
-const laurel2 = require("../../images/laurel2.png");
-
 import Layout from "../../components/layout";
 import Evictor from "../../components/evictor";
 
@@ -106,16 +103,6 @@ const CitywideEvictorsListPage = () => (
             </h2>
             <div className="mention-category"></div>
             <div className="mention-category">
-              <div className="laurel container p-relative">
-                <img
-                  className="laurel-img p-centered"
-                  src={laurel1}
-                  alt="laurel2"
-                />
-                <div className="laurel-text text-center p-absolute">
-                  PROPERTY MANAGERS
-                </div>
-              </div>
               <span className="text-center">
                 {documentToReactComponents(
                   data.contentfulCitywideListPage.citywideDishonorableMentions

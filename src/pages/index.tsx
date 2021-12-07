@@ -102,14 +102,13 @@ const LandingPage = () => (
                   {evictors.map((evictor: EvictorDetails, i: number) => (
                     <Link
                       key={`e-${i}`}
-                      to="/"
+                      to={`/list`}
                       className="column col-3 bg-error"
                     >
-                      {/* TODO: Update LINK to citywide page */}
                       <>
                         <div className="container">
                           <div
-                            className="evictor-icon"
+                            className="evictor-icon background-cover-photo"
                             style={
                               evictor.photo && {
                                 backgroundImage: `url(${evictor.photo.sizes.src})`

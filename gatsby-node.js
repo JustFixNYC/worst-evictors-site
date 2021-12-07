@@ -19,4 +19,9 @@ exports.createPages = ({ graphql, actions }) => {
     toPath: "/evictors-list/citywide",
     isPermanent: true
   });
+  createRedirect({
+    fromPath: "/evictors-list/citywide",
+    toPath: "/list",
+    isPermanent: true
+  });
 };
