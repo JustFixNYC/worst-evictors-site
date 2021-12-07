@@ -72,11 +72,6 @@
   }
 }
 
-.page-content {
-  margin-top: $header-height;
-  min-height: calc(100vh - #{$header-height} - #{$footer-height});
-}
-
 // This footer class is based on the Eviction-Free NYC CSS:
 // https://github.com/JustFixNYC/eviction-free-nyc/blob/master/src/styles/Footer.scss
 .Footer {

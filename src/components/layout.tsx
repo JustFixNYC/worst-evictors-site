@@ -76,7 +76,6 @@ const Layout = ({
         <meta name="twitter:image" content={shareImageURL} />
         <meta name="twitter:image:alt" content="NYC's Worst Evictors" />
       </Helmet>
-      <Header />
       <div className="page-content">{children}</div>
       <Footer />
     </div>

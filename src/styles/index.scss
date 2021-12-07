@@ -13,12 +13,8 @@
 }
 
 .landing-intro {
-  padding-left: 50px;
-  padding-right: 50px;
-  height: calc(100vh - #{$header-height});
+  height: 100vh;
   flex-direction: unset;
-  color: $light;
-  background-color: $dark;
 
   @include for-phone-only() {
     padding-left: 15px;

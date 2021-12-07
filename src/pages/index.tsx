@@ -71,37 +71,28 @@ const LandingPage = () => (
     `}
     render={data => (
       <Layout>
-        <section
-          id="intro"
-          className="landing-intro hero hero-centered hero-lg"
-          style={{
-            backgroundImage:
-              "url(" +
-              (data.contentfulLandingPage.openingBackground
-                ? data.contentfulLandingPage.openingBackground.fluid.src
-                : "") +
-              ")",
-            backgroundPosition: "center center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat"
-          }}
-        >
-          <div className="hero-body">
-            <h1 className="title-font">
-              {documentToReactComponents(
-                data.contentfulLandingPage.openingTitle.json
-              )}
-            </h1>
-            {documentToReactComponents(
-              data.contentfulLandingPage.openingSubtitle.json
-            )}
-            <AnchorLink
-              offset="50"
-              href="#list-link"
-              className="btn btn-outline-dark btn-lg s-circle"
-            >
-              <i className="icon icon-arrow-down"></i>
-            </AnchorLink>
+        <section id="intro">
+          <div className="container landing-intro">
+            <div className="columns">
+              <div className="column col-6">
+                <h1>
+                  {documentToReactComponents(
+                    data.contentfulLandingPage.openingTitle.json
+                  )}
+                </h1>
+                {documentToReactComponents(
+                  data.contentfulLandingPage.openingSubtitle.json
+                )}
+              </div>
+              <div className="column col-6"></div>
+              <AnchorLink
+                offset="50"
+                href="#list-link"
+                className="btn btn-outline-dark btn-lg s-circle"
+              >
+                <i className="icon icon-arrow-down"></i>
+              </AnchorLink>
+            </div>
           </div>
         </section>
         <section

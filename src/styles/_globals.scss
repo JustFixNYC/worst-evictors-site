@@ -1,16 +1,9 @@
 @import "_vars.scss";
 
-// Smaller header sizes on mobile
-@include for-phone-only() {
-  h1 {
-    font-size: 1.5rem;
-  }
-  h2 {
-    font-size: 1.2rem;
-  }
-  h3 {
-    font-size: 1.05rem;
-  }
+.page-content {
+  background-color: $primary;
+  color: $secondary;
+  padding: 0.7rem 1.2rem;
 }
 
 // No horizontal overflow on mobile

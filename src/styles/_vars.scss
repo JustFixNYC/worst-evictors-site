@@ -5,9 +5,9 @@ $footer-height: 60px;
 
 // COLORS:
 
-$primary: #051171;
-$secondary: #ee674f;
-$accent: #ee674f;
+$primary: #242323;
+$secondary: #faf8f4;
+$accent: #e83a33;
 $dark: #000;
 $gray-dark: #3f3f3f;
 $gray: #b1b1b1;
@@ -37,11 +37,6 @@ $accent-color-light: lighten($accent-color, 3%);
 
 $link-color: $primary-color;
 $link-color-dark: darken($link-color, 10%);
-
-// FONTS:
-
-$body-font: Roboto, "Helvetica Neue", sans-serif;
-$title-font: Work Sans, National, sans-serif;
 
 // SIZE RANGES:
 

@@ -33,20 +33,37 @@
     url("../fonts/SuisseIntlMono-Regular-WebS.woff") format("woff");
 }
 
-* {
-  font-family: "Degular", Arial, Helvetica, sans-serif;
-}
+$body-font: "Degular", Arial, Helvetica, sans-serif;
+$title-font: "Degular Display", Arial, Helvetica, sans-serif;
+$eyebrow-font: "Suisse Int'l Mono", "Courier New", Courier, monospace;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Degular Display", Arial, Helvetica, sans-serif;
-}
+.page-content {
+  font-family: $body-font;
+  // DEFAULT BODY FONT SPECS:
+  font-size: 1.2rem;
+  line-height: 1.44rem;
+  letter-spacing: 0.01rem;
 
-.eyebrow {
-  font-family: "Suisse Int'l Mono", "Courier New", Courier, monospace;
-  text-transform: uppercase;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $title-font;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+    line-height: 2.9rem;
+    letter-spacing: 0.03rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .eyebrow {
+    font-family: $eyebrow-font;
+    text-transform: uppercase;
+  }
 }
