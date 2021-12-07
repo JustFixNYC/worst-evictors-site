@@ -1,12 +1,22 @@
 import React from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql, Link } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import contentfulOptions from "../utils/contentful-rich-text-options";
 
 import "../styles/evictors-list.scss";
 
 import Layout from "../components/layout";
+import { OutboundLink } from "../components/outbound-link";
+
+const AddAmongOthers = (array: string[]) => {
+  const lastElem = array.slice(-1)[0] + " (Among Others)";
+  return array.slice(0, -1).concat([lastElem]);
+};
+
+const FormatListAsArray = (list: string) => {
+  const rawArray = list.split(",").map(item => item.trim());
+  return AddAmongOthers(rawArray);
+};
 
 type EvictorProps = {
   content: any;
@@ -35,9 +45,28 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
         <p>{content.pastExecutedEvictions} evictions executed since 2017</p>
         <p>{content.citywideUnits} families housed</p>
         <p>{content.citywidePercentRs}% rent stabilized</p>
-        <p>{content.estimatedWorth} paid for buildings</p>
+        <p>{content.estimatedWorth || "Unknown amount"} paid for buildings</p>
+        <br />
+        <div className="btn-group">
+          <Link
+            to="/map"
+            className="btn btn-outline-primary my-1"
+            state={{
+              iframe: content.citywideEvictionsMapUrl.citywideEvictionsMapUrl,
+              mapType: "citywide"
+            }}
+          >
+            See Map of Portfolio
+          </Link>
+          <OutboundLink
+            href={content.whoOwnsWhatUrl}
+            className="btn btn-outline-primary"
+          >
+            See if your building is in this portfolio
+          </OutboundLink>
+        </div>
       </div>
-      <div className="column col-8 bg-error">
+      <div className="column col-8">
         <div
           className="background-cover-photo"
           style={
@@ -46,6 +75,62 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
             }
           }
         />
+      </div>
+    </div>
+    <div className="columns text-secondary">
+      <div className="column col-4"></div>
+      <div className="column col-8">
+        <p>
+          <span className="text-bold text-uppercase">Funded By</span>
+          <br />
+          <ul>
+            {FormatListAsArray(content.banks).map((bank: string, i: number) => (
+              <li key={i}>{bank}</li>
+            ))}
+          </ul>
+        </p>
+        <p>
+          <span className="text-bold text-uppercase">Represented by</span>
+          <br />
+          {content.lawyers} (Among Others)
+          <br />
+        </p>
+        <p>
+          <span className="text-bold text-uppercase">
+            Public subsidy programs
+          </span>
+          <br />
+          {content.subsidies ? (
+            <ul>
+              {FormatListAsArray(content.subsidies).map(
+                (subsidy: string, i: number) => (
+                  <li key={i}>{subsidy}</li>
+                )
+              )}
+            </ul>
+          ) : (
+            "None"
+          )}
+        </p>
+        <p>
+          <span className="text-bold text-uppercase">
+            Primary business address
+          </span>
+          <br />
+          {content.primaryBusinessAddress}
+          <br />
+        </p>
+        <br />
+        {content.citywideListDescription &&
+          content.citywideListDescription.json &&
+          documentToReactComponents(
+            content.citywideListDescription.json,
+            contentfulOptions
+          )}
+        <br />
+        <Link to="/" className="btn btn-outline-primary">
+          Back to worst evictors list
+        </Link>
       </div>
     </div>
   </section>
@@ -69,6 +154,7 @@ const CitywideEvictorsListPage = () => (
               json
             }
             corporation
+            primaryBusinessAddress
             photo {
               sizes(maxWidth: 613) {
                 aspectRatio
@@ -84,7 +170,7 @@ const CitywideEvictorsListPage = () => (
             citywidePercentRs
             banks
             lawyers
-            marshals
+            subsidies
             estimatedWorth
             citywideEvictionsMapUrl {
               citywideEvictionsMapUrl
