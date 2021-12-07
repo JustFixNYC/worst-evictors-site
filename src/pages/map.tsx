@@ -41,7 +41,7 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
           <div className="map-title-banner">
             <h4 className="p-2 mx-2">
               <span className="mr-2 map-buttons-leadin">
-                2019 Evictions in NYC
+                Eviction Lawsuits from March 2020 to September 2021
               </span>
             </h4>
           </div>

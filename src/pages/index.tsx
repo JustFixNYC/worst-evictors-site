@@ -71,135 +71,51 @@ const LandingPage = () => (
     `}
     render={data => (
       <Layout>
-        <section id="intro">
-          <div className="container landing-intro">
-            <div className="columns">
-              <div className="column col-6">
-                <h1>
+        <div className="homepage">
+          <section>
+            <div className="container landing-intro">
+              <div className="columns">
+                <div className="column col-6">
+                  <h1>
+                    {documentToReactComponents(
+                      data.contentfulLandingPage.openingTitle.json
+                    )}
+                  </h1>
                   {documentToReactComponents(
-                    data.contentfulLandingPage.openingTitle.json
+                    data.contentfulLandingPage.openingSubtitle.json
                   )}
-                </h1>
-                {documentToReactComponents(
-                  data.contentfulLandingPage.openingSubtitle.json
-                )}
-              </div>
-              <div className="column col-6"></div>
-              <AnchorLink
-                offset="50"
-                href="#list-link"
-                className="btn btn-outline-dark btn-lg s-circle"
-              >
-                <i className="icon icon-arrow-down"></i>
-              </AnchorLink>
-            </div>
-          </div>
-        </section>
-        <section
-          id="list-link"
-          className="list-link hero hero-centered half-vh text-light"
-          style={{
-            backgroundImage:
-              "url(" +
-              (data.contentfulLandingPage.listBackground
-                ? data.contentfulLandingPage.listBackground.fluid.src
-                : "") +
-              ")",
-            backgroundPosition: "center center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat"
-          }}
-        >
-          <div className="hero-body">
-            <h1>{data.contentfulLandingPage.listTitle}</h1>
-            {documentToReactComponents(
-              data.contentfulLandingPage.listDescription.json
-            )}
-            <div className="d-inline-flex">
-              <Link
-                to="/evictors-list/citywide"
-                className="btn btn-outline-secondary mx-2 d-inline-block"
-              >
-                Explore List
-                <i className="icon icon-forward ml-2"></i>
-              </Link>
-            </div>
-          </div>
-        </section>
-        <section
-          id="map-link"
-          className="map-link hero hero-centered half-vh text-light"
-          style={{
-            backgroundImage:
-              "url(" +
-              (data.contentfulLandingPage.mapBackground
-                ? data.contentfulLandingPage.mapBackground.fluid.src
-                : "") +
-              ")",
-            backgroundPosition: "center center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat"
-          }}
-        >
-          <div className="hero-body">
-            <h1>{data.contentfulLandingPage.mapTitle}</h1>
-            {documentToReactComponents(
-              data.contentfulLandingPage.mapDescription.json
-            )}
-            <Link to="/map" className="btn btn-outline-primary">
-              {data.contentfulLandingPage.mapButton}
-              <i className="icon icon-forward ml-2"></i>
-            </Link>
-          </div>
-        </section>
-        <section id="context" className="landing-context hero">
-          <div className="hero-body">
-            <h3>{data.contentfulLandingPage.contextTitle}</h3>
-            <div className="divider d-invisible"></div>
-            {documentToReactComponents(
-              data.contentfulLandingPage.contextDescription.json
-            )}
-          </div>
-        </section>
-        <section id="resources" className="landing-resources container">
-          <div className="columns">
-            <div
-              id="efnyc"
-              className="efnyc column col-6 col-sm-12 hero hero-sm text-light"
-            >
-              <div className="hero-body">
-                <h3>{data.contentfulLandingPage.efnycTitle}</h3>
-                {documentToReactComponents(
-                  data.contentfulLandingPage.efnycDescription.json
-                )}
-                <a
-                  href="https://www.evictionfreenyc.org/"
-                  className="btn btn-outline-efnyc"
+                </div>
+                <div className="column col-6"></div>
+                <AnchorLink
+                  offset="50"
+                  href="#list-link"
+                  className="btn btn-outline-dark btn-lg s-circle"
                 >
-                  {data.contentfulLandingPage.efnycButton}
-                  <i className="icon icon-forward ml-2"></i>
-                </a>
+                  <i className="icon icon-arrow-down"></i>
+                </AnchorLink>
               </div>
             </div>
-            <div
-              id="know-your-rights"
-              className="know-your-rights column col-6 col-sm-12 hero hero-sm bg-gray"
-            >
-              <div className="hero-body">
-                <h3>{data.contentfulLandingPage.kyrTitle}</h3>
-                {documentToReactComponents(
-                  data.contentfulLandingPage.kyrDescription.json
-                )}
-                <Link to="/rights">
-                  <button className="btn btn-outline-dark">
-                    {data.contentfulLandingPage.kyrButton}
+          </section>
+          <section className="hero bg-secondary text-primary">
+            <div className="hero-body">
+              <div className="columns">
+                <div className="column col-6">
+                  <div className="eyebrow">worst evictors map</div>
+                  <br />
+                  <h1>{data.contentfulLandingPage.mapTitle}</h1>
+                  {documentToReactComponents(
+                    data.contentfulLandingPage.mapDescription.json
+                  )}
+                  <Link to="/map" className="btn btn-outline-primary">
+                    {data.contentfulLandingPage.mapButton}
                     <i className="icon icon-forward ml-2"></i>
-                  </button>
-                </Link>
+                  </Link>
+                </div>
+                <div className="column col-6"></div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </Layout>
     )}
   />
