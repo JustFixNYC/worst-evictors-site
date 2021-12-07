@@ -15,8 +15,8 @@ type EvictorProps = {
 const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
   <section
     className="bg-primary evictor-profile"
-    key={content.rank}
-    id={content.rank}
+    key={content.citywideRank}
+    id={content.citywideRank}
   >
     <div className="columns text-secondary">
       <div className="column col-4">

@@ -102,7 +102,7 @@ const LandingPage = () => (
                   {evictors.map((evictor: EvictorDetails, i: number) => (
                     <Link
                       key={`e-${i}`}
-                      to={`/list`}
+                      to={`/list/#${evictor.citywideRank}`}
                       className="column col-3 bg-error"
                     >
                       <>
