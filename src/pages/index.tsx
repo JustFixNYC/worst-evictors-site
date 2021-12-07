@@ -7,6 +7,7 @@ import { Link } from "gatsby";
 import "../styles/index.scss";
 
 import Layout from "../components/layout";
+import contentfulOptions from "../utils/contentful-rich-text-options";
 
 const LandingPage = () => (
   <StaticQuery
@@ -18,26 +19,6 @@ const LandingPage = () => (
           }
           openingSubtitle {
             json
-          }
-          openingBackground {
-            fluid {
-              aspectRatio
-              src
-              srcSet
-              sizes
-            }
-          }
-          listTitle
-          listDescription {
-            json
-          }
-          listBackground {
-            fluid {
-              aspectRatio
-              src
-              srcSet
-              sizes
-            }
           }
           mapTitle
           mapDescription {
@@ -52,68 +33,67 @@ const LandingPage = () => (
               sizes
             }
           }
-          contextTitle
-          contextDescription {
-            json
-          }
-          efnycTitle
-          efnycDescription {
-            json
-          }
-          efnycButton
           kyrTitle
           kyrDescription {
             json
           }
-          kyrButton
+          kyrContent {
+            json
+          }
         }
       }
     `}
     render={data => (
       <Layout>
         <div className="homepage">
-          <section>
-            <div className="container landing-intro">
-              <div className="columns">
-                <div className="column col-6">
-                  <h1>
-                    {documentToReactComponents(
-                      data.contentfulLandingPage.openingTitle.json
-                    )}
-                  </h1>
-                  {documentToReactComponents(
-                    data.contentfulLandingPage.openingSubtitle.json
-                  )}
-                </div>
-                <div className="column col-6"></div>
-                <AnchorLink
-                  offset="50"
-                  href="#list-link"
-                  className="btn btn-outline-dark btn-lg s-circle"
-                >
-                  <i className="icon icon-arrow-down"></i>
-                </AnchorLink>
+          <div className="columns bg-primary text-secondary">
+            <div className="column col-4">
+              <h1>
+                {documentToReactComponents(
+                  data.contentfulLandingPage.openingTitle.json
+                )}
+              </h1>
+              {documentToReactComponents(
+                data.contentfulLandingPage.openingSubtitle.json
+              )}
+            </div>
+            <div className="column col-8"></div>
+          </div>
+          <div className="columns bg-secondary text-primary">
+            <div className="column col-4">
+              <div className="eyebrow">Worst Evictors Map</div>
+              <h1>{data.contentfulLandingPage.mapTitle}</h1>
+              {documentToReactComponents(
+                data.contentfulLandingPage.mapDescription.json
+              )}
+              <Link to="/map" className="btn btn-outline-primary">
+                {data.contentfulLandingPage.mapButton}
+                <i className="icon icon-forward ml-2"></i>
+              </Link>
+            </div>
+            <div className="column col-8"></div>
+          </div>
+
+          <div className="columns bg-primary text-secondary">
+            <div className="column col-4">
+              <div className="eyebrow">know your tenant rights </div>
+              <h1>{data.contentfulLandingPage.kyrTitle}</h1>
+              {documentToReactComponents(
+                data.contentfulLandingPage.kyrDescription.json
+              )}
+            </div>
+            <div className="column col-8"></div>
+            <div className="column col-4"></div>
+            <div className="column col-8">
+              {" "}
+              <div className="rich-text-bulleted-list">
+                {documentToReactComponents(
+                  data.contentfulLandingPage.kyrContent.json,
+                  contentfulOptions
+                )}
               </div>
             </div>
-          </section>
-          <section className="hero bg-secondary text-primary">
-            <div className="hero-body">
-              <div className="columns">
-                <div className="column col-6">
-                  <div className="eyebrow">Worst Evictors Map</div>
-                  <h1>{data.contentfulLandingPage.mapTitle}</h1>
-                  {documentToReactComponents(
-                    data.contentfulLandingPage.mapDescription.json
-                  )}
-                  <Link to="/map" className="btn btn-outline-primary">
-                    {data.contentfulLandingPage.mapButton}
-                    <i className="icon icon-forward ml-2"></i>
-                  </Link>
-                </div>
-                <div className="column col-6"></div>
-              </div>
-            </div>
-          </section>
+          </div>
         </div>
       </Layout>
     )}

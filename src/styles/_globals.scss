@@ -3,6 +3,10 @@
 .page-content {
   background-color: $primary;
   color: $secondary;
+
+  a {
+    color: $secondary;
+  }
 }
 
 // No horizontal overflow on mobile
@@ -15,25 +19,6 @@
 
 .nobr {
   white-space: nowrap;
-}
-
-// Responsive content margins
-.hero-body {
-  max-width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include for-small-desktop-down() {
-    max-width: 80%;
-  }
-
-  @include for-tablet-landscape-down() {
-    max-width: 90%;
-  }
-
-  @include for-phone-only() {
-    max-width: 100%;
-  }
 }
 
 // Class for formatting bulleted lists from Contentful rich text elements

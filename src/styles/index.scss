@@ -8,33 +8,28 @@
 // LANDING PAGE:
 
 .homepage {
-  .hero-centered {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .landing-intro {
+  .columns {
+    margin: 0;
     min-height: 100vh;
-    flex-direction: unset;
-    padding: 0.7rem 1.2rem;
-  }
 
-  .hero {
-    min-height: 100vh;
-    margin: 4.5rem 0rem;
+    .column {
+      padding: 0.7rem 1.2rem;
+    }
 
-    .hero-body {
-      padding: 0;
-      margin: 0rem 3.2rem;
+    &.text-primary .column.col-4 {
+      border-right: 1px solid $primary;
+    }
+    &.text-secondary .column.col-4 {
+      border-right: 1px solid $secondary;
+    }
 
-      .eyebrow {
-        margin-bottom: 1.3rem;
-      }
+    &:not(:first-child) .column {
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
     }
   }
 
-  .landing-context {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .eyebrow {
+    margin-bottom: 1.3rem;
   }
 }
