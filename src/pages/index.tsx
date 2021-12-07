@@ -100,8 +100,7 @@ const LandingPage = () => (
             <div className="hero-body">
               <div className="columns">
                 <div className="column col-6">
-                  <div className="eyebrow">worst evictors map</div>
-                  <br />
+                  <div className="eyebrow">Worst Evictors Map</div>
                   <h1>{data.contentfulLandingPage.mapTitle}</h1>
                   {documentToReactComponents(
                     data.contentfulLandingPage.mapDescription.json

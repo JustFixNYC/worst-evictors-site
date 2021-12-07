@@ -55,8 +55,7 @@ const Footer = () => (
         </OutboundLink>
       </div>
       Made with NYC ♥ by the team at{" "}
-      <OutboundLink href="https://justfix.nyc">JustFix.nyc</OutboundLink> and
-      the{" "}
+      <OutboundLink href="https://justfix.nyc">JustFix</OutboundLink> and the{" "}
       <span className="nobr">
         <OutboundLink href="https://antievictionmap.com/">
           Anti&#8209;Eviction Mapping Project

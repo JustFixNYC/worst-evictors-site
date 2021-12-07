@@ -50,15 +50,15 @@ p,
 .Footer {
   a {
     text-decoration: underline;
-    color: $primary;
+    color: $secondary;
   }
 
   a:visited {
-    color: $primary;
+    color: $secondary;
   }
 
   a:hover {
-    color: $primary;
+    color: $secondary;
     text-decoration: none;
   }
 }
