@@ -80,6 +80,14 @@ const LandingPage = () => (
               </div>
               <div className="column col-8">
                 <div className="columns red-overlay">
+                  <div
+                    key="e-intro"
+                    className="column col-3 bg-primary text-right"
+                  >
+                    <span>
+                      2021 <br /> Worst <br /> Evictors
+                    </span>
+                  </div>
                   {evictors.map((evictor: EvictorDetails, i: number) => {
                     const imageURL = evictor.photo
                       ? evictor.photo.sizes.src
@@ -90,9 +98,7 @@ const LandingPage = () => (
                     return (
                       <div key={`e-${i}`} className="column col-3">
                         <div className="evictor-icon" style={style} />
-                        <div className="evictor-rank text-secondary">
-                          {evictor.citywideRank}
-                        </div>
+                        <div className="eyebrow">{evictor.citywideRank}</div>
                       </div>
                     );
                   })}
