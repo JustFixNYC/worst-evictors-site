@@ -1,5 +1,4 @@
 import React from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { StaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Link } from "gatsby";
@@ -8,6 +7,12 @@ import "../styles/index.scss";
 
 import Layout from "../components/layout";
 import contentfulOptions from "../utils/contentful-rich-text-options";
+
+type EvictorDetails = {
+  citywideRank: number;
+  name: string;
+  photo: any;
+};
 
 const LandingPage = () => (
   <StaticQuery
@@ -40,63 +45,99 @@ const LandingPage = () => (
           kyrContent {
             json
           }
+          evictorsList {
+            evictors {
+              citywideRank
+              name
+              photo {
+                sizes(maxWidth: 613) {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+            }
+          }
         }
       }
     `}
-    render={data => (
-      <Layout>
-        <div className="homepage">
-          <div className="columns bg-primary text-secondary">
-            <div className="column col-4">
-              <h1>
+    render={data => {
+      const { evictors } = data.contentfulLandingPage.evictorsList;
+      return (
+        <Layout>
+          <div className="homepage">
+            <div className="columns bg-primary text-secondary">
+              <div className="column col-4">
+                <h1>
+                  {documentToReactComponents(
+                    data.contentfulLandingPage.openingTitle.json
+                  )}
+                </h1>
                 {documentToReactComponents(
-                  data.contentfulLandingPage.openingTitle.json
+                  data.contentfulLandingPage.openingSubtitle.json
                 )}
-              </h1>
-              {documentToReactComponents(
-                data.contentfulLandingPage.openingSubtitle.json
-              )}
+              </div>
+              <div className="column col-8">
+                <div className="columns red-overlay">
+                  {evictors.map((evictor: EvictorDetails, i: number) => {
+                    const imageURL = evictor.photo
+                      ? evictor.photo.sizes.src
+                      : "";
+                    const style = {
+                      backgroundImage: "url(" + imageURL + ")"
+                    };
+                    return (
+                      <div key={`e-${i}`} className="column col-3">
+                        <div className="evictor-icon" style={style} />
+                        <div className="evictor-rank text-secondary">
+                          {evictor.citywideRank}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
-            <div className="column col-8"></div>
-          </div>
-          <div className="columns bg-secondary text-primary">
-            <div className="column col-4">
-              <div className="eyebrow">Worst Evictors Map</div>
-              <h1>{data.contentfulLandingPage.mapTitle}</h1>
-              {documentToReactComponents(
-                data.contentfulLandingPage.mapDescription.json
-              )}
-              <Link to="/map" className="btn btn-outline-primary">
-                {data.contentfulLandingPage.mapButton}
-                <i className="icon icon-forward ml-2"></i>
-              </Link>
+            <div className="columns bg-secondary text-primary">
+              <div className="column col-4">
+                <div className="eyebrow">Worst Evictors Map</div>
+                <h1>{data.contentfulLandingPage.mapTitle}</h1>
+                {documentToReactComponents(
+                  data.contentfulLandingPage.mapDescription.json
+                )}
+                <Link to="/map" className="btn btn-outline-primary">
+                  {data.contentfulLandingPage.mapButton}
+                  <i className="icon icon-forward ml-2"></i>
+                </Link>
+              </div>
+              <div className="column col-8"></div>
             </div>
-            <div className="column col-8"></div>
-          </div>
 
-          <div className="columns bg-primary text-secondary">
-            <div className="column col-4">
-              <div className="eyebrow">know your tenant rights </div>
-              <h1>{data.contentfulLandingPage.kyrTitle}</h1>
-              {documentToReactComponents(
-                data.contentfulLandingPage.kyrDescription.json
-              )}
-            </div>
-            <div className="column col-8"></div>
-            <div className="column col-4"></div>
-            <div className="column col-8">
-              {" "}
-              <div className="rich-text-bulleted-list">
+            <div className="columns bg-primary text-secondary">
+              <div className="column col-4">
+                <div className="eyebrow">know your tenant rights </div>
+                <h1>{data.contentfulLandingPage.kyrTitle}</h1>
                 {documentToReactComponents(
-                  data.contentfulLandingPage.kyrContent.json,
-                  contentfulOptions
+                  data.contentfulLandingPage.kyrDescription.json
                 )}
+              </div>
+              <div className="column col-8"></div>
+              <div className="column col-4"></div>
+              <div className="column col-8">
+                {" "}
+                <div className="rich-text-bulleted-list">
+                  {documentToReactComponents(
+                    data.contentfulLandingPage.kyrContent.json,
+                    contentfulOptions
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </Layout>
-    )}
+        </Layout>
+      );
+    }}
   />
 );
 
