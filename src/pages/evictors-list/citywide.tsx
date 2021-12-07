@@ -53,9 +53,6 @@ const CitywideEvictorsListPage = () => (
             }
             whoOwnsWhatUrl
           }
-          nychaDishonorableMention {
-            json
-          }
           citywideDishonorableMentions {
             json
           }
