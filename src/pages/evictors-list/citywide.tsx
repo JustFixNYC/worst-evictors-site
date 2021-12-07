@@ -104,8 +104,7 @@ const CitywideEvictorsListPage = () => (
             <h2 className="text-center text-bold text-uppercase p-sticky">
               Dishonorable Mentions
             </h2>
-            <div className="mention-category">
-            </div>
+            <div className="mention-category"></div>
             <div className="mention-category">
               <div className="laurel container p-relative">
                 <img
