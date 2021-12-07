@@ -12,10 +12,6 @@
     margin: 0;
     min-height: 100vh;
 
-    &.red-overlay {
-      background-color: $accent;
-    }
-
     .column {
       padding: 0.7rem 1.2rem;
 
@@ -34,23 +30,47 @@
           }
         }
 
-        .evictor-icon {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-position: center center;
-          background-size: cover;
-          background-repeat: no-repeat;
-          filter: grayscale(100%) brightness(130%);
-          mix-blend-mode: multiply;
-        }
+        &.bg-error {
+          text-decoration: none;
 
-        .eyebrow {
-          font-size: 3.2rem;
-          position: absolute;
-          margin: 1.3rem 0.7rem;
+          .container {
+            margin: 1.3rem 0.7rem;
+          }
+
+          .evictor-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: grayscale(100%) brightness(130%);
+            mix-blend-mode: multiply;
+          }
+
+          .eyebrow {
+            font-size: 3.2rem;
+            position: absolute;
+          }
+
+          .hover-label {
+            opacity: 0;
+            margin: 0.7rem;
+          }
+
+          &:hover {
+            .evictor-icon,
+            .eyebrow {
+              transition: all 0.1s linear;
+              opacity: 0;
+            }
+            .hover-label {
+              transition: all 0.1s linear;
+              opacity: 1;
+            }
+          }
         }
       }
     }

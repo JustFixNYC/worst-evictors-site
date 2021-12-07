@@ -7,7 +7,6 @@ $footer-height: 60px;
 
 $primary: #242323;
 $secondary: #faf8f4;
-$accent: #b82e28;
 $dark: #000;
 $gray-dark: #3f3f3f;
 $gray: #b1b1b1;
@@ -18,7 +17,7 @@ $background: #f8f9fa;
 $light: #fff;
 $success: #32b643;
 $warning: #ffb700;
-$error: #e85600;
+$error: #b82e28;
 
 $efnyc-red: #980048;
 $efnyc-blue: #031e40;
@@ -31,7 +30,7 @@ $primary-color-light: lighten($primary-color, 3%);
 $secondary-color: $secondary;
 $secondary-color-dark: darken($secondary-color, 3%);
 $secondary-color-light: lighten($secondary-color, 3%);
-$accent-color: $accent;
+$accent-color: $error;
 $accent-color-dark: darken($accent-color, 3%);
 $accent-color-light: lighten($accent-color, 3%);
 

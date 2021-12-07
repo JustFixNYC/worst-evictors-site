@@ -79,29 +79,40 @@ const LandingPage = () => (
                 )}
               </div>
               <div className="column col-8">
-                <div className="columns red-overlay">
+                <div className="columns">
                   <div
                     key="e-intro"
                     className="column col-3 bg-primary text-right"
                   >
                     <span>
-                      2021 <br /> Worst <br /> Evictors
+                      COVID <br /> Worst <br /> Evictors
                     </span>
                   </div>
-                  {evictors.map((evictor: EvictorDetails, i: number) => {
-                    const imageURL = evictor.photo
-                      ? evictor.photo.sizes.src
-                      : "";
-                    const style = {
-                      backgroundImage: "url(" + imageURL + ")"
-                    };
-                    return (
-                      <div key={`e-${i}`} className="column col-3">
-                        <div className="evictor-icon" style={style} />
-                        <div className="eyebrow">{evictor.citywideRank}</div>
-                      </div>
-                    );
-                  })}
+                  {evictors.map((evictor: EvictorDetails, i: number) => (
+                    <Link
+                      key={`e-${i}`}
+                      to="/"
+                      className="column col-3 bg-error"
+                    >
+                      {/* TODO: Update LINK to citywide page */}
+                      <>
+                        <div className="container">
+                          <div
+                            className="evictor-icon"
+                            style={
+                              evictor.photo && {
+                                backgroundImage: `url(${evictor.photo.sizes.src})`
+                              }
+                            }
+                          />
+                          <div className="eyebrow">{evictor.citywideRank}</div>
+                        </div>
+                        <div className="hover-label text-right">
+                          {evictor.name}
+                        </div>
+                      </>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
