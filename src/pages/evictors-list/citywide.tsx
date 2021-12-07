@@ -105,21 +105,6 @@ const CitywideEvictorsListPage = () => (
               Dishonorable Mentions
             </h2>
             <div className="mention-category">
-              <div className="laurel container p-relative">
-                <img
-                  className="laurel-img p-centered"
-                  src={laurel2}
-                  alt="laurel1"
-                />
-                <div className="laurel-text text-center p-absolute">
-                  PUBLIC HOUSING
-                </div>
-              </div>
-              <span className="text-center">
-                {documentToReactComponents(
-                  data.contentfulCitywideListPage.nychaDishonorableMention.json
-                )}
-              </span>
             </div>
             <div className="mention-category">
               <div className="laurel container p-relative">

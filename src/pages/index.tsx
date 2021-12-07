@@ -78,7 +78,7 @@ const LandingPage = () => (
                   data.contentfulLandingPage.openingSubtitle.json
                 )}
               </div>
-              <div className="column col-8">
+              <div className="column col-8 evictors">
                 <div className="columns">
                   <div
                     key="e-intro"
