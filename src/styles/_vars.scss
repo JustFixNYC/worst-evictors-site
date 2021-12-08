@@ -30,9 +30,9 @@ $primary-color-light: lighten($primary-color, 3%);
 $secondary-color: $secondary;
 $secondary-color-dark: darken($secondary-color, 3%);
 $secondary-color-light: lighten($secondary-color, 3%);
-$accent-color: $error;
-$accent-color-dark: darken($accent-color, 3%);
-$accent-color-light: lighten($accent-color, 3%);
+$error-color: $error;
+$error-color-dark: darken($error-color, 3%);
+$error-color-light: lighten($error-color, 3%);
 
 $link-color: $primary-color;
 $link-color-dark: darken($link-color, 10%);
