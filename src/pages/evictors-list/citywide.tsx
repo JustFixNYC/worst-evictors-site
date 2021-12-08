@@ -15,9 +15,6 @@ const CitywideEvictorsListPage = () => (
       query {
         contentfulCitywideListPage {
           title
-          subtitle {
-            json
-          }
           evictors {
             boro
             citywideRank

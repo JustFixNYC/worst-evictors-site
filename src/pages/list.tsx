@@ -142,21 +142,14 @@ const CitywideEvictorsListPage = () => (
       query {
         contentfulCitywideListPage {
           title
-          subtitle {
-            json
-          }
           evictors {
-            boro
             citywideRank
             rankLastYear
             name
-            citywideListDescription {
-              json
-            }
             corporation
             primaryBusinessAddress
             photo {
-              sizes(maxWidth: 613) {
+              sizes(maxWidth: 1000) {
                 aspectRatio
                 src
                 srcSet
@@ -176,6 +169,20 @@ const CitywideEvictorsListPage = () => (
               citywideEvictionsMapUrl
             }
             whoOwnsWhatUrl
+            citywideListDescription {
+              json
+            }
+          }
+          dishonorableMentionImage {
+            sizes(maxWidth: 1000) {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
+          dishonorableMentionImageCaption {
+            json
           }
           citywideDishonorableMentions {
             json
