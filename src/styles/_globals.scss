@@ -59,11 +59,13 @@ p,
 .columns {
   margin: 0;
 
-  &.text-primary .column.col-4 {
-    border-right: 1px solid $primary;
-  }
-  &.text-secondary .column.col-4 {
-    border-right: 1px solid $secondary;
+  @include for-tablet-landscape-up {
+    &.text-primary .column.col-4.col-md-12 {
+      border-right: 1px solid $primary;
+    }
+    &.text-secondary .column.col-4.col-md-12 {
+      border-right: 1px solid $secondary;
+    }
   }
 
   .column {

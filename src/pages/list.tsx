@@ -74,10 +74,10 @@ const CitywideEvictorsListPage = () => (
           <div className="list-page">
             <section className="bg-primary">
               <div className="columns text-secondary">
-                <div className="column col-4">
+                <div className="column col-4 col-xl-6 col-md-12">
                   <h1>{data.contentfulCitywideListPage.title}</h1>
                 </div>
-                <div className="column col-8"></div>
+                <div className="column col-8 col-xl-6 col-md-12"></div>
               </div>
             </section>
             {evictorsContentList.map((content: any) => (
@@ -85,12 +85,12 @@ const CitywideEvictorsListPage = () => (
             ))}
             <section className="bg-primary evictor-profile" id="dm">
               <div className="columns text-secondary">
-                <div className="column col-4">
+                <div className="column col-4 col-xl-6 col-md-12">
                   <div className="eyebrow">Dishonorable Mention</div>
                   <br />
                   <h2 className="text-bold">Property Management Companies</h2>
                 </div>
-                <div className="column col-8">
+                <div className="column col-8 col-xl-6 col-md-12">
                   <div
                     className="background-cover-photo"
                     style={
@@ -103,8 +103,8 @@ const CitywideEvictorsListPage = () => (
                 </div>
               </div>
               <div className="columns text-secondary">
-                <div className="column col-4"></div>
-                <div className="column col-8">
+                <div className="column col-4 col-xl-6 col-md-12"></div>
+                <div className="column col-8 col-xl-6 col-md-12">
                   {documentToReactComponents(
                     data.contentfulCitywideListPage.citywideDishonorableMentions
                       .json,
