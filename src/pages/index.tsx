@@ -80,7 +80,7 @@ const LandingPage = () => (
         <Layout>
           <div className="homepage">
             <div className="columns bg-primary text-secondary">
-              <div className="column col-4">
+              <div className="column col-4 col-md-12">
                 <h1>
                   {documentToReactComponents(
                     data.contentfulLandingPage.openingTitle.json
@@ -90,21 +90,21 @@ const LandingPage = () => (
                   data.contentfulLandingPage.openingSubtitle.json
                 )}
               </div>
-              <div className="column col-8 evictors">
+              <div className="column col-8 col-md-12 evictors">
                 <div className="columns">
                   <div
                     key="e-intro"
-                    className="column col-3 bg-primary text-right"
+                    className="column col-3 col-xl-4 col-md-12 bg-primary text-right"
                   >
                     <span>
-                      COVID <br /> Worst <br /> Evictors
+                      COVID <br /> Worst <br className="hide-md" /> Evictors
                     </span>
                   </div>
                   {evictors.map((evictor: EvictorDetails, i: number) => (
                     <Link
                       key={`e-${i}`}
                       to={`/list/#${evictor.citywideRank}`}
-                      className="column col-3 bg-error"
+                      className="column col-3 col-xl-4 col-md-6 bg-error"
                     >
                       <>
                         <div className="container">
@@ -127,7 +127,7 @@ const LandingPage = () => (
                   <Link
                     key={`e-dishonor`}
                     to="/list/#dm"
-                    className="column col-3 bg-error"
+                    className="column col-3 col-xl-4 col-md-6 bg-error"
                   >
                     <>
                       <div className="container">
@@ -150,7 +150,7 @@ const LandingPage = () => (
               </div>
             </div>
             <div className="columns bg-secondary text-primary">
-              <div className="column col-4">
+              <div className="column col-4 col-md-12">
                 <div className="eyebrow">Worst Evictors Map</div>
                 <h1>{data.contentfulLandingPage.mapTitle}</h1>
                 {documentToReactComponents(
@@ -161,20 +161,20 @@ const LandingPage = () => (
                   <i className="icon icon-forward ml-2"></i>
                 </Link>
               </div>
-              <div className="column col-8"></div>
+              <div className="column col-8 col-md-12"></div>
             </div>
 
             <div className="columns bg-primary text-secondary">
-              <div className="column col-4">
+              <div className="column col-4 col-md-12">
                 <div className="eyebrow">know your tenant rights </div>
                 <h1>{data.contentfulLandingPage.kyrTitle}</h1>
                 {documentToReactComponents(
                   data.contentfulLandingPage.kyrDescription.json
                 )}
               </div>
-              <div className="column col-8"></div>
-              <div className="column col-4"></div>
-              <div className="column col-8">
+              <div className="column col-8 col-md-12"></div>
+              <div className="column col-4 col-md-12"></div>
+              <div className="column col-8 col-md-12">
                 {" "}
                 <div className="rich-text-bulleted-list">
                   {documentToReactComponents(

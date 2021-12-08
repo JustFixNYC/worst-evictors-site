@@ -13,16 +13,26 @@
 
     .column {
       &.col-4 {
-        position: sticky;
-        height: 100vh;
-        top: 0;
+        @include for-tablet-landscape-up {
+          position: sticky;
+          height: 100vh;
+          top: 0;
+        }
       }
 
       &.evictors .column {
         position: relative;
-        padding: 0 0 25% 0;
         height: 0;
         border: 4px solid $primary;
+        padding: 0 0 50% 0;
+
+        @include for-tablet-landscape-up {
+          padding: 0 0 33.3% 0;
+        }
+
+        @include for-desktop-up {
+          padding: 0 0 25% 0;
+        }
 
         &.bg-primary.text-right {
           font-size: 1.8rem;
