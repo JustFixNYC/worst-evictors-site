@@ -7,12 +7,21 @@
     border-bottom: 1px solid $secondary;
 
     &.evictor-profile {
+      .columns:first-child {
+        min-height: 100vh;
+      }
       .rank {
         margin-top: 1rem;
         font-size: 1.8rem;
       }
       h1 {
         margin-bottom: 0.4rem;
+      }
+      h3 {
+        font-size: 1.2rem;
+        line-height: 1.44rem;
+        letter-spacing: 0.01rem;
+        margin-bottom: 0;
       }
       p {
         margin-bottom: 0.8rem;

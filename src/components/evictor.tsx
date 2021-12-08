@@ -1,196 +1,166 @@
 import React from "react";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import contentfulOptions from "../utils/contentful-rich-text-options";
 import { Link } from "gatsby";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Document } from "@contentful/rich-text-types";
+import contentfulOptions from "../utils/contentful-rich-text-options";
 
-const evictorPlaceholder = require("../images/evictor-placeholder.png");
+import "../styles/evictors-list.scss";
 
-const AmongOthersLabel = () => (
-  <span className="nobr text-gray-medium text-italic pl-1">(Among Others)</span>
-);
+import { OutboundLink } from "../components/outbound-link";
+
+const AddAmongOthers = (array: string[]) => {
+  const lastElem = array.slice(-1)[0] + " (Among Others)";
+  return array.slice(0, -1).concat([lastElem]);
+};
+
+const FormatListAsArray = (list: string) => {
+  const rawArray = list.split(",").map(item => item.trim());
+  return AddAmongOthers(rawArray);
+};
 
 type EvictorProps = {
-  data: any;
+  content: {
+    citywideRank: number;
+    rankLastYear: number;
+    name: string;
+    corporation: string;
+    primaryBusinessAddress: string;
+    photo: {
+      sizes: {
+        src: string;
+      };
+    };
+    photoCaption: string;
+    citywideEvictions: number;
+    pastExecutedEvictions: number;
+    citywideUnits: number;
+    citywidePercentRs: number;
+    banks: string;
+    lawyers: string;
+    subsidies: string;
+    estimatedWorth: string;
+    citywideEvictionsMapUrl: {
+      citywideEvictionsMapUrl: string;
+    };
+    whoOwnsWhatUrl: string;
+    citywideListDescription: {
+      json: Document;
+    };
+  };
 };
 
-const Evictor: React.FC<EvictorProps> = props => {
-  const imageURL = props.data.photo
-    ? props.data.photo.sizes.src
-    : evictorPlaceholder;
-  const style = {
-    backgroundImage: "url(" + imageURL + ")",
-    backgroundPosition: "center center",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat"
-  };
-
-  return (
-    <div className="evictor-container" id={props.data.citywideRank}>
-      <div className="columns">
-        <div className="column col-2 col-sm-4 evictor-rank">
-          <div>
-            <h1 className={props.data.citywideRank > 9 ? "double-digit" : ""}>
-              {props.data.citywideRank}
-            </h1>
-          </div>
-        </div>
-        <div className="column col-8 col-sm-8 show-sm">
-          <div className="evictor-pic-container">
-            <div
-              className="evictor-pic s-circle p-centered"
-              style={style}
-            ></div>
-            <small className="caption p-centered text-gray-medium text-center text-italic my-2">
-              {props.data.photoCaption}
-            </small>
-          </div>
-        </div>
-        <div className="column col-7 col-sm-12">
-          <div className="evictor-intro">
-            <h5 className="evictor-name text-uppercase text-secondary mb-1">
-              {props.data.name}
-            </h5>
-            <h6 className="evictor-corp text-dark">{props.data.corporation}</h6>
-            <h6 className="text-gray-medium text-italic">
-              Last year's rank:{" "}
-              {props.data.rankLastYear ? (
-                <>
-                  <sup>#</sup>
-                  {props.data.rankLastYear}
-                </>
-              ) : (
-                "N/A"
-              )}
-            </h6>
-          </div>
-          <div className="evictor-stats">
-            <div className="columns">
-              <div className="column col-12 rtc-data">
-                <h4 className="eviction-count">
-                  <span className="text-primary">
-                    {props.data.citywideEvictions}
-                  </span>{" "}
-                  Evictions
-                </h4>
-                <div className="secondary-data">
-                  <span>
-                    <span className="text-primary text-bold mr-1">
-                      {props.data.citywideUnits}
-                    </span>{" "}
-                    families housed
-                  </span>
-                  <br />
-                  <span
-                    className="tooltip"
-                    data-tooltip="Total from January 2013 to June 2015"
-                  >
-                    <span className="text-primary text-bold mr-1">
-                      {props.data.citywideFilings}
-                    </span>{" "}
-                    families sued<sup>*</sup>
-                  </span>
-                  <br />
-                  <span>
-                    <span className="text-primary text-bold mr-1">
-                      {props.data.citywidePercentRs}%
-                    </span>{" "}
-                    rent stabilized
-                  </span>
-                  <br />
-                  <span
-                    className="tooltip"
-                    data-tooltip="Landlord's net worth likely much higher."
-                  >
-                    <span className="text-primary text-bold mr-1">
-                      {props.data.estimatedWorth}
-                    </span>{" "}
-                    paid for buildings<sup>*</sup>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="mb-2">
-              <span>
-                Funded by<span> </span>
-                <span className="text-primary text-bold ml-2">
-                  {props.data.banks}
-                </span>
-                <AmongOthersLabel />
-              </span>
-              <br />
-              <span>
-                Represented by<span> </span>
-                <span className="text-primary text-bold ml-2">
-                  {props.data.lawyers}
-                </span>
-                <AmongOthersLabel />
-              </span>
-              <br />
-              <span>
-                Evictions conducted by<span> </span>
-                <span className="text-primary text-bold ml-2">
-                  {props.data.marshals}
-                </span>
-                <AmongOthersLabel />
-              </span>
-            </div>
-          </div>
-          <div className="btn-group evictor-links">
-            {props.data.citywideEvictionsMapUrl &&
-              props.data.citywideEvictionsMapUrl.citywideEvictionsMapUrl && (
-                <Link
-                  to="/map"
-                  className="btn btn-outline-primary my-1"
-                  state={{
-                    iframe:
-                      props.data.citywideEvictionsMapUrl
-                        .citywideEvictionsMapUrl,
-                    mapType: "citywide"
-                  }}
-                >
-                  View on Evictions Map
-                </Link>
-              )}
-            {props.data.whoOwnsWhatUrl && (
-              <a
-                className="btn btn-outline-primary my-1"
-                target="_blank"
-                href={props.data.whoOwnsWhatUrl}
-              >
-                View on Who Owns What
-              </a>
-            )}
-          </div>
-          {props.data.citywideListDescription &&
-            props.data.citywideListDescription.json &&
-            documentToReactComponents(
-              props.data.citywideListDescription.json,
-              contentfulOptions
-            )}
-          {props.data.organizingCta ? (
-            <span className="get-involved">
-              <div
-                className="divider text-center"
-                data-content="HOW TO GET INVOLVED"
-              ></div>
-              {documentToReactComponents(
-                props.data.organizingCta.json,
-                contentfulOptions
-              )}
-            </span>
-          ) : (
-            <div />
-          )}
-        </div>
-        <div className="evictor-pic-container column col-3 hide-sm">
-          <div className="evictor-pic s-circle p-centered" style={style}></div>
-          <small className="caption p-centered text-gray-medium text-center text-italic my-2">
-            {props.data.photoCaption}
-          </small>
+const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
+  <section
+    className="bg-primary evictor-profile"
+    key={content.citywideRank}
+    id={content.citywideRank.toString()}
+  >
+    <div className="columns text-secondary">
+      <div className="column col-4">
+        <div className="eyebrow rank">{content.citywideRank}.</div>
+        {content.rankLastYear && (
+          <div className="eyebrow">Last Year: {content.rankLastYear}</div>
+        )}
+        <br />
+        <span className="text-bold">
+          <h1>{content.name}</h1>
+          <h2>{content.corporation}</h2>
+          <br />
+          <br />
+          <h2>{content.citywideEvictions} households sued for eviction</h2>
+        </span>
+        <p>{content.pastExecutedEvictions} evictions executed since 2017</p>
+        <p>{content.citywideUnits} families housed</p>
+        <p>{content.citywidePercentRs}% rent stabilized</p>
+        <p>{content.estimatedWorth || "Unknown amount"} paid for buildings</p>
+        <br />
+        <div className="btn-group">
+          <Link
+            to="/map"
+            className="btn btn-outline-primary my-1"
+            state={{
+              iframe: content.citywideEvictionsMapUrl.citywideEvictionsMapUrl,
+              mapType: "citywide"
+            }}
+          >
+            See Map of Portfolio
+          </Link>
+          <OutboundLink
+            href={content.whoOwnsWhatUrl}
+            className="btn btn-outline-primary"
+          >
+            See if your building is in this portfolio
+          </OutboundLink>
         </div>
       </div>
+      <div className="column col-8">
+        <div
+          className="background-cover-photo"
+          style={
+            content.photo && {
+              backgroundImage: `url(${content.photo.sizes.src})`
+            }
+          }
+        />
+      </div>
     </div>
-  );
-};
+    <div className="columns text-secondary">
+      <div className="column col-4"></div>
+      <div className="column col-8">
+        <p>
+          <span className="text-bold text-uppercase">Funded By</span>
+          <br />
+          <ul>
+            {FormatListAsArray(content.banks).map((bank: string, i: number) => (
+              <li key={i}>{bank}</li>
+            ))}
+          </ul>
+        </p>
+        <p>
+          <span className="text-bold text-uppercase">Represented by</span>
+          <br />
+          {content.lawyers} (Among Others)
+          <br />
+        </p>
+        <p>
+          <span className="text-bold text-uppercase">
+            Public subsidy programs
+          </span>
+          <br />
+          {content.subsidies ? (
+            <ul>
+              {FormatListAsArray(content.subsidies).map(
+                (subsidy: string, i: number) => (
+                  <li key={i}>{subsidy}</li>
+                )
+              )}
+            </ul>
+          ) : (
+            "None"
+          )}
+        </p>
+        <p>
+          <span className="text-bold text-uppercase">
+            Primary business address
+          </span>
+          <br />
+          {content.primaryBusinessAddress}
+          <br />
+        </p>
+        <br />
+        {content.citywideListDescription &&
+          content.citywideListDescription.json &&
+          documentToReactComponents(
+            content.citywideListDescription.json,
+            contentfulOptions
+          )}
+        <br />
+        <Link to="/" className="btn btn-outline-primary">
+          Back to worst evictors list
+        </Link>
+      </div>
+    </div>
+  </section>
+);
 
-export default Evictor;
+export default EvictorProfile;

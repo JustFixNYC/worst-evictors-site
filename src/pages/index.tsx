@@ -50,7 +50,7 @@ const LandingPage = () => (
               citywideRank
               name
               photo {
-                sizes(maxWidth: 613) {
+                sizes(maxWidth: 300) {
                   aspectRatio
                   src
                   srcSet
@@ -59,7 +59,7 @@ const LandingPage = () => (
               }
             }
             dishonorableMentionImage {
-              sizes(maxWidth: 613) {
+              sizes(maxWidth: 300) {
                 aspectRatio
                 src
                 srcSet
@@ -75,6 +75,7 @@ const LandingPage = () => (
         evictors,
         dishonorableMentionImage
       } = data.contentfulLandingPage.evictorsList;
+
       return (
         <Layout>
           <div className="homepage">
@@ -123,16 +124,15 @@ const LandingPage = () => (
                       </>
                     </Link>
                   ))}
-                  {/* TODO: Update LINK to dishonorable mention */}
                   <Link
                     key={`e-dishonor`}
-                    to="/"
+                    to="/list/#dm"
                     className="column col-3 bg-error"
                   >
                     <>
                       <div className="container">
                         <div
-                          className="evictor-icon"
+                          className="evictor-icon background-cover-photo"
                           style={
                             dishonorableMentionImage && {
                               backgroundImage: `url(${dishonorableMentionImage.sizes.src})`
