@@ -1,73 +1,55 @@
 @import "_vars.scss";
 
 .navbar {
-  top: 0px;
-  height: $header-height;
-  padding-right: 20px;
-  background-color: $light;
-  width: 100%;
+  position: fixed;
   z-index: 1000;
+  right: 1.5rem;
+  bottom: 1.5rem;
 
-  .btn.btn-link,
-  .btn.btn-link:hover {
-    color: $dark;
-  }
-
-  .text-small {
-    font-size: 0.8em;
-  }
-
-  .btn.btn-link.active {
-    background-color: $light;
-    color: $gray-dark;
-    font-weight: 600;
-
-    &.dropdown-toggle {
-      background-color: $gray-light;
-    }
-  }
-
-  .btn.btn-link:hover,
-  .btn.btn-link:focus {
-    background-color: $gray-light;
-    color: $gray-dark;
-  }
-
-  .dropdown.dropdown-right .menu.d-block {
-    display: block;
-  }
-
-  .dropdown.dropdown-right .menu.d-none {
-    display: none;
-  }
-}
-
-.navbar.header {
-  .navbar-section {
-    justify-content: flex-end;
-  }
-  .navbar-section.website-title {
-    justify-content: flex-start;
-    padding-left: 1rem;
-
-    a,
-    a:active,
-    a:hover,
-    a:focus {
-      color: $dark;
-      text-decoration: none;
-      box-shadow: none;
+  .menu.d-flex {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: end;
+    // Override default menu's vertical transformation:
+    transform: none;
+    .dropdown-toggle {
+      position: fixed;
+      background-color: transparent;
+      border: none;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+      width: 1.5rem;
+      height: 1.5rem;
     }
 
-    img {
-      width: 20px;
-      height: 20px;
-      vertical-align: middle;
+    padding: 2.5rem 3.5rem 2.5rem 2.5rem;
+    @include for-tablet-landscape-down {
+      padding: 0.5rem;
     }
 
-    span {
-      vertical-align: middle;
-      padding-left: 0.5rem;
+    a {
+      color: $primary;
+      padding: 0.25rem 1.25rem;
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray-light;
+      }
+
+      &.active {
+        text-decoration: none;
+        list-style-type: disc;
+        padding-left: 3.75rem;
+      }
+
+      &:focus {
+        text-decoration: none;
+        box-shadow: none;
+        border: 1px dashed $primary;
+      }
     }
   }
 }

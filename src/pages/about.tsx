@@ -28,8 +28,8 @@ export const InfoPage: React.FC<InfoPageProps> = ({
         {subtitle &&
           documentToReactComponents(subtitle.json, contentfulOptions)}
       </div>
-      <div className="column col-8 hide-md bg-primary"></div>
-      <div className="column col-4 col-md-12"></div>
+      <div className="column col-8 hide-md bg-primary" />
+      <div className="column col-4 col-md-12" />
       <div className="column col-8 col-md-12">
         <div className="rich-text-bulleted-list">
           {documentToReactComponents(description.json, contentfulOptions)}

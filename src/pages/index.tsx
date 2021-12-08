@@ -164,7 +164,7 @@ const LandingPage = () => (
               <div className="column col-8 col-md-12"></div>
             </div>
 
-            <div className="columns bg-primary text-secondary">
+            <div id="rights" className="columns bg-primary text-secondary">
               <div className="column col-4 col-md-12 sticky-column-full-height">
                 <div className="eyebrow">know your tenant rights </div>
                 <h1>{data.contentfulLandingPage.kyrTitle}</h1>

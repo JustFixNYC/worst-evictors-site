@@ -74,6 +74,14 @@ $eyebrow-font: "Suisse Int'l Mono", "Courier New", Courier, monospace;
 .Footer {
   font-family: $body-font;
   line-height: 0.9rem;
-  line-height: 1.08rem;
   letter-spacing: 0.01rem;
+}
+
+.navbar {
+  font-family: $body-font;
+  font-size: 2.4rem;
+  letter-spacing: 0.01rem;
+  @include for-tablet-landscape-down {
+    font-size: 1.2rem;
+  }
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import Helmet from "react-helmet";
 
-import "../styles/header-footer.scss";
+import "../styles/menu-footer.scss";
 
-import Header from "./header";
 import Footer from "./footer";
+import NavMenu from "./menu";
 
 type Props = {
   children: React.ReactNode;
@@ -76,6 +76,7 @@ const Layout = ({
         <meta name="twitter:image" content={shareImageURL} />
         <meta name="twitter:image:alt" content="NYC's Worst Evictors" />
       </Helmet>
+      <NavMenu />
       <div className="page-content">{children}</div>
       <Footer />
     </div>

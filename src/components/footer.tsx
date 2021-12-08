@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/header-footer.scss";
+import "../styles/menu-footer.scss";
 import { FaGithub, FaTwitter, FaFacebook } from "react-icons/fa";
 import { OutboundLink } from "./outbound-link";
 import { IconType } from "react-icons/lib/cjs";
