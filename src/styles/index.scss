@@ -12,14 +12,6 @@
     min-height: 100vh;
 
     .column {
-      &.col-4 {
-        @include for-tablet-landscape-up {
-          position: sticky;
-          height: 100vh;
-          top: 0;
-        }
-      }
-
       &.evictors .column {
         position: relative;
         height: 0;

@@ -80,7 +80,7 @@ const LandingPage = () => (
         <Layout>
           <div className="homepage">
             <div className="columns bg-primary text-secondary">
-              <div className="column col-4 col-md-12">
+              <div className="column col-4 col-md-12 sticky-column-full-height">
                 <h1>
                   {documentToReactComponents(
                     data.contentfulLandingPage.openingTitle.json
@@ -165,7 +165,7 @@ const LandingPage = () => (
             </div>
 
             <div className="columns bg-primary text-secondary">
-              <div className="column col-4 col-md-12">
+              <div className="column col-4 col-md-12 sticky-column-full-height">
                 <div className="eyebrow">know your tenant rights </div>
                 <h1>{data.contentfulLandingPage.kyrTitle}</h1>
                 {documentToReactComponents(

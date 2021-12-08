@@ -25,6 +25,15 @@
   background-repeat: no-repeat;
 }
 
+.sticky-column-full-height {
+  @include for-tablet-landscape-up {
+    position: sticky;
+    min-height: 100vh;
+    height: fit-content;
+    top: 0;
+  }
+}
+
 .nobr {
   white-space: nowrap;
 }

@@ -56,7 +56,7 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
     id={content.citywideRank.toString()}
   >
     <div className="columns text-secondary">
-      <div className="column col-4 col-xl-6 col-md-12">
+      <div className="column col-4 col-xl-6 col-md-12 sticky-column-full-height">
         <div className="eyebrow rank">{content.citywideRank}.</div>
         {content.rankLastYear && (
           <div className="eyebrow">Last Year: {content.rankLastYear}</div>
@@ -102,11 +102,7 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
             }
           }
         />
-      </div>
-    </div>
-    <div className="columns text-secondary">
-      <div className="column col-4 col-xl-6 col-md-12"></div>
-      <div className="column col-8 col-xl-6 col-md-12">
+        <br />
         <p>
           <span className="text-bold text-uppercase">Funded By</span>
           <br />

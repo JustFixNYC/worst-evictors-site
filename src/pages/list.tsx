@@ -85,7 +85,7 @@ const CitywideEvictorsListPage = () => (
             ))}
             <section className="bg-primary evictor-profile" id="dm">
               <div className="columns text-secondary">
-                <div className="column col-4 col-xl-6 col-md-12">
+                <div className="column col-4 col-xl-6 col-md-12 sticky-column-full-height">
                   <div className="eyebrow">Dishonorable Mention</div>
                   <br />
                   <h2 className="text-bold">Property Management Companies</h2>
@@ -100,11 +100,7 @@ const CitywideEvictorsListPage = () => (
                       }
                     }
                   />
-                </div>
-              </div>
-              <div className="columns text-secondary">
-                <div className="column col-4 col-xl-6 col-md-12"></div>
-                <div className="column col-8 col-xl-6 col-md-12">
+                  <br />
                   {documentToReactComponents(
                     data.contentfulCitywideListPage.citywideDishonorableMentions
                       .json,
