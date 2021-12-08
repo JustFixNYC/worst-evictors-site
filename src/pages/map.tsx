@@ -17,9 +17,6 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
       query {
         contentfulMapPage {
           title
-          subtitle {
-            json
-          }
           description {
             json
           }
