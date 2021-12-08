@@ -28,7 +28,6 @@
 .sticky-header-column {
   position: sticky;
   top: 0;
-  border-bottom: 1px solid $secondary;
 }
 .sticky-column-full-height {
   @include for-tablet-landscape-up {

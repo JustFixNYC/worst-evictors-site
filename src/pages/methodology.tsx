@@ -8,15 +8,20 @@ const AboutPage = () => (
       query {
         contentfulMethodologyPage {
           title
+          subtitle {
+            json
+          }
           description {
             json
           }
         }
       }
     `}
-    render={(data) => {
-      const { title, description } = data.contentfulMethodologyPage;
-      return <InfoPage title={title} description={description} />;
+    render={data => {
+      const { title, subtitle, description } = data.contentfulMethodologyPage;
+      return (
+        <InfoPage title={title} subtitle={subtitle} description={description} />
+      );
     }}
   />
 );
