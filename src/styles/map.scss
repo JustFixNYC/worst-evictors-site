@@ -1,7 +1,10 @@
 @import "_vars.scss";
 
+$title-banner-height: 50px;
+$bottom-banner-height: 40px;
+
 .map-title-banner {
-  height: 50px;
+  height: $title-banner-height;
   background-color: $carto-background;
   padding-top: 3px; // offset for Carto Map iFrame border
 
@@ -31,30 +34,31 @@
 
 .map-container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
-  height: calc(100vh - 140px);
+  height: calc(100vh - #{$title-banner-height} - #{$bottom-banner-height});
   background-color: $carto-background;
 
   // remove Landlord widget by bringing margin up to cover it
   @include for-carto-map-minimized() {
     padding: 7px;
-    height: calc(100vh + 70px);
+    height: calc(
+      100vh - #{$title-banner-height} - #{$bottom-banner-height} + 210px
+    );
     margin-bottom: -210px;
   }
 }
 
 .map-bottom-banner {
   position: relative;
-  z-index: 2;
-  height: 40px;
+  z-index: 3;
+  height: $bottom-banner-height;
   background-color: $carto-background;
   border-top: 2px solid $gray-light;
   font-weight: 300;
 }
 
-.map-context {
+#map-context {
   position: relative;
   z-index: 2;
-  background-color: $light;
 }

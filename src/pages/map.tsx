@@ -6,6 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import "../styles/map.scss";
 
 import Layout from "../components/layout";
+import contentfulOptions from "../utils/contentful-rich-text-options";
 
 const CITYWIDE_MAP_URL =
   "https://ampitup.carto.com/builder/740ca688-2c74-4f0f-8aea-90d527dc6cdc/embed";
@@ -32,20 +33,29 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
         const loadingFrame = document.getElementById("map-iframe");
         if (!!loadingFrame) loadingFrame.className = "map-container d-block";
       };
+
+      const { title, description } = data.contentfulMapPage;
+
       return (
         <Layout
-          customTitle="Interactive Map of Evictions Across NYC in 2019"
+          customTitle="Interactive Map of Evictions Across NYC during COVID-19"
           customImage="https://i.imgur.com/21ukLGA.png"
           customUrl="https://www.worstevictorsnyc.org/map/"
         >
-          <div className="map-title-banner">
+          <div className="map-title-banner text-primary">
             <h4 className="p-2 mx-2">
-              <span className="mr-2 map-buttons-leadin">
-                Eviction Lawsuits from March 2020 to September 2021
+              <span className="mr-2 map-buttons-leadin hide-md">
+                Eviction lawsuits from March 2020 to September 2021
+              </span>
+              <span className="map-buttons-leadin show-md">
+                Eviction cases during COVID
               </span>
             </h4>
           </div>
-          <div id="map-iframe-loading" className="loading loading-lg">
+          <div
+            id="map-iframe-loading bg-secondary"
+            className="loading loading-lg"
+          >
             <iframe
               id="map-iframe"
               className="map-container d-invisible"
@@ -66,16 +76,21 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
               About this map <i className="icon icon-arrow-down"></i>
             </AnchorLink>
           </div>
-          <section
-            id="map-context"
-            className="map-context landing-context hero"
-          >
-            <div className="hero-body">
-              {documentToReactComponents(
-                data.contentfulMapPage.description.json
-              )}
+          <div className="columns bg-primary text-secondary" id="map-context">
+            <div className="column col-4 col-md-12 bg-primary sticky-header-column">
+              <br />
+              <div className="eyebrow">Worst Evictors Map</div>
+              <br />
+              <h1 className="m0">{title}</h1>
             </div>
-          </section>
+            <div className="column col-8 hide-md bg-primary" />
+            <div className="column col-4 col-md-12" />
+            <div className="column col-8 col-md-12">
+              <div className="rich-text-bulleted-list">
+                {documentToReactComponents(description.json, contentfulOptions)}
+              </div>
+            </div>
+          </div>
         </Layout>
       );
     }}
