@@ -38,6 +38,7 @@ type EvictorProps = {
     banks: string;
     lawyers: string;
     subsidies: string;
+    publicFundingType: string[];
     estimatedWorth: string;
     citywideEvictionsMapUrl: {
       citywideEvictionsMapUrl: string;
@@ -128,6 +129,23 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
               {FormatListAsArray(content.subsidies).map(
                 (subsidy: string, i: number) => (
                   <li key={i}>{subsidy}</li>
+                )
+              )}
+            </ul>
+          ) : (
+            "None"
+          )}
+        </p>
+        <p>
+          <span className="text-bold text-uppercase">
+            Public funding sources
+          </span>
+          <br />
+          {content.publicFundingType ? (
+            <ul>
+              {content.publicFundingType.map(
+                (fundingType: string, i: number) => (
+                  <li key={i}>{fundingType}</li>
                 )
               )}
             </ul>

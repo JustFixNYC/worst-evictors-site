@@ -36,6 +36,7 @@ const CitywideEvictorsListPage = () => (
             banks
             lawyers
             subsidies
+            publicFundingType
             estimatedWorth
             citywideEvictionsMapUrl {
               citywideEvictionsMapUrl
