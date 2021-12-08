@@ -12,12 +12,13 @@
     min-height: 100vh;
 
     .column {
-      &.evictors {
-        height: 100%;
-        overflow-y: scroll;
+      &.col-4 {
+        position: sticky;
+        height: 100vh;
+        top: 0;
       }
 
-      &.col-3 {
+      &.evictors .column {
         position: relative;
         padding: 0 0 25% 0;
         height: 0;
