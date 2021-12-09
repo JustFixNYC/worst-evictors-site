@@ -47,11 +47,8 @@ const Footer = () => (
           title="Follow us on Twitter"
           icon={FaTwitter}
         />
-        <OutboundLink href="https://www.netlify.com" className="hide-sm">
-          <img
-            src="https://www.netlify.com/img/global/badges/netlify-light.svg"
-            width="100"
-          />
+        <OutboundLink href="https://www.netlify.com" className="hide-md">
+          <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" />
         </OutboundLink>
       </div>
       Made with NYC ♥ by the team at{" "}

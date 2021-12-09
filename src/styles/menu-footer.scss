@@ -84,7 +84,7 @@
   }
 
   img {
-    max-width: 72px;
+    max-width: 250px;
     margin-right: 32px;
   }
 
@@ -100,12 +100,11 @@
     }
   }
 
-  @include for-phone-only() {
+  @include for-tablet-landscape-down() {
     display: block;
     text-align: center;
 
     img {
-      max-width: 100px;
       display: block;
       margin: 0 auto 16px auto;
     }
