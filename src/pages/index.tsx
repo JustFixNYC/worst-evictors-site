@@ -89,28 +89,31 @@ const LandingPage = () => (
                     data.contentfulLandingPage.openingTitle.json
                   )}
                 </h1>
-                {documentToReactComponents(
-                  data.contentfulLandingPage.openingSubtitle.json
-                )}
-                <br />
-                <div className="eyebrow">Brought to you by</div>
-                <img
-                  className="logo"
-                  src={rtcLogo}
-                  alt="Right to Counsel NYC Coalition"
-                />
-                <img className="logo" src={justfixLogo} alt="JustFix NYC" />
-                <img
-                  className="logo"
-                  src={aempLogo}
-                  alt="The Anti-Eviction Mapping Project"
-                />
+                <div className="delayed-fade-in">
+                  {documentToReactComponents(
+                    data.contentfulLandingPage.openingSubtitle.json
+                  )}
+
+                  <br />
+                  <div className="eyebrow">Brought to you by</div>
+                  <img
+                    className="logo"
+                    src={rtcLogo}
+                    alt="Right to Counsel NYC Coalition"
+                  />
+                  <img className="logo" src={justfixLogo} alt="JustFix NYC" />
+                  <img
+                    className="logo"
+                    src={aempLogo}
+                    alt="The Anti-Eviction Mapping Project"
+                  />
+                </div>
               </div>
               <div className="column col-8 col-md-12 evictors">
                 <div className="columns">
                   <div
                     key="e-intro"
-                    className="column col-3 col-xl-4 col-md-12 bg-primary text-right"
+                    className="column col-3 col-xl-4 col-md-12 bg-primary text-right fade-in-0"
                   >
                     <span>
                       COVID <br /> Worst <br className="hide-md" /> Evictors
@@ -120,7 +123,7 @@ const LandingPage = () => (
                     <Link
                       key={`e-${i}`}
                       to={`/list/#${evictor.citywideRank}`}
-                      className="column col-3 col-xl-4 col-md-6 bg-error text-secondary"
+                      className={`column col-3 col-xl-4 col-md-6 bg-error text-secondary fade-in-${evictor.citywideRank}`}
                     >
                       <>
                         <div className="container">
@@ -143,7 +146,7 @@ const LandingPage = () => (
                   <Link
                     key={`e-dishonor`}
                     to="/list/#dm"
-                    className="column col-3 col-xl-4 col-md-6 bg-error text-secondary"
+                    className="column col-3 col-xl-4 col-md-6 bg-error text-secondary fade-in-21"
                   >
                     <>
                       <div className="container">
