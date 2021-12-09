@@ -34,7 +34,7 @@ const LandingPage = () => (
           }
           mapButton
           mapBackground {
-            fluid {
+            sizes(maxWidth: 850) {
               aspectRatio
               src
               srcSet
@@ -42,6 +42,14 @@ const LandingPage = () => (
             }
           }
           kyrTitle
+          kyrImage {
+            sizes(maxWidth: 850) {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
           kyrDescription {
             json
           }
@@ -168,6 +176,7 @@ const LandingPage = () => (
                 </div>
               </div>
             </div>
+
             <div className="columns bg-secondary text-primary">
               <div className="column col-4 col-md-12">
                 <div className="eyebrow">Worst Evictors Map</div>
@@ -179,18 +188,36 @@ const LandingPage = () => (
                   {data.contentfulLandingPage.mapButton}
                 </Link>
               </div>
-              <div className="column col-8 col-md-12"></div>
+              <div className="column col-8 col-md-12">
+                <div
+                  className="background-cover-photo"
+                  style={
+                    data.contentfulLandingPage.mapBackground && {
+                      backgroundImage: `url(${data.contentfulLandingPage.mapBackground.sizes.src})`
+                    }
+                  }
+                />
+              </div>
             </div>
 
             <div id="rights" className="columns bg-primary text-secondary">
               <div className="column col-4 col-md-12 sticky-column-full-height">
-                <div className="eyebrow">know your tenant rights </div>
+                <div className="eyebrow">Know your tenant rights </div>
                 <h1>{data.contentfulLandingPage.kyrTitle}</h1>
                 {documentToReactComponents(
                   data.contentfulLandingPage.kyrDescription.json
                 )}
               </div>
-              <div className="column col-8 col-md-12"></div>
+              <div className="column col-8 col-md-12">
+                <div
+                  className="background-cover-photo"
+                  style={
+                    data.contentfulLandingPage.kyrImage && {
+                      backgroundImage: `url(${data.contentfulLandingPage.kyrImage.sizes.src})`
+                    }
+                  }
+                />
+              </div>
               <div className="column col-4 col-md-12"></div>
               <div className="column col-8 col-md-12">
                 {" "}

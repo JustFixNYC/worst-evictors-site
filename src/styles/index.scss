@@ -84,11 +84,17 @@
           }
         }
       }
+
+      &.col-8 {
+        min-height: 350px;
+      }
     }
 
     &:not(:first-child) .column {
-      padding-top: 3.2rem;
-      padding-bottom: 3.2rem;
+      @include for-tablet-landscape-up {
+        padding-top: 3.2rem;
+        padding-bottom: 3.2rem;
+      }
     }
   }
 
