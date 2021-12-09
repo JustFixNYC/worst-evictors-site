@@ -15,7 +15,7 @@ const SocialLink = (props: { href: string; icon: IconType; title: string }) => (
 
 const Footer = () => (
   <footer className="Footer">
-    <img src={rtcLogo} alt={`Right to Counsel logo`} />
+    <img src={rtcLogo} alt="Right to Counsel logo" />
     <span>
       This resource is made &ldquo;by tenants for tenants&rdquo; and is
       maintained by the{" "}

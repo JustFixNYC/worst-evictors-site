@@ -82,4 +82,13 @@
   .eyebrow {
     margin-bottom: 1.3rem;
   }
+
+  img.logo {
+    width: 100%;
+    max-width: 300px;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
 }

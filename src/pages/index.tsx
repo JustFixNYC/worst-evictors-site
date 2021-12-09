@@ -2,11 +2,14 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Link } from "gatsby";
+import Layout from "../components/layout";
+import contentfulOptions from "../utils/contentful-rich-text-options";
 
 import "../styles/index.scss";
 
-import Layout from "../components/layout";
-import contentfulOptions from "../utils/contentful-rich-text-options";
+const rtcLogo = require("../images/RTC_logo.png");
+const justfixLogo = require("../images/JustFix_logo.png");
+const aempLogo = require("../images/AEMP_logo.png");
 
 type EvictorDetails = {
   citywideRank: number;
@@ -89,6 +92,19 @@ const LandingPage = () => (
                 {documentToReactComponents(
                   data.contentfulLandingPage.openingSubtitle.json
                 )}
+                <br />
+                <div className="eyebrow">Brought to you by</div>
+                <img
+                  className="logo"
+                  src={rtcLogo}
+                  alt="Right to Counsel NYC Coalition"
+                />
+                <img className="logo" src={justfixLogo} alt="JustFix NYC" />
+                <img
+                  className="logo"
+                  src={aempLogo}
+                  alt="The Anti-Eviction Mapping Project"
+                />
               </div>
               <div className="column col-8 col-md-12 evictors">
                 <div className="columns">
