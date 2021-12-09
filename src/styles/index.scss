@@ -58,14 +58,25 @@
             margin: 0.7rem;
           }
 
+          // CSS Transitions:
+          .evictor-icon,
+          .eyebrow {
+            transition: all 0.3s linear;
+            opacity: 1;
+          }
+          .hover-label {
+            transition: all 0.3s linear;
+            opacity: 0;
+          }
+
           &:hover {
             .evictor-icon,
             .eyebrow {
-              transition: all 0.1s linear;
+              transition: all 0.3s linear;
               opacity: 0;
             }
             .hover-label {
-              transition: all 0.1s linear;
+              transition: all 0.3s linear;
               opacity: 1;
             }
           }

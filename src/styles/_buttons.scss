@@ -17,10 +17,13 @@
   border-radius: 5rem;
   padding: 1rem 1.2rem;
   height: fit-content;
-  box-shadow: 0px 7px 0px 0px $gray-medium;
+  box-shadow: 7px 7px 0px 0px $gray-medium;
   max-width: 100%;
   white-space: normal;
   word-wrap: break-word;
+
+  transition: all 0.1s linear;
+  transform: translateX(0px);
 
   &:focus,
   &:hover {
@@ -29,10 +32,12 @@
   }
   &:focus {
     border-style: dashed;
-    box-shadow: 0px 7px 0px 0px $gray-medium;
+    box-shadow: 7px 7px 0px 0px $gray-medium;
   }
   &:hover {
-    box-shadow: 7px 7px 0px 0px $gray-medium;
+    transition: all 0.1s linear;
+    box-shadow: 0px 7px 0px 0px $gray-medium;
+    transform: translateX(7px);
   }
   &:active,
   &.active {
@@ -45,7 +50,6 @@
     background-color: $color;
     box-shadow: 0px 7px 0px 0px $gray-medium inset,
       0px -3px 0px 0px $gray-medium;
-    border-top-color: $gray-medium;
   }
 }
 

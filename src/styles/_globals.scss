@@ -1,11 +1,24 @@
 @import "_vars.scss";
 
-.page-content {
+.page-content,
+.Footer {
   background-color: $primary;
   color: $secondary;
 
   a {
+    background-color: $primary;
     color: $secondary;
+    text-decoration: underline;
+
+    &.btn {
+      text-decoration: none;
+    }
+  }
+
+  a:hover,
+  a:focus {
+    color: $primary;
+    background-color: $secondary;
   }
 }
 
@@ -48,24 +61,6 @@
     & > p {
       display: inline;
     }
-  }
-}
-
-// Site-wide styling for inline hyperlinks
-p,
-.Footer {
-  a {
-    text-decoration: underline;
-    color: $secondary;
-  }
-
-  a:visited {
-    color: $secondary;
-  }
-
-  a:hover {
-    color: $secondary;
-    text-decoration: none;
   }
 }
 
