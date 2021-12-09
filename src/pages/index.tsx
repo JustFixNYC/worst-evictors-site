@@ -70,10 +70,10 @@ const LandingPage = () => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const {
         evictors,
-        dishonorableMentionImage
+        dishonorableMentionImage,
       } = data.contentfulLandingPage.evictorsList;
 
       return (
@@ -112,7 +112,7 @@ const LandingPage = () => (
                             className="evictor-icon background-cover-photo"
                             style={
                               evictor.photo && {
-                                backgroundImage: `url(${evictor.photo.sizes.src})`
+                                backgroundImage: `url(${evictor.photo.sizes.src})`,
                               }
                             }
                           />
@@ -135,7 +135,7 @@ const LandingPage = () => (
                           className="evictor-icon background-cover-photo"
                           style={
                             dishonorableMentionImage && {
-                              backgroundImage: `url(${dishonorableMentionImage.sizes.src})`
+                              backgroundImage: `url(${dishonorableMentionImage.sizes.src})`,
                             }
                           }
                         />
@@ -156,7 +156,7 @@ const LandingPage = () => (
                 {documentToReactComponents(
                   data.contentfulLandingPage.mapDescription.json
                 )}
-                <Link to="/map" className="btn btn-outline-primary">
+                <Link to="/map" className="btn btn-secondary">
                   {data.contentfulLandingPage.mapButton}
                   <i className="icon icon-forward ml-2"></i>
                 </Link>

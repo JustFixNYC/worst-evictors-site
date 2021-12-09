@@ -15,7 +15,7 @@ class NavMenu extends React.Component<Props, State> {
     super(props);
     this.state = {
       isDropdownVisible: false,
-      isListDropdownVisible: false
+      isListDropdownVisible: false,
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -24,32 +24,33 @@ class NavMenu extends React.Component<Props, State> {
 
   toggleDropdown() {
     this.setState({
-      isDropdownVisible: !this.state.isDropdownVisible
+      isDropdownVisible: !this.state.isDropdownVisible,
     });
   }
 
   toggleListDropdown() {
     this.setState({
-      isListDropdownVisible: !this.state.isListDropdownVisible
+      isListDropdownVisible: !this.state.isListDropdownVisible,
     });
   }
 
   render() {
     return (
-      <div className="navbar bg-secondary text-primary">
+      <div className="navbar text-primary">
         <button
           className={
-            "btn btn-link dropdown-toggle m-2" +
+            "btn btn-secondary dropdown-toggle" +
             (this.state.isDropdownVisible ? " active" : "")
           }
           onClick={this.toggleDropdown}
           tabIndex={0}
         >
-          MENU
+          Menu
         </button>
         <ul
           className={
-            "menu " + (this.state.isDropdownVisible ? "d-flex" : "d-none")
+            "menu bg-secondary " +
+            (this.state.isDropdownVisible ? "d-flex" : "d-none")
           }
           onClick={this.toggleDropdown}
         >

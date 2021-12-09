@@ -14,7 +14,7 @@ const AddAmongOthers = (array: string[]) => {
 };
 
 const FormatListAsArray = (list: string) => {
-  const rawArray = list.split(",").map(item => item.trim());
+  const rawArray = list.split(",").map((item) => item.trim());
   return AddAmongOthers(rawArray);
 };
 
@@ -78,17 +78,17 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
         <div className="btn-group">
           <Link
             to="/map"
-            className="btn btn-outline-primary my-1"
+            className="btn btn-primary my-1"
             state={{
               iframe: content.citywideEvictionsMapUrl.citywideEvictionsMapUrl,
-              mapType: "citywide"
+              mapType: "citywide",
             }}
           >
             See Map of Portfolio
           </Link>
           <OutboundLink
             href={content.whoOwnsWhatUrl}
-            className="btn btn-outline-primary"
+            className="btn btn-primary"
           >
             See if your building is in this portfolio
           </OutboundLink>
@@ -99,7 +99,7 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
           className="background-cover-photo"
           style={
             content.photo && {
-              backgroundImage: `url(${content.photo.sizes.src})`
+              backgroundImage: `url(${content.photo.sizes.src})`,
             }
           }
         />
@@ -169,7 +169,7 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
             contentfulOptions
           )}
         <br />
-        <Link to="/" className="btn btn-outline-primary">
+        <Link to="/" className="btn btn-primary">
           Back to worst evictors list
         </Link>
       </div>

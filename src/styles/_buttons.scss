@@ -1,62 +1,51 @@
 @import "_vars.scss";
 @import "node_modules/spectre.css/src/spectre.scss";
 
-.btn.btn-primary {
-  @include button-variant($primary-color);
-}
-
-.btn.btn-secondary {
-  @include button-variant($secondary-color);
-}
-
-.btn.btn-gray {
-  @include button-variant($gray);
-}
-
 // Override of Standard Mixin:
-@mixin button-outline-variant($color: $primary-color) {
-  background: $light-color;
-  border-color: $color;
-  color: $color;
-  &:focus {
-    @include control-shadow($color);
+@mixin button-variant($color: $primary-color) {
+  background-color: $color;
+  text-transform: inherit;
+
+  @if $color == $secondary-color {
+    color: $primary-color;
+    border-color: $primary-color;
+  } @else {
+    color: $secondary-color;
+    border-color: $secondary-color;
   }
-  &:focus,
+
+  border-radius: 5rem;
+  padding: 1rem 1.2rem;
+  height: fit-content;
+  box-shadow: 0px 7px 0px 0px $gray-medium;
+  &:focus {
+    box-shadow: 0px 7px 0px 0px $gray-medium;
+  }
   &:hover {
-    background: $gray-light;
-    border-color: darken($color, 2%);
-    color: $color;
+    border-color: inherit;
+    background-color: $color;
+    box-shadow: 7px 7px 0px 0px $gray-medium;
   }
   &:active,
   &.active {
-    background: $gray-light;
-    border-color: darken($color, 5%);
-    color: $color;
-  }
-  &.loading {
-    &::after {
-      border-bottom-color: $color;
-      border-left-color: $color;
+    @if $color == $secondary-color {
+      color: $primary-color;
+    } @else {
+      color: $secondary-color;
     }
+    background-color: $color;
+    box-shadow: 0px 7px 0px 0px $gray-medium inset,
+      0px -3px 0px 0px $gray-medium;
+    border-top-color: $gray-medium;
   }
 }
 
-.btn.btn-outline-primary {
-  @include button-outline-variant($primary-color);
+a.btn.btn-primary,
+button.btn.btn-primary {
+  @include button-variant($primary-color);
 }
 
-.btn.btn-outline-secondary {
-  @include button-outline-variant($secondary-color);
-}
-
-.btn.btn-outline-efnyc {
-  @include button-outline-variant($efnyc-blue);
-}
-
-.btn.btn-outline-gray {
-  @include button-outline-variant($gray);
-}
-
-.btn.btn-outline-dark {
-  @include button-outline-variant($dark);
+a.btn.btn-secondary,
+button.btn.btn-secondary {
+  @include button-variant($secondary-color);
 }

@@ -62,13 +62,6 @@ $eyebrow-font: "Suisse Int'l Mono", "Courier New", Courier, monospace;
     font-size: 1.8rem;
     line-height: 1.8rem;
   }
-
-  .eyebrow {
-    font-size: 0.9rem;
-    font-family: $eyebrow-font;
-    text-transform: uppercase;
-    letter-spacing: 0.03rem;
-  }
 }
 
 .Footer {
@@ -83,5 +76,17 @@ $eyebrow-font: "Suisse Int'l Mono", "Courier New", Courier, monospace;
   letter-spacing: 0.01rem;
   @include for-tablet-landscape-down {
     font-size: 1.2rem;
+  }
+}
+
+.page-content,
+.navbar {
+  .eyebrow,
+  .btn.btn-primary,
+  .btn.btn-secondary {
+    font-size: 0.9rem;
+    font-family: $eyebrow-font;
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
   }
 }

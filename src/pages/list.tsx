@@ -63,7 +63,7 @@ const CitywideEvictorsListPage = () => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const evictorsContentList = data.contentfulCitywideListPage.evictors;
       return (
         <Layout
@@ -97,7 +97,7 @@ const CitywideEvictorsListPage = () => (
                     style={
                       data.contentfulCitywideListPage
                         .dishonorableMentionImage && {
-                        backgroundImage: `url(${data.contentfulCitywideListPage.dishonorableMentionImage.sizes.src})`
+                        backgroundImage: `url(${data.contentfulCitywideListPage.dishonorableMentionImage.sizes.src})`,
                       }
                     }
                   />
@@ -108,7 +108,7 @@ const CitywideEvictorsListPage = () => (
                     contentfulOptions
                   )}
                   <br />
-                  <Link to="/" className="btn btn-outline-primary">
+                  <Link to="/" className="btn btn-primary">
                     Back to worst evictors list
                   </Link>
                 </div>
