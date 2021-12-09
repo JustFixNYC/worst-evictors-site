@@ -12,6 +12,7 @@ type Props = {
   customUrl?: string;
   customImage?: string;
   className?: string;
+  hideScrollArrow?: boolean;
 };
 
 const ScrollArrow = () => (
@@ -25,7 +26,8 @@ const Layout = ({
   customTitle,
   customUrl,
   customImage,
-  className
+  className,
+  hideScrollArrow
 }: Props) => {
   const title = customTitle || "NYC's Worst Evictors";
   const description =
@@ -84,7 +86,7 @@ const Layout = ({
       </Helmet>
       <NavMenu />
       <div className="page-content">
-        <ScrollArrow />
+        {!hideScrollArrow && <ScrollArrow />}
         {children}
       </div>
       <Footer />

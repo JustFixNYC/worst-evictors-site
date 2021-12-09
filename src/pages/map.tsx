@@ -38,6 +38,7 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
           customTitle="Interactive Map of Evictions Across NYC during COVID-19"
           customImage="https://i.imgur.com/21ukLGA.png"
           customUrl="https://www.worstevictorsnyc.org/map/"
+          hideScrollArrow
         >
           <div className="map-title-banner text-primary">
             <h4 className="p-2 mx-2">
