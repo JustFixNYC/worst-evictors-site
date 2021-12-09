@@ -27,6 +27,13 @@ body {
   }
 }
 
+div.d-flex {
+  flex-direction: column;
+  div:first-child {
+    flex-grow: 1;
+  }
+}
+
 // No horizontal overflow on mobile
 @include for-tablet-landscape-down() {
   .page-content {
