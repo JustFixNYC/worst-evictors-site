@@ -67,11 +67,19 @@
 .Footer {
   background-color: $primary;
   color: $secondary;
-  padding: 48px 32px;
+  padding: 0.7rem;
   display: flex;
   justify-content: space-between;
-
   align-items: flex-end;
+
+  // This makes sure our Footer appears above our fixed "scroll-arrow" component:
+  position: relative;
+  z-index: 750;
+
+  // This adds space for the MENU button on desktop:
+  @include for-tablet-landscape-up {
+    margin-right: calc(2.4rem + #{$menu-button-width});
+  }
 
   .btn.btn-link {
     color: $secondary;
@@ -130,6 +138,7 @@
 .scroll-arrow {
   position: fixed;
   bottom: 1.5rem;
+  z-index: 500;
   text-shadow: -1px 0 $primary, 0 1px $primary, 1px 0 $primary, 0 -1px $primary;
   left: calc(33% - 0.825rem);
   pointer-events: none;

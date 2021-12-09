@@ -1,5 +1,9 @@
 @import "_vars.scss";
 
+body {
+  background-color: $primary;
+}
+
 .page-content,
 .Footer {
   background-color: $primary;
