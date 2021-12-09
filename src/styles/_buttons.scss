@@ -8,10 +8,10 @@
 
   @if $color == $secondary-color {
     color: $primary-color;
-    border-color: $primary-color;
+    border: 1px solid $primary-color;
   } @else {
     color: $secondary-color;
-    border-color: $secondary-color;
+    border: 1px solid $secondary-color;
   }
 
   border-radius: 5rem;
@@ -22,12 +22,16 @@
   white-space: normal;
   word-wrap: break-word;
 
+  &:focus,
+  &:hover {
+    border-color: initial;
+    background-color: $color;
+  }
   &:focus {
+    border-style: dashed;
     box-shadow: 0px 7px 0px 0px $gray-medium;
   }
   &:hover {
-    border-color: inherit;
-    background-color: $color;
     box-shadow: 7px 7px 0px 0px $gray-medium;
   }
   &:active,
@@ -37,6 +41,7 @@
     } @else {
       color: $secondary-color;
     }
+    border-style: solid;
     background-color: $color;
     box-shadow: 0px 7px 0px 0px $gray-medium inset,
       0px -3px 0px 0px $gray-medium;
