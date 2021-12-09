@@ -9,7 +9,7 @@ import Layout from "../components/layout";
 import contentfulOptions from "../utils/contentful-rich-text-options";
 
 const CITYWIDE_MAP_URL =
-  "https://ampitup.carto.com/builder/740ca688-2c74-4f0f-8aea-90d527dc6cdc/embed";
+  "https://ampitup.carto.com/builder/22338af2-9fab-4e3b-89aa-2fcb1b509f9e/embed";
 
 const MapPage: React.FC<{ location: any }> = ({ location }) => (
   <StaticQuery
@@ -49,10 +49,7 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
               </span>
             </h4>
           </div>
-          <div
-            id="map-iframe-loading bg-secondary"
-            className="loading loading-lg"
-          >
+          <div id="map-iframe-loading" className="loading loading-lg">
             <iframe
               id="map-iframe"
               className="map-container d-invisible"
