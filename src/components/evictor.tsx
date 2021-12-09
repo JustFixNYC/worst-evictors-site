@@ -57,24 +57,26 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
     id={content.citywideRank.toString()}
   >
     <div className="columns text-secondary">
-      <div className="column col-4 col-xl-6 col-md-12 sticky-column-full-height">
-        <div className="eyebrow rank">{content.citywideRank}.</div>
-        {content.rankLastYear && (
-          <div className="eyebrow">Last Year: {content.rankLastYear}</div>
-        )}
-        <br />
-        <span className="text-bold">
-          <h1>{content.name}</h1>
-          <h2>{content.corporation}</h2>
+      <div className="column col-4 col-xl-6 col-md-12 sticky-column-desktop full-height-container-desktop">
+        <div className="full-height-container-desktop">
+          <div className="eyebrow rank">{content.citywideRank}.</div>
+          {content.rankLastYear && (
+            <div className="eyebrow">Last Year: {content.rankLastYear}</div>
+          )}
           <br />
+          <span className="text-bold">
+            <h1>{content.name}</h1>
+            <h2>{content.corporation}</h2>
+            <br />
+            <br />
+            <h2>{content.citywideEvictions} households sued for eviction</h2>
+          </span>
+          <p>{content.pastExecutedEvictions} evictions executed since 2017</p>
+          <p>{content.citywideUnits} families housed</p>
+          <p>{content.citywidePercentRs}% rent stabilized</p>
+          <p>{content.estimatedWorth || "Unknown amount"} paid for buildings</p>
           <br />
-          <h2>{content.citywideEvictions} households sued for eviction</h2>
-        </span>
-        <p>{content.pastExecutedEvictions} evictions executed since 2017</p>
-        <p>{content.citywideUnits} families housed</p>
-        <p>{content.citywidePercentRs}% rent stabilized</p>
-        <p>{content.estimatedWorth || "Unknown amount"} paid for buildings</p>
-        <br />
+        </div>
         <Link
           to="/map"
           className="btn btn-primary"

@@ -91,17 +91,20 @@ const LandingPage = () => (
         <Layout>
           <div className="homepage">
             <div className="columns bg-primary text-secondary">
-              <div className="column col-4 col-md-12 sticky-column-full-height">
-                <h1 className="immediate-fade-in">
-                  {documentToReactComponents(
-                    data.contentfulLandingPage.openingTitle.json
-                  )}
-                </h1>
+              <div className="column col-4 col-md-12 sticky-column-desktop full-height-container">
+                <div className="full-height-container">
+                  <h1 className="immediate-fade-in">
+                    {documentToReactComponents(
+                      data.contentfulLandingPage.openingTitle.json
+                    )}
+                  </h1>
+                  <div className="delayed-fade-in">
+                    {documentToReactComponents(
+                      data.contentfulLandingPage.openingSubtitle.json
+                    )}
+                  </div>
+                </div>
                 <div className="delayed-fade-in">
-                  {documentToReactComponents(
-                    data.contentfulLandingPage.openingSubtitle.json
-                  )}
-
                   <br />
                   <div className="eyebrow">Brought to you by</div>
                   <img
@@ -201,7 +204,7 @@ const LandingPage = () => (
             </div>
 
             <div id="rights" className="columns bg-primary text-secondary">
-              <div className="column col-4 col-md-12 sticky-column-full-height">
+              <div className="column col-4 col-md-12 sticky-column-desktop full-height-container-desktop">
                 <div className="eyebrow">Know your tenant rights </div>
                 <h1>{data.contentfulLandingPage.kyrTitle}</h1>
                 {documentToReactComponents(

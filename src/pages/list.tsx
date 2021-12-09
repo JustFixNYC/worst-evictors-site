@@ -86,7 +86,7 @@ const CitywideEvictorsListPage = () => (
             ))}
             <section className="bg-primary evictor-profile" id="dm">
               <div className="columns text-secondary">
-                <div className="column col-4 col-xl-6 col-md-12 sticky-column-full-height">
+                <div className="column col-4 col-xl-6 col-md-12 sticky-column-desktop full-height-container">
                   <div className="eyebrow">Dishonorable Mention</div>
                   <br />
                   <h2 className="text-bold">Property Management Companies</h2>

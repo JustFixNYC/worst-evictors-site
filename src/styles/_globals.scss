@@ -43,16 +43,27 @@ body {
   background-repeat: no-repeat;
 }
 
-.sticky-header-column {
+.sticky-column {
   position: sticky;
   top: 0;
 }
-.sticky-column-full-height {
+
+.sticky-column-desktop {
   @include for-tablet-landscape-up {
     position: sticky;
+    top: 0;
+  }
+}
+
+.full-height-container {
+  min-height: 100vh;
+  height: fit-content;
+}
+
+.full-height-container-desktop {
+  @include for-tablet-landscape-up {
     min-height: 100vh;
     height: fit-content;
-    top: 0;
   }
 }
 

@@ -71,7 +71,7 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
             </AnchorLink>
           </div>
           <div className="columns bg-primary text-secondary" id="map-context">
-            <div className="column col-4 col-md-12 bg-primary sticky-header-column">
+            <div className="column col-4 col-md-12 bg-primary sticky-column">
               <br />
               <div className="eyebrow">Worst Evictors Map</div>
               <br />

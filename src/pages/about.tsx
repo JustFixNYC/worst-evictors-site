@@ -23,7 +23,7 @@ export const InfoPage: React.FC<InfoPageProps> = ({
 }) => (
   <Layout>
     <div className="columns bg-primary text-secondary">
-      <div className="column col-4 col-md-12 bg-primary sticky-header-column">
+      <div className="column col-4 col-md-12 bg-primary sticky-column">
         <h1 className="m0">{title}</h1>
         {subtitle &&
           documentToReactComponents(subtitle.json, contentfulOptions)}
