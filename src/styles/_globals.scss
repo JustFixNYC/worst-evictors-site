@@ -10,7 +10,8 @@
     color: $secondary;
     text-decoration: underline;
 
-    &.btn {
+    &.btn,
+    &.column {
       text-decoration: none;
     }
   }

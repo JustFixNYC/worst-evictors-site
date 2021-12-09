@@ -120,7 +120,7 @@ const LandingPage = () => (
                     <Link
                       key={`e-${i}`}
                       to={`/list/#${evictor.citywideRank}`}
-                      className="column col-3 col-xl-4 col-md-6 bg-error"
+                      className="column col-3 col-xl-4 col-md-6 bg-error text-secondary"
                     >
                       <>
                         <div className="container">
@@ -143,7 +143,7 @@ const LandingPage = () => (
                   <Link
                     key={`e-dishonor`}
                     to="/list/#dm"
-                    className="column col-3 col-xl-4 col-md-6 bg-error"
+                    className="column col-3 col-xl-4 col-md-6 bg-error text-secondary"
                   >
                     <>
                       <div className="container">
