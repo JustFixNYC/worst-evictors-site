@@ -84,7 +84,7 @@ const LandingPage = () => (
           <div className="homepage">
             <div className="columns bg-primary text-secondary">
               <div className="column col-4 col-md-12 sticky-column-full-height">
-                <h1>
+                <h1 className="immediate-fade-in">
                   {documentToReactComponents(
                     data.contentfulLandingPage.openingTitle.json
                   )}

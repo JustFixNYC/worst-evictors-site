@@ -36,6 +36,10 @@
   }
 }
 
+.immediate-fade-in {
+  @include fade-in("0s");
+}
+
 .delayed-fade-in {
   @include fade-in("0.5s");
 }
