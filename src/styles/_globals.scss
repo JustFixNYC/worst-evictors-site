@@ -71,6 +71,13 @@ body {
   white-space: nowrap;
 }
 
+.marginless {
+  margin: 0;
+  p {
+    margin: 0;
+  }
+}
+
 // Class for formatting bulleted lists from Contentful rich text elements
 .rich-text-bulleted-list {
   li {

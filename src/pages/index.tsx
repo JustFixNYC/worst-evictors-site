@@ -92,7 +92,7 @@ const LandingPage = () => (
           <div className="homepage">
             <div className="columns bg-primary text-secondary">
               <div className="column col-4 col-md-12 sticky-column-desktop full-height-container">
-                <div className="full-height-container">
+                <div className="full-height-container d-flex">
                   <h1 className="immediate-fade-in">
                     {documentToReactComponents(
                       data.contentfulLandingPage.openingTitle.json
@@ -118,6 +118,7 @@ const LandingPage = () => (
                     src={aempLogo}
                     alt="The Anti-Eviction Mapping Project"
                   />
+                  <br />
                 </div>
               </div>
               <div className="column col-8 col-md-12 evictors">
@@ -181,15 +182,20 @@ const LandingPage = () => (
             </div>
 
             <div className="columns bg-secondary text-primary">
-              <div className="column col-4 col-md-12">
-                <div className="eyebrow">Worst Evictors Map</div>
-                <h1>{data.contentfulLandingPage.mapTitle}</h1>
-                {documentToReactComponents(
-                  data.contentfulLandingPage.mapDescription.json
-                )}
-                <Link to="/map" className="btn btn-secondary">
-                  {data.contentfulLandingPage.mapButton}
-                </Link>
+              <div className="column col-4 col-md-12 d-flex">
+                <div>
+                  <div className="eyebrow">Worst Evictors Map</div>
+                  <h1>{data.contentfulLandingPage.mapTitle}</h1>
+                </div>
+                <div>
+                  {documentToReactComponents(
+                    data.contentfulLandingPage.mapDescription.json
+                  )}
+
+                  <Link to="/map" className="btn btn-secondary">
+                    {data.contentfulLandingPage.mapButton}
+                  </Link>
+                </div>
               </div>
               <div className="column col-8 col-md-12">
                 <div
@@ -204,12 +210,16 @@ const LandingPage = () => (
             </div>
 
             <div id="rights" className="columns bg-primary text-secondary">
-              <div className="column col-4 col-md-12 sticky-column-desktop full-height-container-desktop">
-                <div className="eyebrow">Know your tenant rights </div>
-                <h1>{data.contentfulLandingPage.kyrTitle}</h1>
-                {documentToReactComponents(
-                  data.contentfulLandingPage.kyrDescription.json
-                )}
+              <div className="column col-4 col-md-12 sticky-column-desktop full-height-container-desktop d-flex">
+                <div>
+                  <div className="eyebrow">Know your tenant rights </div>
+                  <h1>{data.contentfulLandingPage.kyrTitle}</h1>
+                </div>
+                <div className="marginless">
+                  {documentToReactComponents(
+                    data.contentfulLandingPage.kyrDescription.json
+                  )}
+                </div>
               </div>
               <div className="column col-8 col-md-12">
                 <div

@@ -98,6 +98,13 @@
     }
   }
 
+  div.d-flex {
+    flex-direction: column;
+    div:first-child {
+      flex-grow: 1;
+    }
+  }
+
   .eyebrow {
     margin-bottom: 1.3rem;
   }
