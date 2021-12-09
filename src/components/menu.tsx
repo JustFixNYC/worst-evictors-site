@@ -54,7 +54,7 @@ class NavMenu extends React.Component<Props, State> {
           }
           onClick={this.toggleDropdown}
         >
-          <button className="dropdown-toggle icon icon-cross"></button>
+          <button className="dropdown-toggle">✕</button>
 
           <Link activeClassName="active" to="/">
             <li className="menu-item">Home</li>

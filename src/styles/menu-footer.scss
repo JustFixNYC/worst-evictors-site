@@ -21,16 +21,16 @@
     transform: none;
     .dropdown-toggle {
       position: fixed;
-      background-color: transparent;
       border: none;
       top: 1.5rem;
       right: 1.5rem;
       z-index: 1000;
-      width: 1.5rem;
-      height: 1.5rem;
-      @include for-tablet-landscape-down {
-        width: 1rem;
-        height: 1rem;
+      font-size: 1.5rem;
+      background-color: $secondary;
+      &:hover,
+      &:focus {
+        background-color: $primary;
+        color: $secondary;
       }
     }
 
