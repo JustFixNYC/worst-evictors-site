@@ -14,7 +14,7 @@ const AddAmongOthers = (array: string[]) => {
 };
 
 const FormatListAsArray = (list: string) => {
-  const rawArray = list.split(",").map((item) => item.trim());
+  const rawArray = list.split(",").map(item => item.trim());
   return AddAmongOthers(rawArray);
 };
 
@@ -75,31 +75,26 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
         <p>{content.citywidePercentRs}% rent stabilized</p>
         <p>{content.estimatedWorth || "Unknown amount"} paid for buildings</p>
         <br />
-        <div className="btn-group">
-          <Link
-            to="/map"
-            className="btn btn-primary my-1"
-            state={{
-              iframe: content.citywideEvictionsMapUrl.citywideEvictionsMapUrl,
-              mapType: "citywide",
-            }}
-          >
-            See Map of Portfolio
-          </Link>
-          <OutboundLink
-            href={content.whoOwnsWhatUrl}
-            className="btn btn-primary"
-          >
-            See if your building is in this portfolio
-          </OutboundLink>
-        </div>
+        <Link
+          to="/map"
+          className="btn btn-primary"
+          state={{
+            iframe: content.citywideEvictionsMapUrl.citywideEvictionsMapUrl,
+            mapType: "citywide"
+          }}
+        >
+          See Map of Portfolio
+        </Link>
+        <OutboundLink href={content.whoOwnsWhatUrl} className="btn btn-primary">
+          See if your building is in this portfolio
+        </OutboundLink>
       </div>
       <div className="column col-8 col-xl-6 col-md-12">
         <div
           className="background-cover-photo"
           style={
             content.photo && {
-              backgroundImage: `url(${content.photo.sizes.src})`,
+              backgroundImage: `url(${content.photo.sizes.src})`
             }
           }
         />

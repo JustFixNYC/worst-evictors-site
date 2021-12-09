@@ -18,6 +18,10 @@
   padding: 1rem 1.2rem;
   height: fit-content;
   box-shadow: 0px 7px 0px 0px $gray-medium;
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+
   &:focus {
     box-shadow: 0px 7px 0px 0px $gray-medium;
   }

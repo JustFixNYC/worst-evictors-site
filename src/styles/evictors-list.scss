@@ -34,6 +34,14 @@
       p {
         margin-bottom: 0.8rem;
       }
+      .btn {
+        width: 100%;
+        max-width: 325px;
+        margin-bottom: 1.35rem;
+        @include for-tablet-landscape-down {
+          max-width: calc(100% - 80px);
+        }
+      }
     }
   }
 }

@@ -63,7 +63,7 @@ const CitywideEvictorsListPage = () => (
         }
       }
     `}
-    render={(data) => {
+    render={data => {
       const evictorsContentList = data.contentfulCitywideListPage.evictors;
       return (
         <Layout
@@ -97,7 +97,7 @@ const CitywideEvictorsListPage = () => (
                     style={
                       data.contentfulCitywideListPage
                         .dishonorableMentionImage && {
-                        backgroundImage: `url(${data.contentfulCitywideListPage.dishonorableMentionImage.sizes.src})`,
+                        backgroundImage: `url(${data.contentfulCitywideListPage.dishonorableMentionImage.sizes.src})`
                       }
                     }
                   />
