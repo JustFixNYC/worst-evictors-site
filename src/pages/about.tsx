@@ -14,12 +14,18 @@ type InfoPageProps = {
   description: {
     json: Document;
   };
+  image?: {
+    sizes: {
+      src: string;
+    };
+  };
 };
 
 export const InfoPage: React.FC<InfoPageProps> = ({
   title,
   subtitle,
-  description
+  description,
+  image
 }) => (
   <Layout>
     <div className="columns bg-primary text-secondary">
@@ -28,7 +34,16 @@ export const InfoPage: React.FC<InfoPageProps> = ({
         {subtitle &&
           documentToReactComponents(subtitle.json, contentfulOptions)}
       </div>
-      <div className="column col-8 hide-md bg-primary" />
+      <div className="column col-8 bg-primary">
+        <div
+          className="background-cover-photo"
+          style={
+            image && {
+              backgroundImage: `url(${image.sizes.src})`
+            }
+          }
+        />
+      </div>
       <div className="column col-4 col-md-12" />
       <div className="column col-8 col-md-12">
         <div className="rich-text-bulleted-list">
@@ -51,14 +66,19 @@ const AboutPage = () => (
           description {
             json
           }
+          image {
+            sizes(maxWidth: 1000) {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
         }
       }
     `}
     render={data => {
-      const { title, subtitle, description } = data.contentfulAboutPage;
-      return (
-        <InfoPage title={title} subtitle={subtitle} description={description} />
-      );
+      return <InfoPage {...data.contentfulAboutPage} />;
     }}
   />
 );
