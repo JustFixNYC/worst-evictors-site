@@ -70,7 +70,8 @@ $eyebrow-font: "Suisse Int'l Mono", "Courier New", Courier, monospace;
   }
 }
 
-.Footer {
+.Footer,
+.scroll-arrow {
   font-family: $body-font;
   line-height: 0.9rem;
   letter-spacing: 0.01rem;

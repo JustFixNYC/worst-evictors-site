@@ -14,6 +14,12 @@ type Props = {
   className?: string;
 };
 
+const ScrollArrow = () => (
+  <div className="scroll-arrow bounce-up-and-down text-secondary">
+    <span>↓</span> <span>↓</span>
+  </div>
+);
+
 const Layout = ({
   children,
   customTitle,
@@ -77,7 +83,10 @@ const Layout = ({
         <meta name="twitter:image:alt" content="NYC's Worst Evictors" />
       </Helmet>
       <NavMenu />
-      <div className="page-content">{children}</div>
+      <div className="page-content">
+        <ScrollArrow />
+        {children}
+      </div>
       <Footer />
     </div>
   );

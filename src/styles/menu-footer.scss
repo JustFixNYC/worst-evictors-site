@@ -1,4 +1,5 @@
 @import "_vars.scss";
+@import "_animations.scss";
 
 .navbar {
   position: fixed;
@@ -124,4 +125,12 @@
       }
     }
   }
+}
+
+.scroll-arrow {
+  position: fixed;
+  bottom: 1.5rem;
+  text-shadow: -1px 0 $primary, 0 1px $primary, 1px 0 $primary, 0 -1px $primary;
+  left: calc(33% - 0.825rem);
+  pointer-events: none;
 }
