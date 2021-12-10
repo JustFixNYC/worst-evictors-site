@@ -63,7 +63,12 @@ class NavMenu extends React.Component<Props, State> {
               }
               onClick={this.toggleDropdown}
             >
-              <button className="dropdown-toggle">✕</button>
+              <button
+                className="dropdown-toggle"
+                aria-label="Press Escape Key to close menu"
+              >
+                ✕
+              </button>
 
               <Link activeClassName="active" to="/">
                 <li className="menu-item">Home</li>

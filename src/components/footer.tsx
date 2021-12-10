@@ -48,7 +48,10 @@ const Footer = () => (
           icon={FaTwitter}
         />
         <br className="show-md" />
-        <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" />
+        <img
+          aria-hidden
+          src="https://www.netlify.com/img/global/badges/netlify-light.svg"
+        />
       </div>
       Made with NYC ♥ by the team at{" "}
       <OutboundLink href="https://justfix.nyc">JustFix</OutboundLink> and the{" "}

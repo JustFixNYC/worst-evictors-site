@@ -16,7 +16,7 @@ type Props = {
 };
 
 const ScrollArrow = () => (
-  <div className="scroll-arrow bounce-up-and-down text-secondary">
+  <div aria-hidden className="scroll-arrow bounce-up-and-down text-secondary">
     <span>↓</span> <span>↓</span>
   </div>
 );

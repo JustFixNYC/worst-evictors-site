@@ -15,6 +15,7 @@ type InfoPageProps = {
     json: Document;
   };
   image?: {
+    description?: string;
     sizes: {
       src: string;
     };
@@ -40,12 +41,19 @@ export const InfoPage: React.FC<InfoPageProps> = ({
       </div>
       <div className="column col-8 col-md-12 bg-primary">
         {image && (
-          <div
-            className="background-cover-photo"
-            style={{
-              backgroundImage: `url(${image.sizes.src})`
-            }}
-          />
+          <>
+            <div
+              className="background-cover-photo"
+              style={{
+                backgroundImage: `url(${image.sizes.src})`
+              }}
+            />
+            {image.description && (
+              <span className="text-assistive">
+                Image description: {image.description}
+              </span>
+            )}
+          </>
         )}
       </div>
       <div className="column col-4 col-md-12" />
@@ -71,6 +79,7 @@ const AboutPage = () => (
             json
           }
           image {
+            description
             sizes(maxWidth: 1000) {
               aspectRatio
               src

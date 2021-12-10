@@ -34,6 +34,7 @@ const LandingPage = () => (
           }
           mapButton
           mapBackground {
+            description
             sizes(maxWidth: 850) {
               aspectRatio
               src
@@ -43,6 +44,7 @@ const LandingPage = () => (
           }
           kyrTitle
           kyrImage {
+            description
             sizes(maxWidth: 850) {
               aspectRatio
               src
@@ -127,9 +129,10 @@ const LandingPage = () => (
                     key="e-intro"
                     className="column col-3 col-xl-4 col-md-12 bg-primary text-right fade-in-0"
                   >
-                    <span>
+                    <span aria-hidden>
                       COVID <br /> Worst <br className="hide-md" /> Evictors
                     </span>
+                    <span className="text-assistive">COVID Worst Evictor</span>
                   </div>
                   {evictors.map((evictor: EvictorDetails, i: number) => (
                     <Link
@@ -198,14 +201,22 @@ const LandingPage = () => (
                 </div>
               </div>
               <div className="column col-8 col-md-12">
-                <div
-                  className="background-cover-photo"
-                  style={
-                    data.contentfulLandingPage.mapBackground && {
-                      backgroundImage: `url(${data.contentfulLandingPage.mapBackground.sizes.src})`
-                    }
-                  }
-                />
+                {data.contentfulLandingPage.mapBackground && (
+                  <>
+                    <div
+                      className="background-cover-photo"
+                      style={{
+                        backgroundImage: `url(${data.contentfulLandingPage.mapBackground.sizes.src})`
+                      }}
+                    />
+                    {data.contentfulLandingPage.mapBackground.description && (
+                      <span className="text-assistive">
+                        Image description:{" "}
+                        {data.contentfulLandingPage.mapBackground.description}
+                      </span>
+                    )}
+                  </>
+                )}
               </div>
             </div>
 
@@ -222,14 +233,22 @@ const LandingPage = () => (
                 </div>
               </div>
               <div className="column col-8 col-md-12">
-                <div
-                  className="background-cover-photo"
-                  style={
-                    data.contentfulLandingPage.kyrImage && {
-                      backgroundImage: `url(${data.contentfulLandingPage.kyrImage.sizes.src})`
-                    }
-                  }
-                />
+                {data.contentfulLandingPage.kyrImage && (
+                  <>
+                    <div
+                      className="background-cover-photo"
+                      style={{
+                        backgroundImage: `url(${data.contentfulLandingPage.kyrImage.sizes.src})`
+                      }}
+                    />
+                    {data.contentfulLandingPage.kyrImage.description && (
+                      <span className="text-assistive">
+                        Image description:{" "}
+                        {data.contentfulLandingPage.kyrImage.description}
+                      </span>
+                    )}
+                  </>
+                )}
               </div>
               <div className="column col-4 col-md-12"></div>
               <div className="column col-8 col-md-12">
