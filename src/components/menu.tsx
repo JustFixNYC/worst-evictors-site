@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import "../styles/menu-footer.scss";
+import "../styles/menu.scss";
 
 type Props = {};
 
