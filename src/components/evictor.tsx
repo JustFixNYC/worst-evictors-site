@@ -18,6 +18,13 @@ const FormatListAsArray = (list: string) => {
   return AddAmongOthers(rawArray);
 };
 
+const FormatPublicFundingSources = (sources: string[]) => {
+  if (sources.includes("Other")) {
+    const mainSources = sources.filter(s => s !== "Other");
+    return AddAmongOthers(mainSources);
+  } else return sources;
+};
+
 type EvictorProps = {
   content: {
     citywideRank: number;
@@ -142,7 +149,7 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
           <br />
           {content.publicFundingType ? (
             <>
-              {content.publicFundingType.map(
+              {FormatPublicFundingSources(content.publicFundingType).map(
                 (fundingType: string, i: number) => (
                   <li key={i}>{fundingType}</li>
                 )
