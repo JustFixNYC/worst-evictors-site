@@ -71,7 +71,8 @@
             opacity: 0;
           }
 
-          &:hover {
+          &:hover,
+          &:focus {
             .evictor-icon,
             .eyebrow {
               transition: all 0.3s linear;

@@ -12,6 +12,7 @@
     "dotenv": "^6.2.0",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
+    "focus-trap-react": "^8.8.2",
     "gatsby": "^2.3.17",
     "gatsby-plugin-canonical-urls": "^2.1.13",
     "gatsby-plugin-client-side-redirect": "^0.0.2",
