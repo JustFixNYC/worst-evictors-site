@@ -25,6 +25,21 @@ const FormatPublicFundingSources = (sources: string[]) => {
   } else return sources;
 };
 
+const FormatBusinessAddress = (addr: string) => {
+  const addressPartsAsArray = addr.split(" ");
+  const formattedAddress = addressPartsAsArray.reduce((address, part) => {
+    if (/[a-zA-Z]/.test(part.charAt(0)) && part !== "NY" && part !== "CT") {
+      return (
+        address +
+        " " +
+        part.charAt(0).toUpperCase() +
+        part.toLowerCase().slice(1)
+      );
+    } else return address + " " + part.toUpperCase();
+  }, "");
+  return formattedAddress;
+};
+
 type EvictorProps = {
   content: {
     citywideRank: number;
@@ -164,7 +179,7 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
             Primary business address
           </span>
           <br />
-          {content.primaryBusinessAddress}
+          {FormatBusinessAddress(content.primaryBusinessAddress)}
           <br />
         </p>
         <br />
