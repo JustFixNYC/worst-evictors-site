@@ -35,7 +35,7 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
 
       return (
         <Layout
-          customTitle="Interactive Map of Evictions Across NYC during COVID-19"
+          customTitle="Interactive Map of Worst Evictor Buildings Across NYC"
           customImage="https://i.imgur.com/21ukLGA.png"
           customUrl="https://www.worstevictorsnyc.org/map/"
           hideScrollArrow

@@ -38,15 +38,15 @@ export const InfoPage: React.FC<InfoPageProps> = ({
             documentToReactComponents(subtitle.json, contentfulOptions)}
         </div>
       </div>
-      <div className="column col-8 bg-primary">
-        <div
-          className="background-cover-photo"
-          style={
-            image && {
+      <div className="column col-8 col-md-12 bg-primary">
+        {image && (
+          <div
+            className="background-cover-photo"
+            style={{
               backgroundImage: `url(${image.sizes.src})`
-            }
-          }
-        />
+            }}
+          />
+        )}
       </div>
       <div className="column col-4 col-md-12" />
       <div className="column col-8 col-md-12">

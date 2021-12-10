@@ -50,6 +50,10 @@ div.d-flex {
   background-repeat: no-repeat;
 }
 
+.column.col-8 > .background-cover-photo {
+  min-height: 350px;
+}
+
 .sticky-column {
   position: sticky;
   top: 0;
