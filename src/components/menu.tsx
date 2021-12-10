@@ -1,102 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 
 import "../styles/menu.scss";
 import FocusTrap from "focus-trap-react";
 
-type Props = {};
+const NavMenu = () => {
+  const [isMenuVisible, setMenuVisibility] = useState(false);
+  const toggleMenu = () => setMenuVisibility(!isMenuVisible);
 
-type State = {
-  isDropdownVisible: boolean;
-  isListDropdownVisible: boolean;
-};
+  return (
+    <div className="navbar text-primary">
+      <button
+        className={
+          "btn btn-secondary dropdown-toggle" + (isMenuVisible ? " d-none" : "")
+        }
+        onClick={toggleMenu}
+        tabIndex={0}
+      >
+        Menu
+      </button>
 
-class NavMenu extends React.Component<Props, State> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isDropdownVisible: false,
-      isListDropdownVisible: false
-    };
-
-    this.toggleDropdown = this.toggleDropdown.bind(this);
-    this.toggleListDropdown = this.toggleListDropdown.bind(this);
-  }
-
-  toggleDropdown() {
-    this.setState({
-      isDropdownVisible: !this.state.isDropdownVisible
-    });
-  }
-
-  toggleListDropdown() {
-    this.setState({
-      isListDropdownVisible: !this.state.isListDropdownVisible
-    });
-  }
-
-  render() {
-    return (
-      <div className="navbar text-primary">
-        <button
-          className={
-            "btn btn-secondary dropdown-toggle" +
-            (this.state.isDropdownVisible ? " active" : "")
-          }
-          onClick={this.toggleDropdown}
-          tabIndex={0}
+      {isMenuVisible && (
+        <FocusTrap
+          active={isMenuVisible}
+          focusTrapOptions={{
+            onDeactivate: toggleMenu
+          }}
         >
-          Menu
-        </button>
-
-        {this.state.isDropdownVisible && (
-          <FocusTrap
-            focusTrapOptions={{
-              clickOutsideDeactivates: true,
-              onDeactivate: () => this.toggleDropdown()
-            }}
+          <ul
+            className={
+              "menu bg-secondary " + (isMenuVisible ? "d-flex" : "d-none")
+            }
+            onClick={toggleMenu}
           >
-            <ul
-              className={
-                "menu bg-secondary " +
-                (this.state.isDropdownVisible ? "d-flex" : "d-none")
-              }
-              onClick={this.toggleDropdown}
+            <button
+              className="dropdown-toggle"
+              aria-label="Press Escape Key to close menu"
             >
-              <button
-                className="dropdown-toggle"
-                aria-label="Press Escape Key to close menu"
-              >
-                ✕
-              </button>
+              ✕
+            </button>
 
-              <Link activeClassName="active" to="/">
-                <li className="menu-item">Home</li>
-              </Link>
-              <Link activeClassName="active" to="/list">
-                <li className="menu-item">Worst Evictors List</li>
-              </Link>
-              <Link activeClassName="active" to="/map">
-                <li className="menu-item">Worst Evictors Map</li>
-              </Link>
-              <Link activeClassName="active" to="/#rights">
-                <li className="menu-item">My Rights</li>
-              </Link>
-              <Link activeClassName="active" to="/about">
-                <li className="menu-item">About</li>
-              </Link>
-              <Link activeClassName="active" to="/methodology">
-                <li className="menu-item">Methodology</li>
-              </Link>
-              <Link activeClassName="active" to="/archive">
-                <li className="menu-item">Archive</li>
-              </Link>
-            </ul>
-          </FocusTrap>
-        )}
-      </div>
-    );
-  }
-}
+            <Link activeClassName="active" to="/">
+              <li className="menu-item">Home</li>
+            </Link>
+            <Link activeClassName="active" to="/list">
+              <li className="menu-item">Worst Evictors List</li>
+            </Link>
+            <Link activeClassName="active" to="/map">
+              <li className="menu-item">Worst Evictors Map</li>
+            </Link>
+            <Link activeClassName="active" to="/#rights">
+              <li className="menu-item">My Rights</li>
+            </Link>
+            <Link activeClassName="active" to="/about">
+              <li className="menu-item">About</li>
+            </Link>
+            <Link activeClassName="active" to="/methodology">
+              <li className="menu-item">Methodology</li>
+            </Link>
+            <Link activeClassName="active" to="/archive">
+              <li className="menu-item">Archive</li>
+            </Link>
+          </ul>
+        </FocusTrap>
+      )}
+    </div>
+  );
+};
 
 export default NavMenu;
