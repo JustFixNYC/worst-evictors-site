@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Link } from "gatsby";
 import Layout from "../components/layout";
+import BackgroundImage from "gatsby-background-image";
 import contentfulOptions from "../utils/contentful-rich-text-options";
 
 import "../styles/index.scss";
@@ -81,10 +82,10 @@ const LandingPage = () => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const {
         evictors,
-        dishonorableMentionImage
+        dishonorableMentionImage,
       } = data.contentfulLandingPage.evictorsList;
 
       return (
@@ -143,7 +144,7 @@ const LandingPage = () => (
                             className="evictor-icon background-cover-photo"
                             style={
                               evictor.photo && {
-                                backgroundImage: `url(${evictor.photo.sizes.src})`
+                                backgroundImage: `url(${evictor.photo.sizes.src})`,
                               }
                             }
                           />
@@ -166,7 +167,7 @@ const LandingPage = () => (
                           className="evictor-icon background-cover-photo"
                           style={
                             dishonorableMentionImage && {
-                              backgroundImage: `url(${dishonorableMentionImage.sizes.src})`
+                              backgroundImage: `url(${dishonorableMentionImage.sizes.src})`,
                             }
                           }
                         />
@@ -198,14 +199,13 @@ const LandingPage = () => (
                 </div>
               </div>
               <div className="column col-8 col-md-12">
-                <div
-                  className="background-cover-photo"
-                  style={
-                    data.contentfulLandingPage.mapBackground && {
-                      backgroundImage: `url(${data.contentfulLandingPage.mapBackground.sizes.src})`
-                    }
-                  }
-                />
+                {data.contentfulLandingPage.mapBackground && (
+                  <BackgroundImage
+                    className="background-cover-photo"
+                    src={data.contentfulLandingPage.mapBackground.sizes.src}
+                    alt="background-image"
+                  />
+                )}
               </div>
             </div>
 
@@ -226,7 +226,7 @@ const LandingPage = () => (
                   className="background-cover-photo"
                   style={
                     data.contentfulLandingPage.kyrImage && {
-                      backgroundImage: `url(${data.contentfulLandingPage.kyrImage.sizes.src})`
+                      backgroundImage: `url(${data.contentfulLandingPage.kyrImage.sizes.src})`,
                     }
                   }
                 />
