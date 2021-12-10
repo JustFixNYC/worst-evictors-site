@@ -81,8 +81,8 @@ const CitywideEvictorsListPage = () => (
                 <div className="column col-8 col-xl-6 col-md-12"></div>
               </div>
             </section>
-            {evictorsContentList.map((content: any) => (
-              <EvictorProfile content={content} />
+            {evictorsContentList.map((content: any, i: number) => (
+              <EvictorProfile content={content} key={i} />
             ))}
             <section className="bg-primary evictor-profile" id="dm">
               <div className="columns text-secondary">
@@ -101,6 +101,13 @@ const CitywideEvictorsListPage = () => (
                       }
                     }
                   />
+                  <div className="eyebrow text-right">
+                    {documentToReactComponents(
+                      data.contentfulCitywideListPage
+                        .dishonorableMentionImageCaption.json,
+                      contentfulOptions
+                    )}
+                  </div>
                   <br />
                   {documentToReactComponents(
                     data.contentfulCitywideListPage.citywideDishonorableMentions

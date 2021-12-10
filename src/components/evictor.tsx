@@ -100,15 +100,17 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
             }
           }
         />
+
+        <div className="eyebrow text-right">
+          <p>Photo: {content.photoCaption}</p>
+        </div>
         <br />
         <p>
           <span className="text-bold text-uppercase">Funded By</span>
           <br />
-          <ul>
-            {FormatListAsArray(content.banks).map((bank: string, i: number) => (
-              <li key={i}>{bank}</li>
-            ))}
-          </ul>
+          {FormatListAsArray(content.banks).map((bank: string, i: number) => (
+            <li key={i}>{bank}</li>
+          ))}
         </p>
         <p>
           <span className="text-bold text-uppercase">Represented by</span>
@@ -122,13 +124,13 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
           </span>
           <br />
           {content.subsidies ? (
-            <ul>
+            <>
               {FormatListAsArray(content.subsidies).map(
                 (subsidy: string, i: number) => (
                   <li key={i}>{subsidy}</li>
                 )
               )}
-            </ul>
+            </>
           ) : (
             "None"
           )}
@@ -139,13 +141,13 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
           </span>
           <br />
           {content.publicFundingType ? (
-            <ul>
+            <>
               {content.publicFundingType.map(
                 (fundingType: string, i: number) => (
                   <li key={i}>{fundingType}</li>
                 )
               )}
-            </ul>
+            </>
           ) : (
             "None"
           )}
