@@ -17,6 +17,8 @@
   border-radius: 5rem;
   padding: 1rem 1.2rem;
   height: fit-content;
+  // IE support:
+  display: table;
   box-shadow: 7px 7px 0px 0px $gray-medium;
   max-width: 100%;
   white-space: normal;
