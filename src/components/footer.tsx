@@ -47,6 +47,7 @@ const Footer = () => (
           title="Follow us on Twitter"
           icon={FaTwitter}
         />
+        <br className="show-md" />
         <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" />
       </div>
       Made with NYC ♥ by the team at{" "}
