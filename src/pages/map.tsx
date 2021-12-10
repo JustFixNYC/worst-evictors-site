@@ -7,9 +7,13 @@ import "../styles/map.scss";
 
 import Layout from "../components/layout";
 import contentfulOptions from "../utils/contentful-rich-text-options";
+import { OutboundLink } from "../components/outbound-link";
 
 const CITYWIDE_MAP_URL =
   "https://ampitup.carto.com/builder/22338af2-9fab-4e3b-89aa-2fcb1b509f9e/embed";
+
+const EVICTION_CRISIS_MONITOR_URL =
+  "https://www.righttocounselnyc.org/evictioncrisismonitor";
 
 const MapPage: React.FC<{ location: any }> = ({ location }) => (
   <StaticQuery
@@ -20,10 +24,13 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
           description {
             json
           }
+          descriptionFooter {
+            json
+          }
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const mapLoaded = function() {
         const loadingElem = document.getElementById("map-iframe-loading");
         if (!!loadingElem) loadingElem.className = "";
@@ -31,7 +38,7 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
         if (!!loadingFrame) loadingFrame.className = "map-container d-block";
       };
 
-      const { title, description } = data.contentfulMapPage;
+      const { title, description, descriptionFooter } = data.contentfulMapPage;
 
       return (
         <Layout
@@ -83,6 +90,20 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
             <div className="column col-8 col-md-12">
               <div className="rich-text-bulleted-list">
                 {documentToReactComponents(description.json, contentfulOptions)}
+                <OutboundLink
+                  href={EVICTION_CRISIS_MONITOR_URL}
+                  className="btn btn-primary"
+                >
+                  Learn more on the Eviction Crisis Monitor
+                </OutboundLink>
+              </div>
+              <br />
+              <div className="divider" />
+              <div>
+                {documentToReactComponents(
+                  descriptionFooter.json,
+                  contentfulOptions
+                )}
               </div>
             </div>
           </div>
