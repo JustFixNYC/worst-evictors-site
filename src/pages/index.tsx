@@ -35,11 +35,9 @@ const LandingPage = () => (
           }
           mapButton
           mapBackground {
-            sizes(maxWidth: 850) {
-              aspectRatio
-              src
-              srcSet
-              sizes
+            description
+            fluid {
+              ...GatsbyContentfulFluid
             }
           }
           kyrTitle
@@ -200,11 +198,24 @@ const LandingPage = () => (
               </div>
               <div className="column col-8 col-md-12">
                 {data.contentfulLandingPage.mapBackground && (
-                  <BackgroundImage
-                    className="background-cover-photo"
-                    src={data.contentfulLandingPage.mapBackground.sizes.src}
-                    alt="background-image"
-                  />
+                  <>
+                    <BackgroundImage
+                      className="background-cover-photo"
+                      fluid={data.contentfulLandingPage.mapBackground.fluid}
+                    />
+                    {/* <div
+                      className="background-cover-photo"
+                      style={{
+                        backgroundImage: `url(${data.contentfulLandingPage.mapBackground.sizes.src})`,
+                      }}
+                    /> */}
+                    {data.contentfulLandingPage.mapBackground.description && (
+                      <span className="text-assistive">
+                        Image description:{" "}
+                        {data.contentfulLandingPage.mapBackground.description}
+                      </span>
+                    )}
+                  </>
                 )}
               </div>
             </div>
@@ -222,14 +233,22 @@ const LandingPage = () => (
                 </div>
               </div>
               <div className="column col-8 col-md-12">
-                <div
-                  className="background-cover-photo"
-                  style={
-                    data.contentfulLandingPage.kyrImage && {
-                      backgroundImage: `url(${data.contentfulLandingPage.kyrImage.sizes.src})`,
-                    }
-                  }
-                />
+                {data.contentfulLandingPage.kyrImage && (
+                  <>
+                    <div
+                      className="background-cover-photo"
+                      style={{
+                        backgroundImage: `url(${data.contentfulLandingPage.kyrImage.sizes.src})`,
+                      }}
+                    />
+                    {data.contentfulLandingPage.kyrImage.description && (
+                      <span className="text-assistive">
+                        Image description:{" "}
+                        {data.contentfulLandingPage.kyrImage.description}
+                      </span>
+                    )}
+                  </>
+                )}
               </div>
               <div className="column col-4 col-md-12"></div>
               <div className="column col-8 col-md-12">

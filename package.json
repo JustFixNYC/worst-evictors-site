@@ -27,6 +27,8 @@
     "gatsby-plugin-typescript": "^2.0.12",
     "gatsby-source-contentful": "^2.0.47",
     "gatsby-transformer-remark": "^2.3.8",
+    "gatsby-transformer-sharp": "^2.3.3",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-anchor-link-smooth-scroll": "^1.0.12",
