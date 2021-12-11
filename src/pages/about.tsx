@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import contentfulOptions from "../utils/contentful-rich-text-options";
 import { Document } from "@contentful/rich-text-types";
+import BackgroundImage from "gatsby-background-image";
 
 import Layout from "../components/layout";
 
@@ -16,9 +17,7 @@ type InfoPageProps = {
   };
   image?: {
     description?: string;
-    sizes: {
-      src: string;
-    };
+    fluid: any;
   };
 };
 
@@ -42,11 +41,9 @@ export const InfoPage: React.FC<InfoPageProps> = ({
       <div className="column col-8 col-md-12 bg-primary">
         {image && (
           <>
-            <div
+            <BackgroundImage
               className="background-cover-photo"
-              style={{
-                backgroundImage: `url(${image.sizes.src})`
-              }}
+              fluid={image.fluid}
             />
             {image.description && (
               <span className="text-assistive">
@@ -80,11 +77,8 @@ const AboutPage = () => (
           }
           image {
             description
-            sizes(maxWidth: 1000) {
-              aspectRatio
-              src
-              srcSet
-              sizes
+            fluid {
+              ...GatsbyContentfulFluid
             }
           }
         }

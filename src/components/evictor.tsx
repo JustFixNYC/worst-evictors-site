@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Document } from "@contentful/rich-text-types";
 import contentfulOptions from "../utils/contentful-rich-text-options";
+import BackgroundImage from "gatsby-background-image";
 
 import "../styles/evictors-list.scss";
 
@@ -48,9 +49,7 @@ type EvictorProps = {
     corporation: string;
     primaryBusinessAddress: string;
     photo: {
-      sizes: {
-        src: string;
-      };
+      fluid: any;
     };
     photoCaption: string;
     citywideEvictions: number;
@@ -114,13 +113,9 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
         </OutboundLink>
       </div>
       <div className="column col-8 col-xl-6 col-md-12">
-        <div
+        <BackgroundImage
           className="background-cover-photo"
-          style={
-            content.photo && {
-              backgroundImage: `url(${content.photo.sizes.src})`
-            }
-          }
+          fluid={content.photo.fluid}
         />
 
         <div className="eyebrow text-right">

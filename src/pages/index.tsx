@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Link } from "gatsby";
 import Layout from "../components/layout";
+import BackgroundImage from "gatsby-background-image";
 import contentfulOptions from "../utils/contentful-rich-text-options";
 
 import "../styles/index.scss";
@@ -35,21 +36,15 @@ const LandingPage = () => (
           mapButton
           mapBackground {
             description
-            sizes(maxWidth: 850) {
-              aspectRatio
-              src
-              srcSet
-              sizes
+            fluid {
+              ...GatsbyContentfulFluid
             }
           }
           kyrTitle
           kyrImage {
             description
-            sizes(maxWidth: 850) {
-              aspectRatio
-              src
-              srcSet
-              sizes
+            fluid {
+              ...GatsbyContentfulFluid
             }
           }
           kyrDescription {
@@ -63,7 +58,7 @@ const LandingPage = () => (
               citywideRank
               name
               photo {
-                sizes(maxWidth: 300) {
+                sizes(maxWidth: 250) {
                   aspectRatio
                   src
                   srcSet
@@ -72,7 +67,7 @@ const LandingPage = () => (
               }
             }
             dishonorableMentionImage {
-              sizes(maxWidth: 300) {
+              sizes(maxWidth: 250) {
                 aspectRatio
                 src
                 srcSet
@@ -203,11 +198,9 @@ const LandingPage = () => (
               <div className="column col-8 col-md-12">
                 {data.contentfulLandingPage.mapBackground && (
                   <>
-                    <div
+                    <BackgroundImage
                       className="background-cover-photo"
-                      style={{
-                        backgroundImage: `url(${data.contentfulLandingPage.mapBackground.sizes.src})`
-                      }}
+                      fluid={data.contentfulLandingPage.mapBackground.fluid}
                     />
                     {data.contentfulLandingPage.mapBackground.description && (
                       <span className="text-assistive">
@@ -235,11 +228,9 @@ const LandingPage = () => (
               <div className="column col-8 col-md-12">
                 {data.contentfulLandingPage.kyrImage && (
                   <>
-                    <div
+                    <BackgroundImage
                       className="background-cover-photo"
-                      style={{
-                        backgroundImage: `url(${data.contentfulLandingPage.kyrImage.sizes.src})`
-                      }}
+                      fluid={data.contentfulLandingPage.kyrImage.fluid}
                     />
                     {data.contentfulLandingPage.kyrImage.description && (
                       <span className="text-assistive">
