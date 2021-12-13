@@ -20,7 +20,6 @@ const FormatListAsArray = (list: string) => {
 };
 
 const FormatPublicFundingSources = (sources: string[]) => {
-  console.log(sources);
   if (sources.includes("Other")) {
     const mainSources = sources.filter(s => s !== "Other");
     return !!mainSources.length
