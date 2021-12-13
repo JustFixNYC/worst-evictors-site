@@ -35,6 +35,7 @@ module.exports = {
     "gatsby-plugin-offline",
     `gatsby-plugin-sass`,
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-remove-trailing-slashes`,
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     {
