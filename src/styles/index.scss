@@ -88,9 +88,11 @@
               transition: all 0.3s linear;
               opacity: 0;
             }
-            .hover-label {
-              transition: all 0.3s linear;
-              opacity: 1;
+            @include for-small-desktop-up {
+              .hover-label {
+                transition: all 0.3s linear;
+                opacity: 1;
+              }
             }
           }
         }
