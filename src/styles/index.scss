@@ -42,6 +42,9 @@
 
           .container {
             margin: 1.3rem 0.7rem;
+            @include for-tablet-landscape-down {
+              margin: 0.7rem 0.2rem;
+            }
           }
 
           .evictor-icon {
@@ -53,6 +56,10 @@
           .eyebrow {
             font-size: 3.2rem;
             position: absolute;
+
+            @include for-tablet-landscape-down {
+              font-size: 2rem;
+            }
           }
 
           .hover-label {
