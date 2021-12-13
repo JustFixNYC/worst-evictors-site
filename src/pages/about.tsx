@@ -27,7 +27,7 @@ export const InfoPage: React.FC<InfoPageProps> = ({
   description,
   image
 }) => (
-  <Layout>
+  <Layout customTitle={`${title} | NYC's Worst COVID Evictors`}>
     <div className="columns bg-primary text-secondary">
       <div className="column col-4 col-lg-12 bg-primary sticky-column d-flex">
         <div>
