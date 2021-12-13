@@ -98,15 +98,6 @@ div.d-flex {
   }
 }
 
-li {
-  list-style: none;
-}
-
-li::before {
-  content: "•";
-  margin-right: 0.75rem;
-}
-
 .columns {
   margin: 0;
 

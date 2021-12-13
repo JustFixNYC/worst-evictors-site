@@ -31,6 +31,13 @@
         letter-spacing: 0.01rem;
         margin-bottom: 0;
       }
+      li {
+        list-style: none;
+        &::before {
+          content: "•";
+          margin-right: 0.75rem;
+        }
+      }
       p {
         margin-bottom: 0.8rem;
       }
