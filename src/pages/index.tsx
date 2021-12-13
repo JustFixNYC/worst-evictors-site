@@ -18,6 +18,36 @@ type EvictorDetails = {
   photo: any;
 };
 
+type ResponsiveImageProps = {
+  fluid: any;
+  description?: string;
+  /**
+   * If set to `true`, will only show image on on devices smaller than a desktop.
+   * If `false`, will only show on desktop.
+   */
+  showMobileOnly?: boolean;
+};
+const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
+  fluid,
+  description,
+  showMobileOnly
+}) => {
+  const visibilityClass = showMobileOnly ? "show-lg" : "hide-lg";
+  return (
+    <>
+      <BackgroundImage
+        className={`background-cover-photo ${visibilityClass}`}
+        fluid={fluid}
+      />
+      {description && (
+        <span className={`text-assistive ${visibilityClass}`}>
+          Image description: {description}
+        </span>
+      )}
+    </>
+  );
+};
+
 const LandingPage = () => (
   <StaticQuery
     query={graphql`
@@ -187,6 +217,12 @@ const LandingPage = () => (
                   <div className="eyebrow">Worst Evictors Map</div>
                   <h1>{data.contentfulLandingPage.mapTitle}</h1>
                 </div>
+                {data.contentfulLandingPage.mapBackground && (
+                  <ResponsiveImage
+                    showMobileOnly
+                    {...data.contentfulLandingPage.mapBackground}
+                  />
+                )}
                 <div>
                   {documentToReactComponents(
                     data.contentfulLandingPage.mapDescription.json
@@ -199,18 +235,9 @@ const LandingPage = () => (
               </div>
               <div className="column col-8 col-lg-12">
                 {data.contentfulLandingPage.mapBackground && (
-                  <>
-                    <BackgroundImage
-                      className="background-cover-photo"
-                      fluid={data.contentfulLandingPage.mapBackground.fluid}
-                    />
-                    {data.contentfulLandingPage.mapBackground.description && (
-                      <span className="text-assistive">
-                        Image description:{" "}
-                        {data.contentfulLandingPage.mapBackground.description}
-                      </span>
-                    )}
-                  </>
+                  <ResponsiveImage
+                    {...data.contentfulLandingPage.mapBackground}
+                  />
                 )}
               </div>
             </div>
@@ -221,6 +248,12 @@ const LandingPage = () => (
                   <div className="eyebrow">Know your tenant rights </div>
                   <h1>{data.contentfulLandingPage.kyrTitle}</h1>
                 </div>
+                {data.contentfulLandingPage.kyrImage && (
+                  <ResponsiveImage
+                    showMobileOnly
+                    {...data.contentfulLandingPage.kyrImage}
+                  />
+                )}
                 <div className="marginless">
                   {documentToReactComponents(
                     data.contentfulLandingPage.kyrDescription.json
@@ -229,18 +262,7 @@ const LandingPage = () => (
               </div>
               <div className="column col-8 col-lg-12">
                 {data.contentfulLandingPage.kyrImage && (
-                  <>
-                    <BackgroundImage
-                      className="background-cover-photo"
-                      fluid={data.contentfulLandingPage.kyrImage.fluid}
-                    />
-                    {data.contentfulLandingPage.kyrImage.description && (
-                      <span className="text-assistive">
-                        Image description:{" "}
-                        {data.contentfulLandingPage.kyrImage.description}
-                      </span>
-                    )}
-                  </>
+                  <ResponsiveImage {...data.contentfulLandingPage.kyrImage} />
                 )}
               </div>
               <div className="column col-4 col-lg-12"></div>
