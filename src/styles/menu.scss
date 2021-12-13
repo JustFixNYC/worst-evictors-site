@@ -6,7 +6,7 @@
   z-index: 1000;
   right: 1.5rem;
   bottom: 1.5rem;
-  @include for-tablet-landscape-down {
+  @include for-small-desktop-down {
     right: 0.5rem;
     bottom: 0.5rem;
   }
@@ -21,7 +21,7 @@
     left: 0;
     flex-direction: column;
     justify-content: flex-end;
-    @include for-tablet-landscape-down {
+    @include for-small-desktop-down {
       justify-content: center;
     }
     // Override default menu's vertical transformation:
@@ -44,7 +44,7 @@
     }
 
     padding: 2.5rem 3.5rem 2.5rem 2.5rem;
-    @include for-tablet-landscape-down {
+    @include for-small-desktop-down {
       padding: 0.5rem;
     }
 

@@ -29,7 +29,7 @@ export const InfoPage: React.FC<InfoPageProps> = ({
 }) => (
   <Layout>
     <div className="columns bg-primary text-secondary">
-      <div className="column col-4 col-md-12 bg-primary sticky-column d-flex">
+      <div className="column col-4 col-lg-12 bg-primary sticky-column d-flex">
         <div>
           <h1>{title}</h1>
         </div>
@@ -38,7 +38,7 @@ export const InfoPage: React.FC<InfoPageProps> = ({
             documentToReactComponents(subtitle.json, contentfulOptions)}
         </div>
       </div>
-      <div className="column col-8 col-md-12 bg-primary">
+      <div className="column col-8 col-lg-12 bg-primary">
         {image && (
           <>
             <BackgroundImage
@@ -53,8 +53,8 @@ export const InfoPage: React.FC<InfoPageProps> = ({
           </>
         )}
       </div>
-      <div className="column col-4 col-md-12" />
-      <div className="column col-8 col-md-12">
+      <div className="column col-4 col-lg-12" />
+      <div className="column col-8 col-lg-12">
         <div className="rich-text-bulleted-list">
           {documentToReactComponents(description.json, contentfulOptions)}
         </div>

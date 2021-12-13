@@ -35,7 +35,7 @@ div.d-flex {
 }
 
 // No horizontal overflow on mobile
-@include for-tablet-landscape-down() {
+@include for-small-desktop-down() {
   .page-content {
     max-width: 100vw;
     overflow-x: hidden;
@@ -60,7 +60,7 @@ div.d-flex {
 }
 
 .sticky-column-desktop {
-  @include for-tablet-landscape-up {
+  @include for-small-desktop-up {
     position: sticky;
     top: 0;
   }
@@ -72,7 +72,7 @@ div.d-flex {
 }
 
 .full-height-container-desktop {
-  @include for-tablet-landscape-up {
+  @include for-small-desktop-up {
     min-height: 100vh;
     height: fit-content;
   }
@@ -101,11 +101,11 @@ div.d-flex {
 .columns {
   margin: 0;
 
-  @include for-tablet-landscape-up {
-    &.text-primary .column.col-4.col-md-12 {
+  @include for-small-desktop-up {
+    &.text-primary .column.col-4.col-lg-12 {
       border-right: 1px solid $primary;
     }
-    &.text-secondary .column.col-4.col-md-12 {
+    &.text-secondary .column.col-4.col-lg-12 {
       border-right: 1px solid $secondary;
     }
   }

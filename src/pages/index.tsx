@@ -88,7 +88,7 @@ const LandingPage = () => (
         <Layout>
           <div className="homepage">
             <div className="columns bg-primary text-secondary">
-              <div className="column col-4 col-md-12 sticky-column-desktop full-height-container">
+              <div className="column col-4 col-lg-12 sticky-column-desktop full-height-container">
                 <div className="full-height-container d-flex">
                   <h1 className="immediate-fade-in">
                     {documentToReactComponents(
@@ -118,14 +118,14 @@ const LandingPage = () => (
                   <br />
                 </div>
               </div>
-              <div className="column col-8 col-md-12 evictors">
+              <div className="column col-8 col-lg-12 evictors">
                 <div className="columns">
                   <div
                     key="e-intro"
-                    className="column col-3 col-xl-4 col-md-12 bg-primary text-right fade-in-0"
+                    className="column col-3 col-xl-4 col-lg-12 bg-primary text-right fade-in-0"
                   >
                     <span aria-hidden>
-                      COVID <br /> Worst <br className="hide-md" /> Evictors
+                      COVID <br /> Worst <br className="hide-lg" /> Evictors
                     </span>
                     <span className="text-assistive">COVID Worst Evictor</span>
                   </div>
@@ -133,7 +133,7 @@ const LandingPage = () => (
                     <Link
                       key={`e-${i}`}
                       to={`/list#${evictor.citywideRank}`}
-                      className={`column col-3 col-xl-4 col-md-6 bg-error text-secondary fade-in-${evictor.citywideRank}`}
+                      className={`column col-3 col-xl-4 col-lg-6 bg-error text-secondary fade-in-${evictor.citywideRank}`}
                     >
                       <>
                         <div className="container">
@@ -156,7 +156,7 @@ const LandingPage = () => (
                   <Link
                     key={`e-dishonor`}
                     to="/list#dm"
-                    className="column col-3 col-xl-4 col-md-6 bg-error text-secondary fade-in-21"
+                    className="column col-3 col-xl-4 col-lg-6 bg-error text-secondary fade-in-21"
                   >
                     <>
                       <div className="container">
@@ -180,7 +180,7 @@ const LandingPage = () => (
             </div>
 
             <div className="columns bg-secondary text-primary">
-              <div className="column col-4 col-md-12 d-flex">
+              <div className="column col-4 col-lg-12 d-flex">
                 <div>
                   <div className="eyebrow">Worst Evictors Map</div>
                   <h1>{data.contentfulLandingPage.mapTitle}</h1>
@@ -195,7 +195,7 @@ const LandingPage = () => (
                   </Link>
                 </div>
               </div>
-              <div className="column col-8 col-md-12">
+              <div className="column col-8 col-lg-12">
                 {data.contentfulLandingPage.mapBackground && (
                   <>
                     <BackgroundImage
@@ -214,7 +214,7 @@ const LandingPage = () => (
             </div>
 
             <div id="rights" className="columns bg-primary text-secondary">
-              <div className="column col-4 col-md-12 sticky-column-desktop full-height-container-desktop d-flex">
+              <div className="column col-4 col-lg-12 sticky-column-desktop full-height-container-desktop d-flex">
                 <div>
                   <div className="eyebrow">Know your tenant rights </div>
                   <h1>{data.contentfulLandingPage.kyrTitle}</h1>
@@ -225,7 +225,7 @@ const LandingPage = () => (
                   )}
                 </div>
               </div>
-              <div className="column col-8 col-md-12">
+              <div className="column col-8 col-lg-12">
                 {data.contentfulLandingPage.kyrImage && (
                   <>
                     <BackgroundImage
@@ -241,8 +241,8 @@ const LandingPage = () => (
                   </>
                 )}
               </div>
-              <div className="column col-4 col-md-12"></div>
-              <div className="column col-8 col-md-12">
+              <div className="column col-4 col-lg-12"></div>
+              <div className="column col-8 col-lg-12">
                 {" "}
                 <div className="rich-text-bulleted-list">
                   {documentToReactComponents(

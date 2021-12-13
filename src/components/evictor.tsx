@@ -78,7 +78,7 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
     id={content.citywideRank.toString()}
   >
     <div className="columns text-secondary">
-      <div className="column col-4 col-xl-6 col-md-12 sticky-column-desktop full-height-container-desktop">
+      <div className="column col-4 col-xl-6 col-lg-12 sticky-column-desktop full-height-container-desktop">
         <div className="full-height-container-desktop">
           <div className="eyebrow rank">{content.citywideRank}.</div>
           {content.rankLastYear && (
@@ -112,7 +112,7 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
           See if your building is in this portfolio
         </OutboundLink>
       </div>
-      <div className="column col-8 col-xl-6 col-md-12">
+      <div className="column col-8 col-xl-6 col-lg-12">
         <BackgroundImage
           className="background-cover-photo"
           fluid={content.photo.fluid}

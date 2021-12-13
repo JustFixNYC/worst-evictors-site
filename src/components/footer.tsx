@@ -47,7 +47,7 @@ const Footer = () => (
           title="Follow us on Twitter"
           icon={FaTwitter}
         />
-        <br className="show-md" />
+        <br className="show-lg" />
         <img
           aria-hidden
           src="https://www.netlify.com/img/global/badges/netlify-light.svg"

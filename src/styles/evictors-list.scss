@@ -41,7 +41,7 @@
         width: 100%;
         max-width: 325px;
         margin-bottom: 1.35rem;
-        @include for-tablet-landscape-down {
+        @include for-small-desktop-down {
           max-width: calc(100% - #{$menu-button-width});
         }
       }

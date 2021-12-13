@@ -49,10 +49,10 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
         >
           <div className="map-title-banner text-primary">
             <h4 className="p-2 mx-2">
-              <span className="mr-2 map-buttons-leadin hide-md">
+              <span className="mr-2 map-buttons-leadin hide-lg">
                 Eviction lawsuits from March 2020 to September 2021
               </span>
-              <span className="map-buttons-leadin show-md">
+              <span className="map-buttons-leadin show-lg">
                 Eviction cases during COVID
               </span>
             </h4>
@@ -79,15 +79,15 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
             </AnchorLink>
           </div>
           <div className="columns bg-primary text-secondary" id="map-context">
-            <div className="column col-4 col-md-12 bg-primary sticky-column">
+            <div className="column col-4 col-lg-12 bg-primary sticky-column">
               <br />
               <div className="eyebrow">Worst Evictors Map</div>
               <br />
               <h1 className="m0">{title}</h1>
             </div>
-            <div className="column col-8 hide-md bg-primary" />
-            <div className="column col-4 col-md-12" />
-            <div className="column col-8 col-md-12">
+            <div className="column col-8 hide-lg bg-primary" />
+            <div className="column col-4 col-lg-12" />
+            <div className="column col-8 col-lg-12">
               <div className="rich-text-bulleted-list">
                 {documentToReactComponents(description.json, contentfulOptions)}
                 <OutboundLink
