@@ -13,10 +13,21 @@
     min-height: 100vh;
     opacity: 1;
 
+    @include for-small-desktop-down {
+      padding: 1.5rem 0;
+    }
+
     .column {
       .subtitle {
         margin-bottom: 0.7rem;
       }
+
+      .btn {
+        @include for-small-desktop-down {
+          max-width: calc(100% - #{$menu-button-width});
+        }
+      }
+
       &.evictors .column {
         position: relative;
         height: 0;
