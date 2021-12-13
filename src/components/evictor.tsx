@@ -20,9 +20,12 @@ const FormatListAsArray = (list: string) => {
 };
 
 const FormatPublicFundingSources = (sources: string[]) => {
+  console.log(sources);
   if (sources.includes("Other")) {
     const mainSources = sources.filter(s => s !== "Other");
-    return AddAmongOthers(mainSources);
+    return !!mainSources.length
+      ? AddAmongOthers(mainSources)
+      : ["Other (not HPD or HDC)"];
   } else return sources;
 };
 
@@ -140,7 +143,7 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
             Public subsidy programs
           </span>
           <br />
-          {content.subsidies ? (
+          {!!content.subsidies ? (
             <>
               {FormatListAsArray(content.subsidies).map(
                 (subsidy: string, i: number) => (
@@ -157,7 +160,7 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
             Public funding sources
           </span>
           <br />
-          {content.publicFundingType ? (
+          {!!content.publicFundingType ? (
             <>
               {FormatPublicFundingSources(content.publicFundingType).map(
                 (fundingType: string, i: number) => (
