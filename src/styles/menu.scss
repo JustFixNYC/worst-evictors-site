@@ -76,4 +76,8 @@
   text-shadow: -1px 0 $primary, 0 1px $primary, 1px 0 $primary, 0 -1px $primary;
   left: calc(33% - 0.825rem);
   pointer-events: none;
+
+  @include for-small-desktop-down {
+    left: 0.15rem;
+  }
 }
