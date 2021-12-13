@@ -14,6 +14,9 @@
     opacity: 1;
 
     .column {
+      .subtitle {
+        margin-bottom: 1.7rem;
+      }
       &.evictors .column {
         position: relative;
         height: 0;

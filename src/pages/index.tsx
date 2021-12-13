@@ -90,12 +90,14 @@ const LandingPage = () => (
             <div className="columns bg-primary text-secondary">
               <div className="column col-4 col-lg-12 sticky-column-desktop full-height-container">
                 <div className="full-height-container d-flex">
-                  <h1 className="immediate-fade-in">
-                    {documentToReactComponents(
-                      data.contentfulLandingPage.openingTitle.json
-                    )}
-                  </h1>
-                  <div className="delayed-fade-in">
+                  <div>
+                    <h1 className="immediate-fade-in">
+                      {documentToReactComponents(
+                        data.contentfulLandingPage.openingTitle.json
+                      )}
+                    </h1>
+                  </div>
+                  <div className="subtitle delayed-fade-in">
                     {documentToReactComponents(
                       data.contentfulLandingPage.openingSubtitle.json
                     )}
