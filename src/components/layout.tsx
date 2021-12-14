@@ -9,6 +9,7 @@ import NavMenu from "./menu";
 type Props = {
   children: React.ReactNode;
   customTitle?: string;
+  customDescription?: string;
   customUrl?: string;
   customImage?: string;
   className?: string;
@@ -24,6 +25,7 @@ const ScrollArrow = () => (
 const Layout = ({
   children,
   customTitle,
+  customDescription,
   customUrl,
   customImage,
   className,
@@ -33,6 +35,7 @@ const Layout = ({
   const altTitle =
     "These NYC landlords are trying to evict tenants during the COVID-19 pandemic. We are fighting back.";
   const description =
+    customDescription ||
     "Never-before-seen data from NYC Housing Court highlights who stands to benefit the most if and when evictions move forward during COVID-19.";
   const url = customUrl || "https://www.worstevictorsnyc.org";
   const shareImageURL = customImage || "https://i.imgur.com/RkMxfbS.png";

@@ -42,7 +42,8 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
 
       return (
         <Layout
-          customTitle="Interactive Map of Worst Evictor Buildings Across NYC"
+          customTitle="Interactive Map | NYC's Worst COVID Evictors"
+          customDescription="We mapped how these pending evictions relate to COVID-19 case rates, race, income and other factors inextricable from the eviction crisis."
           customImage="https://i.imgur.com/21ukLGA.png"
           customUrl="https://www.worstevictorsnyc.org/map/"
           hideScrollArrow

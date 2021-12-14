@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 import contentfulOptions from "../utils/contentful-rich-text-options";
 import { Document } from "@contentful/rich-text-types";
 import BackgroundImage from "gatsby-background-image";
@@ -11,6 +12,11 @@ type InfoPageProps = {
   title: string;
   subtitle?: {
     json: Document;
+    content: {
+      content: {
+        value: string;
+      };
+    };
   };
   description: {
     json: Document;
@@ -27,7 +33,12 @@ export const InfoPage: React.FC<InfoPageProps> = ({
   description,
   image
 }) => (
-  <Layout customTitle={`${title} | NYC's Worst COVID Evictors`}>
+  <Layout
+    customTitle={`${title} | NYC's Worst COVID Evictors`}
+    customDescription={
+      subtitle ? documentToPlainTextString(subtitle.json) : undefined
+    }
+  >
     <div className="columns bg-primary text-secondary">
       <div className="column col-4 col-lg-12 bg-primary sticky-column d-flex">
         <div>
