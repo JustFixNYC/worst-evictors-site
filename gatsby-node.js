@@ -26,7 +26,7 @@ exports.createPages = ({ graphql, actions }) => {
   });
   createRedirect({
     fromPath: "/rights",
-    toPath: "#rights",
+    toPath: "/#rights",
     isPermanent: true
   });
 };

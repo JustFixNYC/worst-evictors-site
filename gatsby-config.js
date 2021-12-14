@@ -10,18 +10,18 @@ const contentfulConfig = {
 
 module.exports = {
   siteMetadata: {
-    title: "NYC Worst Evictors"
+    title: "NYC's Worst Evictors"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "gatsby-starter-contentful-typescript",
-        short_name: "starter",
+        name: "NYC's Worst Evictors during COVID-19",
+        short_name: "Worst COVID Evictors",
         start_url: "/",
-        background_color: "#663399",
-        theme_color: "#663399",
+        background_color: "#242323",
+        theme_color: "#e83a33",
         display: "minimal-ui",
         icon: "src/images/favicon.png" // This path is relative to the root of the site.
       }
