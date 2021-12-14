@@ -29,7 +29,7 @@ const Layout = ({
   className,
   hideScrollArrow
 }: Props) => {
-  const title = customTitle || "NYC's Worst COVID Evictors";
+  const title = customTitle || "NYC's Worst Evictors during COVID";
   const altTitle =
     "These NYC landlords are trying to evict tenants during the COVID-19 pandemic. We are fighting back.";
   const description =
