@@ -38,7 +38,7 @@ const Layout = ({
     customDescription ||
     "Never-before-seen data from NYC Housing Court highlights who stands to benefit the most if and when evictions move forward during COVID-19.";
   const url = customUrl || "https://www.worstevictorsnyc.org";
-  const shareImageURL = customImage || "https://i.imgur.com/RkMxfbS.png";
+  const shareImageURL = customImage || "https://i.imgur.com/FjrtF1X.png";
 
   return (
     <div className={className}>
