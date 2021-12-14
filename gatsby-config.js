@@ -21,7 +21,7 @@ module.exports = {
         short_name: "Worst COVID Evictors",
         start_url: "/",
         background_color: "#242323",
-        theme_color: "#e83a33",
+        theme_color: "#242323",
         display: "minimal-ui",
         icon: "src/images/favicon.png" // This path is relative to the root of the site.
       }
