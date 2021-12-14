@@ -80,7 +80,7 @@ const MapPage: React.FC<{ location: any }> = ({ location }) => (
             </AnchorLink>
           </div>
           <div className="columns bg-primary text-secondary" id="map-context">
-            <div className="column col-4 col-lg-12 bg-primary sticky-column">
+            <div className="column col-4 col-lg-12 bg-primary sticky-column-desktop">
               <br />
               <div className="eyebrow">Worst Evictors Map</div>
               <br />
