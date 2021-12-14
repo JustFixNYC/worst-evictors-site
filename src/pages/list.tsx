@@ -61,9 +61,9 @@ const CitywideEvictorsListPage = () => (
       const evictorsContentList = data.contentfulCitywideListPage.evictors;
       return (
         <Layout
-          customTitle={data.contentfulCitywideListPage.title}
-          customImage="https://i.imgur.com/NiEQZ6x.png"
-          customUrl="https://www.worstevictorsnyc.org/evictors-list/citywide/"
+          customTitle="Top 20 List | NYC's Worst COVID Evictors"
+          customDescription={data.contentfulCitywideListPage.title}
+          customUrl="https://www.worstevictorsnyc.org/list"
           className="list-page"
         >
           <div className="list-page">
