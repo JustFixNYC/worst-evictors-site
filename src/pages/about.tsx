@@ -40,7 +40,7 @@ export const InfoPage: React.FC<InfoPageProps> = ({
     }
   >
     <div className="columns bg-primary text-secondary">
-      <div className="column col-4 col-lg-12 bg-primary sticky-column d-flex">
+      <div className="column col-4 col-lg-12 bg-primary sticky-column-desktop d-flex">
         <div>
           <h1>{title}</h1>
         </div>
