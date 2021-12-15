@@ -118,8 +118,8 @@ const LandingPage = () => (
         <Layout>
           <div className="homepage">
             <div className="columns bg-primary text-secondary">
-              <div className="column col-4 col-lg-12 sticky-column-desktop full-height-container">
-                <div className="full-height-container d-flex">
+              <div className="column col-4 col-lg-12 sticky-column-desktop full-height-container-desktop">
+                <div className="full-height-container-desktop d-flex">
                   <div>
                     <h1 className="immediate-fade-in">
                       {documentToReactComponents(
