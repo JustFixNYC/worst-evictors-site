@@ -187,7 +187,7 @@ const EvictorProfile: React.FC<EvictorProps> = ({ content }) => (
             contentfulOptions
           )}
         <br />
-        <Link to="/" className="btn btn-primary">
+        <Link to="/#evictors" className="btn btn-primary">
           Back to worst evictors list
         </Link>
       </div>
