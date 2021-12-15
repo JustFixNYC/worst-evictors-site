@@ -22,6 +22,9 @@ const ScrollArrow = () => (
   </div>
 );
 
+const GOOGLE_SITE_VERIFICATION_CODE =
+  "-q5dreY6DgZQyoLddmn5nWlr_zAbobvRgbC6SnX90l8";
+
 const Layout = ({
   children,
   customTitle,
@@ -45,6 +48,10 @@ const Layout = ({
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
+        <meta
+          name="google-site-verification"
+          content={GOOGLE_SITE_VERIFICATION_CODE}
+        />
         <meta name="description" content={description} />
         <meta
           name="keywords"
