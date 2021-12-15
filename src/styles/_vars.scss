@@ -1,24 +1,22 @@
 // MEASUREMENTS:
 
-$header-height: 50px;
-$footer-height: 60px;
+$menu-button-width: 4.35rem;
 
 // COLORS:
 
-$primary: #051171;
-$secondary: #ee674f;
-$accent: #ee674f;
+$primary: #242323;
+$secondary: #faf8f4;
 $dark: #000;
 $gray-dark: #3f3f3f;
 $gray: #b1b1b1;
-$gray-medium: #949494;
+$gray-medium: #d4d5d0;
 $gray-light: #e7e9ed;
 $border: #f0f1f4;
 $background: #f8f9fa;
 $light: #fff;
 $success: #32b643;
 $warning: #ffb700;
-$error: #e85600;
+$error: #e83a33;
 
 $efnyc-red: #980048;
 $efnyc-blue: #031e40;
@@ -31,17 +29,12 @@ $primary-color-light: lighten($primary-color, 3%);
 $secondary-color: $secondary;
 $secondary-color-dark: darken($secondary-color, 3%);
 $secondary-color-light: lighten($secondary-color, 3%);
-$accent-color: $accent;
-$accent-color-dark: darken($accent-color, 3%);
-$accent-color-light: lighten($accent-color, 3%);
+$error-color: $error;
+$error-color-dark: darken($error-color, 3%);
+$error-color-light: lighten($error-color, 3%);
 
 $link-color: $primary-color;
 $link-color-dark: darken($link-color, 10%);
-
-// FONTS:
-
-$body-font: Roboto, "Helvetica Neue", sans-serif;
-$title-font: Work Sans, National, sans-serif;
 
 // SIZE RANGES:
 

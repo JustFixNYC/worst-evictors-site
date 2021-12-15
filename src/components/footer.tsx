@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/header-footer.scss";
+import "../styles/footer.scss";
 import { FaGithub, FaTwitter, FaFacebook } from "react-icons/fa";
 import { OutboundLink } from "./outbound-link";
 import { IconType } from "react-icons/lib/cjs";
@@ -15,7 +15,7 @@ const SocialLink = (props: { href: string; icon: IconType; title: string }) => (
 
 const Footer = () => (
   <footer className="Footer">
-    <img src={rtcLogo} alt={`Right to Counsel logo`} />
+    <img src={rtcLogo} alt="Right to Counsel logo" />
     <span>
       This resource is made &ldquo;by tenants for tenants&rdquo; and is
       maintained by the{" "}
@@ -47,16 +47,14 @@ const Footer = () => (
           title="Follow us on Twitter"
           icon={FaTwitter}
         />
-        <OutboundLink href="https://www.netlify.com" className="hide-sm">
-          <img
-            src="https://www.netlify.com/img/global/badges/netlify-light.svg"
-            width="100"
-          />
-        </OutboundLink>
+        <br className="show-lg" />
+        <img
+          aria-hidden
+          src="https://www.netlify.com/img/global/badges/netlify-light.svg"
+        />
       </div>
       Made with NYC ♥ by the team at{" "}
-      <OutboundLink href="https://justfix.nyc">JustFix.nyc</OutboundLink> and
-      the{" "}
+      <OutboundLink href="https://justfix.nyc">JustFix</OutboundLink> and the{" "}
       <span className="nobr">
         <OutboundLink href="https://antievictionmap.com/">
           Anti&#8209;Eviction Mapping Project

@@ -1,23 +1,72 @@
 @import "_vars.scss";
 
-// Smaller header sizes on mobile
-@include for-phone-only() {
-  h1 {
-    font-size: 1.5rem;
+body {
+  background-color: $primary;
+}
+
+.page-content,
+.Footer {
+  background-color: $primary;
+  color: $secondary;
+
+  a {
+    color: $secondary;
+    background-color: transparent;
+    text-decoration: underline;
+
+    &.btn,
+    &.column {
+      text-decoration: none;
+    }
   }
-  h2 {
-    font-size: 1.2rem;
-  }
-  h3 {
-    font-size: 1.05rem;
+
+  a:hover,
+  a:focus {
+    color: $primary;
+    background-color: $secondary;
   }
 }
 
-// No horizontal overflow on mobile
-@include for-tablet-landscape-down() {
-  .page-content {
-    max-width: 100vw;
-    overflow-x: hidden;
+div.d-flex {
+  flex-direction: column;
+  div:first-child {
+    flex-grow: 1;
+  }
+}
+
+.background-cover-photo {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.column.col-8 > .background-cover-photo {
+  min-height: 350px;
+}
+
+.sticky-column {
+  position: sticky;
+  top: 0;
+}
+
+.sticky-column-desktop {
+  @include for-small-desktop-up {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.full-height-container {
+  min-height: 100vh;
+  height: fit-content;
+}
+
+.full-height-container-desktop {
+  @include for-small-desktop-up {
+    min-height: 100vh;
+    height: fit-content;
   }
 }
 
@@ -25,22 +74,10 @@
   white-space: nowrap;
 }
 
-// Responsive content margins
-.hero-body {
-  max-width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include for-small-desktop-down() {
-    max-width: 80%;
-  }
-
-  @include for-tablet-landscape-down() {
-    max-width: 90%;
-  }
-
-  @include for-phone-only() {
-    max-width: 100%;
+.marginless {
+  margin: 0;
+  p {
+    margin: 0;
   }
 }
 
@@ -53,32 +90,29 @@
   }
 }
 
-// Site-wide styling for inline hyperlinks
-p,
-.Footer {
-  a {
-    text-decoration: underline;
-    color: $primary;
+.columns {
+  margin: 0;
+
+  @include for-small-desktop-up {
+    &.text-primary .column.col-4.col-lg-12 {
+      border-right: 1px solid $primary;
+    }
+    &.text-secondary .column.col-4.col-lg-12 {
+      border-right: 1px solid $secondary;
+    }
   }
 
-  a:visited {
-    color: $primary;
-  }
-
-  a:hover {
-    color: $primary;
-    text-decoration: none;
+  .column {
+    padding: 0.7rem 1.2rem;
   }
 }
 
-// Modal overlay background color:
+// Spectre CSS Overrides:
 
-.modal:target .modal-overlay,
-.modal.active .modal-overlay {
-  background-color: rgba(80, 80, 80, 0.75);
+.bg-primary {
+  color: $secondary;
 }
 
-// Additional font-color class
-.text-gray-medium {
-  color: $gray-medium;
+.bg-secondary {
+  color: $primary;
 }

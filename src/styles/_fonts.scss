@@ -1,15 +1,98 @@
 // GLOBAL RULES/OVERRIDES:
 @import "_vars.scss";
 
-* {
-  font-family: $body-font;
+@font-face {
+  font-family: "Degular";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Degular-Medium.woff2") format("woff2"),
+    url("../fonts/Degular-Medium.woff") format("woff");
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $title-font;
+@font-face {
+  font-family: "Degular";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/Degular-Semibold.woff2") format("woff2"),
+    url("../fonts/Degular-Semibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Degular Display";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Degular_Display-Medium.woff2") format("woff2"),
+    url("../fonts/Degular_Display-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Suisse Int'l Mono";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/SuisseIntlMono-Regular-WebS.woff2") format("woff2"),
+    url("../fonts/SuisseIntlMono-Regular-WebS.woff") format("woff");
+}
+
+$body-font: "Degular", Arial, Helvetica, sans-serif;
+$title-font: "Degular Display", Arial, Helvetica, sans-serif;
+$eyebrow-font: "Suisse Int'l Mono", "Courier New", Courier, monospace;
+
+.page-content {
+  font-family: $body-font;
+  // DEFAULT BODY FONT SPECS:
+  font-size: 1.2rem;
+  line-height: 1.44rem;
+  letter-spacing: 0.01rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $title-font;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+    line-height: 2.9rem;
+    letter-spacing: 0.03rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+  .eyebrow {
+    font-size: 0.9rem;
+    font-family: $eyebrow-font;
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
+  }
+}
+
+.Footer,
+.scroll-arrow {
+  font-family: $body-font;
+  line-height: 0.9rem;
+  letter-spacing: 0.01rem;
+}
+
+.navbar {
+  font-family: $body-font;
+  font-size: 2.4rem;
+  letter-spacing: 0.01rem;
+  @include for-small-desktop-down {
+    font-size: 1.2rem;
+  }
+}
+
+.page-content,
+.navbar {
+  .btn.btn-primary,
+  .btn.btn-secondary {
+    font-size: 0.7rem;
+    font-family: $eyebrow-font;
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
+  }
 }

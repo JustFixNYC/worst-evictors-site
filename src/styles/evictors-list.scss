@@ -2,270 +2,63 @@
 
 // PAGE CSS:
 
-.list-hero.hero {
-  padding-left: 2.5em;
-  padding-right: 2.5em;
-  padding-bottom: 0;
-  .hero-body {
-    text-align: left;
-    .list-subtitle {
-      a {
-        color: $light;
-        text-decoration: underline;
+.list-page {
+  section {
+    border-bottom: 1px solid $secondary;
+
+    &.evictor-profile {
+      .columns:first-child {
+        min-height: 100vh;
       }
-
-      a:hover {
-        color: $light;
-        text-decoration: none;
+      .column.col-8 {
+        padding: 1.2rem 1.2rem 0.7rem 1.2rem;
       }
-    }
-    .citywide-list-anchor {
-      border-radius: 5px;
-    }
-
-    h3 {
-      margin-bottom: 0px;
-    }
-  }
-  .dishonorable-mentions.hero-body {
-    .mention-category {
-      padding-bottom: 35px;
-
-      .laurel {
-        margin-top: 50px;
-        margin-bottom: 50px;
-
-        .laurel-img {
-          width: 250px;
-
-          @include for-phone-only {
-            width: 210px;
-          }
-        }
-
-        .laurel-text {
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          width: 150px;
-          font-family: Copperplate, "Copperplate Gothic Light";
-        }
+      .rank {
+        margin-top: 1rem;
+        font-size: 1.8rem;
       }
-    }
-  }
-}
-
-.boro-list-selector.hero {
-  z-index: 100;
-  padding: 0.25em 2.5em 0.25em 2.5em;
-
-  @include for-tablet-landscape-up() {
-    top: $header-height;
-    position: sticky;
-  }
-
-  .hero-body {
-    width: 100%;
-
-    .btn-group {
-      .btn {
-        margin-right: 9px;
-        margin-bottom: 9px;
-        border-radius: 5px;
-        max-width: 190px;
-      }
-      .btn:focus {
-        background-color: $light;
-      }
-
-      .icon {
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-      }
-    }
-
-    .btn-group.hide-md {
-      .btn {
-        margin-bottom: 0px;
-      }
-    }
-  }
-}
-
-.red-space {
-  width: 100%;
-  height: 2.5rem;
-}
-
-.boro-list {
-  padding: 2rem;
-
-  .boro-list-intro {
-    margin-bottom: 60px;
-
-    h1 {
-      font-weight: 700;
-      font-size: 5rem;
-      margin-bottom: 0.25rem;
-
-      @include for-phone-only() {
-        font-size: 2.5rem;
-      }
-    }
-  }
-
-  .evictor-container {
-    margin-bottom: 3rem;
-    padding-top: 3rem;
-
-    .evictor-rank {
-      padding-right: 1rem;
-      text-align: center;
-
-      @include for-phone-only() {
-        display: flex;
-        align-items: center;
-      }
-
-      h1 {
-        font-weight: 700;
-        font-size: 5rem;
-        margin-bottom: -18px;
-        @include lhCrop(1.3);
-
-        @include for-phone-only() {
-          font-size: 7rem;
-          &.double-digit {
-            font-size: 4rem;
-          }
-        }
-      }
-
-      sup {
-        font-size: 15%;
-        top: -4em;
-      }
-
-      sub {
-        font-size: 25%;
-        bottom: 0em;
-      }
-      small {
-        font-weight: 700;
-        font-size: 0.75rem;
-      }
-    }
-    .evictor-intro {
-      align-self: center;
-
-      @include for-phone-only() {
-        padding-top: 1rem;
-      }
-
-      .evictor-name {
-        font-size: 1.75rem;
-        font-weight: 900;
-      }
-
-      .evictor-corp {
-        font-weight: 500;
-      }
-    }
-    .evictor-stats {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-
-      .column {
-        margin-top: 0.4rem;
-        margin-bottom: 0.4rem;
-
-        @include for-phone-only() {
-          margin-top: 0.4rem;
-          margin-bottom: 0.8rem;
-        }
-
-        .eviction-count {
-          font-size: 1.25rem;
-          font-weight: 900;
-          margin-bottom: 8px;
-        }
-
-        .secondary-data {
-          line-height: 1.75;
-
-          @include for-phone-only() {
-            .tooltip:focus::after,
-            .tooltip:hover::after {
-              -webkit-transform: translate(-35%, -0.2rem);
-              transform: translate(-35%, -0.2rem);
-            }
-          }
-        }
-      }
-    }
-    .evictor-pic-container {
-      max-width: 250px;
-      .evictor-pic {
-        width: 80%;
-        padding-top: 80%; /* 1:1 Aspect Ratio */
+      .background-cover-photo {
         position: relative;
-        background-color: black;
+        height: 0;
+        padding: 0 0 100% 0;
       }
-    }
-
-    .evictor-pic-container.show-sm {
-      margin-top: 40px;
-      margin-bottom: 40px;
-      width: 80%;
-
-      .evictor-pic {
-        width: 100%;
-        padding-top: 100%;
+      h1 {
+        margin-bottom: 0.4rem;
       }
-    }
-    .get-involved {
-      .divider {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+      h3 {
+        font-size: 1.2rem;
+        line-height: 1.44rem;
+        letter-spacing: 0.01rem;
+        margin-bottom: 0;
       }
-    }
-
-    .organizing-photos {
-      display: flex;
-      flex-wrap: wrap;
-      padding-bottom: 30px;
-
-      .img-container {
-        width: 100px;
-        margin-right: 20px;
-
-        img {
-          height: 100px;
-          display: block;
-          object-fit: cover;
-          cursor: pointer;
-        }
-
-        img:hover {
-          -webkit-filter: brightness(60%); /* Safari 6.0 - 9.0 */
-          filter: brightness(60%);
+      li {
+        list-style: none;
+        &::before {
+          content: "•";
+          margin-right: 0.75rem;
         }
       }
-
-      .modal {
-        .content {
-          .img-responsive {
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-          }
-        }
+      p {
+        margin-bottom: 0.8rem;
       }
-    }
-    .evictor-links {
-      margin-bottom: 1.5rem;
       .btn {
-        margin-right: 20px;
+        width: 100%;
+        max-width: 325px;
+        margin-bottom: 1.35rem;
+        @include for-small-desktop-down {
+          max-width: calc(100% - #{$menu-button-width});
+        }
+      }
+      // Photo captions:
+      .eyebrow.text-right {
+        margin-top: 0.4rem;
+        display: flex;
+        justify-content: flex-end;
+        p {
+          font-size: 0.7rem;
+          line-height: 0.8rem;
+          max-width: 570px;
+        }
       }
     }
   }

@@ -1,0 +1,83 @@
+@import "_vars.scss";
+@import "_animations.scss";
+
+.navbar {
+  position: fixed;
+  z-index: 1000;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  @include for-small-desktop-down {
+    right: 0.5rem;
+  }
+  button {
+    cursor: pointer;
+  }
+  .menu.d-flex {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: flex-end;
+    @include for-small-desktop-down {
+      justify-content: center;
+    }
+    // Override default menu's vertical transformation:
+    transform: none;
+    .dropdown-toggle {
+      color: $primary;
+      position: fixed;
+      border: none;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+      font-size: 1.5rem;
+      background-color: $secondary;
+      outline: none;
+      &:hover,
+      &:focus {
+        background-color: $primary;
+        color: $secondary;
+      }
+    }
+
+    padding: 2.5rem 3.5rem 2.5rem 2.5rem;
+    @include for-small-desktop-down {
+      padding: 0.5rem;
+    }
+
+    a {
+      color: $primary;
+      padding: 0.25rem 1.25rem;
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray-light;
+      }
+
+      &.active {
+        text-decoration: none;
+        list-style-type: disc;
+        padding-left: 3.75rem;
+      }
+
+      &:focus {
+        text-decoration: none;
+        box-shadow: none;
+        border: 1px dashed $primary;
+      }
+    }
+  }
+}
+
+.scroll-arrow {
+  position: fixed;
+  bottom: 1.5rem;
+  z-index: 500;
+  text-shadow: -1px 0 $primary, 0 1px $primary, 1px 0 $primary, 0 -1px $primary;
+  left: calc(33% - 0.825rem);
+  pointer-events: none;
+
+  @include for-small-desktop-down {
+    left: 0.15rem;
+  }
+}
