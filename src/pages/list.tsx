@@ -83,7 +83,7 @@ const CitywideEvictorsListPage = () => (
                 <div className="column col-4 col-xl-6 col-lg-12 sticky-column-desktop full-height-container-desktop">
                   <div className="eyebrow">Dishonorable Mention</div>
                   <br />
-                  <h1 className="text-bold">Property Management Companies</h1>
+                  <h2 className="text-bold">Property Management Companies</h2>
                 </div>
                 <div className="column col-8 col-xl-6 col-lg-12">
                   <BackgroundImage
