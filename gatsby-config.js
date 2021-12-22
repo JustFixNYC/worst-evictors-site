@@ -8,6 +8,10 @@ const contentfulConfig = {
   host: process.env.CONTENTFUL_HOST || "cdn.contentful.com"
 };
 
+const tracking = {
+  gtm: "GTM-NMPT5JP"
+};
+
 module.exports = {
   siteMetadata: {
     title: "NYC's Worst Evictors"
@@ -24,6 +28,17 @@ module.exports = {
         theme_color: "#242323",
         display: "minimal-ui",
         icon: "src/images/favicon.png" // This path is relative to the root of the site.
+      }
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: tracking.gtm,
+
+        // datalayer to be set before GTM is loaded
+        // should be an object or a function that is executed in the browser
+        // Defaults to null
+        defaultDataLayer: { platform: "gatsby" }
       }
     },
     {
