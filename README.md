@@ -51,4 +51,4 @@ Then visit `http://localhost:8000`!
   
 ## Code of Conduct
 
-  Read about JustFix's code of conduct as an organization on our [Mission page](https://www.justfix.nyc/our-mission/).
+  Read about JustFix's code of conduct as an organization on our [Mission page](https://www.justfix.org/our-mission/).

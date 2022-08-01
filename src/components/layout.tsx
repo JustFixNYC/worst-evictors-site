@@ -59,7 +59,7 @@ const Layout = ({
         />
         <meta
           name="author"
-          content="Right to Counsel Coalition, JustFix.nyc, and the Anti-Eviction Mapping Project"
+          content="Right to Counsel Coalition, JustFix, and the Anti-Eviction Mapping Project"
         />
 
         <meta property="fb:app_id" content="247990609143668" />
