@@ -10,7 +10,7 @@ import contentfulOptions from "../utils/contentful-rich-text-options";
 import { OutboundLink } from "../components/outbound-link";
 
 const CITYWIDE_MAP_URL =
-  "https://ampitup.carto.com/builder/22338af2-9fab-4e3b-89aa-2fcb1b509f9e/embed";
+  "https://clausa.app.carto.com/viewer/5246df20-c40f-4d1c-8449-11b969fb4314";
 
 const EVICTION_CRISIS_MONITOR_URL =
   "https://www.righttocounselnyc.org/evictioncrisismonitor";
