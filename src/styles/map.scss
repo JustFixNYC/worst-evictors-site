@@ -39,13 +39,12 @@ $bottom-banner-height: 40px;
   height: calc(100vh - #{$title-banner-height} - #{$bottom-banner-height});
   background-color: $carto-background;
 
-  // remove Landlord widget by bringing margin up to cover it
+  // make sure map doesn't overlap with Menu button on mobile:
   @include for-carto-map-minimized() {
     padding: 7px;
     height: calc(
-      100vh - #{$title-banner-height} - #{$bottom-banner-height} + 210px
+      100vh - #{$title-banner-height} - #{$bottom-banner-height} - 150px
     );
-    margin-bottom: -210px;
   }
 }
 
