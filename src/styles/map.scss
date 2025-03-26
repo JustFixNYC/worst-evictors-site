@@ -38,6 +38,14 @@ $bottom-banner-height: 40px;
   width: 100%;
   height: calc(100vh - #{$title-banner-height} - #{$bottom-banner-height});
   background-color: $carto-background;
+
+  // make sure map doesn't overlap with Menu button on mobile:
+  @include for-carto-map-minimized() {
+    padding: 7px;
+    height: calc(
+      100vh - #{$title-banner-height} - #{$bottom-banner-height} - 100px
+    );
+  }
 }
 
 .map-bottom-banner {
