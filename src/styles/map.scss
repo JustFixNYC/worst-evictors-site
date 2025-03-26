@@ -38,15 +38,6 @@ $bottom-banner-height: 40px;
   width: 100%;
   height: calc(100vh - #{$title-banner-height} - #{$bottom-banner-height});
   background-color: $carto-background;
-
-  // remove Landlord widget by bringing margin up to cover it
-  @include for-carto-map-minimized() {
-    padding: 7px;
-    height: calc(
-      100vh - #{$title-banner-height} - #{$bottom-banner-height} + 210px
-    );
-    margin-bottom: -210px;
-  }
 }
 
 .map-bottom-banner {
