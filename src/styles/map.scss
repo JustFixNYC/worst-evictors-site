@@ -43,7 +43,7 @@ $bottom-banner-height: 40px;
   @include for-carto-map-minimized() {
     padding: 7px;
     height: calc(
-      100vh - #{$title-banner-height} - #{$bottom-banner-height} - 100px
+      100vh - #{$title-banner-height} - #{$bottom-banner-height} - 150px
     );
   }
 }
